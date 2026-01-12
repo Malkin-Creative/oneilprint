@@ -1,0 +1,40 @@
+#footer {
+    background: $darkBlue;
+
+    .widget_nav_menu {
+        margin-top: 0;
+    }
+
+    #menu-footer-navigation {
+        display: flex;
+        gap: 20px;
+        justify-content: end;
+    }
+
+    p {
+        color: #FFFFFFB0;
+    }
+}
+@media (min-width: 768px) and (max-width: 1024px) {
+    
+}
+@media (max-width: 767px) {
+    #footer {
+        .wp-block-columns {
+            p, figure {
+                text-align: center !important;
+            }
+            figure {
+                float: unset;
+                width: 100%;
+                margin: 0;
+            }
+        }
+        #menu-footer-nav {
+            justify-content: center;
+            flex-direction: column;
+            text-align: center;
+            align-items: center;
+        }
+    }
+}

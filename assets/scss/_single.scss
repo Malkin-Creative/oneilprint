@@ -1,0 +1,28 @@
+.single-hero {
+    padding: 175px 0px;
+}
+.single {
+    background: $white;
+}
+.breadcrumbs {
+    position: relative;
+
+    p, a, span {
+        color: $white;
+    }
+    span:first-child {
+        display: flex;
+        gap: 10px;
+        flex-wrap: wrap;
+    }
+}
+@media (min-width: 768px) and (max-width: 1024px) {
+    .single-hero {
+        padding: 150px 0px;
+    }
+}
+@media (max-width: 767px) {
+    .single-hero {
+        padding: 150px 0px;
+    }
+}

@@ -1,0 +1,90 @@
+.three-col {
+    background-color: $white;
+    
+    &__header {
+        &:after {
+            content: '';
+            position: absolute;
+            width: 100px;
+            height: 2px;
+            background-color: $lightBlue;
+            opacity: 0.5;
+            bottom: 0;
+            left: calc(50% - 50px);
+        }
+    }
+
+    &__row {
+        row-gap: 60px;
+
+        &__image {
+            width: 92%;
+            z-index: 1;
+            height: 175px;
+
+            img {
+                width: 100%;
+                object-fit: cover;
+            }
+        }
+        &__wrap {
+            padding: 40px 24px 32px 24px;
+            z-index: 2;
+            height: calc(50% + 20px);
+            margin-top: -20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 10px;
+            text-align: center;
+
+            .image-overlay {
+                clip-path: polygon(0 0, 100% 10%, 100% 100%, 0% 100%);
+                z-index: 1;
+                position: absolute;
+                top: -15px;
+                left: 4%;
+                width: 92%;
+                height: 100%;
+                background-color: $lightBlue;
+                opacity: 0.5;
+                min-height: 100%;
+            }
+
+            .background {
+                clip-path: polygon(0 0, 100% 10%, 100% 100%, 0% 100%);
+                z-index: 2;
+                position: absolute;
+                top: 0px;
+                left: 0%;
+                background: $primaryBlue;
+                width: 100%;
+                min-height: 100%;
+            }
+
+            &__header {
+                color: $white;
+                z-index: 3;
+            }
+
+            &__content {
+                color: $white;
+                z-index: 3;
+            }
+        }
+    }
+}
+@media screen and (min-width: 767px) and (max-width: 1024px) {
+    .three-col {
+        
+    }
+}
+@media screen and (max-width: 767px) {
+    .three-col {
+        &__row {
+            &__wrap {
+                height: auto;
+            }
+        }
+    }
+}

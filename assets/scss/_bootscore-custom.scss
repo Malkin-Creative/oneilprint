@@ -1,0 +1,336 @@
+/*!
+ * Bootscore custom styles
+ */
+
+// Add your own code here!
+// Because this file is compiled after Bootstrap, you're also able to use Bootstrap mixins for better code.
+// Some examples can be found here: https://bootscore.me/documentation/bootstrap-css-sass
+
+// Background set to offwhite
+.page, .blog, .post {
+    background: $offwhite;
+}
+
+// Social Sharing
+.simplesocialbuttons {
+    background: transparent !important;
+}
+
+// Fonts
+/* roboto-condensed-300 - latin */
+@font-face {
+    font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+    font-family: 'Roboto Condensed';
+    font-style: normal;
+    font-weight: 300;
+    src: url('../fonts/roboto-condensed-v27-latin-300.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+/* roboto-condensed-regular - latin */
+@font-face {
+    font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+    font-family: 'Roboto Condensed';
+    font-style: normal;
+    font-weight: 400;
+    src: url('../fonts/roboto-condensed-v27-latin-regular.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+/* roboto-condensed-500 - latin */
+@font-face {
+    font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+    font-family: 'Roboto Condensed';
+    font-style: normal;
+    font-weight: 500;
+    src: url('../fonts/roboto-condensed-v27-latin-500.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+/* roboto-condensed-600 - latin */
+@font-face {
+    font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+    font-family: 'Roboto Condensed';
+    font-style: normal;
+    font-weight: 600;
+    src: url('../fonts/roboto-condensed-v27-latin-600.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+/* roboto-condensed-700 - latin */
+@font-face {
+    font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+    font-family: 'Roboto Condensed';
+    font-style: normal;
+    font-weight: 700;
+    src: url('../fonts/roboto-condensed-v27-latin-700.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+
+// Typography
+.h1-large h1 {
+    font-size: 55px;
+    font-family: $primaryFont;
+    text-transform: uppercase;
+    line-height: 1.2;
+    font-weight: 400;
+    margin: 0 0 20px !important;
+}
+h1 {
+    font-size: 45px;
+    font-family: $primaryFont;
+    text-transform: uppercase;
+    line-height: 1.2;
+    font-weight: 400;
+    margin: 0 0 20px !important;
+}
+h2 {
+    font-size: 36px;
+    font-family: $primaryFont;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: $primaryBlue;
+    line-height: 1.2;
+    margin: 0 0 20px !important;
+}
+h3 {
+    font-size: 30px;
+    font-family: $primaryFont;
+    color: $primaryBlue;
+    font-weight: 700;
+    text-transform: uppercase;
+    line-height: 1.2;
+    margin: 0 0 20px !important;
+}
+h4 {
+    font-size: 22px;
+    font-family: $primaryFont;
+    font-weight: 700;
+    text-transform: uppercase;
+    line-height: 1.2;
+}
+h5 {
+    font-size: 20px;
+    font-family: $primaryFont;
+    font-weight: 700;
+    text-transform: uppercase;
+    line-height: 1.2;
+}
+h6 {
+    font-size: 18px;
+    font-family: $primaryFont;
+    font-weight: 700;
+    text-transform: uppercase;
+    line-height: 1.2;
+}
+.subheader {
+    font-size: 16px;
+    font-family: $primaryFont;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+.link {
+    font-size: 16px;
+    font-family: $primaryFont;
+    font-weight: 400;
+    text-transform: uppercase;
+}
+p {
+    font-size: 16px;
+    font-family: $primaryFont;
+    font-weight: 400;
+    line-height: 1.2;
+    color: $darkGray;
+}
+a {
+    color: $lightBlue;
+}
+
+// Background images that lazy load
+.overlay {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+.object-fit-cover > img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    background-size: cover;
+}
+.object-fit-contain > img {
+    height: 100%;
+    width: 100%;
+    object-fit: contain;
+    background-size: contain;
+}
+
+// Buttons
+.button {
+    font-size: 16px !important;
+    font-family: $primaryFont;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1.5 !important;
+    text-decoration: none !important;
+    transition: all .3s ease-in-out !important;
+    width: fit-content;
+    background: transparent !important;
+    outline: none !important;
+    border-color: transparent !important;
+
+    &--primary {
+        position: relative;
+        padding: 24px 32px !important;
+        color: $white !important;
+        top: 0;
+        transition: top 200ms ease 0s;
+        letter-spacing: 1.5px;
+
+        &:before {
+            content: '';
+            position: absolute;
+            background: $lightRed;
+            transform: skewX(-5deg);
+            transition: all .3s ease-in-out;
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: 100%;
+        }
+
+        span {
+            position: relative;
+            z-index: 1;
+        }
+
+        &:hover {
+            top: -8px;
+
+            &:before {
+                background: $darkRed;
+            }
+        }
+    }
+    &--secondary {
+        position: relative;
+        padding: 24px 32px !important;
+        color: $primaryBlue !important;
+        top: 0;
+        transition: top 200ms ease 0s;
+        letter-spacing: 1.5px;
+
+        &:before {
+            content: '';
+            position: absolute;
+            background: $offBlue;
+            transform: skewX(-5deg);
+            transition: all .3s ease-in-out;
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: 100%;
+        }
+
+        span {
+            position: relative;
+            z-index: 1;
+        }
+
+        &:hover {
+            top: -8px;
+
+            &:before {
+                background: $offwhite;
+            }
+        }
+    }
+    &--tertiary {
+        position: relative;
+        padding: 12px 24px !important;
+        color: $darkGray !important;
+        text-transform: none;
+        font-weight: 400;
+        text-align: center;
+        letter-spacing: 0 !important;
+
+        span {
+            position: relative;
+            z-index: 1;
+        }
+
+        &:hover {
+            color: $white;
+
+            &:after {
+                width: 100%;
+            }
+        }
+
+        &:before {
+            content: '';
+            position: absolute;
+            background: $gray;
+            transform: skewX(-5deg);
+            transition: all .3s ease-in-out;
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: 100%;
+            opacity: 0.1;
+        }
+
+        &:after {
+            content: '';
+            width: 4px;
+            height: 100%;
+            left: 0;
+            top: 0;
+            position: absolute;
+            background: #62799B;
+            transition: width 0.5s;
+            transform: skewX(-5deg);
+        }
+    }
+    &--black {
+        background-color: $black !important;
+        border-radius: 9999px !important;
+        padding: 6px 12px !important;
+        font-weight: 400;
+
+        &:hover {
+            background-color: #333;
+        }
+
+        span {
+            text-transform: none;
+            color: $white;
+        }
+    }
+    &--contact {
+        span {
+            text-transform: none;
+            color: $darkGray;
+        }
+    }
+}
+@media screen and (min-width: 767px) and (max-width: 1024px) {
+    .button {
+        &--tertiary {
+            min-width: 340px;
+        }
+    }
+}
+@media screen and (max-width: 767px) {
+    .h1-large h1 {
+        font-size: 42px;
+    }
+    h1 {
+        font-size: 36px;
+    }
+    h2 {
+        font-size: 30px;
+    }
+    h3 {
+        font-size: 24px;
+    }
+    .button {
+        &--tertiary {
+            min-width: 300px;
+            max-width: 300px !important;
+        }
+    }
+}

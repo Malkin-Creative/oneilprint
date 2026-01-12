@@ -1,0 +1,186 @@
+header.site-header {
+    position: absolute; /* starts as absolute at top */
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 999;
+    transition: top 0.3s ease-in-out, position 0s linear 0.3s;
+    background-color: transparent !important;
+
+    #nav-main {
+        padding-top: 0;
+        padding-bottom: 0;
+    }
+
+    .header__container {
+        border-bottom: 1px solid #62799B;
+        padding-top: 15px !important;
+        padding-bottom: 15px !important;
+
+        &__logo {
+            position: relative;
+        }
+
+        .nav-toggler {
+            border: none;
+            color: $white;
+            padding: 0;
+        }
+    }
+    .offcanvas-body {
+        align-items: center;
+        gap: 30px;
+    }
+    .navbar-nav {
+        gap: 30px;
+
+        .menu-item {
+            &.current-menu-item {
+                a {
+                    color: $lightBlue;
+                }
+            }
+            a {
+                color: $white;
+                text-transform: uppercase;
+                transition: all .3s ease-in-out;
+                font-family: $primaryFont;
+    
+                &:hover {
+                    color: $lightBlue;
+                }
+            }
+        }
+    }
+}
+  
+/* When scrolled past 1000px */
+.site-header.fixed {
+    position: fixed;
+    background-color: $white !important;
+    top: -100px; /* Start off-screen when switching to fixed */
+    transition: none; /* instantly jump to off-screen */
+    box-shadow: 0px 0px 12px 0px #00000025;
+
+    &:before {
+        content: '';
+        position: absolute;
+        background: $primaryBlue;
+        top: 0;
+        left: 0;
+        height: 100%;
+        min-width: 23%;
+    }
+
+    .header__container {
+        border-bottom: none;
+        position: relative;
+
+        &:before {
+            content: '';
+            position: absolute;
+            background: $primaryBlue;
+            top: 0;
+            left: 0;
+            height: 100%;
+            min-width: 23%;
+            clip-path: polygon(0 0, 100% 0%, 98% 100%, 0% 100%);
+        }
+    }
+
+    .navbar-nav {
+        .menu-item {
+            a {
+                color: $primaryBlue;
+            }
+        }
+    }
+}
+  
+/* Then trigger the slide-down */
+.site-header.fixed.show {
+    top: 0;
+    transition: top 0.3s ease-in-out;
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+    header.site-header {
+        .header__container {
+            padding-top: 30px !important;
+            padding-bottom: 30px !important;
+        }
+        .offcanvas-end {
+            width: 100%;
+            padding: 50px;
+        }
+        .offcanvas-body {
+            display: flex;
+            flex-direction: column;
+        }
+        .navbar-nav {
+            margin-left: 0 !important;
+            gap: 20px;
+
+            .menu-item {
+                text-align: center;
+
+                a {
+                    color: $primaryBlue;
+                }
+            }
+        }
+    }
+    .site-header.fixed {
+        .header__container {
+            &:before {
+                min-width: 55%;
+                clip-path: polygon(0 0, 100% 0%, 95% 100%, 0% 100%);
+            }
+            .nav-toggler {
+                color: $primaryBlue;
+            }
+        }
+    }
+}
+@media (max-width: 767px) {
+    header.site-header {
+        .header__container {
+            padding-top: 30px !important;
+            padding-bottom: 30px !important;
+            padding-left: 28px !important;
+            padding-right: 28px !important;
+        }
+        .offcanvas-end {
+            width: 100%;
+            padding: 20px;
+        }
+        .offcanvas-body {
+            display: flex;
+            flex-direction: column;
+        }
+        .navbar-nav {
+            margin-left: 0 !important;
+            gap: 20px;
+
+            .menu-item {
+                text-align: center;
+
+                a {
+                    color: $primaryBlue;
+                }
+            }
+        }
+    }
+
+    .site-header.fixed {
+        .header__container {
+            &:before {
+                min-width: 55%;
+                clip-path: polygon(0 0, 100% 0%, 95% 100%, 0% 100%);
+            }
+            .nav-toggler {
+                color: $primaryBlue;
+            }
+        }
+    }
+}

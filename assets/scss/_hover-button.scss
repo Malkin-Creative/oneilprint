@@ -1,0 +1,57 @@
+.hover-button {
+    &__header {
+        padding-left: 30px;
+
+        &:after {
+            content: '';
+            position: absolute;
+            width: 2px;
+            height: 100%;
+            background-color: $lightBlue;
+            opacity: 0.5;
+            bottom: 0;
+            left: 0;
+        }
+    }
+    &__subheader {
+        p {
+            margin-bottom: 0;
+        }
+    }
+    &__row {
+        grid-template-columns: repeat(5, 1fr);
+        grid-column-gap: 10px;
+        display: grid;
+        padding-right: 12px;
+        padding-left: 12px;
+    }
+}
+@media screen and (min-width: 767px) and (max-width: 1024px) {
+    .hover-button {
+        &__header {
+            padding-left: 20px;
+        }
+        &__row {
+            grid-template-columns: repeat(1, 1fr);
+            grid-row-gap: 10px;
+        }
+    }
+}
+@media screen and (max-width: 767px) {
+    .hover-button {
+        &__header {
+            text-align: center;
+            padding-left: 0;
+
+            &:after {
+                width: 100px;
+                height: 1px;
+                left: calc(50% - 50px);
+            }
+        }
+        &__row {
+            grid-template-columns: repeat(1, 1fr);
+            grid-row-gap: 10px;
+        }
+    }
+}
