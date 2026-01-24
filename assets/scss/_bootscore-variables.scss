@@ -2,22 +2,27 @@
 // Do you want primary to be green? Just add "$primary: #00FF00;" to this file and the theme will automatically compile the scss for you.
 
 // Fonts
-$primaryFont: 'Roboto Condensed', sans-serif;
+$primaryFont: 'Figtree', sans-serif;
+$secondaryFont: 'Roboto Mono', monospace;
 
 // Colors
-$lightRed: #DC3545;
-$darkRed: #C42938;
-$primaryBlue: #112848;
-$lightBlue: #62799B;
-$darkBlue: #060F1C;
-$offBlue: #B0BCCD;
 $white: #ffffff;
-$black: #000000;
-$lightGray: #EEEEEE;
-$offwhite: #F7F7F7;
-$darkGray: #212529;
-$blue: #2A3E5B;
-$gray: #9E9E9E;
+$navy: #141B4D;
+$steel: #647692;
+$silver: #C8D8EB;
+$light-silver: #E3EBF5;
+$lightest-silver: #F1F5FA;
+$blue: #489FDF;
+$blue-ada: #1179C5;
+$green: #00B373;
+$green-ada: #11865C;
+$yellow: #F0B323;
+$orange: #FF8F1C;
+$red: #F4364C;
+$red-ada: #DF2D42;
+$violet: #C964CF;
+$black: #232323;
+$brown: #89532F;
 
 // Spacing
 $gutter: 10px;

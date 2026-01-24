@@ -19,12 +19,10 @@ if ( ! empty( $block['anchor'] ) ) {
 
 $id = 'hero-' . $block['id'];
 
-$desktop_horizontal_padding = get_field('desktop_horizontal_padding');
-$desktop_vertical_padding = get_field('desktop_vertical_padding');
-$tablet_horizontal_padding = get_field('tablet_horizontal_padding');
-$tablet_vertical_padding = get_field('tablet_vertical_padding');
-$mobile_horizontal_padding = get_field('mobile_horizontal_padding');
-$mobile_vertical_padding = get_field('mobile_vertical_padding');
+$padding_top = get_field('padding_top');
+$padding_bottom = get_field('padding_bottom');
+$padding_top_mobile = $padding_top / 2;
+$padding_bottom_mobile = $padding_bottom / 2;
 $background_video = get_field('background_video');
 $background_image = get_field('background_image');
 $header = get_field('header');
@@ -93,16 +91,13 @@ if ($anchorScrollPrimary == 'anchor-scroll') {
 
 <style type="text/css">
     #<?php echo esc_attr( $id ); ?> {
-        padding: <?php echo esc_attr( $desktop_vertical_padding ); ?>px <?php echo esc_attr( $desktop_horizontal_padding ); ?>px;
+        padding-top: <?php echo esc_attr( $padding_top ); ?>px;
+        padding-bottom: <?php echo esc_attr( $padding_bottom ); ?>px;
     }
-	@media (min-width: 768px) and (max-width: 1024px) {
-		#<?php echo esc_attr( $id ); ?> {
-            padding: <?php echo esc_attr( $tablet_vertical_padding ); ?>px <?php echo esc_attr( $tablet_horizontal_padding ); ?>px;
-        }
-	}
 	@media (max-width: 767px) {
 		#<?php echo esc_attr( $id ); ?> {
-            padding: <?php echo esc_attr( $mobile_vertical_padding ); ?>px <?php echo esc_attr( $mobile_horizontal_padding ); ?>px;
+            padding-top: <?php echo esc_attr( $padding_top_mobile ); ?>px;
+            padding-bottom: <?php echo esc_attr( $padding_bottom_mobile ); ?>px;
         }
 	}
 </style>
