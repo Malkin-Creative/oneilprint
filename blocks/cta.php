@@ -43,9 +43,9 @@ $tile_background_video = get_field('tile_background_video');
 $primary_cta = get_field('primary_call_to_action');
 $primary_cta_label = get_field('primary_call_to_action_label');
 if( $primary_cta ): 
-    $link_url = $primary_cta['url'];
-    $link_title = $primary_cta['title'];
-    $link_target = $primary_cta['target'] ? $primary_cta['target'] : '_self';
+    $primary_link_url = $primary_cta['url'];
+    $primary_link_title = $primary_cta['title'];
+    $primary_link_target = $primary_cta['target'] ? $primary_cta['target'] : '_self';
 endif;
 $anchorScrollPrimary = get_field('anchor_scroll_on_primary_cta');
 
@@ -57,10 +57,10 @@ if ($anchorScrollPrimary == 'anchor-scroll') {
 
 $secondary_cta = get_field('secondary_call_to_action');
 $secondary_cta_label = get_field('secondary_call_to_action_label');
-if( $primary_cta ): 
-    $link_url = $secondary_cta['url'];
-    $link_title = $secondary_cta['title'];
-    $link_target = $secondary_cta['target'] ? $secondary_cta['target'] : '_self';
+if( $secondary_cta ): 
+    $secondary_link_url = $secondary_cta['url'];
+    $secondary_link_title = $secondary_cta['title'];
+    $secondary_link_target = $secondary_cta['target'] ? $secondary_cta['target'] : '_self';
 endif;
 $anchorScrollSecondary = get_field('anchor_scroll_on_secondary_cta');
 
@@ -122,7 +122,7 @@ if ($tile_background == 'solid') {
 	>
 <?php endif; ?>
 
-<section class="cta position-relative" id="<?php echo esc_attr( $id ); ?>" style="background: <?php echo $backgroundColor; ?>; background: linear-gradient(<?php echo $backgroundGradientAngle; ?>deg,<?php echo $backgroundGradientStart; ?>,<?php echo $backgroundGradientEnd; ?>);">
+<section class="cta position-relative" id="<?php echo esc_attr( $id ); ?>"<?php if ($background == 'solid' || $background == 'gradient') : ?> style="background: <?php echo $backgroundColor; ?>; background: linear-gradient(<?php echo $backgroundGradientAngle; ?>deg,<?php echo $backgroundGradientStart; ?>,<?php echo $backgroundGradientEnd; ?>);"<?php endif; ?>>
     <?php if ($background == 'image') : ?>
         <div class="cta__bg-img overlay object-fit-cover w-100 h-100">
             <?php if ( $background_image ) : ?>
@@ -140,7 +140,7 @@ if ($tile_background == 'solid') {
         </div>
     <?php endif; ?>
     <div class="container">
-        <div class="row justify-content-center cta__content" style="background: <?php echo $tileBackgroundColor; ?>; background: linear-gradient(<?php echo $tileBackgroundGradientAngle; ?>deg,<?php echo $tileBackgroundGradientStart; ?>,<?php echo $tileBackgroundGradientEnd; ?>);">
+        <div class="row justify-content-center cta__content"<?php if ($tile_background == 'solid' || $tile_background == 'gradient') : ?> style="background: <?php echo $tileBackgroundColor; ?>; background: linear-gradient(<?php echo $tileBackgroundGradientAngle; ?>deg,<?php echo $tileBackgroundGradientStart; ?>,<?php echo $tileBackgroundGradientEnd; ?>);"<?php endif; ?>>
             <?php if ($tile_background == 'image') : ?>
                 <div class="cta__content__bg-img overlay object-fit-cover w-100 h-100">
                     <?php if ( $tile_background_image ) : ?>
@@ -171,13 +171,13 @@ if ($tile_background == 'solid') {
                 <?php if ( $primary_cta || $secondary_cta ) : ?>
                     <div class="mt-6 d-flex justify-content-center align-items-center cta__content__wrap__buttons">
                         <?php if ( $primary_cta ) : ?>
-                            <a class="button button--<?php echo $buttonPrimary; ?><?php echo $anchor_scroll_primary; ?>" href="<?php echo esc_url( $link_url ); ?>" target="<?php echo esc_attr( $link_target ); ?>" rel="noopener" aria-label="<?php echo esc_attr( $primary_cta_label ); ?>">
-                                <?php echo esc_html( $link_title ); ?>
+                            <a class="button button--<?php echo $buttonPrimary; ?><?php echo $anchor_scroll_primary; ?>" href="<?php echo esc_url( $primary_link_url ); ?>" target="<?php echo esc_attr( $primary_link_target ); ?>" rel="noopener" aria-label="<?php echo esc_attr( $primary_cta_label ); ?>">
+                                <?php echo esc_html( $primary_link_title ); ?>
                             </a>
                         <?php endif; ?>
                         <?php if ( $secondary_cta ) : ?>
-                            <a class="button button--<?php echo $buttonSecondary; ?><?php echo $anchor_scroll_secondary; ?>" href="<?php echo esc_url( $link_url ); ?>" target="<?php echo esc_attr( $link_target ); ?>" rel="noopener" aria-label="<?php echo esc_attr( $secondary_cta_label ); ?>">
-                                <?php echo esc_html( $link_title ); ?>
+                            <a class="button button--<?php echo $buttonSecondary; ?><?php echo $anchor_scroll_secondary; ?>" href="<?php echo esc_url( $secondary_link_url ); ?>" target="<?php echo esc_attr( $secondary_link_target ); ?>" rel="noopener" aria-label="<?php echo esc_attr( $secondary_cta_label ); ?>">
+                                <?php echo esc_html( $secondary_link_title ); ?>
                             </a>
                         <?php endif; ?>
                     </div>
