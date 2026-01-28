@@ -40,38 +40,39 @@ jQuery(function ($) {
     });
 
     // Toggle Search bar
-    const $parent = $(this).closest('form');
-    const $isExpanded = $parent.hasClass('active-search');
-    const $otherInput = $('#searchinput').siblings('input[type="submit"]').first();
-    console.log($isExpanded);
-
     $('#searchinput').on('click', function() {
-        if ($isExpanded === true) {
+        const $parent = $(this).closest('form');
+        const isExpanded = $parent.hasClass('active-search');
+        const $otherInput = $('#searchinput').siblings('input[type="submit"]').first();
+
+        if (isExpanded === false) {
             $parent.addClass('active-search');
             $parent.attr('aria-expanded', 'true');
+            $('#searchinput').attr('placeholder', 'Keyword');
+        }
+
+        // Toggle value between "Search" and ""
+        if ($otherInput.val() === '') {
             $otherInput.val('Search');
         }
-    }); 
+    });
+
     $('#close-search').on('click', function() {
-        if ($isExpanded === false) {
-            $parent.removeClass('active-search');
-            $parent.attr('aria-expanded', 'false');
-            $otherInput.val('');
+        const $parent1 = $(this).closest('form');
+        const isExpanded1 = $parent1.hasClass('active-search');
+        const $otherInput1 = $('#searchinput').siblings('input[type="submit"]').first();
+
+        if (isExpanded1 === true) {
+            $parent1.removeClass('active-search');
+            $parent1.attr('aria-expanded', 'false');
+            $('#searchinput').attr('placeholder', 'Search');
         }
-    }); 
 
-    // $('#searchinput').on('click', function() {
-    //     alert(isExpanded);
-    //     $parent.toggleClass('active-search');
-    //     $parent.attr('aria-expanded', !isExpanded);
-
-    //     // Toggle value between "Search" and ""
-    //     if ($otherInput.val() === 'Search') {
-    //         $otherInput.val('');
-    //     } else {
-    //         $otherInput.val('Search');
-    //     }
-    // });
+        // Toggle value between "Search" and ""
+        if ($otherInput1.val() === 'Search') {
+            $otherInput1.val('');
+        }
+    });
 
 }); // jQuery End
 

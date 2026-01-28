@@ -1,0 +1,36 @@
+.featured-post-grid {
+    &__header {
+        font-weight: 300 !important;
+    }
+    &__wrap {
+        padding-top: 260px;
+
+        &__img {
+            height: 240px;
+            width: calc(100% - 24px);
+            left: 12px;
+
+            img {
+                border-radius: $radius-md;
+            }
+        }
+
+        &__excerpt {
+            overflow: hidden;
+            display: -webkit-box;
+            -webkit-line-clamp: 3;
+            -webkit-box-orient: vertical;
+        }
+    }
+}
+
+@media (max-width: 767px) {
+    .featured-post-grid {
+        &__wrap {
+            &__img {
+                width: calc(100% - 40px);
+                left: 20px;
+            }
+        }
+    }
+}

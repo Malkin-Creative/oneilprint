@@ -281,4 +281,19 @@ class ADA_Compliant_Walker_Nav_Menu extends Walker_Nav_Menu {
   function end_el( &$output, $item, $depth = 0, $args = array() ) {
     $output .= "</li>\n";
   }
+
+  // Format Phone Number 
+  function format_phone_dots($phone) {
+    // Remove all non-numeric characters
+    $digits = preg_replace('/\D/', '', $phone);
+
+    // Format only if 10 digits
+    if (strlen($digits) === 10) {
+        return substr($digits, 0, 3) . '.' . substr($digits, 3, 3) . '.' . substr($digits, 6);
+    }
+
+    // Fallback for unexpected input
+    return $phone;
+  }
+
 }

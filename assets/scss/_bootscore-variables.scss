@@ -4,6 +4,7 @@
 // Fonts
 $primaryFont: 'Figtree', sans-serif;
 $secondaryFont: 'Roboto Mono', monospace;
+$tertiaryFont: 'Inter', sans-serif;
 
 // Colors
 $white: #ffffff;
@@ -26,6 +27,11 @@ $brown: #89532F;
 
 // Spacing
 $gutter: 10px;
+
+// Border Radius
+$radius-3xl: 20px;
+$radius-md: 8px;
+$radius-xs: 4px;
 
 // Override Bootstrap Variables
 $spacer:$gutter;

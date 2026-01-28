@@ -1,0 +1,45 @@
+.cta {
+    &__content {
+        border-radius: $radius-3xl;
+        z-index: 1;
+        position: relative;
+        box-shadow: 0px 24px 48px -12px rgba(16,24,40,0.18);
+        -webkit-box-shadow: 0px 24px 48px -12px rgba(16,24,40,0.18);
+        -moz-box-shadow: 0px 24px 48px -12px rgba(16,24,40,0.18);
+
+        &__wrap {
+            z-index: 1;
+            position: relative;
+
+            &__buttons {
+                gap: 12px;
+                flex-wrap: wrap;
+            }
+        }
+
+        img, video {
+            border-radius: $radius-3xl;
+        }
+    }
+    video {
+        object-fit: cover;
+    }
+}
+
+@media (max-width: 767px) {
+    .cta {
+        padding-left: 20px;
+        padding-right: 20px;
+        
+        &__content {
+            &__wrap {
+                &__buttons {
+                    a {
+                        width: 100%;
+                        text-align: center;
+                    }
+                }
+            }
+        }
+    }
+}

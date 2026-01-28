@@ -1,0 +1,13 @@
+.faqs {
+    &__header {
+        font-weight: 300 !important;
+    }
+    &__wrap {
+        &.silver {
+            border-top: 2px solid $silver;
+        }
+        &.blue {
+            border-top: 2px solid $blue;
+        }
+    }
+}

@@ -16,198 +16,279 @@
     background: transparent !important;
 }
 
-// Fonts
-/* roboto-condensed-300 - latin */
-// @font-face {
-//     font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
-//     font-family: 'Roboto Condensed';
-//     font-style: normal;
-//     font-weight: 300;
-//     src: url('../fonts/roboto-condensed-v27-latin-300.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
-// }
-// /* roboto-condensed-regular - latin */
-// @font-face {
-//     font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
-//     font-family: 'Roboto Condensed';
-//     font-style: normal;
-//     font-weight: 400;
-//     src: url('../fonts/roboto-condensed-v27-latin-regular.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
-// }
-// /* roboto-condensed-500 - latin */
-// @font-face {
-//     font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
-//     font-family: 'Roboto Condensed';
-//     font-style: normal;
-//     font-weight: 500;
-//     src: url('../fonts/roboto-condensed-v27-latin-500.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
-// }
-// /* roboto-condensed-600 - latin */
-// @font-face {
-//     font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
-//     font-family: 'Roboto Condensed';
-//     font-style: normal;
-//     font-weight: 600;
-//     src: url('../fonts/roboto-condensed-v27-latin-600.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
-// }
-// /* roboto-condensed-700 - latin */
-// @font-face {
-//     font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
-//     font-family: 'Inter';
-//     font-style: normal;
-//     font-weight: 700;
-//     src: url('../fonts/roboto-condensed-v27-latin-700.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
-// }
-
 // Typography
-h1.h1-jumbo {
+h1.h1-jumbo, .h1-jumbo {
     font-size: 60px;
     font-family: $primaryFont;
     text-transform: uppercase;
-    line-height: 1.15;
+    line-height: 1.16;
     font-weight: 300;
 }
-h1 {
+h1, .h1 {
     font-size: 60px;
     font-family: $primaryFont;
     line-height: 1.1;
     font-weight: 300;
 }
-h2.oversized-h2 {
+h2.oversized-h2, .oversized-h2 {
     font-size: 62px;
     font-family: $primaryFont;
     font-weight: 700;
     line-height: 1.2;
     letter-spacing: -1px;
 }
-h2 {
+h2, .h2 {
     font-size: 32px;
     font-family: $primaryFont;
-    font-weight: 500;
-    line-height: 1.2;
+    font-weight: 400;
+    line-height: 1.375;
     letter-spacing: -1px;
     margin: 0 0 20px !important;
 }
-h3 {
+.oversized-h3 {
+    font-size: 48px;
+    font-family: $primaryFont;
+    font-weight: 300;
+    line-height: 1.33;
+    letter-spacing: -1px;
+}
+h3, .h3 {
     font-size: 24px;
     font-family: $primaryFont;
-    font-weight: 500;
-    line-height: 1.2;
+    font-weight: 400;
+    line-height: 1.33;
     letter-spacing: -1px;
 }
-h4 {
+h4, .h4 {
     font-size: 20px;
     font-family: $primaryFont;
-    font-weight: 500;
-    line-height: 1.2;
+    font-weight: 400;
+    line-height: 1.4;
     letter-spacing: -1px;
 }
-h5 {
+h5, .h5 {
     font-size: 18px;
     font-family: $primaryFont;
-    font-weight: 500;
-    line-height: 1.2;
+    font-weight: 400;
+    line-height: 1.33;
 }
-h6 {
+h6, .h6 {
     font-size: 16px;
     font-family: $primaryFont;
-    font-weight: 500;
-    line-height: 1.2;
+    font-weight: 400;
+    line-height: 1.25;
 }
-.text-xl-regular, .text-xl-regular p {
+.text-xl-regular {
     font-size: 20px;
     font-family: $primaryFont;
     font-weight: 400;
-    line-height: 1.2;
+    line-height: 1.5;
+
+    p, li, a, button, span {
+        font-size: 20px;
+        font-family: $primaryFont;
+        font-weight: 400;
+        line-height: 1.5;
+    }
 }
-.text-xl-medium, .text-xl-medium p {
+.text-xl-medium {
     font-size: 20px;
     font-family: $primaryFont;
     font-weight: 500;
-    line-height: 1.2;
+    line-height: 1.5;
+
+    p, li, a, button, span {
+        font-size: 20px;
+        font-family: $primaryFont;
+        font-weight: 500;
+        line-height: 1.5;
+    }
 }
-.text-xl-bold, .text-xl-bold p {
+.text-xl-bold {
     font-size: 20px;
     font-family: $primaryFont;
-    font-weight: 700;
-    line-height: 1.2;
+    font-weight: 600;
+    line-height: 1.5;
+
+    p, li, a, button, span {
+        font-size: 20px;
+        font-family: $primaryFont;
+        font-weight: 600;
+        line-height: 1.5;
+    }
 }
-.text-lg-regular, .text-lg-regular p {
+.text-lg-regular {
     font-size: 18px;
     font-family: $primaryFont;
     font-weight: 400;
-    line-height: 1.2;
+    line-height: 1.5;
+
+    p, li, a, button, span {
+        font-size: 18px;
+        font-family: $primaryFont;
+        font-weight: 400;
+        line-height: 1.5;
+    }
 }
-.text-lg-medium, .text-lg-medium p {
+.text-lg-medium {
     font-size: 18px;
     font-family: $primaryFont;
     font-weight: 500;
-    line-height: 1.2;
+    line-height: 1.5;
+
+    p, li, a, button, span {
+        font-size: 18px;
+        font-family: $primaryFont;
+        font-weight: 500;
+        line-height: 1.5;
+    }
 }
-.text-lg-bold, .text-lg-bold p {
+.text-lg-bold {
     font-size: 18px;
     font-family: $primaryFont;
-    font-weight: 700;
-    line-height: 1.2;
+    font-weight: 600;
+    line-height: 1.5;
+
+    p, li, a, button, span {
+        font-size: 18px;
+        font-family: $primaryFont;
+        font-weight: 600;
+        line-height: 1.5;
+    }
 }
-.text-md-regular, .text-md-regular p {
+.text-md-regular {
     font-size: 16px;
     font-family: $primaryFont;
     font-weight: 400;
-    line-height: 1.2;
+    line-height: 1.5;
+
+    p, li, a, button, span {
+        font-size: 16px;
+        font-family: $primaryFont;
+        font-weight: 400;
+        line-height: 1.5;
+    }
 }
-.text-md-medium, .text-md-medium p {
+.text-md-medium {
     font-size: 16px;
     font-family: $primaryFont;
     font-weight: 500;
-    line-height: 1.2;
+    line-height: 1.5;
+
+    p, li, a, button, span {
+        font-size: 16px;
+        font-family: $primaryFont;
+        font-weight: 500;
+        line-height: 1.5;
+    }
 }
-.text-md-bold, .text-md-bold p {
+.text-md-bold {
     font-size: 16px;
     font-family: $primaryFont;
-    font-weight: 700;
-    line-height: 1.2;
+    font-weight: 600;
+    line-height: 1.5;
+
+    p, li, a, button, span {
+        font-size: 16px;
+        font-family: $primaryFont;
+        font-weight: 600;
+        line-height: 1.5;
+    }
 }
-.text-sm-regular, .text-sm-regular p {
+.text-sm-regular {
     font-size: 14px;
     font-family: $primaryFont;
     font-weight: 400;
-    line-height: 1.2;
+    line-height: 1.5;
+
+    p, li, a, button, span {
+        font-size: 14px;
+        font-family: $primaryFont;
+        font-weight: 400;
+        line-height: 1.5;
+    }
 }
-.text-sm-medium, .text-sm-medium p {
+.text-sm-medium {
     font-size: 14px;
     font-family: $primaryFont;
     font-weight: 500;
-    line-height: 1.2;
+    line-height: 1.5;
+
+    p, li, a, button, span {
+        font-size: 14px;
+        font-family: $primaryFont;
+        font-weight: 500;
+        line-height: 1.5;
+    }
 }
-.text-sm-bold, .text-sm-bold p {
+.text-sm-bold {
     font-size: 14px;
     font-family: $primaryFont;
-    font-weight: 700;
-    line-height: 1.2;
+    font-weight: 600;
+    line-height: 1.5;
+
+    p, li, a, button, span {
+        font-size: 14px;
+        font-family: $primaryFont;
+        font-weight: 600;
+        line-height: 1.5;
+    }
 }
-.text-xs-regular, .text-xs-regular p {
+.text-xs-regular {
     font-size: 12px;
     font-family: $primaryFont;
     font-weight: 400;
-    line-height: 1.2;
+    line-height: 1.5;
+
+    p, li, a, button, span {
+        font-size: 12px;
+        font-family: $primaryFont;
+        font-weight: 400;
+        line-height: 1.5;
+    }
 }
-.text-xs-medium, .text-xs-medium p {
+.text-xs-medium {
     font-size: 12px;
     font-family: $primaryFont;
     font-weight: 500;
-    line-height: 1.2;
+    line-height: 1.5;
+
+    p, li, a, button, span {
+        font-size: 12px;
+        font-family: $primaryFont;
+        font-weight: 500;
+        line-height: 1.5;
+    }
 }
-.text-xs-bold, .text-xs-bold p {
+.text-xs-bold {
     font-size: 12px;
     font-family: $primaryFont;
-    font-weight: 700;
-    line-height: 1.2;
+    font-weight: 600;
+    line-height: 1.5;
+
+    p, li, a, button, span {
+        font-size: 12px;
+        font-family: $primaryFont;
+        font-weight: 600;
+        line-height: 1.5;
+    }
 }
-p {
+p, span {
     font-size: 16px;
     font-family: $primaryFont;
     font-weight: 400;
-    line-height: 1.2;
+    line-height: 1.5;
+}
+
+// Font classes
+.text-primary {
+    font-family: $primaryFont;
+}
+.text-secondary {
+    font-family: $secondaryFont;
+}
+.text-tertiary {
+    font-family: $tertiaryFont;
 }
 
 // Background images that lazy load
@@ -231,136 +312,11 @@ p {
     background-size: contain;
 }
 
-// Buttons
-.button, button {
-    font-size: 16px !important;
-    font-family: $primaryFont;
-    font-weight: 600;
-    text-decoration: none !important;
-    transition: all .3s ease-in-out !important;
-    width: fit-content;
-    background: transparent !important;
-    outline: none !important;
-    border-color: transparent !important;
-
-    &--primary {
-        position: relative;
-        padding: 24px 32px !important;
-        color: $white !important;
-        top: 0;
-        transition: top 200ms ease 0s;
-        letter-spacing: 1.5px;
-
-        span {
-            position: relative;
-            z-index: 1;
-        }
-
-        &:hover {
-            top: -8px;
-        }
-    }
-    &--secondary {
-        position: relative;
-        padding: 24px 32px !important;
-        // color: $primaryBlue !important;
-        top: 0;
-        transition: top 200ms ease 0s;
-        letter-spacing: 1.5px;
-
-        &:before {
-            content: '';
-            position: absolute;
-            // background: $offBlue;
-            transform: skewX(-5deg);
-            transition: all .3s ease-in-out;
-            top: 0;
-            left: 0;
-            height: 100%;
-            width: 100%;
-        }
-
-        span {
-            position: relative;
-            z-index: 1;
-        }
-
-        &:hover {
-            top: -8px;
-        }
-    }
-    &--tertiary {
-        position: relative;
-        padding: 12px 24px !important;
-        text-transform: none;
-        font-weight: 400;
-        text-align: center;
-        letter-spacing: 0 !important;
-
-        span {
-            position: relative;
-            z-index: 1;
-        }
-
-        &:hover {
-            color: $white;
-
-            &:after {
-                width: 100%;
-            }
-        }
-
-        &:before {
-            content: '';
-            position: absolute;
-            transform: skewX(-5deg);
-            transition: all .3s ease-in-out;
-            top: 0;
-            left: 0;
-            height: 100%;
-            width: 100%;
-            opacity: 0.1;
-        }
-
-        &:after {
-            content: '';
-            width: 4px;
-            height: 100%;
-            left: 0;
-            top: 0;
-            position: absolute;
-            background: #62799B;
-            transition: width 0.5s;
-            transform: skewX(-5deg);
-        }
-    }
-    &--black {
-        background-color: $black !important;
-        border-radius: 9999px !important;
-        padding: 6px 12px !important;
-        font-weight: 400;
-
-        &:hover {
-            background-color: #333;
-        }
-
-        span {
-            text-transform: none;
-            color: $white;
-        }
-    }
-    &--contact {
-        span {
-            text-transform: none;
-        }
-    }
+h1, h2, h3, h4, h5, h6, p, span, li {
+    text-wrap: pretty
 }
 @media screen and (min-width: 767px) and (max-width: 1024px) {
-    .button {
-        &--tertiary {
-            min-width: 340px;
-        }
-    }
+    
 }
 @media screen and (max-width: 767px) {
     .h1-large h1 {
@@ -374,11 +330,5 @@ p {
     }
     h3 {
         font-size: 24px;
-    }
-    .button {
-        &--tertiary {
-            min-width: 300px;
-            max-width: 300px !important;
-        }
     }
 }

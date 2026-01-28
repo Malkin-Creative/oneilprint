@@ -115,8 +115,10 @@ defined('ABSPATH') || exit;
             <form id="search-form" class="searchform" action="/search/" method="get" aria-expanded="false">
               <label for="searchinput" aria-labelledby="searchinput" class="sr-only" style="display: none">Search</label>
               <input placeholder="Search" type="text" name="q" id="searchinput" class="text-steel" aria-label="Search site">
-              <input type="submit" name="searchsubmit" class="submit button" value=" " disabled="disabled"/>
-              <button id="close-search" class="banner-close text-xs-medium text-steel py-0" aria-label="Close search bar" title="Close search bar">Close</button>
+              <input type="submit" name="searchsubmit" class="submit button" value=""/>
+              <button type="button" id="close-search" class="banner-close text-xs-medium text-steel py-0" aria-label="Close search bar" title="Close search bar">
+                <p class="mb-0">Close</p>
+              </button>
             </form>
             <!-- <script>
               jQuery(function () {

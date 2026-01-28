@@ -74,10 +74,8 @@ if ($anchorScrollPrimary == 'anchor-scroll') {
                     </p>
                 <?php endif; ?>
                 <?php if ( $primary_cta ) : ?>
-                    <a class="hero--home__button button button--secondary" href="<?php echo esc_url( $link_url ); ?>" target="<?php echo esc_attr( $link_target ); ?>" rel="noopener" aria-label="<?php echo esc_attr( $primary_cta_label ); ?>">
-                        <span>
-                            <?php echo esc_html( $link_title ); ?>
-                        </span>
+                    <a class="hero--home__button button button--secondary<?php echo $anchor_scroll_primary; ?>" href="<?php echo esc_url( $link_url ); ?>" target="<?php echo esc_attr( $link_target ); ?>" rel="noopener" aria-label="<?php echo esc_attr( $primary_cta_label ); ?>">
+                        <?php echo esc_html( $link_title ); ?>
                     </a>
                 <?php endif; ?>
             </div>

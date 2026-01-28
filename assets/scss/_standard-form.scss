@@ -1,0 +1,14 @@
+.standard-form {
+    &__content {
+        border-radius: $radius-md;
+
+        &__subheader {
+            p, a, span, li {
+                line-height: 1.5 !important;
+            }
+        }
+    }
+    &__form {
+        border-radius: $radius-md;
+    }
+}

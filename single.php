@@ -12,6 +12,13 @@ defined('ABSPATH') || exit;
 
 get_header(); ?>
 
+<?php
+if ( function_exists( 'yoast_breadcrumb' ) ) {
+    yoast_breadcrumb( '<p id="breadcrumbs">','</p>' );
+}
+?>
+
+
 <section class="single-hero hero pb-10 position-relative">
     <div class="overlay object-fit-cover">
         <div class="overlay object-fit-cover">

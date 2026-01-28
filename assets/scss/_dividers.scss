@@ -1,0 +1,38 @@
+.dividers {
+    padding-top: 40px;
+    padding-bottom: 40px;
+
+    &.icon {
+        padding-top: 0;
+        padding-bottom: 0;
+    }
+
+    &__cutout {
+        width: 25%;
+
+        &.cutout-left {
+            right: unset;
+        }
+
+        &.cutout-right {
+            left: unset;
+        }
+    }
+
+    &__icon {
+        background-image: url('/wp-content/uploads/2026/01/group-275-1.svg');
+        background-repeat: repeat-x;
+        background-position: center;
+        height: 20px !important;
+    }
+}
+@media (max-width: 767px) {
+    .dividers {
+        padding-top: 15px;
+        padding-bottom: 15px;
+
+        &__cutout {
+            width: 50%;
+        }
+    }
+}
