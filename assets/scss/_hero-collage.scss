@@ -87,6 +87,13 @@
                 height: 300px !important;
                 top: unset;
                 bottom: 48px;
+
+                &:after {
+                    border-top: 20px solid transparent;
+                    border-right: 20px solid transparent;
+                    border-bottom: 20px solid $lightest-silver;
+                    border-left: 20px solid $lightest-silver;
+                }
             }
             &__content {
                 padding-bottom: 350px;

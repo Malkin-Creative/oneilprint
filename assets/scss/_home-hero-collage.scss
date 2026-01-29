@@ -1,0 +1,191 @@
+.home-hero-collage {
+    &__content {
+        border-radius: $radius-3xl;
+
+        &__bg {
+            width: 15%;
+            height: 24%;
+            right: 0;
+            position: absolute;
+            top: 10%;
+            z-index: 2;
+            opacity: 0.8;
+        }
+        &:before {
+            content: '';
+            background: $silver;
+            height: 15%;
+            width: 5%;
+            position: absolute;
+            top: -5%;
+            right: 15%;
+        }
+        &:after {
+            content: '';
+            background-image: url('/wp-content/uploads/2026/01/d806c26951d7fa168dfce167f2c6a4c28548e64e-1-1-e1769670392281.png');
+            background-size: 100%;
+            background-repeat: repeat-y;
+            width: 40%;
+            height: 100%;
+            position: absolute;
+            right: unset;
+            left: 0;
+            bottom: 0;
+            top: 0;
+            opacity: 0.05;
+            border-radius: $radius-3xl;
+        }
+        &__image-primary {
+            width: 30%;
+            right: 20%;
+            z-index: 1;
+            height: 80% !important;
+            top: 10%;
+            left: unset;
+
+            &:after {
+                content: '';
+                width: 0; 
+                height: 0; 
+                bottom: 0;
+                left: 0;
+                position: absolute;
+                border-top: 40px solid transparent;
+                border-right: 40px solid transparent;
+                border-bottom: 40px solid $lightest-silver;
+                border-left: 40px solid $lightest-silver;
+            }
+        }
+        &__image-secondary {
+            width: 20%;
+            right: 0;
+            z-index: 1;
+            height: 35% !important;
+            top: 28%;
+            left: unset;
+        }
+        &__image-tertiary {
+            width: 18%;
+            right: 20%;
+            z-index: 1;
+            height: 20% !important;
+            top: 90%;
+            left: unset;
+        }
+        &__icon {
+            width: 90px;
+            right: 17%;
+            z-index: 2;
+            height: 90px !important;
+            top: 52%;
+            left: unset;
+            border-radius: $radius-sm;
+
+            img {
+                height: 48px;
+                width: 48px;
+                position: absolute;
+                top: calc(50% - 24px);
+                left: calc(50% - 24px);
+            }
+        }
+        &__bg-video {
+            width: 20%;
+            right: 0;
+            z-index: 1;
+            height: 27% !important;
+            top: 63%;
+            left: unset;
+
+            video {
+                object-fit: cover;
+            }
+
+            &:before {
+                content: '';
+                background: $yellow;
+                height: 100%;
+                width: 15%;
+                position: absolute;
+                top: 0;
+                right: -15%;
+            }
+        }
+
+        &__wrap {
+            z-index: 1;
+
+            &__buttons {
+                gap: 24px;
+                flex-wrap: wrap;
+            }
+        }
+    }
+}
+
+@media (max-width: 767px) {
+    .home-hero-collage {
+        padding-left: 20px;
+        padding-right: 20px;
+
+        &__content {
+            &:before {
+                display: none;
+            }
+            &__bg {
+                height: 50px;
+                right: -20px;
+                top: 3%;
+            }
+            &__image-primary {
+                width: 53%;
+                right: 40%;
+                height: 200px !important;
+                top: -5%;
+
+                &:after {
+                    border-top: 20px solid transparent;
+                    border-right: 20px solid transparent;
+                    border-bottom: 20px solid $lightest-silver;
+                    border-left: 20px solid $lightest-silver;
+                }
+            }
+            &__image-secondary {
+                width: 40%;
+                height: 78px !important;
+                top: 6%;
+            }
+            &__image-tertiary {
+                display: none;
+            }
+            &__icon {
+                display: none;
+            }
+            &__bg-video {
+                width: 40%;
+                height: 67px !important;
+                top: 21%;
+
+                &:before {
+                    width: 20px;
+                    right: 20px;
+                }
+            }
+
+            &__wrap {
+                padding-top: 200px !important;
+                padding-left: 0 !important;
+                padding-right: 0 !important;
+
+                &__buttons {
+                    gap: 15px;
+
+                    a {
+                        width: 100%;
+                        text-align: center;
+                    }
+                }
+            }
+        }
+    }
+}

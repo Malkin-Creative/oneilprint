@@ -74,5 +74,84 @@ jQuery(function ($) {
         }
     });
 
+    // Modal
+    const $modal = $('#videoModal');
+    const $frameContainer = $modal.find('.video-frame');
+    const $closeBtn = $modal.find('.close-modal');
+    let $lastFocused = null;
+
+    const focusableSelectors = `
+        a[href], button:not([disabled]), textarea, input, select,
+        [tabindex]:not([tabindex="-1"])
+    `;
+
+    function trapFocus(e) {
+        const $focusable = $modal.find(focusableSelectors).filter(':visible');
+        const $first = $focusable.first();
+        const $last = $focusable.last();
+
+        if (e.key === 'Tab') {
+        if (e.shiftKey && $(document.activeElement).is($first)) {
+            e.preventDefault();
+            $last.focus();
+        } else if (!e.shiftKey && $(document.activeElement).is($last)) {
+            e.preventDefault();
+            $first.focus();
+        }
+        }
+
+        if (e.key === 'Escape') {
+        closeModal();
+        }
+    }
+
+    function openModal(videoId, $trigger) {
+        $lastFocused = $trigger;
+
+        $frameContainer.html(`
+        <iframe
+            src="https://www.youtube.com/embed/${videoId}?autoplay=1&rel=0"
+            title="YouTube video player"
+            allow="autoplay; encrypted-media"
+            allowfullscreen>
+        </iframe>
+        `);
+
+        $modal.addClass('active').attr('aria-hidden', 'false');
+        $('body').addClass('modal-open');
+
+        $(document).on('keydown.videoModal', trapFocus);
+
+        $closeBtn.focus();
+    }
+
+    function closeModal() {
+        $modal.removeClass('active').attr('aria-hidden', 'true');
+        $frameContainer.empty();
+        $('body').removeClass('modal-open');
+
+        $(document).off('keydown.videoModal');
+
+        if ($lastFocused) {
+        $lastFocused.focus();
+        }
+    }
+
+    // Open
+    $('.hero-video__wrap__thumb__play-btn').on('click', function () {
+        const videoId = $(this).data('video-id');
+        openModal(videoId, $(this));
+    });
+
+    // Close button
+    $closeBtn.on('click', closeModal);
+
+    // Click outside
+    $modal.on('click', function (e) {
+        if ($(e.target).is($modal)) {
+        closeModal();
+        }
+    });
+
 }); // jQuery End
 

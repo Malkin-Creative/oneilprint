@@ -99,7 +99,7 @@ if ($background == 'solid') {
             </div>
         <?php endif; ?>
         <div class="row hero-collage__container__content">
-            <div class="col-12 col-md-10 col-lg-6 hero-collage__container__content__wrap py-6">
+            <div class="col-12 col-md-10 col-lg-6 hero-collage__container__content__wrap">
                 <?php if ($header) : ?>
                     <div class="mb-2 h1 text-black hero-collage__container__content__wrap__header">
                         <?php echo $header; ?>
@@ -143,17 +143,6 @@ if ($background == 'solid') {
         padding-top: <?php echo esc_attr( $padding_top ); ?>px;
         padding-bottom: <?php echo esc_attr( $padding_bottom ); ?>px;
     }
-    /* #<?php echo esc_attr( $id ); ?> .hero-collage__content__bg-img__bg {
-        top: -<?php echo esc_attr( $padding_top ); ?>px;
-        height: calc(50% + <?php echo esc_attr( $padding_top ); ?>px);
-    }
-    #<?php echo esc_attr( $id ); ?> .hero-collage__content__bg-img:before {
-        top: calc(50% + <?php echo esc_attr( $padding_top ); ?>px);
-    }
-    #<?php echo esc_attr( $id ); ?> .hero-collage__content__bg-img:after {
-        top: calc(63% + <?php echo esc_attr( $padding_top ); ?>px);
-        height: calc(10% + <?php echo esc_attr( $padding_bottom ); ?>px);
-    } */
 	@media (max-width: 767px) {
 		#<?php echo esc_attr( $id ); ?> {
             padding-top: <?php echo esc_attr( $padding_top_mobile ); ?>px;

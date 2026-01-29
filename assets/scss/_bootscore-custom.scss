@@ -16,6 +16,15 @@
     background: transparent !important;
 }
 
+// Containers 
+@media (max-width: 1024px) {
+    .container, .container-sm, .container-md {
+        max-width: unset;
+        padding-right: 20px;
+        padding-left: 20px;
+    }
+}
+
 // Typography
 h1.h1-jumbo, .h1-jumbo, .h1-jumbo h1, .h1-jumbo h2 {
     font-size: 60px;
