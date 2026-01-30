@@ -65,7 +65,7 @@ if ($background == 'solid') {
                         $captionColor = 'steel';
                     }
                     ?>
-                    <div class="col multi-col-img-tiles__content__col position-relative">
+                    <div class="col multi-col-img-tiles__content__col position-relative p-0">
                         <?php if ( $image ) : ?>
                             <img src="<?php echo esc_url($image['url']); ?>" alt="<?php echo esc_attr($image['alt']); ?>" class="multi-col-img-tiles__content__col__image w-100 object-fit-cover"/>
                         <?php endif; ?>

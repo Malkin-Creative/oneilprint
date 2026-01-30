@@ -23,6 +23,7 @@ $padding_top = get_field('padding_top');
 $padding_bottom = get_field('padding_bottom');
 $padding_top_mobile = $padding_top / 2;
 $padding_bottom_mobile = $padding_bottom / 2;
+$stack_columns_in_2_rows = get_field('stack_columns_in_2_rows');
 $background = get_field('background');
 $background_color = get_field('background_color');
 $background_gradient_start = get_field('background_gradient_start');
@@ -31,6 +32,7 @@ $background_gradient_angle = get_field('background_gradient_angle');
 $background_image = get_field('background_image');
 $background_video = get_field('background_video');
 $background_overlay_color = get_field('background_overlay_color');
+$cta_column = get_field('cta_column');
 $primary_cta = get_field('call_to_action');
 $call_to_action_color = get_field('call_to_action_color');
 $primary_cta_label = get_field('call_to_action_label');
@@ -73,6 +75,18 @@ if ($background_overlay_color) {
     $overlayGradientEnd = '';
     $overlayGradientAngle = '';
 }
+
+if ($stack_columns_in_2_rows == '1') {
+    $stackColumns = ' stack-columns';
+} else {
+    $stackColumns = '';
+}
+
+if ($cta_column) {
+    $ctaColumn = ' cta-column';
+} else {
+    $ctaColumn = '';
+}
 ?>
 
 <?php if ( ! $is_preview ) : ?>
@@ -102,7 +116,7 @@ if ($background_overlay_color) {
         </div>
     <?php endif; ?>
     <div class="container">
-        <div class="row justify-content-center multi-col-tiles__content">
+        <div class="row justify-content-center multi-col-tiles__content<?php echo $stackColumns; echo $ctaColumn; ?>">
             <?php if( have_rows('columns') ): ?>
                 <?php while( have_rows('columns') ) : the_row(); ?>
                     <?php 
@@ -162,7 +176,7 @@ if ($background_overlay_color) {
                         $buttonColor = 'steel-underline';
                     } elseif ($button_color == 'white') {
                         $buttonColor = 'white-underline';
-                    } else {
+                    } elseif ($button_color == 'black') {
                         $buttonColor = 'black-underline';
                     }
                     ?>

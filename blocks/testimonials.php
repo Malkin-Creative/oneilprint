@@ -25,6 +25,7 @@ $padding_top_mobile = $padding_top / 2;
 $padding_bottom_mobile = $padding_bottom / 2;
 $header = get_field('header');
 $testimonial_type = get_field('testimonial_type');
+$background_graphic = get_field('background_graphic');
 $collage_image = get_field('collage_image');
 $collage_icon = get_field('collage_icon');
 $stars = get_field('stars');
@@ -43,16 +44,22 @@ if ($testimonial_type == 'collage') {
     $testimonialType = 'columns';
 }
 
-if ($background == 'solid') {
-    $backgroundColor = $background_color;
-    $backgroundGradientStart = '';
-    $backgroundGradientEnd = '';
-    $backgroundGradientAngle = '';
-} elseif ($background == 'gradient') {
-    $backgroundColor = $background_gradient_start;
-    $backgroundGradientStart = $background_gradient_start;
-    $backgroundGradientEnd = $background_gradient_end;
-    $backgroundGradientAngle = $background_gradient_angle;
+if ($background_graphic == 'yes') {
+    $backgroundGraphic = ' background-graphic';
+} else {
+    $backgroundGraphic = '';
+}
+
+if ($tile_background == 'solid') {
+    $tileBackgroundColor = $tile_background_color;
+    $tileBackgroundGradientStart = '';
+    $tileBackgroundGradientEnd = '';
+    $tileBackgroundGradientAngle = '';
+} else {
+    $tileBackgroundColor = $tile_background_gradient_start;
+    $tileBackgroundGradientStart = $tile_background_gradient_start;
+    $tileBackgroundGradientEnd = $tile_background_gradient_end;
+    $tileBackgroundGradientAngle = $tile_background_gradient_angle;
 }
 ?>
 
@@ -63,52 +70,88 @@ if ($background == 'solid') {
 	>
 <?php endif; ?>
 
-<section class="testimonials position-relative testimonials--<?php echo $testimonialType; ?> container" id="<?php echo esc_attr( $id ); ?>">
-    <div class="row">
+<section class="testimonials container" id="<?php echo esc_attr( $id ); ?>">
+    <div class="row testimonials__row position-relative testimonials--<?php echo $testimonialType; echo $backgroundGraphic; ?>">
         <div class="col-12">
             <?php if ($header) : ?>
-                <h2 class="mb-8 text-steel">
+                <h2 class="mb-lg-8 text-steel">
                     <?php echo $header; ?>
                 </h2>
             <?php endif; ?>
         </div>
-    </div>
-    <div class="row align-items-center testimonials__row">
-        <?php if($testimonial_type = 'collage'): ?>
-
+        <?php if($testimonial_type == 'collage'): ?>
+            <div class="col-12 col-lg-6 testimonials__row--left">
+                <?php if ( $stars ) : ?>
+                    <img src="<?php echo esc_url($stars['url']); ?>" alt="<?php echo esc_attr($stars['alt']); ?>" class="mb-4 mb-md-6 mb-lg-10 testimonials__row__stars"/>
+                <?php endif; ?>
+                <?php if ( $testimonial_content ) : ?>
+                    <h3 class="mb-5 text-black oversized-h3">
+                        <?php echo $testimonial_content; ?>
+                    </h3>
+                <?php endif; ?>
+                <?php if ( $testimonial_name ) : ?>
+                    <p class="text-lg-medium text-black mb-0">
+                        <?php echo $testimonial_name; ?>
+                    </p>
+                <?php endif; ?>
+                <?php if ( $testimonial_title ) : ?>
+                    <p class="text-md-regular text-steel text-tertiary">
+                        <?php echo $testimonial_title; ?>
+                    </p>
+                <?php endif; ?>
+            </div>
+            <div class="col-12 col-md-6 testimonials__row--right">
+                <?php if( $collage_image ): ?>
+                    <?php $count = 1; ?>
+                    <?php foreach( $collage_image as $image ): ?>
+                        <div class="testimonials__row__image overlay object-fit-cover testimonials__row__image-<?php echo $count; ?>">
+                            <img src="<?php echo esc_url($image['url']); ?>" alt="<?php echo esc_attr($image['alt']); ?>" />
+                        </div>
+                        <?php $count = $count + 1; ?>
+                    <?php endforeach; ?>
+                <?php endif; ?>
+                <?php if ( $collage_icon ) : ?>
+                    <div class="testimonials__row__image overlay testimonials__row__image-<?php echo $count; ?>"<?php if ($tile_background == 'solid' || $tile_background == 'gradient') : ?> style="background: <?php echo $tileBackgroundColor; ?>; background: linear-gradient(<?php echo $tileBackgroundGradientAngle; ?>deg,<?php echo $tileBackgroundGradientStart; ?>,<?php echo $tileBackgroundGradientEnd; ?>);"<?php endif; ?>>
+                        <img src="<?php echo esc_url($collage_icon['url']); ?>" alt="<?php echo esc_attr($collage_icon['alt']); ?>" class="testimonials__row__image__icon"/>
+                    </div>
+                <?php endif; ?>
+            </div>
         <?php endif; ?>
-        <?php if($testimonial_type = 'columns'): ?>
+        <?php if($testimonial_type == 'columns'): ?>
             <?php if( have_rows('testimonials') ): ?>
                 <?php while( have_rows('testimonials') ) : the_row(); ?>
                     <?php 
                     $stars = get_sub_field('stars');
+                    $testimonial_content_size = get_sub_field('testimonial_content_size');
                     $testimonial_content = get_sub_field('testimonial_content');
                     $testimonial_name = get_sub_field('testimonial_name');
                     $testimonial_title = get_sub_field('testimonial_title');
+
+                    if ($testimonial_content_size == 'small') {
+                        $testimonialContentSize = ' text-xl-regular';
+                    } else {
+                        $testimonialContentSize = ' oversized-h3';
+                    }
                     ?>
-                    <div class="col multi-col-tiles__content__col position-relative p-6 p-lg-4 d-flex flex-column justify-content-between"<?php if ($tile_background == 'solid' || $tile_background == 'gradient') : ?> style="background: <?php echo $tileBackgroundColor; ?>; background: linear-gradient(<?php echo $tileBackgroundGradientAngle; ?>deg,<?php echo $tileBackgroundGradientStart; ?>,<?php echo $tileBackgroundGradientEnd; ?>);"<?php endif; ?>>
-                        <div>
-                            <?php if ( $icon ) : ?>
-                                <img src="<?php echo esc_url($icon['url']); ?>" alt="<?php echo esc_attr($icon['alt']); ?>" class="mb-4 multi-col-tiles__content__col__icon"/>
-                            <?php endif; ?>
-                            <?php if ( $header ) : ?>
-                                <h3 class="mb-2 text-<?php echo $headerColor; ?>">
-                                    <?php echo $header; ?>
-                                </h3>
-                            <?php endif; ?>
-                            <?php if ( $paragraph ) : ?>
-                                <p class="text-md-regular text-<?php echo $paragraphColor; ?>">
-                                    <?php echo $paragraph; ?>
-                                </p>
-                            <?php endif; ?>
-                        </div>
-                        <div>
-                            <?php if ( $cta ) : ?>
-                                <a class="button button--<?php echo $buttonColor; ?><?php echo $anchor_scroll; ?>" href="<?php echo esc_url( $cta_url ); ?>" target="<?php echo esc_attr( $cta_target ); ?>" rel="noopener" aria-label="<?php echo esc_attr( $cta_label ); ?>">
-                                    <?php echo esc_html( $cta_title ); ?>
-                                </a>
-                            <?php endif; ?>
-                        </div>
+                    <div class="col testimonials__row__col">
+                        <?php if ( $stars ) : ?>
+                            <img src="<?php echo esc_url($stars['url']); ?>" alt="<?php echo esc_attr($stars['alt']); ?>" class="mb-4 testimonials__row__stars"/>
+                        <?php endif; ?>
+                        <?php if ( $testimonial_content ) : ?>
+                            <h3 class="mb-5 text-black<?php echo $testimonialContentSize; ?>">
+                                <?php echo $testimonial_content; ?>
+                            </h3>
+                        <?php endif; ?>
+                        <?php if ( $testimonial_name ) : ?>
+                            <p class="text-lg-medium text-black mb-0">
+                                <?php echo $testimonial_name; ?>
+                            </p>
+                        <?php endif; ?>
+                        <?php if ( $testimonial_title ) : ?>
+                            <p class="text-md-regular text-steel text-tertiary">
+                                <?php echo $testimonial_title; ?>
+                            </p>
+                        <?php endif; ?>
                     </div>
                 <?php endwhile; ?>
             <?php endif; ?>

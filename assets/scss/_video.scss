@@ -1,0 +1,101 @@
+.video {
+    &__col {
+        text-align: center;
+    }
+    &__wrap {
+        padding-left: 60px;
+
+        &__thumb {
+            height: 400px;
+
+            &:before {
+                content: '';
+                height: 100%;
+                width: 100%;
+                position: absolute;
+                top: 0;
+                right: 0;
+                opacity: 0.3;
+                background: $black;
+                border-radius: $radius-md;
+            }
+
+            img {
+                border-radius: $radius-md;
+            }
+
+            &__play-btn {
+                border: none;
+                border-radius: $radius-md;
+                z-index: 1;
+
+                &:before {
+                    content: '';
+                    height: 48px;
+                    width: 48px;
+                    position: absolute;
+                    top: calc(50% - 24px);
+                    right: calc(50% - 24px);
+                    border-radius: 50%;
+                    border: 2px solid $white;
+                    background: transparent;
+                    transition: all .3s ease-in-out !important;
+                }
+
+                &:after {
+                    content: '';
+                    height: 18px;
+                    width: 16px;
+                    position: absolute;
+                    top: calc(50% - 9px);
+                    right: calc(50% - 9px);
+                    background-image: url('/wp-content/uploads/2026/01/shape.svg');
+                    transition: all .3s ease-in-out !important;
+                }
+
+                &:hover {
+                    &:before {
+                        background: $white;
+                    }
+
+                    &:after {
+                        background-image: url('/wp-content/uploads/2026/01/shape-black.svg');
+                    }
+                }
+            }
+        }
+        &__details {
+            align-items: center;
+            justify-content: space-between;
+        }
+    }
+    &__buttons {
+        gap: 12px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+}
+
+@media (max-width: 767px) {
+    .video {
+        &__col {
+            text-align: left;
+        }
+        &__wrap {
+            padding-left: 0;
+
+            &__thumb {
+                height: 300px;
+            }
+            &__details {
+                flex-direction: column;
+                align-items: start;
+                justify-content: start;
+                gap: 10px;
+            }
+        }
+        &__buttons {
+            justify-content: start;
+        }
+    }
+}

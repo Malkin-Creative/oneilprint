@@ -1,28 +1,195 @@
 .testimonials {
+    overflow: hidden;
+
     &--collage {
-        &:after {
-            content: '';
-            background-image: url('/wp-content/uploads/2026/01/d806c26951d7fa168dfce167f2c6a4c28548e64e-1-1-e1769670392281.png');
-            background-size: 100%;
-            background-repeat: no-repeat;
-            width: 100%;
-            height: 40%;
-            position: absolute;
-            opacity: 0.05;
-            right: 0;
-            top: 0;
-        }
         &:before {
             content: '';
             background-image: url('/wp-content/uploads/2026/01/d806c26951d7fa168dfce167f2c6a4c28548e64e-1-1-e1769670392281.png');
             background-size: 100%;
             background-repeat: no-repeat;
-            width: 100%;
+            width: 50%;
             height: 40%;
             position: absolute;
             opacity: 0.05;
             right: 0;
             top: 0;
+            transform: scaleX(-1);
+            mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0) 100%);
+            -webkit-mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0) 100%);
+        }
+        &:after {
+            content: '';
+            background-image: url('/wp-content/uploads/2026/01/d806c26951d7fa168dfce167f2c6a4c28548e64e-1-1-e1769670392281.png');
+            background-size: 100%;
+            background-repeat: no-repeat;
+            width: 50%;
+            height: 40%;
+            position: absolute;
+            opacity: 0.05;
+            left: 50%;
+            top: 50%;
+            mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0) 100%);
+            -webkit-mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0) 100%);
+        }
+    }
+
+    &__row {
+        column-gap: 80px;
+
+        &.background-graphic {
+            &:before {
+                content: '';
+                background-image: url('/wp-content/uploads/2026/01/d806c26951d7fa168dfce167f2c6a4c28548e64e-1-1-e1769670392281.png');
+                background-size: 100%;
+                background-repeat: no-repeat;
+                width: 50%;
+                height: 40%;
+                position: absolute;
+                opacity: 0.05;
+                right: 0;
+                top: 0;
+                transform: scaleX(-1);
+                mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0) 100%);
+                -webkit-mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0) 100%);
+            }
+        }
+        &--right {
+            position: relative;
+        }
+        &__stars {
+            width: 120px;
+            height: fit-content;
+        }
+        &__image {
+            position: absolute;
+            z-index: 1;
+
+            &__icon {
+                left: 20px;
+                height: 70px;
+                width: 70px;
+                top: calc(50% - 35px);
+                position: absolute;
+            }
+        }
+        &__image-1 {
+            height: 160px;
+            width: 160px;
+            top: 20px;
+            left: 20%;
+        }
+        &__image-2 {
+            height: 240px;
+            width: 160px;
+            top: -60px;
+            left: calc(20% + 180px);
+
+            &:after {
+                content: '';
+                width: 0; 
+                height: 0; 
+                top: 0;
+                left: 0;
+                position: absolute;
+                border-top: 20px solid $white;
+                border-right: 20px solid transparent;
+                border-bottom: 20px solid transparent;
+                border-left: 20px solid $white;
+            }
+        }
+        &__image-3 {
+            height: 160px;
+            width: 160px;
+            top: 200px;
+            left: 10%;
+        }
+        &__image-4 {
+            height: 240px;
+            width: 160px;
+            top: 200px;
+            left: calc(10% + 180px);
+
+            &:after {
+                content: '';
+                width: 0; 
+                height: 0; 
+                bottom: 0;
+                right: 0;
+                position: absolute;
+                border-top: 20px solid transparent;
+                border-right: 20px solid $white;
+                border-bottom: 20px solid $white;
+                border-left: 20px solid transparent;
+            }
+        }
+        &__image-5 {
+            height: 125px;
+            width: 180px;
+            top: 200px;
+            left: calc(10% + 360px);
+        }
+    }
+}
+@media (max-width: 992px) {
+    .testimonials {
+        &--collage {
+            &:before {
+                display: none;
+            }
+            &:after {
+                display: none;
+            }
+        }
+        &__row {
+            row-gap: 40px;
+            grid-template-columns: repeat(1, 1fr);
+            &--left {
+                padding-bottom: 330px;
+                position: relative;
+            }
+            &--right {
+                position: unset;
+            }
+            &__image-1 {
+                top: unset;
+                right: 215px;
+                left: unset;
+                bottom: 165px;
+                height: 100px;
+                width: 100px;
+            }
+            &__image-2 {
+                top: unset;
+                right: 100px;
+                left: unset;
+                bottom: 165px;
+                height: 150px;
+                width: 100px;
+            }
+            &__image-3 {
+                bottom: 50px;
+                top: unset;
+                height: 100px;
+                width: 100px;
+                left: unset;
+                right: 280px;
+            }
+            &__image-4 {
+                bottom: 0;
+                top: unset;
+                height: 150px;
+                width: 100px;
+                left: unset;
+                right: 165px;
+            }
+            &__image-5 {
+                width: 130px;
+                height: 80px;
+                right: 20px;
+                left: unset;
+                top: unset;
+                bottom: 70px;
+            }
         }
     }
 }
