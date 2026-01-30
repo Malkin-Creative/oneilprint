@@ -29,6 +29,15 @@
         &__content {
             &__wrap {
                 padding-bottom: 360px !important;
+
+                &__buttons {
+                    flex-direction: column;
+
+                    .button {
+                        width: 100%;
+                        text-align: center;
+                    }
+                }
             }
             &__bg-img {
                 width: 100%;

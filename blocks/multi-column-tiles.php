@@ -23,6 +23,10 @@ $padding_top = get_field('padding_top');
 $padding_bottom = get_field('padding_bottom');
 $padding_top_mobile = $padding_top / 2;
 $padding_bottom_mobile = $padding_bottom / 2;
+$margin_top = get_field('margin_top');
+$margin_bottom = get_field('margin_bottom');
+$margin_top_mobile = $margin_top / 2;
+$margin_bottom_mobile = $margin_bottom / 2;
 $stack_columns_in_2_rows = get_field('stack_columns_in_2_rows');
 $background = get_field('background');
 $background_color = get_field('background_color');
@@ -32,6 +36,7 @@ $background_gradient_angle = get_field('background_gradient_angle');
 $background_image = get_field('background_image');
 $background_video = get_field('background_video');
 $background_overlay_color = get_field('background_overlay_color');
+$cta_position = get_field('cta_position');
 $cta_column = get_field('cta_column');
 $primary_cta = get_field('call_to_action');
 $call_to_action_color = get_field('call_to_action_color');
@@ -47,6 +52,12 @@ if ($anchorScrollPrimary == 'anchor-scroll') {
     $anchor_scroll_primary = ' anchor-scroll';
 } else {
     $anchor_scroll_primary = '';
+}
+
+if ($cta_position == 'left') {
+    $ctaPosition = ' px-0';
+} else {
+    $ctaPosition = ' d-flex justify-content-center align-items-center';
 }
 
 if ($call_to_action_color == 'blue') {
@@ -108,7 +119,7 @@ if ($cta_column) {
     <?php if ($background == 'video') : ?>
         <div class="multi-col-tiles__bg-video overlay w-100 h-100">
             <?php if ( $background_video ) : ?>
-                <video autoplay muted playsinline loop width="100%" height="100%">
+                <video autoplay muted playsinline loop width="100%" height="100%" class="object-fit-cover">
                     <source src="<?php echo $background_video; ?>" type="video/mp4">
                 </video>
             <?php endif; ?>
@@ -209,7 +220,7 @@ if ($cta_column) {
         </div>
         <?php if ( $primary_cta ) : ?>
             <div class="row">
-                <div class="col-12 mt-6 mt-md-8 mt-lg-10 d-flex justify-content-center align-items-center multi-col-tiles__content__wrap__buttons">
+                <div class="col-12 mt-6 mt-md-8 mt-lg-10 multi-col-tiles__content__wrap__buttons<?php echo $ctaPosition; ?>">
                     <a class="button button--<?php echo $ctaColor; ?><?php echo $anchor_scroll_primary; ?>" href="<?php echo esc_url( $primary_link_url ); ?>" target="<?php echo esc_attr( $primary_link_target ); ?>" rel="noopener" aria-label="<?php echo esc_attr( $primary_cta_label ); ?>">
                         <?php echo esc_html( $primary_link_title ); ?>
                     </a>
@@ -227,11 +238,15 @@ if ($cta_column) {
     #<?php echo esc_attr( $id ); ?> {
         padding-top: <?php echo esc_attr( $padding_top ); ?>px;
         padding-bottom: <?php echo esc_attr( $padding_bottom ); ?>px;
+        margin-top: <?php echo esc_attr( $margin_top ); ?>px;
+        margin-bottom: <?php echo esc_attr( $margin_bottom ); ?>px;
     }
 	@media (max-width: 767px) {
 		#<?php echo esc_attr( $id ); ?> {
             padding-top: <?php echo esc_attr( $padding_top_mobile ); ?>px;
             padding-bottom: <?php echo esc_attr( $padding_bottom_mobile ); ?>px;
+            margin-top: <?php echo esc_attr( $margin_top_mobile ); ?>px;
+            margin-bottom: <?php echo esc_attr( $margin_bottom_mobile ); ?>px;
         }
 	}
 </style>

@@ -35,6 +35,35 @@ $featured_case_study = get_field('featured_case_study');
 $featured_story = get_field('featured_story');
 $featured_post = get_field('featured_post');
 $typeOfPost = $type_of_post->name;
+$primary_cta = get_field('primary_cta');
+$primary_cta_label = get_field('primary_cta_label');
+if( $primary_cta ): 
+    $primary_link_url = $primary_cta['url'];
+    $primary_link_title = $primary_cta['title'];
+    $primary_link_target = $primary_cta['target'] ? $primary_cta['target'] : '_self';
+endif;
+$anchorScrollPrimary = get_field('anchor_scroll_on_primary_cta');
+
+if ($anchorScrollPrimary == 'anchor-scroll') {
+    $anchor_scroll_primary = ' anchor-scroll';
+} else {
+    $anchor_scroll_primary = '';
+}
+
+$secondary_cta = get_field('secondary_call_to_action');
+$secondary_cta_label = get_field('secondary_call_to_action_label');
+if( $secondary_cta ): 
+    $secondary_link_url = $secondary_cta['url'];
+    $secondary_link_title = $secondary_cta['title'];
+    $secondary_link_target = $secondary_cta['target'] ? $secondary_cta['target'] : '_self';
+endif;
+$anchorScrollSecondary = get_field('anchor_scroll_on_secondary_cta');
+
+if ($anchorScrollSecondary == 'anchor-scroll') {
+    $anchor_scroll_secondary = ' anchor-scroll';
+} else {
+    $anchor_scroll_secondary = '';
+}
 
 if ($text_and_button_color == 'light') {
     $textColor = 'white';
@@ -108,6 +137,24 @@ $permalink = get_permalink( $postId );
             <div class="featured-post__content__bg-img overlay object-fit-cover h-100">
                 <?php if ($featured_image_url) : ?>
                     <img src="<?php echo esc_url( $featured_image_url ); ?>" alt="<?php echo esc_attr( $alt_text ); ?>" class="w-100 h-100"/>
+                <?php endif; ?>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col p-0">
+                <?php if ( $primary_cta || $secondary_cta ) : ?>
+                    <div class="mt-6 mt-md-8 mt-lg-10 hero-default__content__wrap__buttons d-flex justify-content-center align-items-center">
+                        <?php if ( $primary_cta ) : ?>
+                            <a class="button button--primary<?php echo $anchor_scroll_primary; ?>" href="<?php echo esc_url( $primary_link_url ); ?>" target="<?php echo esc_attr( $primary_link_target ); ?>" rel="noopener" aria-label="<?php echo esc_attr( $primary_cta_label ); ?>">
+                                <?php echo esc_html( $primary_link_title ); ?>
+                            </a>
+                        <?php endif; ?>
+                        <?php if ( $secondary_cta ) : ?>
+                            <a class="button button--secondary<?php echo $anchor_scroll_secondary; ?>" href="<?php echo esc_url( $secondary_link_url ); ?>" target="<?php echo esc_attr( $secondary_link_target ); ?>" rel="noopener" aria-label="<?php echo esc_attr( $secondary_cta_label ); ?>">
+                                <?php echo esc_html( $secondary_link_title ); ?>
+                            </a>
+                        <?php endif; ?>
+                    </div>
                 <?php endif; ?>
             </div>
         </div>

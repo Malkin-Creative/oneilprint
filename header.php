@@ -83,7 +83,7 @@ defined('ABSPATH') || exit;
           </div>
           <div class="col-12 col-md-3 col-lg-2 d-flex align-items-center justify-content-end">
             <?php if ( $announcement_bar_link ) : ?>
-              <a class="button button--text text-white text-md-medium" href="<?php echo esc_url( $link_url ); ?>" target="<?php echo esc_attr( $link_target ); ?>" rel="noopener" aria-label="<?php echo esc_attr( $announcement_bar_link_label ); ?>">
+              <a class="button text-white text-md-medium" href="<?php echo esc_url( $link_url ); ?>" target="<?php echo esc_attr( $link_target ); ?>" rel="noopener" aria-label="<?php echo esc_attr( $announcement_bar_link_label ); ?>">
                 <span>
                   <?php echo esc_html( $link_title ); ?>
                 </span>
@@ -96,6 +96,10 @@ defined('ABSPATH') || exit;
     </div>
   <?php endif; ?>
 
+
+  <?php // Variables
+  $header_logo = get_field('header_logo', 'options');
+  ?>
   <header id="masthead" class="site-header header">
     <?php do_action( 'bootscore_after_masthead_open' ); ?>
     <div class="container">
@@ -111,7 +115,6 @@ defined('ABSPATH') || exit;
                 ));
               ?>
             </nav>
-            <!-- <div class="clear"></div> -->
             <form id="search-form" class="searchform" action="/search/" method="get" aria-expanded="false">
               <label for="searchinput" aria-labelledby="searchinput" class="sr-only" style="display: none">Search</label>
               <input placeholder="Search" type="text" name="q" id="searchinput" class="text-steel" aria-label="Search site">
@@ -120,12 +123,27 @@ defined('ABSPATH') || exit;
                 <p class="mb-0">Close</p>
               </button>
             </form>
-            <!-- <script>
-              jQuery(function () {
-                form_rules.add_rule({form: 7, parent: '#searchinput', type: 'text'});
-              });
-            </script> -->
           </div>
+        </div>
+      </div>
+      <div class="row justify-content-between py-4">
+        <div class="col-6 col-md-4 col-lg-2">
+          <?php if ( $header_logo ) : ?>
+            <a href="<?php echo esc_url( home_url( '/' ) ); ?>" class="header__logo--buton">
+              <img src="<?php echo esc_url($header_logo['url']); ?>" alt="<?php echo esc_attr($header_logo['alt']); ?>" class="header__logo"/>
+            </a>
+          <?php endif; ?>
+        </div>
+        <div class="col-6 col-md-8 col-lg-10 d-flex align-items-center justify-content-end">
+          <nav class="nav menu-main-menu-container" aria-label="Main Manu navigation">
+            <?php // Primary Menu
+              wp_nav_menu( array(
+                'theme_location' => 'main-menu',
+                'walker'         => new ADA_Compliant_Walker_Nav_Menu(),
+                'container' => false, // disables default wrapping
+              ));
+            ?>
+          </nav>
         </div>
       </div>
     </div>
@@ -135,25 +153,7 @@ defined('ABSPATH') || exit;
         ?>
         <a class="logobox" href="<?php echo home_url(); ?>"><img class="logomain" width="200" src="<?php echo get_template_directory_uri(); ?>/assets/logomain-new.png" alt="Batavia Public School District 101">
         </a>
-      <?php } else if ( $id == 2 ) { ?>
-        <a class="logobox" href="<?php echo home_url(); ?>"><img class="logomain" src="<?php echo get_template_directory_uri(); ?>/assets/logo-hs.png" alt="Batavia High School">
-        </a>
-      <?php } else if ( $id == 3 ) { ?>
-        <a class="logobox" href="<?php echo home_url(); ?>"><img height="113" class="logomain" src="<?php echo get_template_directory_uri(); ?>/assets/logo-agsv2.png" alt="Alice Gustafson School">
-        </a>
-      <?php } else if ( $id == 4 ) { ?>
-        <a class="logobox" href="<?php echo home_url(); ?>"><img height="80" class="logomain" src="<?php echo get_template_directory_uri(); ?>/assets/gmw-logo.png" alt="Grace McWayne School">
-        </a>
       <?php } ?>
-      <nav class="nav menu-main-menu-container" aria-label="Main Manu navigation">
-        <?php // Primary Menu
-          wp_nav_menu( array(
-            'theme_location' => 'main-menu',
-              'walker'         => new ADA_Compliant_Walker_Nav_Menu(),
-            'container' => false, // disables default wrapping
-          ));
-        ?>
-      </nav>
       <?php
 
         /*
