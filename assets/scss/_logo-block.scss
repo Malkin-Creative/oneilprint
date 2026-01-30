@@ -1,3 +1,39 @@
 .logo-block {
-    
+    &__row {
+        row-gap: 10px;
+
+        &__icon {
+            transition: all .3s ease-in-out !important;
+            border: 1px solid transparent;
+
+            img {
+                height: 75px;
+                width: auto;
+                transition: all .3s ease-in-out !important;
+            }
+
+            &:hover, &:focus, &:focus-visible, &:focus-within {
+                border-radius: $radius-md;
+                border: 1px solid $steel;
+
+                img {
+                    transform: scale(0.95);
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 767px) {
+    .logo-block {
+        &__row {
+            row-gap: 20px;
+
+            &__icon {
+                img {
+                    height: 60px;
+                }
+            }
+        }
+    }
 }

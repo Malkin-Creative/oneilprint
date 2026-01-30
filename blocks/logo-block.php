@@ -38,23 +38,35 @@ $header = get_field('header');
         <div class="row">
             <div class="col-12">
                 <?php if ($header) : ?>
-                    <h2 class="mb-2 mb-md-3 text-steel text-center">
+                    <h2 class="mb-8 mb-md-14 text-steel text-center">
                         <?php echo $header; ?>
                     </h2>
                 <?php endif; ?>
             </div>
         </div>
-        <div class="row">
-            <div class="col-12">
-                <?php if( have_rows('logos') ): ?>
-                    <?php while( have_rows('logos') ) : the_row(); ?>
-                        <?php $logo = get_sub_field('logo');
-                        $logo_link = get_sub_field('logo_link');
-                        $logo_link_label = get_sub_field('logo_link_label'); ?>
-                        
-                    <?php endwhile; ?>
-                <?php endif; ?>
-            </div>
+        <div class="row justify-content-between align-items-center logo-block__row">
+            <?php if( have_rows('logos') ): ?>
+                <?php while( have_rows('logos') ) : the_row(); ?>
+                    <?php $logo = get_sub_field('logo');
+                    $logo_link = get_sub_field('logo_link');
+                    $logo_link_label = get_sub_field('logo_link_label'); ?>
+                    <div class="col-6 col-md-4 col-lg-2 text-center">
+                        <?php if ( $logo ) : ?>
+                            <?php if ( $logo_link ) : ?>
+                                <a class="logo-block__row__icon p-1 object-fit-contain d-flex h-100 justify-content-center" href="<?php echo $logo_link; ?>" aria-label="<?php echo esc_attr( $logo_link_label ); ?>">
+                            <?php else : ?>
+                                <div class="logo-block__row__icon p-1 object-fit-contain d-flex h-100 justify-content-center">
+                            <?php endif; ?>
+                                    <img src="<?php echo esc_url($logo['url']); ?>" alt="<?php echo esc_attr($logo['alt']); ?>" class=""/>
+                            <?php if ( $logo_link ) : ?>
+                                </a>
+                            <?php else : ?>
+                                </div>
+                            <?php endif; ?>
+                        <?php endif; ?>
+                    </div>
+                <?php endwhile; ?>
+            <?php endif; ?>
         </div>
     </div>
 </section>

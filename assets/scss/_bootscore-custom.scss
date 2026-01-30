@@ -11,17 +11,26 @@
     // background: $offwhite;
 }
 
+body {
+    --gf-form-validation-heading-color: $red-ada;
+}
+
 // Social Sharing
 .simplesocialbuttons {
     background: transparent !important;
 }
 
 // Containers 
-@media (max-width: 1024px) {
+@media (max-width: 992px) {
     .container, .container-sm, .container-md {
         max-width: unset;
         padding-right: 20px;
         padding-left: 20px;
+    }
+}
+@media (min-width: 992px) {
+    .container, .container-sm, .container-md {
+        max-width: 980px;
     }
 }
 
@@ -33,12 +42,28 @@ h1.h1-jumbo, .h1-jumbo, .h1-jumbo h1, .h1-jumbo h2 {
     line-height: 1.16;
     font-weight: 300;
     letter-spacing: -1px;
+
+    h1, h2, h3, h4, h5, h6, p, li, a, button, span {
+        font-size: 60px;
+        font-family: $primaryFont;
+        text-transform: uppercase;
+        line-height: 1.16;
+        font-weight: 300;
+        letter-spacing: -1px;
+    }
 }
 h1, .h1 {
     font-size: 60px;
     font-family: $primaryFont;
     line-height: 1.1;
     font-weight: 300;
+
+    h1, h2, h3, h4, h5, h6, p, li, a, button, span {
+        font-size: 60px;
+        font-family: $primaryFont;
+        line-height: 1.1;
+        font-weight: 300;
+    }
 }
 h2.oversized-h2, .oversized-h2 {
     font-size: 62px;
@@ -46,6 +71,14 @@ h2.oversized-h2, .oversized-h2 {
     font-weight: 700;
     line-height: 1.2;
     letter-spacing: -1px;
+
+    h1, h2, h3, h4, h5, h6, p, li, a, button, span {
+        font-size: 62px;
+        font-family: $primaryFont;
+        font-weight: 700;
+        line-height: 1.2;
+        letter-spacing: -1px;
+    }
 }
 h2, .h2 {
     font-size: 32px;
@@ -54,6 +87,15 @@ h2, .h2 {
     line-height: 1.375;
     letter-spacing: -1px;
     margin: 0 0 20px !important;
+
+    h1, h2, h3, h4, h5, h6, p, li, a, button, span {
+        font-size: 32px;
+        font-family: $primaryFont;
+        font-weight: 400;
+        line-height: 1.375;
+        letter-spacing: -1px;
+        margin: 0 0 20px !important;
+    }
 }
 .oversized-h3 {
     font-size: 48px;
@@ -61,6 +103,14 @@ h2, .h2 {
     font-weight: 300;
     line-height: 1.33;
     letter-spacing: -1px;
+
+    h1, h2, h3, h4, h5, h6, p, li, a, button, span {
+        font-size: 48px;
+        font-family: $primaryFont;
+        font-weight: 300;
+        line-height: 1.33;
+        letter-spacing: -1px;
+    }
 }
 h3, .h3 {
     font-size: 24px;
@@ -68,6 +118,14 @@ h3, .h3 {
     font-weight: 400;
     line-height: 1.33;
     letter-spacing: -1px;
+
+    h1, h2, h3, h4, h5, h6, p, li, a, button, span {
+        font-size: 24px;
+        font-family: $primaryFont;
+        font-weight: 400;
+        line-height: 1.33;
+        letter-spacing: -1px;
+    }
 }
 h4, .h4 {
     font-size: 20px;
@@ -75,18 +133,40 @@ h4, .h4 {
     font-weight: 400;
     line-height: 1.4;
     letter-spacing: -1px;
+
+    h1, h2, h3, h4, h5, h6, p, li, a, button, span {
+        font-size: 20px;
+        font-family: $primaryFont;
+        font-weight: 400;
+        line-height: 1.4;
+        letter-spacing: -1px;
+    }
 }
 h5, .h5 {
     font-size: 18px;
     font-family: $primaryFont;
     font-weight: 400;
     line-height: 1.33;
+
+    h1, h2, h3, h4, h5, h6, p, li, a, button, span {
+        font-size: 18px;
+        font-family: $primaryFont;
+        font-weight: 400;
+        line-height: 1.33;
+    }
 }
 h6, .h6 {
     font-size: 16px;
     font-family: $primaryFont;
     font-weight: 400;
     line-height: 1.25;
+
+    h1, h2, h3, h4, h5, h6, p, li, a, button, span {
+        font-size: 16px;
+        font-family: $primaryFont;
+        font-weight: 400;
+        line-height: 1.25;
+    }
 }
 .text-xl-regular {
     font-size: 20px;
@@ -94,7 +174,7 @@ h6, .h6 {
     font-weight: 400;
     line-height: 1.5;
 
-    p, li, a, button, span {
+    h1, h2, h3, h4, h5, h6, p, li, a, button, span {
         font-size: 20px;
         font-family: $primaryFont;
         font-weight: 400;
@@ -107,7 +187,7 @@ h6, .h6 {
     font-weight: 500;
     line-height: 1.5;
 
-    p, li, a, button, span {
+    h1, h2, h3, h4, h5, h6, p, li, a, button, span {
         font-size: 20px;
         font-family: $primaryFont;
         font-weight: 500;
@@ -120,7 +200,7 @@ h6, .h6 {
     font-weight: 600;
     line-height: 1.5;
 
-    p, li, a, button, span {
+    h1, h2, h3, h4, h5, h6, p, li, a, button, span {
         font-size: 20px;
         font-family: $primaryFont;
         font-weight: 600;
@@ -133,7 +213,7 @@ h6, .h6 {
     font-weight: 400;
     line-height: 1.5;
 
-    p, li, a, button, span {
+    h1, h2, h3, h4, h5, h6, p, li, a, button, span {
         font-size: 18px;
         font-family: $primaryFont;
         font-weight: 400;
@@ -146,7 +226,7 @@ h6, .h6 {
     font-weight: 500;
     line-height: 1.5;
 
-    p, li, a, button, span {
+    h1, h2, h3, h4, h5, h6, p, li, a, button, span {
         font-size: 18px;
         font-family: $primaryFont;
         font-weight: 500;
@@ -159,7 +239,7 @@ h6, .h6 {
     font-weight: 600;
     line-height: 1.5;
 
-    p, li, a, button, span {
+    h1, h2, h3, h4, h5, h6, p, li, a, button, span {
         font-size: 18px;
         font-family: $primaryFont;
         font-weight: 600;
@@ -172,7 +252,7 @@ h6, .h6 {
     font-weight: 400;
     line-height: 1.5;
 
-    p, li, a, button, span {
+    h1, h2, h3, h4, h5, h6, p, li, a, button, span {
         font-size: 16px;
         font-family: $primaryFont;
         font-weight: 400;
@@ -198,7 +278,7 @@ h6, .h6 {
     font-weight: 600;
     line-height: 1.5;
 
-    p, li, a, button, span {
+    h1, h2, h3, h4, h5, h6, p, li, a, button, span {
         font-size: 16px;
         font-family: $primaryFont;
         font-weight: 600;
@@ -211,7 +291,7 @@ h6, .h6 {
     font-weight: 400;
     line-height: 1.5;
 
-    p, li, a, button, span {
+    h1, h2, h3, h4, h5, h6, p, li, a, button, span {
         font-size: 14px;
         font-family: $primaryFont;
         font-weight: 400;
@@ -224,7 +304,7 @@ h6, .h6 {
     font-weight: 500;
     line-height: 1.5;
 
-    p, li, a, button, span {
+    h1, h2, h3, h4, h5, h6, p, li, a, button, span {
         font-size: 14px;
         font-family: $primaryFont;
         font-weight: 500;
@@ -237,7 +317,7 @@ h6, .h6 {
     font-weight: 600;
     line-height: 1.5;
 
-    p, li, a, button, span {
+    h1, h2, h3, h4, h5, h6, p, li, a, button, span {
         font-size: 14px;
         font-family: $primaryFont;
         font-weight: 600;
@@ -250,7 +330,7 @@ h6, .h6 {
     font-weight: 400;
     line-height: 1.5;
 
-    p, li, a, button, span {
+    h1, h2, h3, h4, h5, h6, p, li, a, button, span {
         font-size: 12px;
         font-family: $primaryFont;
         font-weight: 400;
@@ -263,7 +343,7 @@ h6, .h6 {
     font-weight: 500;
     line-height: 1.5;
 
-    p, li, a, button, span {
+    h1, h2, h3, h4, h5, h6, p, li, a, button, span {
         font-size: 12px;
         font-family: $primaryFont;
         font-weight: 500;
@@ -276,7 +356,7 @@ h6, .h6 {
     font-weight: 600;
     line-height: 1.5;
 
-    p, li, a, button, span {
+    h1, h2, h3, h4, h5, h6, p, li, a, button, span {
         font-size: 12px;
         font-family: $primaryFont;
         font-weight: 600;
@@ -325,7 +405,7 @@ p, span {
 h1, h2, h3, h4, h5, h6, p, span, li {
     text-wrap: pretty
 }
-@media screen and (min-width: 767px) and (max-width: 1024px) {
+@media screen and (min-width: 767px) and (max-width: 992px) {
     
 }
 @media screen and (max-width: 767px) {

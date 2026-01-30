@@ -1,0 +1,27 @@
+.standard-content {
+    &.background-white, &.background-light-silver {
+        a {
+            color: $blue-ada;
+        }
+    }
+    &.background-blue-ada, &.background-navy {
+        a {
+            color: $white;
+        }
+    }
+    &__wrap {
+        &__columns {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+        }
+    }
+}
+@media (max-width: 767px) {
+    .standard-content {
+        &__wrap {
+            &__columns {
+                grid-template-columns: 1fr;
+            }
+        }
+    }
+}

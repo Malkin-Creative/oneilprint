@@ -1,4 +1,8 @@
 .gform-theme {
+    .gform_submission_error {
+        margin-bottom: 0 !important;
+    }
+
     .gform_heading {
         display: none;
     }
@@ -8,6 +12,9 @@
     }
     form {
         .gform-body {
+            .gfield_validation_message {
+                display: none !important;
+            }
             .gform_fields {
                 row-gap: 25px;
 

@@ -24035,17 +24035,33 @@ Block Patterns
 /*!
  * Bootscore custom styles
  */
+body {
+  --gf-form-validation-heading-color: $red-ada;
+}
 .simplesocialbuttons {
   background: transparent !important;
 }
-@media (max-width: 1024px) {
+@media (max-width: 992px) {
   .container, .container-sm, .container-md {
     max-width: unset;
     padding-right: 20px;
     padding-left: 20px;
   }
 }
+@media (min-width: 992px) {
+  .container, .container-sm, .container-md {
+    max-width: 980px;
+  }
+}
 h1.h1-jumbo, .h1-jumbo.h1, .h1-jumbo, .h1-jumbo h1, .h1-jumbo .h1, .h1-jumbo h2, .h1-jumbo .h2 {
+  font-size: 60px;
+  font-family: "Figtree", sans-serif;
+  text-transform: uppercase;
+  line-height: 1.16;
+  font-weight: 300;
+  letter-spacing: -1px;
+}
+h1.h1-jumbo h1, .h1-jumbo.h1 h1, h1.h1-jumbo .h1, .h1-jumbo.h1 .h1, h1.h1-jumbo h2, .h1-jumbo.h1 h2, h1.h1-jumbo .h2, .h1-jumbo.h1 .h2, h1.h1-jumbo h3, .h1-jumbo.h1 h3, h1.h1-jumbo .h3, .h1-jumbo.h1 .h3, h1.h1-jumbo h4, .h1-jumbo.h1 h4, h1.h1-jumbo .h4, .h1-jumbo.h1 .h4, h1.h1-jumbo h5, .h1-jumbo.h1 h5, h1.h1-jumbo .h5, .h1-jumbo.h1 .h5, h1.h1-jumbo h6, .h1-jumbo.h1 h6, h1.h1-jumbo .h6, .h1-jumbo.h1 .h6, h1.h1-jumbo p, .h1-jumbo.h1 p, h1.h1-jumbo li, .h1-jumbo.h1 li, h1.h1-jumbo a, .h1-jumbo.h1 a, h1.h1-jumbo button, .h1-jumbo.h1 button, h1.h1-jumbo span, .h1-jumbo.h1 span, .h1-jumbo h1, .h1-jumbo .h1, .h1-jumbo h2, .h1-jumbo .h2, .h1-jumbo h3, .h1-jumbo .h3, .h1-jumbo h4, .h1-jumbo .h4, .h1-jumbo h5, .h1-jumbo .h5, .h1-jumbo h6, .h1-jumbo .h6, .h1-jumbo p, .h1-jumbo li, .h1-jumbo a, .h1-jumbo button, .h1-jumbo span, .h1-jumbo h1 h1, .h1-jumbo .h1 h1, .h1-jumbo h1 .h1, .h1-jumbo .h1 .h1, .h1-jumbo h1 h2, .h1-jumbo .h1 h2, .h1-jumbo h1 .h2, .h1-jumbo .h1 .h2, .h1-jumbo h1 h3, .h1-jumbo .h1 h3, .h1-jumbo h1 .h3, .h1-jumbo .h1 .h3, .h1-jumbo h1 h4, .h1-jumbo .h1 h4, .h1-jumbo h1 .h4, .h1-jumbo .h1 .h4, .h1-jumbo h1 h5, .h1-jumbo .h1 h5, .h1-jumbo h1 .h5, .h1-jumbo .h1 .h5, .h1-jumbo h1 h6, .h1-jumbo .h1 h6, .h1-jumbo h1 .h6, .h1-jumbo .h1 .h6, .h1-jumbo h1 p, .h1-jumbo .h1 p, .h1-jumbo h1 li, .h1-jumbo .h1 li, .h1-jumbo h1 a, .h1-jumbo .h1 a, .h1-jumbo h1 button, .h1-jumbo .h1 button, .h1-jumbo h1 span, .h1-jumbo .h1 span, .h1-jumbo h2 h1, .h1-jumbo .h2 h1, .h1-jumbo h2 .h1, .h1-jumbo .h2 .h1, .h1-jumbo h2 h2, .h1-jumbo .h2 h2, .h1-jumbo h2 .h2, .h1-jumbo .h2 .h2, .h1-jumbo h2 h3, .h1-jumbo .h2 h3, .h1-jumbo h2 .h3, .h1-jumbo .h2 .h3, .h1-jumbo h2 h4, .h1-jumbo .h2 h4, .h1-jumbo h2 .h4, .h1-jumbo .h2 .h4, .h1-jumbo h2 h5, .h1-jumbo .h2 h5, .h1-jumbo h2 .h5, .h1-jumbo .h2 .h5, .h1-jumbo h2 h6, .h1-jumbo .h2 h6, .h1-jumbo h2 .h6, .h1-jumbo .h2 .h6, .h1-jumbo h2 p, .h1-jumbo .h2 p, .h1-jumbo h2 li, .h1-jumbo .h2 li, .h1-jumbo h2 a, .h1-jumbo .h2 a, .h1-jumbo h2 button, .h1-jumbo .h2 button, .h1-jumbo h2 span, .h1-jumbo .h2 span {
   font-size: 60px;
   font-family: "Figtree", sans-serif;
   text-transform: uppercase;
@@ -24059,7 +24075,20 @@ h1, .h1 {
   line-height: 1.1;
   font-weight: 300;
 }
+h1 h1, .h1 h1, h1 .h1, .h1 .h1, h1 h2, .h1 h2, h1 .h2, .h1 .h2, h1 h3, .h1 h3, h1 .h3, .h1 .h3, h1 h4, .h1 h4, h1 .h4, .h1 .h4, h1 h5, .h1 h5, h1 .h5, .h1 .h5, h1 h6, .h1 h6, h1 .h6, .h1 .h6, h1 p, .h1 p, h1 li, .h1 li, h1 a, .h1 a, h1 button, .h1 button, h1 span, .h1 span {
+  font-size: 60px;
+  font-family: "Figtree", sans-serif;
+  line-height: 1.1;
+  font-weight: 300;
+}
 h2.oversized-h2, .oversized-h2.h2, .oversized-h2 {
+  font-size: 62px;
+  font-family: "Figtree", sans-serif;
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: -1px;
+}
+h2.oversized-h2 h1, .oversized-h2.h2 h1, h2.oversized-h2 .h1, .oversized-h2.h2 .h1, h2.oversized-h2 h2, .oversized-h2.h2 h2, h2.oversized-h2 .h2, .oversized-h2.h2 .h2, h2.oversized-h2 h3, .oversized-h2.h2 h3, h2.oversized-h2 .h3, .oversized-h2.h2 .h3, h2.oversized-h2 h4, .oversized-h2.h2 h4, h2.oversized-h2 .h4, .oversized-h2.h2 .h4, h2.oversized-h2 h5, .oversized-h2.h2 h5, h2.oversized-h2 .h5, .oversized-h2.h2 .h5, h2.oversized-h2 h6, .oversized-h2.h2 h6, h2.oversized-h2 .h6, .oversized-h2.h2 .h6, h2.oversized-h2 p, .oversized-h2.h2 p, h2.oversized-h2 li, .oversized-h2.h2 li, h2.oversized-h2 a, .oversized-h2.h2 a, h2.oversized-h2 button, .oversized-h2.h2 button, h2.oversized-h2 span, .oversized-h2.h2 span, .oversized-h2 h1, .oversized-h2 .h1, .oversized-h2 h2, .oversized-h2 .h2, .oversized-h2 h3, .oversized-h2 .h3, .oversized-h2 h4, .oversized-h2 .h4, .oversized-h2 h5, .oversized-h2 .h5, .oversized-h2 h6, .oversized-h2 .h6, .oversized-h2 p, .oversized-h2 li, .oversized-h2 a, .oversized-h2 button, .oversized-h2 span {
   font-size: 62px;
   font-family: "Figtree", sans-serif;
   font-weight: 700;
@@ -24074,7 +24103,22 @@ h2, .h2 {
   letter-spacing: -1px;
   margin: 0 0 20px !important;
 }
+h2 h1, .h2 h1, h2 .h1, .h2 .h1, h2 h2, .h2 h2, h2 .h2, .h2 .h2, h2 h3, .h2 h3, h2 .h3, .h2 .h3, h2 h4, .h2 h4, h2 .h4, .h2 .h4, h2 h5, .h2 h5, h2 .h5, .h2 .h5, h2 h6, .h2 h6, h2 .h6, .h2 .h6, h2 p, .h2 p, h2 li, .h2 li, h2 a, .h2 a, h2 button, .h2 button, h2 span, .h2 span {
+  font-size: 32px;
+  font-family: "Figtree", sans-serif;
+  font-weight: 400;
+  line-height: 1.375;
+  letter-spacing: -1px;
+  margin: 0 0 20px !important;
+}
 .oversized-h3 {
+  font-size: 48px;
+  font-family: "Figtree", sans-serif;
+  font-weight: 300;
+  line-height: 1.33;
+  letter-spacing: -1px;
+}
+.oversized-h3 h1, .oversized-h3 .h1, .oversized-h3 h2, .oversized-h3 .h2, .oversized-h3 h3, .oversized-h3 .h3, .oversized-h3 h4, .oversized-h3 .h4, .oversized-h3 h5, .oversized-h3 .h5, .oversized-h3 h6, .oversized-h3 .h6, .oversized-h3 p, .oversized-h3 li, .oversized-h3 a, .oversized-h3 button, .oversized-h3 span {
   font-size: 48px;
   font-family: "Figtree", sans-serif;
   font-weight: 300;
@@ -24088,7 +24132,21 @@ h3, .h3 {
   line-height: 1.33;
   letter-spacing: -1px;
 }
+h3 h1, .h3 h1, h3 .h1, .h3 .h1, h3 h2, .h3 h2, h3 .h2, .h3 .h2, h3 h3, .h3 h3, h3 .h3, .h3 .h3, h3 h4, .h3 h4, h3 .h4, .h3 .h4, h3 h5, .h3 h5, h3 .h5, .h3 .h5, h3 h6, .h3 h6, h3 .h6, .h3 .h6, h3 p, .h3 p, h3 li, .h3 li, h3 a, .h3 a, h3 button, .h3 button, h3 span, .h3 span {
+  font-size: 24px;
+  font-family: "Figtree", sans-serif;
+  font-weight: 400;
+  line-height: 1.33;
+  letter-spacing: -1px;
+}
 h4, .h4 {
+  font-size: 20px;
+  font-family: "Figtree", sans-serif;
+  font-weight: 400;
+  line-height: 1.4;
+  letter-spacing: -1px;
+}
+h4 h1, .h4 h1, h4 .h1, .h4 .h1, h4 h2, .h4 h2, h4 .h2, .h4 .h2, h4 h3, .h4 h3, h4 .h3, .h4 .h3, h4 h4, .h4 h4, h4 .h4, .h4 .h4, h4 h5, .h4 h5, h4 .h5, .h4 .h5, h4 h6, .h4 h6, h4 .h6, .h4 .h6, h4 p, .h4 p, h4 li, .h4 li, h4 a, .h4 a, h4 button, .h4 button, h4 span, .h4 span {
   font-size: 20px;
   font-family: "Figtree", sans-serif;
   font-weight: 400;
@@ -24101,7 +24159,19 @@ h5, .h5 {
   font-weight: 400;
   line-height: 1.33;
 }
+h5 h1, .h5 h1, h5 .h1, .h5 .h1, h5 h2, .h5 h2, h5 .h2, .h5 .h2, h5 h3, .h5 h3, h5 .h3, .h5 .h3, h5 h4, .h5 h4, h5 .h4, .h5 .h4, h5 h5, .h5 h5, h5 .h5, .h5 .h5, h5 h6, .h5 h6, h5 .h6, .h5 .h6, h5 p, .h5 p, h5 li, .h5 li, h5 a, .h5 a, h5 button, .h5 button, h5 span, .h5 span {
+  font-size: 18px;
+  font-family: "Figtree", sans-serif;
+  font-weight: 400;
+  line-height: 1.33;
+}
 h6, .h6 {
+  font-size: 16px;
+  font-family: "Figtree", sans-serif;
+  font-weight: 400;
+  line-height: 1.25;
+}
+h6 h1, .h6 h1, h6 .h1, .h6 .h1, h6 h2, .h6 h2, h6 .h2, .h6 .h2, h6 h3, .h6 h3, h6 .h3, .h6 .h3, h6 h4, .h6 h4, h6 .h4, .h6 .h4, h6 h5, .h6 h5, h6 .h5, .h6 .h5, h6 h6, .h6 h6, h6 .h6, .h6 .h6, h6 p, .h6 p, h6 li, .h6 li, h6 a, .h6 a, h6 button, .h6 button, h6 span, .h6 span {
   font-size: 16px;
   font-family: "Figtree", sans-serif;
   font-weight: 400;
@@ -24113,7 +24183,7 @@ h6, .h6 {
   font-weight: 400;
   line-height: 1.5;
 }
-.text-xl-regular p, .text-xl-regular li, .text-xl-regular a, .text-xl-regular button, .text-xl-regular span {
+.text-xl-regular h1, .text-xl-regular .h1, .text-xl-regular h2, .text-xl-regular .h2, .text-xl-regular h3, .text-xl-regular .h3, .text-xl-regular h4, .text-xl-regular .h4, .text-xl-regular h5, .text-xl-regular .h5, .text-xl-regular h6, .text-xl-regular .h6, .text-xl-regular p, .text-xl-regular li, .text-xl-regular a, .text-xl-regular button, .text-xl-regular span {
   font-size: 20px;
   font-family: "Figtree", sans-serif;
   font-weight: 400;
@@ -24125,7 +24195,7 @@ h6, .h6 {
   font-weight: 500;
   line-height: 1.5;
 }
-.text-xl-medium p, .text-xl-medium li, .text-xl-medium a, .text-xl-medium button, .text-xl-medium span {
+.text-xl-medium h1, .text-xl-medium .h1, .text-xl-medium h2, .text-xl-medium .h2, .text-xl-medium h3, .text-xl-medium .h3, .text-xl-medium h4, .text-xl-medium .h4, .text-xl-medium h5, .text-xl-medium .h5, .text-xl-medium h6, .text-xl-medium .h6, .text-xl-medium p, .text-xl-medium li, .text-xl-medium a, .text-xl-medium button, .text-xl-medium span {
   font-size: 20px;
   font-family: "Figtree", sans-serif;
   font-weight: 500;
@@ -24137,7 +24207,7 @@ h6, .h6 {
   font-weight: 600;
   line-height: 1.5;
 }
-.text-xl-bold p, .text-xl-bold li, .text-xl-bold a, .text-xl-bold button, .text-xl-bold span {
+.text-xl-bold h1, .text-xl-bold .h1, .text-xl-bold h2, .text-xl-bold .h2, .text-xl-bold h3, .text-xl-bold .h3, .text-xl-bold h4, .text-xl-bold .h4, .text-xl-bold h5, .text-xl-bold .h5, .text-xl-bold h6, .text-xl-bold .h6, .text-xl-bold p, .text-xl-bold li, .text-xl-bold a, .text-xl-bold button, .text-xl-bold span {
   font-size: 20px;
   font-family: "Figtree", sans-serif;
   font-weight: 600;
@@ -24149,7 +24219,7 @@ h6, .h6 {
   font-weight: 400;
   line-height: 1.5;
 }
-.text-lg-regular p, .text-lg-regular li, .text-lg-regular a, .text-lg-regular button, .text-lg-regular span {
+.text-lg-regular h1, .text-lg-regular .h1, .text-lg-regular h2, .text-lg-regular .h2, .text-lg-regular h3, .text-lg-regular .h3, .text-lg-regular h4, .text-lg-regular .h4, .text-lg-regular h5, .text-lg-regular .h5, .text-lg-regular h6, .text-lg-regular .h6, .text-lg-regular p, .text-lg-regular li, .text-lg-regular a, .text-lg-regular button, .text-lg-regular span {
   font-size: 18px;
   font-family: "Figtree", sans-serif;
   font-weight: 400;
@@ -24161,7 +24231,7 @@ h6, .h6 {
   font-weight: 500;
   line-height: 1.5;
 }
-.text-lg-medium p, .text-lg-medium li, .text-lg-medium a, .text-lg-medium button, .text-lg-medium span {
+.text-lg-medium h1, .text-lg-medium .h1, .text-lg-medium h2, .text-lg-medium .h2, .text-lg-medium h3, .text-lg-medium .h3, .text-lg-medium h4, .text-lg-medium .h4, .text-lg-medium h5, .text-lg-medium .h5, .text-lg-medium h6, .text-lg-medium .h6, .text-lg-medium p, .text-lg-medium li, .text-lg-medium a, .text-lg-medium button, .text-lg-medium span {
   font-size: 18px;
   font-family: "Figtree", sans-serif;
   font-weight: 500;
@@ -24173,7 +24243,7 @@ h6, .h6 {
   font-weight: 600;
   line-height: 1.5;
 }
-.text-lg-bold p, .text-lg-bold li, .text-lg-bold a, .text-lg-bold button, .text-lg-bold span {
+.text-lg-bold h1, .text-lg-bold .h1, .text-lg-bold h2, .text-lg-bold .h2, .text-lg-bold h3, .text-lg-bold .h3, .text-lg-bold h4, .text-lg-bold .h4, .text-lg-bold h5, .text-lg-bold .h5, .text-lg-bold h6, .text-lg-bold .h6, .text-lg-bold p, .text-lg-bold li, .text-lg-bold a, .text-lg-bold button, .text-lg-bold span {
   font-size: 18px;
   font-family: "Figtree", sans-serif;
   font-weight: 600;
@@ -24185,7 +24255,7 @@ h6, .h6 {
   font-weight: 400;
   line-height: 1.5;
 }
-.text-md-regular p, .text-md-regular li, .text-md-regular a, .text-md-regular button, .text-md-regular span {
+.text-md-regular h1, .text-md-regular .h1, .text-md-regular h2, .text-md-regular .h2, .text-md-regular h3, .text-md-regular .h3, .text-md-regular h4, .text-md-regular .h4, .text-md-regular h5, .text-md-regular .h5, .text-md-regular h6, .text-md-regular .h6, .text-md-regular p, .text-md-regular li, .text-md-regular a, .text-md-regular button, .text-md-regular span {
   font-size: 16px;
   font-family: "Figtree", sans-serif;
   font-weight: 400;
@@ -24209,7 +24279,7 @@ h6, .h6 {
   font-weight: 600;
   line-height: 1.5;
 }
-.text-md-bold p, .text-md-bold li, .text-md-bold a, .text-md-bold button, .text-md-bold span {
+.text-md-bold h1, .text-md-bold .h1, .text-md-bold h2, .text-md-bold .h2, .text-md-bold h3, .text-md-bold .h3, .text-md-bold h4, .text-md-bold .h4, .text-md-bold h5, .text-md-bold .h5, .text-md-bold h6, .text-md-bold .h6, .text-md-bold p, .text-md-bold li, .text-md-bold a, .text-md-bold button, .text-md-bold span {
   font-size: 16px;
   font-family: "Figtree", sans-serif;
   font-weight: 600;
@@ -24221,7 +24291,7 @@ h6, .h6 {
   font-weight: 400;
   line-height: 1.5;
 }
-.text-sm-regular p, .text-sm-regular li, .text-sm-regular a, .text-sm-regular button, .text-sm-regular span {
+.text-sm-regular h1, .text-sm-regular .h1, .text-sm-regular h2, .text-sm-regular .h2, .text-sm-regular h3, .text-sm-regular .h3, .text-sm-regular h4, .text-sm-regular .h4, .text-sm-regular h5, .text-sm-regular .h5, .text-sm-regular h6, .text-sm-regular .h6, .text-sm-regular p, .text-sm-regular li, .text-sm-regular a, .text-sm-regular button, .text-sm-regular span {
   font-size: 14px;
   font-family: "Figtree", sans-serif;
   font-weight: 400;
@@ -24233,7 +24303,7 @@ h6, .h6 {
   font-weight: 500;
   line-height: 1.5;
 }
-.text-sm-medium p, .text-sm-medium li, .text-sm-medium a, .text-sm-medium button, .text-sm-medium span {
+.text-sm-medium h1, .text-sm-medium .h1, .text-sm-medium h2, .text-sm-medium .h2, .text-sm-medium h3, .text-sm-medium .h3, .text-sm-medium h4, .text-sm-medium .h4, .text-sm-medium h5, .text-sm-medium .h5, .text-sm-medium h6, .text-sm-medium .h6, .text-sm-medium p, .text-sm-medium li, .text-sm-medium a, .text-sm-medium button, .text-sm-medium span {
   font-size: 14px;
   font-family: "Figtree", sans-serif;
   font-weight: 500;
@@ -24245,7 +24315,7 @@ h6, .h6 {
   font-weight: 600;
   line-height: 1.5;
 }
-.text-sm-bold p, .text-sm-bold li, .text-sm-bold a, .text-sm-bold button, .text-sm-bold span {
+.text-sm-bold h1, .text-sm-bold .h1, .text-sm-bold h2, .text-sm-bold .h2, .text-sm-bold h3, .text-sm-bold .h3, .text-sm-bold h4, .text-sm-bold .h4, .text-sm-bold h5, .text-sm-bold .h5, .text-sm-bold h6, .text-sm-bold .h6, .text-sm-bold p, .text-sm-bold li, .text-sm-bold a, .text-sm-bold button, .text-sm-bold span {
   font-size: 14px;
   font-family: "Figtree", sans-serif;
   font-weight: 600;
@@ -24257,7 +24327,7 @@ h6, .h6 {
   font-weight: 400;
   line-height: 1.5;
 }
-.text-xs-regular p, .text-xs-regular li, .text-xs-regular a, .text-xs-regular button, .text-xs-regular span {
+.text-xs-regular h1, .text-xs-regular .h1, .text-xs-regular h2, .text-xs-regular .h2, .text-xs-regular h3, .text-xs-regular .h3, .text-xs-regular h4, .text-xs-regular .h4, .text-xs-regular h5, .text-xs-regular .h5, .text-xs-regular h6, .text-xs-regular .h6, .text-xs-regular p, .text-xs-regular li, .text-xs-regular a, .text-xs-regular button, .text-xs-regular span {
   font-size: 12px;
   font-family: "Figtree", sans-serif;
   font-weight: 400;
@@ -24269,7 +24339,7 @@ h6, .h6 {
   font-weight: 500;
   line-height: 1.5;
 }
-.text-xs-medium p, .text-xs-medium li, .text-xs-medium a, .text-xs-medium button, .text-xs-medium span {
+.text-xs-medium h1, .text-xs-medium .h1, .text-xs-medium h2, .text-xs-medium .h2, .text-xs-medium h3, .text-xs-medium .h3, .text-xs-medium h4, .text-xs-medium .h4, .text-xs-medium h5, .text-xs-medium .h5, .text-xs-medium h6, .text-xs-medium .h6, .text-xs-medium p, .text-xs-medium li, .text-xs-medium a, .text-xs-medium button, .text-xs-medium span {
   font-size: 12px;
   font-family: "Figtree", sans-serif;
   font-weight: 500;
@@ -24281,7 +24351,7 @@ h6, .h6 {
   font-weight: 600;
   line-height: 1.5;
 }
-.text-xs-bold p, .text-xs-bold li, .text-xs-bold a, .text-xs-bold button, .text-xs-bold span {
+.text-xs-bold h1, .text-xs-bold .h1, .text-xs-bold h2, .text-xs-bold .h2, .text-xs-bold h3, .text-xs-bold .h3, .text-xs-bold h4, .text-xs-bold .h4, .text-xs-bold h5, .text-xs-bold .h5, .text-xs-bold h6, .text-xs-bold .h6, .text-xs-bold p, .text-xs-bold li, .text-xs-bold a, .text-xs-bold button, .text-xs-bold span {
   font-size: 12px;
   font-family: "Figtree", sans-serif;
   font-weight: 600;
@@ -24662,30 +24732,49 @@ h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6, p, span, li {
 .button--black-underline:focus:after, .button--black-underline:focus-visible:after, .button--black-underline:focus-within:after, button--black-underline:focus:after, button--black-underline:focus-visible:after, button--black-underline:focus-within:after {
   background-image: url("/wp-content/uploads/2026/01/icon-4.svg");
 }
-.button--white-underline, button--white-underline {
+.button--black-underline, button--black-underline {
   position: relative;
-  padding: 4px 18px !important;
+  padding: 4px 32px 4px 0 !important;
   color: #ffffff !important;
   background: transparent !important;
   border: 1px solid transparent !important;
   border-radius: 4px;
   text-decoration: underline !important;
 }
-.button--white-underline:hover, button--white-underline:hover {
+.button--black-underline:after, button--black-underline:after {
+  content: "";
+  height: 12px;
+  width: 12px;
+  position: absolute;
+  top: calc(50% - 6px);
+  background-size: 100%;
+  right: 8px;
+  background-image: url("/wp-content/uploads/2026/01/icon-2.svg");
+  transition: all 0.3s ease-in-out !important;
+}
+.button--black-underline:hover, button--black-underline:hover {
   color: #232323 !important;
   background: #ffffff !important;
   border: 1px solid #ffffff !important;
   text-decoration: none !important;
+  padding-left: 8px !important;
 }
-.button--white-underline:focus, .button--white-underline:focus-visible, .button--white-underline:focus-within, button--white-underline:focus, button--white-underline:focus-visible, button--white-underline:focus-within {
+.button--black-underline:hover:after, button--black-underline:hover:after {
+  background-image: url("/wp-content/uploads/2026/01/icon-4.svg");
+}
+.button--black-underline:focus, .button--black-underline:focus-visible, .button--black-underline:focus-within, button--black-underline:focus, button--black-underline:focus-visible, button--black-underline:focus-within {
   outline-color: transparent;
   outline-style: solid;
   box-shadow: 0 0 0 3px #ffffff, 0 0 0 4px #C8D8EB;
   border-radius: 4px;
-  color: #ffffff !important;
-  background: transparent !important;
-  border: 1px solid transparent !important;
+  color: #232323 !important;
+  background: #ffffff !important;
+  border: 1px solid #ffffff !important;
+  padding-left: 18px !important;
   text-decoration: none !important;
+}
+.button--black-underline:focus:after, .button--black-underline:focus-visible:after, .button--black-underline:focus-within:after, button--black-underline:focus:after, button--black-underline:focus-visible:after, button--black-underline:focus-within:after {
+  background-image: url("/wp-content/uploads/2026/01/icon-4.svg");
 }
 .button--steel-underline, button--steel-underline {
   position: relative;
@@ -24724,6 +24813,9 @@ h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6, p, span, li {
   background: #141B4D !important;
   text-decoration: none !important;
 }
+.button--steel-underline:focus:after, .button--steel-underline:focus-visible:after, .button--steel-underline:focus-within:after, button--steel-underline:focus:after, button--steel-underline:focus-visible:after, button--steel-underline:focus-within:after {
+  background-image: url("/wp-content/uploads/2026/01/icon-2.svg");
+}
 .button--small, button--small {
   position: relative;
   padding: 6px 18px !important;
@@ -24748,7 +24840,7 @@ h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6, p, span, li {
   background: #ffffff !important;
   border: 1px solid #ffffff !important;
 }
-@media screen and (min-width: 767px) and (max-width: 1024px) {
+@media screen and (min-width: 767px) and (max-width: 992px) {
   .button--tertiary {
     min-width: 340px;
   }
@@ -25025,67 +25117,67 @@ h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6, p, span, li {
 .background-white {
   background-color: #ffffff;
 }
-.background-white p, .background-white a, .background-white li, .background-white span, .background-white button {
+.background-white > p, .background-white > a, .background-white > li, .background-white > span, .background-white > button {
   background-color: #ffffff;
 }
 .background-navy {
   background-color: #141B4D;
 }
-.background-navy p, .background-navy a, .background-navy li, .background-navy span, .background-navy button {
+.background-navy > p, .background-navy > a, .background-navy > li, .background-navy > span, .background-navy > button {
   background-color: #141B4D;
 }
 .background-steel {
   background-color: #647692;
 }
-.background-steel p, .background-steel a, .background-steel li, .background-steel span, .background-steel button {
+.background-steel > p, .background-steel > a, .background-steel > li, .background-steel > span, .background-steel > button {
   background-color: #647692;
 }
 .background-silver {
   background-color: #C8D8EB;
 }
-.background-silver p, .background-silver a, .background-silver li, .background-silver span, .background-silver button {
+.background-silver > p, .background-silver > a, .background-silver > li, .background-silver > span, .background-silver > button {
   background-color: #C8D8EB;
 }
 .background-light-silver {
   background-color: #E3EBF5;
 }
-.background-light-silver p, .background-light-silver a, .background-light-silver li, .background-light-silver span, .background-light-silver button {
+.background-light-silver > p, .background-light-silver > a, .background-light-silver > li, .background-light-silver > span, .background-light-silver > button {
   background-color: #E3EBF5;
 }
 .background-lightest-silver {
   background-color: #F1F5FA;
 }
-.background-lightest-silver p, .background-lightest-silver a, .background-lightest-silver li, .background-lightest-silver span, .background-lightest-silver button {
+.background-lightest-silver > p, .background-lightest-silver > a, .background-lightest-silver > li, .background-lightest-silver > span, .background-lightest-silver > button {
   background-color: #F1F5FA;
 }
 .background-blue {
   background-color: #489FDF;
 }
-.background-blue p, .background-blue a, .background-blue li, .background-blue span, .background-blue button {
+.background-blue > p, .background-blue > a, .background-blue > li, .background-blue > span, .background-blue > button {
   background-color: #489FDF;
 }
 .background-blue-ada {
   background-color: #1179C5;
 }
-.background-blue-ada p, .background-blue-ada a, .background-blue-ada li, .background-blue-ada span, .background-blue-ada button {
+.background-blue-ada > p, .background-blue-ada > a, .background-blue-ada > li, .background-blue-ada > span, .background-blue-ada > button {
   background-color: #1179C5;
 }
 .background-green {
   background-color: #00B373;
 }
-.background-green p, .background-green a, .background-green li, .background-green span, .background-green button {
+.background-green > p, .background-green > a, .background-green > li, .background-green > span, .background-green > button {
   background-color: #00B373;
 }
 .background-green-ada {
   background-color: #11865C;
 }
-.background-green-ada p, .background-green-ada a, .background-green-ada li, .background-green-ada span, .background-green-ada button {
+.background-green-ada > p, .background-green-ada > a, .background-green-ada > li, .background-green-ada > span, .background-green-ada > button {
   background-color: #11865C;
 }
 .background-yellow {
   background-color: #F0B323;
 }
-.background-yellow p, .background-yellow a, .background-yellow li, .background-yellow span, .background-yellow button {
+.background-yellow > p, .background-yellow > a, .background-yellow > li, .background-yellow > span, .background-yellow > button {
   background-color: #F0B323;
 }
 .background-orange {
@@ -25232,12 +25324,18 @@ h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6, p, span, li {
     padding-right: 20px !important;
   }
 }
+.gform-theme .gform_submission_error {
+  margin-bottom: 0 !important;
+}
 .gform-theme .gform_heading {
   display: none;
 }
 .gform-theme .gfield_required_asterisk {
   color: #232323 !important;
   padding-left: 2px;
+}
+.gform-theme form .gform-body .gfield_validation_message {
+  display: none !important;
 }
 .gform-theme form .gform-body .gform_fields {
   row-gap: 25px;
@@ -25602,7 +25700,7 @@ h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6, p, span, li {
   gap: 24px;
   flex-wrap: wrap;
 }
-@media (max-width: 1024px) {
+@media (max-width: 992px) {
   .hero-collage__container:before {
     height: 60px;
     width: 15%;
@@ -25689,7 +25787,7 @@ h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6, p, span, li {
 .hero-default video {
   object-fit: cover;
 }
-@media (max-width: 1024px) {
+@media (max-width: 992px) {
   .hero-default__background {
     padding-left: 20px;
     padding-right: 20px;
@@ -25986,5 +26084,410 @@ body.modal-open {
     width: 100%;
     text-align: center;
   }
+}
+.logo-block__row {
+  row-gap: 10px;
+}
+.logo-block__row__icon {
+  transition: all 0.3s ease-in-out !important;
+  border: 1px solid transparent;
+}
+.logo-block__row__icon img {
+  height: 75px;
+  width: auto;
+  transition: all 0.3s ease-in-out !important;
+}
+.logo-block__row__icon:hover, .logo-block__row__icon:focus, .logo-block__row__icon:focus-visible, .logo-block__row__icon:focus-within {
+  border-radius: 8px;
+  border: 1px solid #647692;
+}
+.logo-block__row__icon:hover img, .logo-block__row__icon:focus img, .logo-block__row__icon:focus-visible img, .logo-block__row__icon:focus-within img {
+  transform: scale(0.95);
+}
+@media (max-width: 767px) {
+  .logo-block__row {
+    row-gap: 20px;
+  }
+  .logo-block__row__icon img {
+    height: 60px;
+  }
+}
+.multi-col-tiles__bg-img__overlay {
+  mask-image: linear-gradient(to bottom, black 0%, rgba(0, 0, 0, 0) 100%);
+  -webkit-mask-image: linear-gradient(to bottom, black 0%, rgba(0, 0, 0, 0) 100%);
+}
+.multi-col-tiles__bg-video__overlay {
+  mask-image: linear-gradient(to bottom, black 0%, rgba(0, 0, 0, 0) 100%);
+  -webkit-mask-image: linear-gradient(to bottom, black 0%, rgba(0, 0, 0, 0) 100%);
+}
+.multi-col-tiles__content {
+  column-gap: 15px;
+}
+.multi-col-tiles__content__col {
+  border-radius: 8px;
+}
+.multi-col-tiles__content__col__icon {
+  width: 24px;
+  height: 24px;
+  object-fit: contain;
+}
+@media (min-width: 767px) and (max-width: 1200px) {
+  .multi-col-tiles__content {
+    row-gap: 15px;
+  }
+  .multi-col-tiles__content__col {
+    flex: 0 0 auto;
+    width: 48%;
+  }
+}
+@media (max-width: 767px) {
+  .multi-col-tiles {
+    padding-left: 20px !important;
+    padding-right: 20px !important;
+  }
+  .multi-col-tiles__content {
+    row-gap: 15px;
+  }
+  .multi-col-tiles__content__col {
+    flex: 0 0 auto;
+    width: 100%;
+  }
+}
+.multi-col-img-tiles__content__col__image {
+  border-radius: 8px;
+  aspect-ratio: 1;
+}
+@media (min-width: 767px) and (max-width: 1200px) {
+  .multi-col-img-tiles__content {
+    row-gap: 40px;
+  }
+  .multi-col-img-tiles__content__col {
+    flex: 0 0 auto;
+    width: 48%;
+  }
+}
+@media (max-width: 767px) {
+  .multi-col-img-tiles__content {
+    row-gap: 30px;
+  }
+  .multi-col-img-tiles__content__col {
+    flex: 0 0 auto;
+    width: 100%;
+  }
+}
+.newsletter__form .gform_confirmation_wrapper {
+  height: 100% !important;
+}
+.newsletter__form .gform_confirmation_wrapper .gform_confirmation_message {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: end !important;
+  height: 100% !important;
+  font-size: 16px !important;
+  font-family: "Figtree", sans-serif !important;
+  font-weight: 400 !important;
+  line-height: 1.5 !important;
+  color: #232323 !important;
+}
+.newsletter form {
+  display: flex;
+  justify-content: end;
+  align-items: end;
+  column-gap: 20px !important;
+}
+.newsletter form .gform_fields {
+  display: flex;
+  align-items: end;
+  row-gap: 20px !important;
+}
+.newsletter form .gform_fields .gfield legend, .newsletter form .gform_fields .gfield label {
+  color: #1179C5 !important;
+}
+.newsletter form .gform_fields .gfield input[type="text"], .newsletter form .gform_fields .gfield input[type="email"] {
+  border: none !important;
+}
+.newsletter form .gform_fields .gfield_required_asterisk {
+  color: #1179C5 !important;
+}
+.newsletter form .gform-footer input[type="submit"] {
+  padding: 6px 18px !important;
+  background: #647692 !important;
+}
+.newsletter form .gform-footer:after {
+  display: none;
+}
+@media (min-width: 767px) and (max-width: 992px) {
+  .newsletter form {
+    justify-content: start;
+    margin-top: 20px;
+  }
+}
+@media (max-width: 767px) {
+  .newsletter__form .gform_confirmation_wrapper .gform_confirmation_message {
+    justify-content: start !important;
+  }
+  .newsletter form {
+    display: block;
+  }
+  .newsletter form .gform_fields {
+    display: grid;
+  }
+}
+.split-content {
+  overflow: hidden;
+}
+.split-content.background-white.image-right .split-content__content__image:after {
+  border-right: 40px solid transparent;
+  border-left: 40px solid #ffffff;
+  border-bottom: 40px solid #ffffff;
+  left: 0;
+}
+.split-content.background-white.image-left .split-content__content__image:after {
+  border-left: 40px solid transparent;
+  border-right: 40px solid #ffffff;
+  border-bottom: 40px solid #ffffff;
+  right: 0;
+}
+.split-content.background-navy.image-right .split-content__content__image:after {
+  border-right: 40px solid transparent;
+  border-left: 40px solid #141B4D;
+  border-bottom: 40px solid #141B4D;
+  left: 0;
+}
+.split-content.background-navy.image-left .split-content__content__image:after {
+  border-left: 40px solid transparent;
+  border-right: 40px solid #141B4D;
+  border-bottom: 40px solid #141B4D;
+  right: 0;
+}
+.split-content.image-right .split-content__wrap {
+  padding-right: 5%;
+}
+.split-content.image-right .split-content__content {
+  padding-left: 10%;
+  padding-right: 40px;
+}
+.split-content.image-right .split-content__content__image__bg {
+  right: -40px;
+  bottom: -40px;
+}
+.split-content.image-right .split-content__content__image__details:before {
+  bottom: calc(60% - 40px);
+  right: -90px;
+}
+.split-content.image-right .split-content__content__image__details:after {
+  right: -40px;
+  bottom: calc(80% - 40px);
+  transform: rotate(180deg);
+}
+.split-content.image-left .split-content__wrap {
+  padding-left: 5%;
+  order: 2;
+}
+.split-content.image-left .split-content__content {
+  padding-right: 10%;
+  padding-left: 40px;
+  order: 1;
+}
+.split-content.image-left .split-content__content__image__bg {
+  top: -40px;
+  left: -40px;
+}
+.split-content.image-left .split-content__content__image__details:before {
+  top: calc(60% - 40px);
+  left: -90px;
+}
+.split-content.image-left .split-content__content__image__details:after {
+  left: -40px;
+  top: calc(80% - 40px);
+}
+.split-content__content__image__details {
+  position: absolute;
+}
+.split-content__content__image__details:before {
+  content: "";
+  background: #C8D8EB;
+  height: 20%;
+  width: 50px;
+  position: absolute;
+}
+.split-content__content__image__details:after {
+  content: "";
+  background-image: url("/wp-content/uploads/2026/01/d806c26951d7fa168dfce167f2c6a4c28548e64e-1-1-e1769670392281.png");
+  background-size: 100%;
+  background-repeat: no-repeat;
+  width: 100%;
+  height: 40%;
+  position: absolute;
+  opacity: 0.05;
+}
+.split-content__content__image__bg {
+  position: absolute;
+  width: 60%;
+  height: 60%;
+}
+.split-content__content__image img {
+  aspect-ratio: 1;
+  z-index: 1;
+}
+.split-content__content__image:after {
+  content: "";
+  width: 0;
+  height: 0;
+  bottom: 0;
+  position: absolute;
+  z-index: 2;
+  border-top: 40px solid transparent;
+}
+@media (max-width: 992px) {
+  .split-content.background-white.image-right .split-content__content__image:after {
+    border-top: 40px solid #ffffff;
+    border-bottom: 40px solid transparent;
+    border-left: 40px solid transparent;
+    border-right: 40px solid #ffffff;
+    left: unset;
+    right: 0px;
+    top: 0;
+  }
+  .split-content.background-navy.image-right .split-content__content__image:after {
+    border-top: 40px solid #141B4D;
+    border-bottom: 40px solid transparent;
+    border-left: 40px solid transparent;
+    border-right: 40px solid #141B4D;
+    left: unset;
+    right: 0px;
+    top: 0;
+  }
+  .split-content.image-left .split-content__content {
+    padding-left: 10px !important;
+    padding-bottom: 30px;
+    padding-right: 0 !important;
+  }
+  .split-content.image-left .split-content__content__image__bg {
+    right: -30px;
+    top: -30px;
+    left: unset;
+  }
+  .split-content.image-left .split-content__wrap {
+    padding-left: 10px;
+  }
+  .split-content.image-right .split-content__content {
+    padding-left: 10px !important;
+    padding-bottom: 60px;
+    padding-right: 0 !important;
+  }
+  .split-content.image-right .split-content__content__image__bg {
+    right: -30px;
+    bottom: -30px;
+    top: unset;
+  }
+  .split-content__content {
+    order: 1;
+  }
+  .split-content__content__image__details:before {
+    display: none;
+  }
+  .split-content__content__image__details:after {
+    display: none;
+  }
+  .split-content__wrap {
+    order: 2;
+    padding-left: 10px;
+  }
+}
+@media (max-width: 767px) {
+  .split-content.background-white.image-right .split-content__content__image:after {
+    border-top: 40px solid #ffffff;
+    border-bottom: 40px solid transparent;
+    border-left: 40px solid transparent;
+    border-right: 40px solid #ffffff;
+    left: unset;
+    right: 0px;
+    top: 0;
+  }
+  .split-content.background-navy.image-right .split-content__content__image:after {
+    border-top: 40px solid #141B4D;
+    border-bottom: 40px solid transparent;
+    border-left: 40px solid transparent;
+    border-right: 40px solid #141B4D;
+    left: unset;
+    right: 0px;
+    top: 0;
+  }
+  .split-content.image-left .split-content__content {
+    padding-left: 20px !important;
+    padding-right: 50px !important;
+  }
+  .split-content.image-right .split-content__content {
+    padding-left: 20px !important;
+    padding-right: 50px !important;
+  }
+}
+.standard-content.background-white a, .standard-content.background-light-silver a {
+  color: #1179C5;
+}
+.standard-content.background-blue-ada a, .standard-content.background-navy a {
+  color: #ffffff;
+}
+.standard-content__wrap__columns {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+@media (max-width: 767px) {
+  .standard-content__wrap__columns {
+    grid-template-columns: 1fr;
+  }
+}
+.stats__row {
+  column-gap: 20px;
+}
+.stats__row__col {
+  border-radius: 8px;
+}
+@media (min-width: 767px) and (max-width: 1200px) {
+  .stats__row {
+    row-gap: 20px;
+  }
+  .stats__row__col {
+    flex: 0 0 auto;
+    width: 48%;
+  }
+}
+@media (max-width: 767px) {
+  .stats.background-white {
+    padding-right: 20px;
+    padding-left: 20px;
+  }
+  .stats__row {
+    row-gap: 20px;
+  }
+  .stats__row__col {
+    flex: 0 0 auto;
+    width: 100%;
+  }
+}
+.testimonials--collage:after {
+  content: "";
+  background-image: url("/wp-content/uploads/2026/01/d806c26951d7fa168dfce167f2c6a4c28548e64e-1-1-e1769670392281.png");
+  background-size: 100%;
+  background-repeat: no-repeat;
+  width: 100%;
+  height: 40%;
+  position: absolute;
+  opacity: 0.05;
+  right: 0;
+  top: 0;
+}
+.testimonials--collage:before {
+  content: "";
+  background-image: url("/wp-content/uploads/2026/01/d806c26951d7fa168dfce167f2c6a4c28548e64e-1-1-e1769670392281.png");
+  background-size: 100%;
+  background-repeat: no-repeat;
+  width: 100%;
+  height: 40%;
+  position: absolute;
+  opacity: 0.05;
+  right: 0;
+  top: 0;
 }
 /*# sourceMappingURL=/wp-content/themes/bootscore-child/assets/css/main.css.map */

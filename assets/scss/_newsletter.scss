@@ -1,0 +1,82 @@
+.newsletter {
+    &__form {
+        .gform_confirmation_wrapper {
+            height: 100% !important;
+
+            .gform_confirmation_message {
+                display: flex !important;
+                align-items: center !important;
+                justify-content: end !important;
+                height: 100% !important;
+                font-size: 16px !important;
+                font-family: $primaryFont !important;
+                font-weight: 400 !important;
+                line-height: 1.5 !important;
+                color: $black !important;
+            }
+        }
+    }
+    form {
+        display: flex;
+        justify-content: end;
+        align-items: end;
+        column-gap: 20px !important;
+
+        .gform_fields {
+            display: flex;
+            align-items: end;
+            row-gap: 20px !important;
+
+            .gfield {
+                legend, label {
+                    color: $blue-ada !important;
+                }
+                input[type="text"], input[type="email"] {
+                    border: none !important;
+                }
+            }
+
+            .gfield_required_asterisk {
+                color: $blue-ada !important;
+            }
+        }
+        .gform-footer {
+            input[type="submit"] {
+                padding: 6px 18px !important;
+                background: $steel !important;
+            }
+
+            &:after {
+                display: none;
+            }
+        }
+    }
+}
+
+@media (min-width: 767px) and (max-width: 992px) {
+    .newsletter {
+        form {
+            justify-content: start;
+            margin-top: 20px;
+        }
+    }
+}
+
+@media (max-width: 767px) {
+    .newsletter {
+        &__form {
+            .gform_confirmation_wrapper {
+                .gform_confirmation_message {
+                    justify-content: start !important;
+                }
+            }
+        }
+        form {
+            display: block;
+
+            .gform_fields {
+                display: grid;
+            }
+        }
+    }
+}

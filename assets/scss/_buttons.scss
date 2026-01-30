@@ -297,20 +297,37 @@
             }
         }
     }
-    &--white-underline {
+    &--black-underline {
         position: relative;
-        padding: 4px 18px !important;
+        padding: 4px 32px 4px 0 !important;
         color: $white !important;
         background: transparent !important;
         border: 1px solid transparent !important; 
         border-radius: $radius-xs;
         text-decoration: underline !important;
 
+        &:after {
+            content: '';
+            height: 12px;
+            width: 12px;
+            position: absolute;
+            top: calc(50% - 6px);
+            background-size: 100%;
+            right: 8px;
+            background-image: url('/wp-content/uploads/2026/01/icon-2.svg');
+            transition: all .3s ease-in-out !important;
+        }
+
         &:hover {
             color: $black !important;
             background: $white !important;
             border: 1px solid $white !important; 
             text-decoration: none !important;
+            padding-left: 8px !important;
+
+            &:after {
+                background-image: url('/wp-content/uploads/2026/01/icon-4.svg');
+            }
         }
 
         &:focus, &:focus-visible, &:focus-within {
@@ -318,10 +335,15 @@
             outline-style: solid;
             box-shadow: 0 0 0 3px $white, 0 0 0 4px $silver;
             border-radius: $radius-xs;
-            color: $white !important;
-            background: transparent !important;
-            border: 1px solid transparent !important;
+            color: $black !important;
+            background: $white !important;
+            border: 1px solid $white !important;
+            padding-left: 18px !important;
             text-decoration: none !important;
+
+            &:after {
+                background-image: url('/wp-content/uploads/2026/01/icon-4.svg');
+            }
         }
     }
     &--steel-underline {
@@ -363,6 +385,10 @@
             color: $white !important;
             background: $navy !important;
             text-decoration: none !important;
+
+            &:after {
+                background-image: url('/wp-content/uploads/2026/01/icon-2.svg');
+            }
         }
     }
     &--small {
@@ -392,7 +418,7 @@
         }
     }
 }
-@media screen and (min-width: 767px) and (max-width: 1024px) {
+@media screen and (min-width: 767px) and (max-width: 992px) {
     .button {
         &--tertiary {
             min-width: 340px;

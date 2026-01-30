@@ -1,0 +1,36 @@
+.multi-col-img-tiles {
+    &__content {
+        &__col {
+            &__image {
+                border-radius: $radius-md;
+                aspect-ratio: 1 / 1;
+            }
+        }
+    }
+}
+
+@media (min-width: 767px) and (max-width: 1200px) {
+    .multi-col-img-tiles {
+        &__content {
+            row-gap: 40px;
+
+            &__col {
+                flex: 0 0 auto;
+                width: 48%;
+            }
+        }
+    }
+}
+
+@media (max-width: 767px) {
+    .multi-col-img-tiles {
+        &__content {
+            row-gap: 30px;
+
+            &__col {
+                flex: 0 0 auto;
+                width: 100%;
+            }
+        }
+    }
+}
