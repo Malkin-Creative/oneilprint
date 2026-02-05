@@ -1,0 +1,23 @@
+{
+  "apiVersion": 2,
+  "name": "acf/cta",
+  "title": "CTA",
+  "category": "text",
+  "icon": "button",
+  "description": "",
+  "acf": {
+    "mode": "preview",
+    "renderTemplate": "cta.php"
+  },
+  "supports": {
+    "align": true,
+    "mode": true,
+    "jsx": true
+  },
+  "attributes": {
+    "previewImage": {
+        "type": "string",
+        "default": "/wp-content/uploads/2026/02/Screenshot-2026-02-02-at-10.36.36-PM.png"
+    }
+  }
+}

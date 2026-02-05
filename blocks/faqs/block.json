@@ -1,0 +1,18 @@
+{
+  "apiVersion": 2,
+  "name": "acf/faqs",
+  "title": "FAQs",
+  "category": "text",
+  "icon": "editor-help",
+  "description": "",
+  "acf": {
+    "mode": "preview",
+    "renderTemplate": "faqs.php"
+  },
+  "attributes": {
+    "previewImage": {
+        "type": "string",
+        "default": "/wp-content/uploads/2026/02/Screenshot-2026-02-03-at-10.07.50-AM.png"
+    }
+  }
+}

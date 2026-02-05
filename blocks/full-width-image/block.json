@@ -1,0 +1,18 @@
+{
+  "apiVersion": 2,
+  "name": "acf/full-width-image",
+  "title": "Full Width Image",
+  "category": "text",
+  "icon": "format-image",
+  "description": "",
+  "acf": {
+    "mode": "preview",
+    "renderTemplate": "full-width-image.php"
+  },
+  "attributes": {
+    "previewImage": {
+        "type": "string",
+        "default": "/wp-content/uploads/2026/02/Screenshot-2026-02-03-at-10.16.22-AM.png"
+    }
+  }
+}

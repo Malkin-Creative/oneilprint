@@ -1,0 +1,18 @@
+{
+  "apiVersion": 2,
+  "name": "acf/statistics",
+  "title": "Statistics",
+  "category": "text",
+  "icon": "editor-ol",
+  "description": "",
+  "acf": {
+    "mode": "preview",
+    "renderTemplate": "statistics.php"
+  },
+  "attributes": {
+    "previewImage": {
+        "type": "string",
+        "default": "/wp-content/uploads/2026/02/Screenshot-2026-02-03-at-10.44.48-AM.png"
+    }
+  }
+}

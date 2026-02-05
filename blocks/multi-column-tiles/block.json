@@ -1,0 +1,18 @@
+{
+  "apiVersion": 2,
+  "name": "acf/multi-column-tiles",
+  "title": "Multi Column Tiles",
+  "category": "text",
+  "icon": "columns",
+  "description": "",
+  "acf": {
+    "mode": "preview",
+    "renderTemplate": "multi-column-tiles.php"
+  },
+  "attributes": {
+    "previewImage": {
+        "type": "string",
+        "default": "/wp-content/uploads/2026/02/Screenshot-2026-02-03-at-10.35.34-AM.png"
+    }
+  }
+}

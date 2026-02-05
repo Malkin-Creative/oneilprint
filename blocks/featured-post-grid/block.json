@@ -1,0 +1,18 @@
+{
+  "apiVersion": 2,
+  "name": "acf/featured-post-grid",
+  "title": "Featured Post Grid",
+  "category": "text",
+  "icon": "grid-view",
+  "description": "",
+  "acf": {
+    "mode": "preview",
+    "renderTemplate": "featured-post-grid.php"
+  },
+  "attributes": {
+    "previewImage": {
+        "type": "string",
+        "default": "/wp-content/uploads/2026/02/Screenshot-2026-02-03-at-10.14.32-AM.png"
+    }
+  }
+}

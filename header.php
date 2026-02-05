@@ -126,7 +126,7 @@ defined('ABSPATH') || exit;
           </div>
         </div>
       </div>
-      <div class="row justify-content-between py-4">
+      <div class="row justify-content-between py-2">
         <div class="col-6 col-md-4 col-lg-2">
           <?php if ( $header_logo ) : ?>
             <a href="<?php echo esc_url( home_url( '/' ) ); ?>" class="header__logo--buton">

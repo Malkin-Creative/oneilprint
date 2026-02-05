@@ -1,0 +1,111 @@
+.single-case-study {
+    &__row {
+        &:before {
+            content: '';
+            background-image: url('/wp-content/uploads/2026/01/d806c26951d7fa168dfce167f2c6a4c28548e64e-1-1-e1769670392281.png');
+            background-size: 100%;
+            background-repeat: no-repeat;
+            width: 50%;
+            height: 40%;
+            position: absolute;
+            opacity: 0.05;
+            right: 0;
+            top: 0;
+            transform: scaleX(-1);
+            mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0) 100%);
+            -webkit-mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0) 100%);
+        }
+
+        img {
+            border-radius: $radius-3xl;
+            z-index: 1;
+            max-height: 775px;
+            object-fit: cover;
+        }
+
+        &--bottom {
+            padding-right: calc(var(--bs-gutter-x) * .5);
+            padding-left: calc(var(--bs-gutter-x) * .5);
+
+            .background-lightest-silver {
+                border-radius: $radius-4xl;
+            }
+
+            &__wrap {
+                gap: 30px;
+            }
+        }
+    }
+}
+
+.single-story {
+    &__row {
+        &:before {
+            content: '';
+            background-image: url('/wp-content/uploads/2026/01/d806c26951d7fa168dfce167f2c6a4c28548e64e-1-1-e1769670392281.png');
+            background-size: 100%;
+            background-repeat: no-repeat;
+            width: 50%;
+            height: 40%;
+            position: absolute;
+            opacity: 0.05;
+            right: 0;
+            top: 0;
+            transform: scaleX(-1);
+            mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0) 100%);
+            -webkit-mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0) 100%);
+        }
+    }
+    img {
+        border-radius: $radius-md;
+        max-height: 500px;
+        object-fit: cover;
+    }
+
+    .background-lightest-silver {
+        border-radius: $radius-md;
+        position: sticky;
+        top: 20px;
+    }
+}
+@media (max-width: 992px) {
+    .single-case-study {
+        &__row {
+            &:before {
+                display: none;
+            }
+
+            img {
+                max-height: 230px;
+                border-radius: $radius-md;
+            }
+
+            &--bottom {
+                padding-left: 20px;
+                padding-right: 20px;
+
+                .background-lightest-silver {
+                    border-radius: $radius-md;
+                }
+
+                &__wrap {
+                    gap: 0;
+                    flex-direction: column;
+                }
+            }
+        }
+    }
+    .single-story {
+        &__row {
+            &__left {
+                order: 2;
+            }
+            &__right {
+                order: 1;
+            }
+            img {
+                max-height: 230px;
+            }
+        }
+    }
+}

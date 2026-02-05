@@ -189,6 +189,7 @@ $allowed_blocks = [
   'acf/tile-block',
   'acf/timeline',
   'acf/video',
+  'acf/case-study-hero',
 ];
 
 add_filter('allowed_block_types_all', 'my_allowed_block_types', 10, 2);
@@ -220,6 +221,7 @@ function my_allowed_block_types($allowed_blocks, $block_editor_context) {
     'acf/tile-block',
     'acf/timeline',
     'acf/video',
+    'acf/case-study-hero',
   ];
 }
 
@@ -280,18 +282,87 @@ class ADA_Compliant_Walker_Nav_Menu extends Walker_Nav_Menu {
     $output .= "</li>\n";
   }
 
-  // Format Phone Number 
-  function format_phone_dots($phone) {
-    // Remove all non-numeric characters
-    $digits = preg_replace('/\D/', '', $phone);
+}
 
-    // Format only if 10 digits
-    if (strlen($digits) === 10) {
-        return substr($digits, 0, 3) . '.' . substr($digits, 3, 3) . '.' . substr($digits, 6);
-    }
+// Format Phone Number 
+function format_phone_dots($phone) {
+  // Remove all non-numeric characters
+  $digits = preg_replace('/\D/', '', $phone);
 
-    // Fallback for unexpected input
-    return $phone;
+  // Format only if 10 digits
+  if (strlen($digits) === 10) {
+      return substr($digits, 0, 3) . '.' . substr($digits, 3, 3) . '.' . substr($digits, 6);
   }
 
+  // Fallback for unexpected input
+  return $phone;
 }
+function format_phone_number($phone_number) {
+    // Remove all non-numeric characters
+    $numbers = preg_replace('/\D+/', '', $phone_number);
+
+    // Remove leading country code if it's +1 (or just 1)
+    if (strlen($numbers) === 11 && substr($numbers, 0, 1) === '1') {
+        $numbers = substr($numbers, 1);
+    }
+
+    // Format as 602.258.7789
+    if (strlen($numbers) === 10) {
+        return substr($numbers, 0, 3) . '.' . substr($numbers, 3, 3) . '.' . substr($numbers, 6);
+    }
+
+    // If invalid, return the original
+    return $phone_number;
+}
+
+// Format Fax
+function format_fax_number($fax_number) {
+    // Remove all non-numeric characters
+    $faxNumbers = preg_replace('/\D+/', '', $fax_number);
+
+    // Remove leading country code if it's +1 (or just 1)
+    if (strlen($faxNumbers) === 11 && substr($faxNumbers, 0, 1) === '1') {
+        $faxNumbers = substr($faxNumbers, 1);
+    }
+
+    // Format as 602.258.7789
+    if (strlen($faxNumbers) === 10) {
+        return substr($faxNumbers, 0, 3) . '.' . substr($faxNumbers, 3, 3) . '.' . substr($faxNumbers, 6);
+    }
+
+    // If invalid, return the original
+    return $fax_number;
+}
+
+// add_action('init', function () {
+//     foreach (glob(get_stylesheet_directory() . '/blocks/*/block.json') as $block) {
+//         register_block_type(dirname($block));
+//     }
+// });
+
+add_action('init', function () {
+
+    foreach (glob(get_stylesheet_directory() . '/blocks/*/block.json') as $block_json) {
+
+        $dir  = dirname($block_json);
+        $meta = json_decode(file_get_contents($block_json), true);
+
+        $args = [];
+
+        // Only restrict THIS block
+        if (($meta['name'] ?? '') === 'acf/case-study-hero') {
+            $args['post_types'] = ['case-study'];
+        }
+
+        register_block_type($dir, $args);
+    }
+
+});
+
+
+function enqueue_admin_scripts_and_styles() {
+	wp_enqueue_script('admin-scripts', get_stylesheet_directory_uri() . '/assets/js/admin_custom.js', array('wp-blocks', 'wp-element', 'wp-hooks'), '', true);
+//We use wp_localize_script to pass data
+wp_localize_script( 'admin-scripts', 'passed_data', array( 'templateUrl' => get_stylesheet_directory_uri() ) );
+}
+add_action('admin_enqueue_scripts', 'enqueue_admin_scripts_and_styles');

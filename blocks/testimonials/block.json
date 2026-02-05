@@ -1,0 +1,18 @@
+{
+  "apiVersion": 2,
+  "name": "acf/testimonials",
+  "title": "Testimonials",
+  "category": "text",
+  "icon": "format-aside",
+  "description": "",
+  "acf": {
+    "mode": "preview",
+    "renderTemplate": "testimonials.php"
+  },
+  "attributes": {
+    "previewImage": {
+        "type": "string",
+        "default": "/wp-content/uploads/2026/02/Screenshot-2026-02-03-at-10.45.59-AM.png"
+    }
+  }
+}

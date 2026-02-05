@@ -1,0 +1,18 @@
+{
+  "apiVersion": 2,
+  "name": "acf/logo-block",
+  "title": "Logo Block",
+  "category": "text",
+  "icon": "post-status",
+  "description": "",
+  "acf": {
+    "mode": "preview",
+    "renderTemplate": "logo-block.php"
+  },
+  "attributes": {
+    "previewImage": {
+        "type": "string",
+        "default": "/wp-content/uploads/2026/02/Screenshot-2026-02-03-at-10.33.01-AM.png"
+    }
+  }
+}

@@ -20,6 +20,29 @@ body {
     background: transparent !important;
 }
 
+.lg-show {
+    display: block;
+}
+.lg-hide {
+    display: none;
+}
+@media (min-width: 768px) and (max-width: 992px) {
+    .md-show {
+        display: block;
+    }
+    .md-hide {
+        display: none;
+    }
+}
+@media (max-width: 767px) {
+    .sm-show {
+        display: block;
+    }
+    .sm-hide {
+        display: none;
+    }
+}
+
 // Containers 
 @media (max-width: 992px) {
     .container, .container-sm, .container-md {
@@ -31,6 +54,85 @@ body {
 @media (min-width: 992px) {
     .container, .container-sm, .container-md {
         max-width: 1150px;
+        padding-right: 20px;
+        padding-left: 20px;
+    }
+}
+@media (min-width: 1200px) {
+    .container, .container-sm, .container-md {
+        max-width: 1400px;
+        padding-right: 20px;
+        padding-left: 20px;
+    }
+}
+@media (min-width: 1400px) {
+    .container, .container-sm, .container-md {
+        max-width: 1600px;
+        padding-right: 20px;
+        padding-left: 20px;
+    }
+}
+
+// Breadcrumbs
+#breadcrumbs {
+    > span {
+        display: flex;
+        gap: 40px;
+        align-items: center;
+
+        > span:first-of-type {
+            > a {
+                position: relative;
+                color: transparent;
+
+                &:after {
+                    position: absolute;
+                    content: '';
+                    width: 24px;
+                    height: 24px;
+                    left: calc(50% - 12px);
+                    top: calc(50% - 12px);
+                    background-image: url('/wp-content/uploads/2026/02/Breadcrumb-button-base.svg');
+                    background-size: 100%;
+                    background-repeat: no-repeat;
+                }
+            }
+        }
+        > span {
+            position: relative;
+            line-height: 1;
+
+            &:after {
+                position: absolute;
+                content: '';
+                width: 8px;
+                height: 13px;
+                right: -26px;
+                top: calc(50% - 6px);
+                background-image: url('/wp-content/uploads/2026/02/Icon.svg');
+                background-size: 100%;
+                background-repeat: no-repeat;
+            }
+
+            a {
+                font-size: 14px;
+                font-family: $primaryFont;
+                font-weight: 500;
+                line-height: 1.5;
+                color: $steel;
+            }
+        }
+        .breadcrumb_last {
+            font-size: 14px;
+            font-family: $primaryFont;
+            font-weight: 500;
+            line-height: 1.5;
+            color: $steel;
+
+            &:after {
+                display: none;
+            }
+        }
     }
 }
 
@@ -410,22 +512,22 @@ h1, h2, h3, h4, h5, h6, p, span, li {
 }
 @media screen and (max-width: 767px) {
     h1.h1-jumbo, .h1-jumbo, .h1-jumbo h1, .h1-jumbo h2 {
-        font-size: 40px;
+        font-size: 38px;
     }
     h1, .h1 {
-        font-size: 40px;
+        font-size: 38px;
     }
     h2.oversized-h2, .oversized-h2 {
-        font-size: 48px;
+        font-size: 38px;
     }
     h2, .h2 {
-        font-size: 28px;
+        font-size: 32px;
     }
     .oversized-h3 {
         font-size: 32px;
     }
     h3, .h3 {
-        font-size: 20px;
+        font-size: 24px;
     }
     h4, .h4 {
         font-size: 18px;
@@ -477,5 +579,253 @@ h1, h2, h3, h4, h5, h6, p, span, li {
         p, li, a, button, span {
             font-size: 16px;
         }
+    }
+}
+
+.background-white {
+    background-color: $white;
+
+    > p, > a, > li, > span, > button {
+        background-color: $white;
+    }
+}
+.background-navy {
+    background-color: $navy;
+
+    > p, > a, > li, > span, > button {
+        background-color: $navy;
+    }
+}
+.background-steel {
+    background-color: $steel;
+
+    > p, > a, > li, > span, > button {
+        background-color: $steel;
+    }
+}
+.background-silver {
+    background-color: $silver;
+
+    > p, > a, > li, > span, > button {
+        background-color: $silver;
+    }
+}
+.background-light-silver {
+    background-color: $light-silver;
+
+    > p, > a, > li, > span, > button {
+        background-color: $light-silver;
+    }
+}
+.background-lightest-silver {
+    background-color: $lightest-silver;
+
+    > p, > a, > li, > span, > button {
+        background-color: $lightest-silver;
+    }
+}
+.background-blue {
+    background-color: $blue;
+
+    > p, > a, > li, > span, > button {
+        background-color: $blue;
+    }
+}
+.background-blue-ada {
+    background-color: $blue-ada;
+
+    > p, > a, > li, > span, > button {
+        background-color: $blue-ada;
+    }
+}
+.background-green {
+    background-color: $green;
+
+    > p, > a, > li, > span, > button {
+        background-color: $green;
+    }
+}
+.background-green-ada {
+    background-color: $green-ada;
+
+    > p, > a, > li, > span, > button {
+        background-color: $green-ada;
+    }
+}
+.background-yellow {
+    background-color: $yellow;
+
+    > p, > a, > li, > span, > button {
+        background-color: $yellow;
+    }
+}
+.background-orange {
+    background-color: $orange;
+
+    p, a, li, span, button {
+        background-color: $orange;
+    }
+}
+.background-red {
+    background-color: $red;
+
+    p, a, li, span, button {
+        background-color: $red;
+    }
+}
+.background-red-ada {
+    background-color: $red-ada;
+
+    p, a, li, span, button {
+        background-color: $red-ada;
+    }
+}
+.background-violet {
+    background-color: $violet;
+
+    p, a, li, span, button {
+        background-color: $violet;
+    }
+}
+.background-black {
+    background-color: $black;
+
+    p, a, li, span, button {
+        background-color: $black;
+    }
+}
+.background-brown {
+    background-color: $brown;
+
+    p, a, li, span, button {
+        background-color: $brown;
+    }
+}
+
+.text-white {
+    color: $white;
+
+    p, a, li, span, button, h1, h2, h3, h4, h5, h6 {
+        color: $white;
+    }
+}
+.text-navy {
+    color: $navy;
+
+    p, a, li, span, button, h1, h2, h3, h4, h5, h6 {
+        color: $navy;
+    }
+}
+.text-steel {
+    color: $steel;
+
+    p, a, li, span, button, h1, h2, h3, h4, h5, h6 {
+        color: $steel;
+    }
+}
+.text-silver {
+    color: $silver;
+
+    p, a, li, span, button, h1, h2, h3, h4, h5, h6 {
+        color: $silver;
+    }
+}
+.text-light-silver {
+    color: $light-silver;
+
+    p, a, li, span, button, h1, h2, h3, h4, h5, h6 {
+        color: $light-silver;
+    }
+}
+.text-lightest-silver {
+    color: $lightest-silver;
+
+    p, a, li, span, button, h1, h2, h3, h4, h5, h6 {
+        color: $lightest-silver;
+    }
+}
+.text-blue {
+    color: $blue;
+
+    p, a, li, span, button, h1, h2, h3, h4, h5, h6 {
+        color: $blue;
+    }
+}
+.text-blue-ada {
+    color: $blue-ada;
+
+    p, a, li, span, button, h1, h2, h3, h4, h5, h6 {
+        color: $blue-ada;
+    }
+}
+.text-green {
+    color: $green;
+
+    p, a, li, span, button, h1, h2, h3, h4, h5, h6 {
+        color: $green;
+    }
+}
+.text-green-ada {
+    color: $green-ada;
+
+    p, a, li, span, button, h1, h2, h3, h4, h5, h6 {
+        color: $green-ada;
+    }
+}
+.text-yellow {
+    color: $yellow;
+
+    p, a, li, span, button, h1, h2, h3, h4, h5, h6 {
+        color: $yellow;
+    }
+}
+.text-orange {
+    color: $orange;
+
+    p, a, li, span, button, h1, h2, h3, h4, h5, h6 {
+        color: $orange;
+    }
+}
+.text-red {
+    color: $red;
+
+    p, a, li, span, button, h1, h2, h3, h4, h5, h6 {
+        color: $red;
+    }
+}
+.text-red-ada {
+    color: $red-ada;
+
+    p, a, li, span, button, h1, h2, h3, h4, h5, h6 {
+        color: $red-ada;
+    }
+}
+.text-violet {
+    color: $violet;
+
+    p, a, li, span, button, h1, h2, h3, h4, h5, h6 {
+        color: $violet;
+    }
+}
+.text-black {
+    color: $black;
+
+    p, a, li, span, button, h1, h2, h3, h4, h5, h6 {
+        color: $black;
+    }
+}
+.text-brown {
+    color: $brown;
+
+    p, a, li, span, button, h1, h2, h3, h4, h5, h6 {
+        color: $brown;
+    }
+}
+
+// Mobile styles
+@media (max-width: 767px) {
+    .col-12 {
+        padding-left: 20px !important;
+        padding-right: 20px !important;
     }
 }

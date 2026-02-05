@@ -1,0 +1,18 @@
+{
+  "apiVersion": 2,
+  "name": "acf/home-hero-collage",
+  "title": "Home Hero Collage",
+  "category": "text",
+  "icon": "images-alt2",
+  "description": "",
+  "acf": {
+    "mode": "preview",
+    "renderTemplate": "home-hero-collage.php"
+  },
+  "attributes": {
+    "previewImage": {
+        "type": "string",
+        "default": "/wp-content/uploads/2026/02/Screenshot-2026-02-03-at-10.28.03-AM.png"
+    }
+  }
+}

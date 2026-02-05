@@ -1,6 +1,4 @@
 .testimonials {
-    overflow: hidden;
-
     &--collage {
         &:before {
             content: '';
@@ -34,8 +32,6 @@
     }
 
     &__row {
-        column-gap: 80px;
-
         &.background-graphic {
             &:before {
                 content: '';

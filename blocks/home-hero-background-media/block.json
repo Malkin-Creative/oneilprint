@@ -1,0 +1,18 @@
+{
+  "apiVersion": 2,
+  "name": "acf/home-hero-background-media",
+  "title": "Home Hero Background Media",
+  "category": "text",
+  "icon": "cover-image",
+  "description": "",
+  "acf": {
+    "mode": "preview",
+    "renderTemplate": "home-hero-background-media.php"
+  },
+  "attributes": {
+    "previewImage": {
+        "type": "string",
+        "default": "/wp-content/uploads/2026/02/Screenshot-2026-02-03-at-10.20.31-AM.png"
+    }
+  }
+}

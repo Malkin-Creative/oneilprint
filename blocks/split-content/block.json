@@ -1,0 +1,18 @@
+{
+  "apiVersion": 3,
+  "name": "acf/split-content",
+  "title": "Split Content",
+  "category": "text",
+  "icon": "columns",
+  "description": "",
+  "acf": {
+    "mode": "preview",
+    "renderTemplate": "split-content.php"
+  },
+  "attributes": {
+    "previewImage": {
+        "type": "string",
+        "default": "/wp-content/uploads/2026/02/Screenshot-2026-02-03-at-10.39.58-AM.png"
+    }
+  }
+}

@@ -24041,6 +24041,25 @@ body {
 .simplesocialbuttons {
   background: transparent !important;
 }
+.lg-show {
+  display: block;
+}
+.lg-hide {
+  display: none;
+}
+@media (min-width: 768px) and (max-width: 992px) {
+  .md-show {
+    display: block;
+  }
+  .md-hide {
+    display: none;
+  }
+}
+@media (max-width: 767px) {
+  .sm-hide {
+    display: none;
+  }
+}
 @media (max-width: 992px) {
   .container, .container-sm, .container-md {
     max-width: unset;
@@ -24051,7 +24070,75 @@ body {
 @media (min-width: 992px) {
   .container, .container-sm, .container-md {
     max-width: 1150px;
+    padding-right: 20px;
+    padding-left: 20px;
   }
+}
+@media (min-width: 1200px) {
+  .container, .container-sm, .container-md {
+    max-width: 1400px;
+    padding-right: 20px;
+    padding-left: 20px;
+  }
+}
+@media (min-width: 1400px) {
+  .container, .container-sm, .container-md {
+    max-width: 1600px;
+    padding-right: 20px;
+    padding-left: 20px;
+  }
+}
+#breadcrumbs > span {
+  display: flex;
+  gap: 40px;
+  align-items: center;
+}
+#breadcrumbs > span > span:first-of-type > a {
+  position: relative;
+  color: transparent;
+}
+#breadcrumbs > span > span:first-of-type > a:after {
+  position: absolute;
+  content: "";
+  width: 24px;
+  height: 24px;
+  left: calc(50% - 12px);
+  top: calc(50% - 12px);
+  background-image: url("/wp-content/uploads/2026/02/Breadcrumb-button-base.svg");
+  background-size: 100%;
+  background-repeat: no-repeat;
+}
+#breadcrumbs > span > span {
+  position: relative;
+  line-height: 1;
+}
+#breadcrumbs > span > span:after {
+  position: absolute;
+  content: "";
+  width: 8px;
+  height: 13px;
+  right: -26px;
+  top: calc(50% - 6px);
+  background-image: url("/wp-content/uploads/2026/02/Icon.svg");
+  background-size: 100%;
+  background-repeat: no-repeat;
+}
+#breadcrumbs > span > span a {
+  font-size: 14px;
+  font-family: "Figtree", sans-serif;
+  font-weight: 500;
+  line-height: 1.5;
+  color: #647692;
+}
+#breadcrumbs > span .breadcrumb_last {
+  font-size: 14px;
+  font-family: "Figtree", sans-serif;
+  font-weight: 500;
+  line-height: 1.5;
+  color: #647692;
+}
+#breadcrumbs > span .breadcrumb_last:after {
+  display: none;
 }
 h1.h1-jumbo, .h1-jumbo.h1, .h1-jumbo, .h1-jumbo h1, .h1-jumbo .h1, .h1-jumbo h2, .h1-jumbo .h2, .h1-jumbo .multi-col-tiles__content.cta-column .multi-col-tiles__content__col:last-of-type h3, .multi-col-tiles__content.cta-column .multi-col-tiles__content__col:last-of-type .h1-jumbo h3, .h1-jumbo .multi-col-tiles__content.cta-column .multi-col-tiles__content__col:last-of-type .h3 {
   font-size: 60px;
@@ -24396,22 +24483,22 @@ h1, .h1, h2, .h2, .multi-col-tiles__content.cta-column .multi-col-tiles__content
 }
 @media screen and (max-width: 767px) {
   h1.h1-jumbo, .h1-jumbo.h1, .h1-jumbo, .h1-jumbo h1, .h1-jumbo .h1, .h1-jumbo h2, .h1-jumbo .h2, .h1-jumbo .multi-col-tiles__content.cta-column .multi-col-tiles__content__col:last-of-type h3, .multi-col-tiles__content.cta-column .multi-col-tiles__content__col:last-of-type .h1-jumbo h3, .h1-jumbo .multi-col-tiles__content.cta-column .multi-col-tiles__content__col:last-of-type .h3 {
-    font-size: 40px;
+    font-size: 38px;
   }
   h1, .h1 {
-    font-size: 40px;
+    font-size: 38px;
   }
   h2.oversized-h2, .oversized-h2.h2, .multi-col-tiles__content.cta-column .multi-col-tiles__content__col:last-of-type h3.oversized-h2, .multi-col-tiles__content.cta-column .multi-col-tiles__content__col:last-of-type .oversized-h2.h3, .oversized-h2 {
-    font-size: 48px;
+    font-size: 38px;
   }
   h2, .h2, .multi-col-tiles__content.cta-column .multi-col-tiles__content__col:last-of-type h3, .multi-col-tiles__content.cta-column .multi-col-tiles__content__col:last-of-type .h3 {
-    font-size: 28px;
+    font-size: 32px;
   }
   .oversized-h3 {
     font-size: 32px;
   }
   h3, .h3 {
-    font-size: 20px;
+    font-size: 24px;
   }
   h4, .h4 {
     font-size: 18px;
@@ -24457,6 +24544,216 @@ h1, .h1, h2, .h2, .multi-col-tiles__content.cta-column .multi-col-tiles__content
   }
   .text-lg-bold p, .text-lg-bold li, .text-lg-bold a, .text-lg-bold button, .text-lg-bold span {
     font-size: 16px;
+  }
+}
+.background-white {
+  background-color: #ffffff;
+}
+.background-white > p, .background-white > a, .background-white > li, .background-white > span, .background-white > button {
+  background-color: #ffffff;
+}
+.background-navy {
+  background-color: #141B4D;
+}
+.background-navy > p, .background-navy > a, .background-navy > li, .background-navy > span, .background-navy > button {
+  background-color: #141B4D;
+}
+.background-steel {
+  background-color: #647692;
+}
+.background-steel > p, .background-steel > a, .background-steel > li, .background-steel > span, .background-steel > button {
+  background-color: #647692;
+}
+.background-silver {
+  background-color: #C8D8EB;
+}
+.background-silver > p, .background-silver > a, .background-silver > li, .background-silver > span, .background-silver > button {
+  background-color: #C8D8EB;
+}
+.background-light-silver {
+  background-color: #E3EBF5;
+}
+.background-light-silver > p, .background-light-silver > a, .background-light-silver > li, .background-light-silver > span, .background-light-silver > button {
+  background-color: #E3EBF5;
+}
+.background-lightest-silver {
+  background-color: #F1F5FA;
+}
+.background-lightest-silver > p, .background-lightest-silver > a, .background-lightest-silver > li, .background-lightest-silver > span, .background-lightest-silver > button {
+  background-color: #F1F5FA;
+}
+.background-blue {
+  background-color: #489FDF;
+}
+.background-blue > p, .background-blue > a, .background-blue > li, .background-blue > span, .background-blue > button {
+  background-color: #489FDF;
+}
+.background-blue-ada {
+  background-color: #1179C5;
+}
+.background-blue-ada > p, .background-blue-ada > a, .background-blue-ada > li, .background-blue-ada > span, .background-blue-ada > button {
+  background-color: #1179C5;
+}
+.background-green {
+  background-color: #00B373;
+}
+.background-green > p, .background-green > a, .background-green > li, .background-green > span, .background-green > button {
+  background-color: #00B373;
+}
+.background-green-ada {
+  background-color: #11865C;
+}
+.background-green-ada > p, .background-green-ada > a, .background-green-ada > li, .background-green-ada > span, .background-green-ada > button {
+  background-color: #11865C;
+}
+.background-yellow {
+  background-color: #F0B323;
+}
+.background-yellow > p, .background-yellow > a, .background-yellow > li, .background-yellow > span, .background-yellow > button {
+  background-color: #F0B323;
+}
+.background-orange {
+  background-color: #FF8F1C;
+}
+.background-orange p, .background-orange a, .background-orange li, .background-orange span, .background-orange button {
+  background-color: #FF8F1C;
+}
+.background-red {
+  background-color: #F4364C;
+}
+.background-red p, .background-red a, .background-red li, .background-red span, .background-red button {
+  background-color: #F4364C;
+}
+.background-red-ada {
+  background-color: #DF2D42;
+}
+.background-red-ada p, .background-red-ada a, .background-red-ada li, .background-red-ada span, .background-red-ada button {
+  background-color: #DF2D42;
+}
+.background-violet {
+  background-color: #C964CF;
+}
+.background-violet p, .background-violet a, .background-violet li, .background-violet span, .background-violet button {
+  background-color: #C964CF;
+}
+.background-black {
+  background-color: #232323;
+}
+.background-black p, .background-black a, .background-black li, .background-black span, .background-black button {
+  background-color: #232323;
+}
+.background-brown {
+  background-color: #89532F;
+}
+.background-brown p, .background-brown a, .background-brown li, .background-brown span, .background-brown button {
+  background-color: #89532F;
+}
+.text-white {
+  color: #ffffff;
+}
+.text-white p, .text-white a, .text-white li, .text-white span, .text-white button, .text-white h1, .text-white .h1, .text-white h2, .text-white .h2, .text-white .multi-col-tiles__content.cta-column .multi-col-tiles__content__col:last-of-type h3, .multi-col-tiles__content.cta-column .multi-col-tiles__content__col:last-of-type .text-white h3, .text-white .multi-col-tiles__content.cta-column .multi-col-tiles__content__col:last-of-type .h3, .text-white h3, .text-white .h3, .text-white h4, .text-white .h4, .text-white h5, .text-white .h5, .text-white h6, .text-white .h6 {
+  color: #ffffff;
+}
+.text-navy {
+  color: #141B4D;
+}
+.text-navy p, .text-navy a, .text-navy li, .text-navy span, .text-navy button, .text-navy h1, .text-navy .h1, .text-navy h2, .text-navy .h2, .text-navy .multi-col-tiles__content.cta-column .multi-col-tiles__content__col:last-of-type h3, .multi-col-tiles__content.cta-column .multi-col-tiles__content__col:last-of-type .text-navy h3, .text-navy .multi-col-tiles__content.cta-column .multi-col-tiles__content__col:last-of-type .h3, .text-navy h3, .text-navy .h3, .text-navy h4, .text-navy .h4, .text-navy h5, .text-navy .h5, .text-navy h6, .text-navy .h6 {
+  color: #141B4D;
+}
+.text-steel {
+  color: #647692;
+}
+.text-steel p, .text-steel a, .text-steel li, .text-steel span, .text-steel button, .text-steel h1, .text-steel .h1, .text-steel h2, .text-steel .h2, .text-steel .multi-col-tiles__content.cta-column .multi-col-tiles__content__col:last-of-type h3, .multi-col-tiles__content.cta-column .multi-col-tiles__content__col:last-of-type .text-steel h3, .text-steel .multi-col-tiles__content.cta-column .multi-col-tiles__content__col:last-of-type .h3, .text-steel h3, .text-steel .h3, .text-steel h4, .text-steel .h4, .text-steel h5, .text-steel .h5, .text-steel h6, .text-steel .h6 {
+  color: #647692;
+}
+.text-silver {
+  color: #C8D8EB;
+}
+.text-silver p, .text-silver a, .text-silver li, .text-silver span, .text-silver button, .text-silver h1, .text-silver .h1, .text-silver h2, .text-silver .h2, .text-silver .multi-col-tiles__content.cta-column .multi-col-tiles__content__col:last-of-type h3, .multi-col-tiles__content.cta-column .multi-col-tiles__content__col:last-of-type .text-silver h3, .text-silver .multi-col-tiles__content.cta-column .multi-col-tiles__content__col:last-of-type .h3, .text-silver h3, .text-silver .h3, .text-silver h4, .text-silver .h4, .text-silver h5, .text-silver .h5, .text-silver h6, .text-silver .h6 {
+  color: #C8D8EB;
+}
+.text-light-silver {
+  color: #E3EBF5;
+}
+.text-light-silver p, .text-light-silver a, .text-light-silver li, .text-light-silver span, .text-light-silver button, .text-light-silver h1, .text-light-silver .h1, .text-light-silver h2, .text-light-silver .h2, .text-light-silver .multi-col-tiles__content.cta-column .multi-col-tiles__content__col:last-of-type h3, .multi-col-tiles__content.cta-column .multi-col-tiles__content__col:last-of-type .text-light-silver h3, .text-light-silver .multi-col-tiles__content.cta-column .multi-col-tiles__content__col:last-of-type .h3, .text-light-silver h3, .text-light-silver .h3, .text-light-silver h4, .text-light-silver .h4, .text-light-silver h5, .text-light-silver .h5, .text-light-silver h6, .text-light-silver .h6 {
+  color: #E3EBF5;
+}
+.text-lightest-silver {
+  color: #F1F5FA;
+}
+.text-lightest-silver p, .text-lightest-silver a, .text-lightest-silver li, .text-lightest-silver span, .text-lightest-silver button, .text-lightest-silver h1, .text-lightest-silver .h1, .text-lightest-silver h2, .text-lightest-silver .h2, .text-lightest-silver .multi-col-tiles__content.cta-column .multi-col-tiles__content__col:last-of-type h3, .multi-col-tiles__content.cta-column .multi-col-tiles__content__col:last-of-type .text-lightest-silver h3, .text-lightest-silver .multi-col-tiles__content.cta-column .multi-col-tiles__content__col:last-of-type .h3, .text-lightest-silver h3, .text-lightest-silver .h3, .text-lightest-silver h4, .text-lightest-silver .h4, .text-lightest-silver h5, .text-lightest-silver .h5, .text-lightest-silver h6, .text-lightest-silver .h6 {
+  color: #F1F5FA;
+}
+.text-blue {
+  color: #489FDF;
+}
+.text-blue p, .text-blue a, .text-blue li, .text-blue span, .text-blue button, .text-blue h1, .text-blue .h1, .text-blue h2, .text-blue .h2, .text-blue .multi-col-tiles__content.cta-column .multi-col-tiles__content__col:last-of-type h3, .multi-col-tiles__content.cta-column .multi-col-tiles__content__col:last-of-type .text-blue h3, .text-blue .multi-col-tiles__content.cta-column .multi-col-tiles__content__col:last-of-type .h3, .text-blue h3, .text-blue .h3, .text-blue h4, .text-blue .h4, .text-blue h5, .text-blue .h5, .text-blue h6, .text-blue .h6 {
+  color: #489FDF;
+}
+.text-blue-ada {
+  color: #1179C5;
+}
+.text-blue-ada p, .text-blue-ada a, .text-blue-ada li, .text-blue-ada span, .text-blue-ada button, .text-blue-ada h1, .text-blue-ada .h1, .text-blue-ada h2, .text-blue-ada .h2, .text-blue-ada .multi-col-tiles__content.cta-column .multi-col-tiles__content__col:last-of-type h3, .multi-col-tiles__content.cta-column .multi-col-tiles__content__col:last-of-type .text-blue-ada h3, .text-blue-ada .multi-col-tiles__content.cta-column .multi-col-tiles__content__col:last-of-type .h3, .text-blue-ada h3, .text-blue-ada .h3, .text-blue-ada h4, .text-blue-ada .h4, .text-blue-ada h5, .text-blue-ada .h5, .text-blue-ada h6, .text-blue-ada .h6 {
+  color: #1179C5;
+}
+.text-green {
+  color: #00B373;
+}
+.text-green p, .text-green a, .text-green li, .text-green span, .text-green button, .text-green h1, .text-green .h1, .text-green h2, .text-green .h2, .text-green .multi-col-tiles__content.cta-column .multi-col-tiles__content__col:last-of-type h3, .multi-col-tiles__content.cta-column .multi-col-tiles__content__col:last-of-type .text-green h3, .text-green .multi-col-tiles__content.cta-column .multi-col-tiles__content__col:last-of-type .h3, .text-green h3, .text-green .h3, .text-green h4, .text-green .h4, .text-green h5, .text-green .h5, .text-green h6, .text-green .h6 {
+  color: #00B373;
+}
+.text-green-ada {
+  color: #11865C;
+}
+.text-green-ada p, .text-green-ada a, .text-green-ada li, .text-green-ada span, .text-green-ada button, .text-green-ada h1, .text-green-ada .h1, .text-green-ada h2, .text-green-ada .h2, .text-green-ada .multi-col-tiles__content.cta-column .multi-col-tiles__content__col:last-of-type h3, .multi-col-tiles__content.cta-column .multi-col-tiles__content__col:last-of-type .text-green-ada h3, .text-green-ada .multi-col-tiles__content.cta-column .multi-col-tiles__content__col:last-of-type .h3, .text-green-ada h3, .text-green-ada .h3, .text-green-ada h4, .text-green-ada .h4, .text-green-ada h5, .text-green-ada .h5, .text-green-ada h6, .text-green-ada .h6 {
+  color: #11865C;
+}
+.text-yellow {
+  color: #F0B323;
+}
+.text-yellow p, .text-yellow a, .text-yellow li, .text-yellow span, .text-yellow button, .text-yellow h1, .text-yellow .h1, .text-yellow h2, .text-yellow .h2, .text-yellow .multi-col-tiles__content.cta-column .multi-col-tiles__content__col:last-of-type h3, .multi-col-tiles__content.cta-column .multi-col-tiles__content__col:last-of-type .text-yellow h3, .text-yellow .multi-col-tiles__content.cta-column .multi-col-tiles__content__col:last-of-type .h3, .text-yellow h3, .text-yellow .h3, .text-yellow h4, .text-yellow .h4, .text-yellow h5, .text-yellow .h5, .text-yellow h6, .text-yellow .h6 {
+  color: #F0B323;
+}
+.text-orange {
+  color: #FF8F1C;
+}
+.text-orange p, .text-orange a, .text-orange li, .text-orange span, .text-orange button, .text-orange h1, .text-orange .h1, .text-orange h2, .text-orange .h2, .text-orange .multi-col-tiles__content.cta-column .multi-col-tiles__content__col:last-of-type h3, .multi-col-tiles__content.cta-column .multi-col-tiles__content__col:last-of-type .text-orange h3, .text-orange .multi-col-tiles__content.cta-column .multi-col-tiles__content__col:last-of-type .h3, .text-orange h3, .text-orange .h3, .text-orange h4, .text-orange .h4, .text-orange h5, .text-orange .h5, .text-orange h6, .text-orange .h6 {
+  color: #FF8F1C;
+}
+.text-red {
+  color: #F4364C;
+}
+.text-red p, .text-red a, .text-red li, .text-red span, .text-red button, .text-red h1, .text-red .h1, .text-red h2, .text-red .h2, .text-red .multi-col-tiles__content.cta-column .multi-col-tiles__content__col:last-of-type h3, .multi-col-tiles__content.cta-column .multi-col-tiles__content__col:last-of-type .text-red h3, .text-red .multi-col-tiles__content.cta-column .multi-col-tiles__content__col:last-of-type .h3, .text-red h3, .text-red .h3, .text-red h4, .text-red .h4, .text-red h5, .text-red .h5, .text-red h6, .text-red .h6 {
+  color: #F4364C;
+}
+.text-red-ada {
+  color: #DF2D42;
+}
+.text-red-ada p, .text-red-ada a, .text-red-ada li, .text-red-ada span, .text-red-ada button, .text-red-ada h1, .text-red-ada .h1, .text-red-ada h2, .text-red-ada .h2, .text-red-ada .multi-col-tiles__content.cta-column .multi-col-tiles__content__col:last-of-type h3, .multi-col-tiles__content.cta-column .multi-col-tiles__content__col:last-of-type .text-red-ada h3, .text-red-ada .multi-col-tiles__content.cta-column .multi-col-tiles__content__col:last-of-type .h3, .text-red-ada h3, .text-red-ada .h3, .text-red-ada h4, .text-red-ada .h4, .text-red-ada h5, .text-red-ada .h5, .text-red-ada h6, .text-red-ada .h6 {
+  color: #DF2D42;
+}
+.text-violet {
+  color: #C964CF;
+}
+.text-violet p, .text-violet a, .text-violet li, .text-violet span, .text-violet button, .text-violet h1, .text-violet .h1, .text-violet h2, .text-violet .h2, .text-violet .multi-col-tiles__content.cta-column .multi-col-tiles__content__col:last-of-type h3, .multi-col-tiles__content.cta-column .multi-col-tiles__content__col:last-of-type .text-violet h3, .text-violet .multi-col-tiles__content.cta-column .multi-col-tiles__content__col:last-of-type .h3, .text-violet h3, .text-violet .h3, .text-violet h4, .text-violet .h4, .text-violet h5, .text-violet .h5, .text-violet h6, .text-violet .h6 {
+  color: #C964CF;
+}
+.text-black {
+  color: #232323;
+}
+.text-black p, .text-black a, .text-black li, .text-black span, .text-black button, .text-black h1, .text-black .h1, .text-black h2, .text-black .h2, .text-black .multi-col-tiles__content.cta-column .multi-col-tiles__content__col:last-of-type h3, .multi-col-tiles__content.cta-column .multi-col-tiles__content__col:last-of-type .text-black h3, .text-black .multi-col-tiles__content.cta-column .multi-col-tiles__content__col:last-of-type .h3, .text-black h3, .text-black .h3, .text-black h4, .text-black .h4, .text-black h5, .text-black .h5, .text-black h6, .text-black .h6 {
+  color: #232323;
+}
+.text-brown {
+  color: #89532F;
+}
+.text-brown p, .text-brown a, .text-brown li, .text-brown span, .text-brown button, .text-brown h1, .text-brown .h1, .text-brown h2, .text-brown .h2, .text-brown .multi-col-tiles__content.cta-column .multi-col-tiles__content__col:last-of-type h3, .multi-col-tiles__content.cta-column .multi-col-tiles__content__col:last-of-type .text-brown h3, .text-brown .multi-col-tiles__content.cta-column .multi-col-tiles__content__col:last-of-type .h3, .text-brown h3, .text-brown .h3, .text-brown h4, .text-brown .h4, .text-brown h5, .text-brown .h5, .text-brown h6, .text-brown .h6 {
+  color: #89532F;
+}
+@media (max-width: 767px) {
+  .col-12 {
+    padding-left: 20px !important;
+    padding-right: 20px !important;
   }
 }
 .button, button {
@@ -25055,7 +25352,7 @@ h1, .h1, h2, .h2, .multi-col-tiles__content.cta-column .multi-col-tiles__content
   padding-left: 0;
   list-style: none;
   display: flex;
-  gap: 50px;
+  gap: 30px;
   margin-bottom: 0;
   align-items: center;
 }
@@ -25072,7 +25369,6 @@ h1, .h1, h2, .h2, .multi-col-tiles__content.cta-column .multi-col-tiles__content
 }
 .header .menu-main-menu-container #menu-primary-navigation li.menu-item {
   position: relative;
-  padding: 5px 10px;
 }
 .header .menu-main-menu-container #menu-primary-navigation li.menu-item a {
   text-decoration: none;
@@ -25211,216 +25507,6 @@ h1, .h1, h2, .h2, .multi-col-tiles__content.cta-column .multi-col-tiles__content
     flex-direction: column;
     text-align: center;
     align-items: center;
-  }
-}
-.background-white {
-  background-color: #ffffff;
-}
-.background-white > p, .background-white > a, .background-white > li, .background-white > span, .background-white > button {
-  background-color: #ffffff;
-}
-.background-navy {
-  background-color: #141B4D;
-}
-.background-navy > p, .background-navy > a, .background-navy > li, .background-navy > span, .background-navy > button {
-  background-color: #141B4D;
-}
-.background-steel {
-  background-color: #647692;
-}
-.background-steel > p, .background-steel > a, .background-steel > li, .background-steel > span, .background-steel > button {
-  background-color: #647692;
-}
-.background-silver {
-  background-color: #C8D8EB;
-}
-.background-silver > p, .background-silver > a, .background-silver > li, .background-silver > span, .background-silver > button {
-  background-color: #C8D8EB;
-}
-.background-light-silver {
-  background-color: #E3EBF5;
-}
-.background-light-silver > p, .background-light-silver > a, .background-light-silver > li, .background-light-silver > span, .background-light-silver > button {
-  background-color: #E3EBF5;
-}
-.background-lightest-silver {
-  background-color: #F1F5FA;
-}
-.background-lightest-silver > p, .background-lightest-silver > a, .background-lightest-silver > li, .background-lightest-silver > span, .background-lightest-silver > button {
-  background-color: #F1F5FA;
-}
-.background-blue {
-  background-color: #489FDF;
-}
-.background-blue > p, .background-blue > a, .background-blue > li, .background-blue > span, .background-blue > button {
-  background-color: #489FDF;
-}
-.background-blue-ada {
-  background-color: #1179C5;
-}
-.background-blue-ada > p, .background-blue-ada > a, .background-blue-ada > li, .background-blue-ada > span, .background-blue-ada > button {
-  background-color: #1179C5;
-}
-.background-green {
-  background-color: #00B373;
-}
-.background-green > p, .background-green > a, .background-green > li, .background-green > span, .background-green > button {
-  background-color: #00B373;
-}
-.background-green-ada {
-  background-color: #11865C;
-}
-.background-green-ada > p, .background-green-ada > a, .background-green-ada > li, .background-green-ada > span, .background-green-ada > button {
-  background-color: #11865C;
-}
-.background-yellow {
-  background-color: #F0B323;
-}
-.background-yellow > p, .background-yellow > a, .background-yellow > li, .background-yellow > span, .background-yellow > button {
-  background-color: #F0B323;
-}
-.background-orange {
-  background-color: #FF8F1C;
-}
-.background-orange p, .background-orange a, .background-orange li, .background-orange span, .background-orange button {
-  background-color: #FF8F1C;
-}
-.background-red {
-  background-color: #F4364C;
-}
-.background-red p, .background-red a, .background-red li, .background-red span, .background-red button {
-  background-color: #F4364C;
-}
-.background-red-ada {
-  background-color: #DF2D42;
-}
-.background-red-ada p, .background-red-ada a, .background-red-ada li, .background-red-ada span, .background-red-ada button {
-  background-color: #DF2D42;
-}
-.background-violet {
-  background-color: #C964CF;
-}
-.background-violet p, .background-violet a, .background-violet li, .background-violet span, .background-violet button {
-  background-color: #C964CF;
-}
-.background-black {
-  background-color: #232323;
-}
-.background-black p, .background-black a, .background-black li, .background-black span, .background-black button {
-  background-color: #232323;
-}
-.background-brown {
-  background-color: #89532F;
-}
-.background-brown p, .background-brown a, .background-brown li, .background-brown span, .background-brown button {
-  background-color: #89532F;
-}
-.text-white {
-  color: #ffffff;
-}
-.text-white p, .text-white a, .text-white li, .text-white span, .text-white button, .text-white h1, .text-white .h1, .text-white h2, .text-white .h2, .text-white .multi-col-tiles__content.cta-column .multi-col-tiles__content__col:last-of-type h3, .multi-col-tiles__content.cta-column .multi-col-tiles__content__col:last-of-type .text-white h3, .text-white .multi-col-tiles__content.cta-column .multi-col-tiles__content__col:last-of-type .h3, .text-white h3, .text-white .h3, .text-white h4, .text-white .h4, .text-white h5, .text-white .h5, .text-white h6, .text-white .h6 {
-  color: #ffffff;
-}
-.text-navy {
-  color: #141B4D;
-}
-.text-navy p, .text-navy a, .text-navy li, .text-navy span, .text-navy button, .text-navy h1, .text-navy .h1, .text-navy h2, .text-navy .h2, .text-navy .multi-col-tiles__content.cta-column .multi-col-tiles__content__col:last-of-type h3, .multi-col-tiles__content.cta-column .multi-col-tiles__content__col:last-of-type .text-navy h3, .text-navy .multi-col-tiles__content.cta-column .multi-col-tiles__content__col:last-of-type .h3, .text-navy h3, .text-navy .h3, .text-navy h4, .text-navy .h4, .text-navy h5, .text-navy .h5, .text-navy h6, .text-navy .h6 {
-  color: #141B4D;
-}
-.text-steel {
-  color: #647692;
-}
-.text-steel p, .text-steel a, .text-steel li, .text-steel span, .text-steel button, .text-steel h1, .text-steel .h1, .text-steel h2, .text-steel .h2, .text-steel .multi-col-tiles__content.cta-column .multi-col-tiles__content__col:last-of-type h3, .multi-col-tiles__content.cta-column .multi-col-tiles__content__col:last-of-type .text-steel h3, .text-steel .multi-col-tiles__content.cta-column .multi-col-tiles__content__col:last-of-type .h3, .text-steel h3, .text-steel .h3, .text-steel h4, .text-steel .h4, .text-steel h5, .text-steel .h5, .text-steel h6, .text-steel .h6 {
-  color: #647692;
-}
-.text-silver {
-  color: #C8D8EB;
-}
-.text-silver p, .text-silver a, .text-silver li, .text-silver span, .text-silver button, .text-silver h1, .text-silver .h1, .text-silver h2, .text-silver .h2, .text-silver .multi-col-tiles__content.cta-column .multi-col-tiles__content__col:last-of-type h3, .multi-col-tiles__content.cta-column .multi-col-tiles__content__col:last-of-type .text-silver h3, .text-silver .multi-col-tiles__content.cta-column .multi-col-tiles__content__col:last-of-type .h3, .text-silver h3, .text-silver .h3, .text-silver h4, .text-silver .h4, .text-silver h5, .text-silver .h5, .text-silver h6, .text-silver .h6 {
-  color: #C8D8EB;
-}
-.text-light-silver {
-  color: #E3EBF5;
-}
-.text-light-silver p, .text-light-silver a, .text-light-silver li, .text-light-silver span, .text-light-silver button, .text-light-silver h1, .text-light-silver .h1, .text-light-silver h2, .text-light-silver .h2, .text-light-silver .multi-col-tiles__content.cta-column .multi-col-tiles__content__col:last-of-type h3, .multi-col-tiles__content.cta-column .multi-col-tiles__content__col:last-of-type .text-light-silver h3, .text-light-silver .multi-col-tiles__content.cta-column .multi-col-tiles__content__col:last-of-type .h3, .text-light-silver h3, .text-light-silver .h3, .text-light-silver h4, .text-light-silver .h4, .text-light-silver h5, .text-light-silver .h5, .text-light-silver h6, .text-light-silver .h6 {
-  color: #E3EBF5;
-}
-.text-lightest-silver {
-  color: #F1F5FA;
-}
-.text-lightest-silver p, .text-lightest-silver a, .text-lightest-silver li, .text-lightest-silver span, .text-lightest-silver button, .text-lightest-silver h1, .text-lightest-silver .h1, .text-lightest-silver h2, .text-lightest-silver .h2, .text-lightest-silver .multi-col-tiles__content.cta-column .multi-col-tiles__content__col:last-of-type h3, .multi-col-tiles__content.cta-column .multi-col-tiles__content__col:last-of-type .text-lightest-silver h3, .text-lightest-silver .multi-col-tiles__content.cta-column .multi-col-tiles__content__col:last-of-type .h3, .text-lightest-silver h3, .text-lightest-silver .h3, .text-lightest-silver h4, .text-lightest-silver .h4, .text-lightest-silver h5, .text-lightest-silver .h5, .text-lightest-silver h6, .text-lightest-silver .h6 {
-  color: #F1F5FA;
-}
-.text-blue {
-  color: #489FDF;
-}
-.text-blue p, .text-blue a, .text-blue li, .text-blue span, .text-blue button, .text-blue h1, .text-blue .h1, .text-blue h2, .text-blue .h2, .text-blue .multi-col-tiles__content.cta-column .multi-col-tiles__content__col:last-of-type h3, .multi-col-tiles__content.cta-column .multi-col-tiles__content__col:last-of-type .text-blue h3, .text-blue .multi-col-tiles__content.cta-column .multi-col-tiles__content__col:last-of-type .h3, .text-blue h3, .text-blue .h3, .text-blue h4, .text-blue .h4, .text-blue h5, .text-blue .h5, .text-blue h6, .text-blue .h6 {
-  color: #489FDF;
-}
-.text-blue-ada {
-  color: #1179C5;
-}
-.text-blue-ada p, .text-blue-ada a, .text-blue-ada li, .text-blue-ada span, .text-blue-ada button, .text-blue-ada h1, .text-blue-ada .h1, .text-blue-ada h2, .text-blue-ada .h2, .text-blue-ada .multi-col-tiles__content.cta-column .multi-col-tiles__content__col:last-of-type h3, .multi-col-tiles__content.cta-column .multi-col-tiles__content__col:last-of-type .text-blue-ada h3, .text-blue-ada .multi-col-tiles__content.cta-column .multi-col-tiles__content__col:last-of-type .h3, .text-blue-ada h3, .text-blue-ada .h3, .text-blue-ada h4, .text-blue-ada .h4, .text-blue-ada h5, .text-blue-ada .h5, .text-blue-ada h6, .text-blue-ada .h6 {
-  color: #1179C5;
-}
-.text-green {
-  color: #00B373;
-}
-.text-green p, .text-green a, .text-green li, .text-green span, .text-green button, .text-green h1, .text-green .h1, .text-green h2, .text-green .h2, .text-green .multi-col-tiles__content.cta-column .multi-col-tiles__content__col:last-of-type h3, .multi-col-tiles__content.cta-column .multi-col-tiles__content__col:last-of-type .text-green h3, .text-green .multi-col-tiles__content.cta-column .multi-col-tiles__content__col:last-of-type .h3, .text-green h3, .text-green .h3, .text-green h4, .text-green .h4, .text-green h5, .text-green .h5, .text-green h6, .text-green .h6 {
-  color: #00B373;
-}
-.text-green-ada {
-  color: #11865C;
-}
-.text-green-ada p, .text-green-ada a, .text-green-ada li, .text-green-ada span, .text-green-ada button, .text-green-ada h1, .text-green-ada .h1, .text-green-ada h2, .text-green-ada .h2, .text-green-ada .multi-col-tiles__content.cta-column .multi-col-tiles__content__col:last-of-type h3, .multi-col-tiles__content.cta-column .multi-col-tiles__content__col:last-of-type .text-green-ada h3, .text-green-ada .multi-col-tiles__content.cta-column .multi-col-tiles__content__col:last-of-type .h3, .text-green-ada h3, .text-green-ada .h3, .text-green-ada h4, .text-green-ada .h4, .text-green-ada h5, .text-green-ada .h5, .text-green-ada h6, .text-green-ada .h6 {
-  color: #11865C;
-}
-.text-yellow {
-  color: #F0B323;
-}
-.text-yellow p, .text-yellow a, .text-yellow li, .text-yellow span, .text-yellow button, .text-yellow h1, .text-yellow .h1, .text-yellow h2, .text-yellow .h2, .text-yellow .multi-col-tiles__content.cta-column .multi-col-tiles__content__col:last-of-type h3, .multi-col-tiles__content.cta-column .multi-col-tiles__content__col:last-of-type .text-yellow h3, .text-yellow .multi-col-tiles__content.cta-column .multi-col-tiles__content__col:last-of-type .h3, .text-yellow h3, .text-yellow .h3, .text-yellow h4, .text-yellow .h4, .text-yellow h5, .text-yellow .h5, .text-yellow h6, .text-yellow .h6 {
-  color: #F0B323;
-}
-.text-orange {
-  color: #FF8F1C;
-}
-.text-orange p, .text-orange a, .text-orange li, .text-orange span, .text-orange button, .text-orange h1, .text-orange .h1, .text-orange h2, .text-orange .h2, .text-orange .multi-col-tiles__content.cta-column .multi-col-tiles__content__col:last-of-type h3, .multi-col-tiles__content.cta-column .multi-col-tiles__content__col:last-of-type .text-orange h3, .text-orange .multi-col-tiles__content.cta-column .multi-col-tiles__content__col:last-of-type .h3, .text-orange h3, .text-orange .h3, .text-orange h4, .text-orange .h4, .text-orange h5, .text-orange .h5, .text-orange h6, .text-orange .h6 {
-  color: #FF8F1C;
-}
-.text-red {
-  color: #F4364C;
-}
-.text-red p, .text-red a, .text-red li, .text-red span, .text-red button, .text-red h1, .text-red .h1, .text-red h2, .text-red .h2, .text-red .multi-col-tiles__content.cta-column .multi-col-tiles__content__col:last-of-type h3, .multi-col-tiles__content.cta-column .multi-col-tiles__content__col:last-of-type .text-red h3, .text-red .multi-col-tiles__content.cta-column .multi-col-tiles__content__col:last-of-type .h3, .text-red h3, .text-red .h3, .text-red h4, .text-red .h4, .text-red h5, .text-red .h5, .text-red h6, .text-red .h6 {
-  color: #F4364C;
-}
-.text-red-ada {
-  color: #DF2D42;
-}
-.text-red-ada p, .text-red-ada a, .text-red-ada li, .text-red-ada span, .text-red-ada button, .text-red-ada h1, .text-red-ada .h1, .text-red-ada h2, .text-red-ada .h2, .text-red-ada .multi-col-tiles__content.cta-column .multi-col-tiles__content__col:last-of-type h3, .multi-col-tiles__content.cta-column .multi-col-tiles__content__col:last-of-type .text-red-ada h3, .text-red-ada .multi-col-tiles__content.cta-column .multi-col-tiles__content__col:last-of-type .h3, .text-red-ada h3, .text-red-ada .h3, .text-red-ada h4, .text-red-ada .h4, .text-red-ada h5, .text-red-ada .h5, .text-red-ada h6, .text-red-ada .h6 {
-  color: #DF2D42;
-}
-.text-violet {
-  color: #C964CF;
-}
-.text-violet p, .text-violet a, .text-violet li, .text-violet span, .text-violet button, .text-violet h1, .text-violet .h1, .text-violet h2, .text-violet .h2, .text-violet .multi-col-tiles__content.cta-column .multi-col-tiles__content__col:last-of-type h3, .multi-col-tiles__content.cta-column .multi-col-tiles__content__col:last-of-type .text-violet h3, .text-violet .multi-col-tiles__content.cta-column .multi-col-tiles__content__col:last-of-type .h3, .text-violet h3, .text-violet .h3, .text-violet h4, .text-violet .h4, .text-violet h5, .text-violet .h5, .text-violet h6, .text-violet .h6 {
-  color: #C964CF;
-}
-.text-black {
-  color: #232323;
-}
-.text-black p, .text-black a, .text-black li, .text-black span, .text-black button, .text-black h1, .text-black .h1, .text-black h2, .text-black .h2, .text-black .multi-col-tiles__content.cta-column .multi-col-tiles__content__col:last-of-type h3, .multi-col-tiles__content.cta-column .multi-col-tiles__content__col:last-of-type .text-black h3, .text-black .multi-col-tiles__content.cta-column .multi-col-tiles__content__col:last-of-type .h3, .text-black h3, .text-black .h3, .text-black h4, .text-black .h4, .text-black h5, .text-black .h5, .text-black h6, .text-black .h6 {
-  color: #232323;
-}
-.text-brown {
-  color: #89532F;
-}
-.text-brown p, .text-brown a, .text-brown li, .text-brown span, .text-brown button, .text-brown h1, .text-brown .h1, .text-brown h2, .text-brown .h2, .text-brown .multi-col-tiles__content.cta-column .multi-col-tiles__content__col:last-of-type h3, .multi-col-tiles__content.cta-column .multi-col-tiles__content__col:last-of-type .text-brown h3, .text-brown .multi-col-tiles__content.cta-column .multi-col-tiles__content__col:last-of-type .h3, .text-brown h3, .text-brown .h3, .text-brown h4, .text-brown .h4, .text-brown h5, .text-brown .h5, .text-brown h6, .text-brown .h6 {
-  color: #89532F;
-}
-@media (max-width: 767px) {
-  .col-12 {
-    padding-left: 20px !important;
-    padding-right: 20px !important;
   }
 }
 .gform-theme .gform_submission_error {
@@ -26614,9 +26700,6 @@ body.modal-open {
     grid-auto-flow: unset;
   }
 }
-.testimonials {
-  overflow: hidden;
-}
 .testimonials--collage:before {
   content: "";
   background-image: url("/wp-content/uploads/2026/01/d806c26951d7fa168dfce167f2c6a4c28548e64e-1-1-e1769670392281.png");
@@ -26645,9 +26728,6 @@ body.modal-open {
   top: 50%;
   mask-image: linear-gradient(to bottom, black 0%, rgba(0, 0, 0, 0) 100%);
   -webkit-mask-image: linear-gradient(to bottom, black 0%, rgba(0, 0, 0, 0) 100%);
-}
-.testimonials__row {
-  column-gap: 80px;
 }
 .testimonials__row.background-graphic:before {
   content: "";
@@ -27012,6 +27092,88 @@ body.modal-open {
   }
   .video__buttons {
     justify-content: start;
+  }
+}
+.single-case-study__row:before {
+  content: "";
+  background-image: url("/wp-content/uploads/2026/01/d806c26951d7fa168dfce167f2c6a4c28548e64e-1-1-e1769670392281.png");
+  background-size: 100%;
+  background-repeat: no-repeat;
+  width: 50%;
+  height: 40%;
+  position: absolute;
+  opacity: 0.05;
+  right: 0;
+  top: 0;
+  transform: scaleX(-1);
+  mask-image: linear-gradient(to bottom, black 0%, rgba(0, 0, 0, 0) 100%);
+  -webkit-mask-image: linear-gradient(to bottom, black 0%, rgba(0, 0, 0, 0) 100%);
+}
+.single-case-study__row img {
+  border-radius: 20px;
+  z-index: 1;
+  max-height: 775px;
+  object-fit: cover;
+}
+.single-case-study__row--bottom {
+  padding-right: calc(var(--bs-gutter-x) * .5);
+  padding-left: calc(var(--bs-gutter-x) * .5);
+}
+.single-case-study__row--bottom .background-lightest-silver {
+  border-radius: 28px;
+}
+.single-case-study__row--bottom__wrap {
+  gap: 30px;
+}
+.single-story__row:before {
+  content: "";
+  background-image: url("/wp-content/uploads/2026/01/d806c26951d7fa168dfce167f2c6a4c28548e64e-1-1-e1769670392281.png");
+  background-size: 100%;
+  background-repeat: no-repeat;
+  width: 50%;
+  height: 40%;
+  position: absolute;
+  opacity: 0.05;
+  right: 0;
+  top: 0;
+  transform: scaleX(-1);
+  mask-image: linear-gradient(to bottom, black 0%, rgba(0, 0, 0, 0) 100%);
+  -webkit-mask-image: linear-gradient(to bottom, black 0%, rgba(0, 0, 0, 0) 100%);
+}
+.single-story img {
+  border-radius: 8px;
+  max-height: 500px;
+  object-fit: cover;
+}
+.single-story .background-lightest-silver {
+  border-radius: 8px;
+  position: sticky;
+  top: 20px;
+}
+@media (max-width: 992px) {
+  .single-case-study__row:before {
+    display: none;
+  }
+  .single-case-study__row img {
+    max-height: 230px;
+    border-radius: 8px;
+  }
+  .single-case-study__row--bottom {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+  .single-case-study__row--bottom .background-lightest-silver {
+    border-radius: 8px;
+  }
+  .single-case-study__row--bottom__wrap {
+    gap: 0;
+    flex-direction: column;
+  }
+  .single-story__row__left {
+    order: 2;
+  }
+  .single-story__row__right {
+    order: 1;
   }
 }
 /*# sourceMappingURL=/wp-content/themes/bootscore-child/assets/css/main.css.map */

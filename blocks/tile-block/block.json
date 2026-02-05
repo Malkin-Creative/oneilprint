@@ -1,0 +1,18 @@
+{
+  "apiVersion": 2,
+  "name": "acf/tile-block",
+  "title": "Tile Block",
+  "category": "text",
+  "icon": "welcome-widgets-menus",
+  "description": "",
+  "acf": {
+    "mode": "preview",
+    "renderTemplate": "tile-block.php"
+  },
+  "attributes": {
+    "previewImage": {
+        "type": "string",
+        "default": "/wp-content/uploads/2026/02/Screenshot-2026-02-03-at-10.47.24-AM.png"
+    }
+  }
+}

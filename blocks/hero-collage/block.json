@@ -1,0 +1,18 @@
+{
+  "apiVersion": 2,
+  "name": "acf/hero-collage",
+  "title": "Hero Collage",
+  "category": "text",
+  "icon": "images-alt",
+  "description": "",
+  "acf": {
+    "mode": "preview",
+    "renderTemplate": "hero-collage.php"
+  },
+  "attributes": {
+    "previewImage": {
+        "type": "string",
+        "default": "/wp-content/uploads/2026/02/Screenshot-2026-02-03-at-10.22.06-AM.png"
+    }
+  }
+}
