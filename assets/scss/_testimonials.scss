@@ -52,9 +52,15 @@
         &--right {
             position: relative;
         }
-        &__stars {
-            width: 120px;
-            height: fit-content;
+        &__col {
+            &__blue-line {
+                width: 120px;
+                border-top: 1px solid $silver;
+            }
+            &__stars {
+                width: 120px;
+                height: fit-content;
+            }
         }
         &__image {
             position: absolute;

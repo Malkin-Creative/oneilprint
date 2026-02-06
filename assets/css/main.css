@@ -24056,6 +24056,9 @@ body {
   }
 }
 @media (max-width: 767px) {
+  .sm-show {
+    display: block;
+  }
   .sm-hide {
     display: none;
   }
@@ -25704,8 +25707,16 @@ h1, .h1, h2, .h2, .multi-col-tiles__content.cta-column .multi-col-tiles__content
   left: unset;
   padding: 0;
 }
+.featured-post__left img {
+  border-radius: 8px;
+  object-fit: cover;
+  max-height: 600px;
+}
+.featured-post__right > div {
+  border-radius: 8px;
+}
 @media (max-width: 767px) {
-  .featured-post {
+  .featured-post.full-width-featured {
     padding-left: 20px;
     padding-right: 20px;
   }
@@ -25724,6 +25735,9 @@ h1, .h1, h2, .h2, .multi-col-tiles__content.cta-column .multi-col-tiles__content
     left: 0;
     top: unset;
     height: 300px !important;
+  }
+  .featured-post__left img {
+    max-height: 220px;
   }
 }
 .featured-post-grid__header {
@@ -26747,7 +26761,11 @@ body.modal-open {
 .testimonials__row--right {
   position: relative;
 }
-.testimonials__row__stars {
+.testimonials__row__col__blue-line {
+  width: 120px;
+  border-top: 1px solid #C8D8EB;
+}
+.testimonials__row__col__stars {
   width: 120px;
   height: fit-content;
 }
@@ -27112,7 +27130,7 @@ body.modal-open {
 .single-case-study__row img {
   border-radius: 20px;
   z-index: 1;
-  max-height: 775px;
+  max-height: 600px;
   object-fit: cover;
 }
 .single-case-study__row--bottom {
@@ -27125,13 +27143,14 @@ body.modal-open {
 .single-case-study__row--bottom__wrap {
   gap: 30px;
 }
-.single-story__row:before {
+.single-story:before {
   content: "";
   background-image: url("/wp-content/uploads/2026/01/d806c26951d7fa168dfce167f2c6a4c28548e64e-1-1-e1769670392281.png");
   background-size: 100%;
   background-repeat: no-repeat;
   width: 50%;
   height: 40%;
+  max-height: 400px;
   position: absolute;
   opacity: 0.05;
   right: 0;
@@ -27147,8 +27166,12 @@ body.modal-open {
 }
 .single-story .background-lightest-silver {
   border-radius: 8px;
-  position: sticky;
-  top: 20px;
+}
+.single-story__row__excerpt {
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
 }
 @media (max-width: 992px) {
   .single-case-study__row:before {
@@ -27169,11 +27192,17 @@ body.modal-open {
     gap: 0;
     flex-direction: column;
   }
+  .single-story:before {
+    display: none;
+  }
   .single-story__row__left {
     order: 2;
   }
   .single-story__row__right {
     order: 1;
+  }
+  .single-story__row img {
+    max-height: 230px;
   }
 }
 /*# sourceMappingURL=/wp-content/themes/bootscore-child/assets/css/main.css.map */

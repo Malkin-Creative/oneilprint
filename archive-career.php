@@ -1,7 +1,7 @@
 <?php
 
 /**
- * Template Post Type: Team Member
+ *
  *
  * @package Bootscore
  * @version 6.1.0
@@ -22,6 +22,11 @@ get_header(); ?>
     </div>
 </section>
 
-<?php the_content();
+<?php
+$page = get_page_by_path('careers');
+
+if ($page) {
+    echo apply_filters('the_content', $page->post_content);
+}
 
 get_footer();

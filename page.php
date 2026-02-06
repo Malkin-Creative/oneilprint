@@ -19,15 +19,17 @@ defined('ABSPATH') || exit;
 
 get_header(); ?>
 
-<section class="container py-6">
-    <div class="row">
-        <div class="col-12">
-            <?php if ( function_exists( 'yoast_breadcrumb' ) ) {
-                yoast_breadcrumb( '<p id="breadcrumbs" class="mb-0">','</p>' );
-            } ?>
+<?php if ( ! is_front_page() && ! is_home() ) { ?>
+    <section class="container py-6">
+        <div class="row">
+            <div class="col-12">
+                <?php if ( function_exists( 'yoast_breadcrumb' ) ) {
+                    yoast_breadcrumb( '<p id="breadcrumbs" class="mb-0">','</p>' );
+                } ?>
+            </div>
         </div>
-    </div>
-</section>
+    </section>
+<?php } ?>
 
 <?php the_content();
 

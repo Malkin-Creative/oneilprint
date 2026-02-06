@@ -133,7 +133,9 @@ if ($tile_background == 'solid') {
                     ?>
                     <div class="col testimonials__row__col">
                         <?php if ( $stars ) : ?>
-                            <img src="<?php echo esc_url($stars['url']); ?>" alt="<?php echo esc_attr($stars['alt']); ?>" class="mb-4 testimonials__row__stars"/>
+                            <img src="<?php echo esc_url($stars['url']); ?>" alt="<?php echo esc_attr($stars['alt']); ?>" class="mb-4 testimonials__row__col__stars"/>
+                        <?php else : ?>
+                            <div class="mb-4 testimonials__row__col__blue-line"></div>
                         <?php endif; ?>
                         <?php if ( $testimonial_content ) : ?>
                             <h3 class="mb-5 text-black<?php echo $testimonialContentSize; ?>">

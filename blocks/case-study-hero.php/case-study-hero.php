@@ -7,7 +7,7 @@ $featured_image_url = get_the_post_thumbnail_url(get_the_ID(), 'full');
 $alt_text = get_post_meta($thumbnail_id, '_wp_attachment_image_alt', true);
 $client = get_the_terms(get_the_ID(), 'client');
 $industries = get_the_terms(get_the_ID(), 'industries');
-$service = get_the_terms(get_the_ID(), 'service');
+$services = get_the_terms(get_the_ID(), 'services');
 ?>
 
 <section class="single-case-study container">
@@ -23,7 +23,9 @@ $service = get_the_terms(get_the_ID(), 'service');
                     <?php echo $subtitle; ?>
                 </span>
             <?php endif; ?>
-            <img src="<?php echo esc_url( $featured_image_url ); ?>" alt="<?php echo esc_attr( $alt_text ); ?>" class="w-100 mt-6 mt-md-8 mt-lg-10 position-relative"/>
+            <?php if ( $featured_image_url ) : ?>
+                <img src="<?php echo esc_url( $featured_image_url ); ?>" alt="<?php echo esc_attr( $alt_text ); ?>" class="w-100 mt-6 mt-md-8 mt-lg-10 position-relative"/>
+            <?php endif; ?>
         </div>
     </div>
     <div class="row single-case-study__row--bottom">
@@ -63,16 +65,16 @@ $service = get_the_terms(get_the_ID(), 'service');
                         </p>
                     </div>
                 <?php endif; ?>
-                <?php if ( ! empty( $service ) && ! is_wp_error( $service ) ) : ?>
+                <?php if ( ! empty( $services ) && ! is_wp_error( $services ) ) : ?>
                     <div class="col">
                         <span class="text-blue-ada text-sm-medium mb-0">
                             Services
                         </span>
-                        <?php $lastServ = end($service); ?>
+                        <?php $lastServ = end($services); ?>
                         <p class="text-lg-medium text-black text-tertiary">
-                            <?php foreach( $service as $services): ?>
-                                <?php echo esc_html( $services->name );
-                                    if ($services !== $lastServ) {
+                            <?php foreach( $services as $service): ?>
+                                <?php echo esc_html( $service->name );
+                                    if ($service !== $lastServ) {
                                         echo ', ';
                                     }
                                 ?>
@@ -80,6 +82,42 @@ $service = get_the_terms(get_the_ID(), 'service');
                         </p>
                     </div>
                 <?php endif; ?>
+            </div>
+            <div class="row">
+                <div class="share-buttons" role="group" aria-label="Share this page">
+                    <button class="share-btn" id="copyLinkBtn" aria-label="Copy page link to clipboard">
+                        Copy Link
+                    </button>
+
+                    <a class="share-btn"
+                    id="shareFacebook"
+                    href="#"
+                    target="_blank"
+                    rel="noopener"
+                    aria-label="Share this page on Facebook">
+                        Facebook
+                    </a>
+
+                    <a class="share-btn"
+                    id="shareX"
+                    href="#"
+                    target="_blank"
+                    rel="noopener"
+                    aria-label="Share this page on X">
+                        X
+                    </a>
+
+                    <a class="share-btn"
+                    id="shareLinkedIn"
+                    href="#"
+                    target="_blank"
+                    rel="noopener"
+                    aria-label="Share this page on LinkedIn">
+                        LinkedIn
+                    </a>
+
+                    <span id="copyStatus" class="visually-hidden" aria-live="polite"></span>
+                </div>
             </div>
         </div>
     </div>

@@ -22,15 +22,11 @@ get_header(); ?>
     </div>
 </section>
 
-<?php 
-if (is_home()) {
-    $page = get_page_by_path('blog');
+<?php
+$page = get_page_by_path('stories');
 
-    if ($page) {
-        echo apply_filters('the_content', $page->post_content);
-    }
-} else {
-    the_content();
+if ($page) {
+    echo apply_filters('the_content', $page->post_content);
 }
 
 get_footer();

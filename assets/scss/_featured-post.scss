@@ -19,12 +19,28 @@
             padding: 0;
         }
     }
+    &__left {
+        img {
+            border-radius: $radius-md;
+            object-fit: cover;
+            max-height: 600px;
+        }
+    }
+    &__right {
+        // height: 500px;
+
+        > div {
+            border-radius: $radius-md;
+        }
+    }
 }
 
 @media (max-width: 767px) {
     .featured-post {
-        padding-left: 20px;
-        padding-right: 20px;
+        &.full-width-featured {
+            padding-left: 20px;
+            padding-right: 20px;
+        }
 
         &__content {
             &__wrap {
@@ -45,6 +61,15 @@
                 top: unset;
                 height: 300px !important;
             }
+        }
+
+        &__left {
+            img {
+                max-height: 220px;
+            }
+        }
+        &__right {
+            // height: fit-content;
         }
     }
 }

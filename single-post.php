@@ -25,15 +25,15 @@ get_header();
 </section>
 
 <?php
-if ( 'story' === get_post_type() ) {
+if ( 'post' === get_post_type() ) {
 $title = get_the_title();
-$subtitle = get_field('summary_excerpt', get_the_ID());
+$subtitle = get_the_excerpt();
 $thumbnail_id = get_post_thumbnail_id();
 $featured_image_url = get_the_post_thumbnail_url(get_the_ID(), 'full');
 $alt_text = get_post_meta($thumbnail_id, '_wp_attachment_image_alt', true);
-$client = get_the_terms(get_the_ID(), 'client');
-$industries = get_the_terms(get_the_ID(), 'industries');
-$service = get_the_terms(get_the_ID(), 'service');
+$author = get_the_terms(get_the_ID(), 'post_author');
+$category = get_the_category(get_the_ID());
+$topic = get_the_terms(get_the_ID(), 'topic');
 ?>
 
 <section class="single-story container position-relative">
@@ -45,7 +45,7 @@ $service = get_the_terms(get_the_ID(), 'service');
                 </h1>
             <?php endif; ?>
             <?php if ( $subtitle ) : ?>
-                <span class="text-steel mb-0 h3">
+                <span class="single-story__row__excerpt text-steel mb-0 h3">
                     <?php echo $subtitle; ?>
                 </span>
             <?php endif; ?>
@@ -63,16 +63,16 @@ $service = get_the_terms(get_the_ID(), 'service');
                 <img src="<?php echo esc_url( $featured_image_url ); ?>" alt="<?php echo esc_attr( $alt_text ); ?>" class="w-100 mb-4 position-relative sm-show md-hide lg-hide"/>
             <?php endif; ?>
             <div class="background-lightest-silver p-6 p-md-8 p-lg-10 d-flex flex-column">
-                <?php if ( ! empty( $client ) && ! is_wp_error( $client ) ) : ?>
+                <?php if ( ! empty( $author ) && ! is_wp_error( $author ) ) : ?>
                     <div class="col">
                         <span class="text-blue-ada text-sm-medium mb-0">
-                            Client
+                            Author
                         </span>
-                        <?php $lastClient = end($client); ?>
+                        <?php $lastAuthor = end($author); ?>
                         <p class="text-lg-medium text-black text-tertiary">
-                            <?php foreach( $client as $clients): ?>
-                                <?php echo esc_html( $clients->name );
-                                    if ($clients !== $lastClient) {
+                            <?php foreach( $author as $authors): ?>
+                                <?php echo esc_html( $authors->name );
+                                    if ($authors !== $lastAuthor) {
                                         echo ', ';
                                     }
                                 ?>
@@ -80,16 +80,16 @@ $service = get_the_terms(get_the_ID(), 'service');
                         </p>
                     </div>
                 <?php endif; ?>
-                <?php if ( ! empty( $industries ) && ! is_wp_error( $industries ) ) : ?>
+                <?php if ( ! empty( $category ) && ! is_wp_error( $category ) ) : ?>
                     <div class="col">
                         <span class="text-blue-ada text-sm-medium mb-0">
-                            Industry
+                            Category
                         </span>
-                        <?php $lastInd = end($industries); ?>
+                        <?php $lastCat = end($category); ?>
                         <p class="text-lg-medium text-black text-tertiary">
-                            <?php foreach( $industries as $industry): ?>
-                                <?php echo esc_html( $industry->name );
-                                    if ($industry !== $lastInd) {
+                            <?php foreach( $category as $categories): ?>
+                                <?php echo esc_html( $categories->name );
+                                    if ($categories !== $lastCat) {
                                         echo ', ';
                                     }
                                 ?>
@@ -97,16 +97,16 @@ $service = get_the_terms(get_the_ID(), 'service');
                         </p>
                     </div>
                 <?php endif; ?>
-                <?php if ( ! empty( $service ) && ! is_wp_error( $service ) ) : ?>
+                <?php if ( ! empty( $topic ) && ! is_wp_error( $topic ) ) : ?>
                     <div class="col">
                         <span class="text-blue-ada text-sm-medium mb-0">
-                            Services
+                            Topic
                         </span>
-                        <?php $lastServ = end($service); ?>
+                        <?php $lastTopic = end($topic); ?>
                         <p class="text-lg-medium text-black text-tertiary">
-                            <?php foreach( $service as $services): ?>
-                                <?php echo esc_html( $services->name );
-                                    if ($services !== $lastServ) {
+                            <?php foreach( $topic as $topics): ?>
+                                <?php echo esc_html( $topics->name );
+                                    if ($topics !== $lastTopic) {
                                         echo ', ';
                                     }
                                 ?>
@@ -124,7 +124,7 @@ $service = get_the_terms(get_the_ID(), 'service');
 </section>
 <?php 
 $args = array(
-    'post_type'      => 'story', 
+    'post_type'      => 'post', 
     'posts_per_page' => 3,
     'post__not_in'   => array( get_the_ID() ), 
     'orderby'        => 'date',
@@ -146,7 +146,7 @@ if ($related_query->have_posts()) : ?>
                 <?php while ($related_query->have_posts()) : $related_query->the_post(); 
                     $permalink = get_permalink(get_the_ID());
                     $title = get_the_title(get_the_ID());
-                    $summary_excerpt = get_field('summary_excerpt', get_the_ID());
+                    $excerpt = get_the_excerpt();
                     $thumbnail_id = get_post_thumbnail_id(get_the_ID());
                     $featured_image_url = get_the_post_thumbnail_url(get_the_ID(), 'full');
                     $alt_text = get_post_meta($thumbnail_id, '_wp_attachment_image_alt', true);
@@ -175,13 +175,13 @@ if ($related_query->have_posts()) : ?>
                                 <?php endforeach; ?>
                             </p>
                         <?php endif; ?>
-                        <?php if ($summary_excerpt) : ?>
+                        <?php if ($excerpt) : ?>
                             <p class="text-md-regular mt-4 text-black text-tertiary featured-post-grid__wrap__excerpt">
-                                <?php echo $summary_excerpt; ?>
+                                <?php echo $excerpt; ?>
                             </p>
                         <?php endif; ?>
                         <a class="button button--steel-underline" href="<?php echo $permalink; ?>" aria-label="Open post">
-                            Read Story
+                            Read Post
                         </a>
                     </div>
                 <?php endwhile; ?>
