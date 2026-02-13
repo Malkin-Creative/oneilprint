@@ -231,8 +231,7 @@ function my_allowed_block_types($allowed_blocks, $block_editor_context) {
 function register_my_theme_menus() {
   register_nav_menus(
     array(
-      'top-main-menu' => __( 'Top Main Menu', 'oneilprint' ),
-      'mobile-menu' => __( 'Mobile Menu', 'oneilprint' )
+      'top-main-menu' => __( 'Top Main Menu', 'oneilprint' )
     )
   );
 }

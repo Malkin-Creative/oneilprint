@@ -37,7 +37,66 @@ $post_objects = $featured_team_members;
 <section class="featured-post-grid position-relative" id="<?php echo esc_attr( $id ); ?>">
     <div class="container">
         <div class="row justify-content-center">
-            
+            <?php foreach( $post_objects as $post): 
+                $postId = $post->ID;
+                $permalink = get_permalink($postId);
+                $title = get_the_title($postId);
+                $thumbnail_id = get_post_thumbnail_id($postId);
+                $featured_image_url = get_the_post_thumbnail_url($postId, 'full');
+                $alt_text = get_post_meta($thumbnail_id, '_wp_attachment_image_alt', true);
+                $job_title = get_field('job_title', $postId);
+                $summary_of_bio = get_field('summary_of_bio', $postId);
+                $full_bio = get_field('full_bio', $postId);
+                $team_member_email = get_field('team_member_email', $postId);
+                $social_media = get_field('social_media', $postId);
+                ?>
+                <div class="col-12 col-md-6 col-lg-3 featured-post-grid__wrap position-relative pb-10 pb-md-8 pb-lg-0">
+                    <?php if ($featured_image_url) : ?>
+                        <div class="overlay object-fit-cover featured-post-grid__wrap__img">
+                            <img src="<?php echo esc_url( $featured_image_url ); ?>" alt="<?php echo esc_attr( $alt_text ); ?>" class="w-100"/>
+                        </div>
+                    <?php endif; ?>
+                    <?php if ($title) : ?>
+                        <h3>
+                            <?php echo $title; ?>
+                        </h3>
+                    <?php endif; ?>
+                    <?php if ($job_title) : ?>
+                        <div class="text-md-regular text-black">
+                            <?php echo $job_title; ?>
+                        </div>
+                    <?php endif; ?>
+                    <?php if ($summary_of_bio) : ?>
+                        <div class="text-md-regular mt-4 text-steel featured-post-grid__wrap__excerpt">
+                            <?php echo $summary_of_bio; ?>
+                        </div>
+                    <?php endif; ?>
+                    <div class="d-flex">
+                        <a class="button button--blue-underline" href="<?php echo $permalink; ?>" aria-label="Open team member bio page">
+                            Read bio
+                        </a>
+                        <?php if( have_rows('social_media') ): ?>
+                            <div class="d-flex gap-3">
+                                <?php while( have_rows('social_media') ) : the_row(); ?>
+                                    <?php 
+                                    $social_media_icon = get_sub_field('social_media_icon');
+                                    $social_media_url = get_sub_field('social_media_url');
+                                    $social_media_button_label = get_sub_field('social_media_button_label');
+                                    ?>
+                                    
+                                    <?php if ( $social_media_url ) : ?>
+                                        <a class="featured-post-grid__wrap__cta" href="<?php echo esc_attr( $social_media_url ); ?>" target="_blank" rel="noopener" aria-label="<?php echo esc_attr( $social_media_button_label ); ?>">
+                                            <?php if ( $social_media_icon ) : ?>
+                                                <img height="24" width="24" src="<?php echo esc_url($social_media_icon['url']); ?>" alt="<?php echo esc_attr($social_media_icon['alt']); ?>" />
+                                            <?php endif; ?>
+                                        </a>
+                                    <?php endif; ?>
+                                <?php endwhile; ?>
+                            </div>
+                        <?php endif; ?>
+                    </div>
+                </div>
+            <?php endforeach; ?>
         </div>
     </div>
 </section>
