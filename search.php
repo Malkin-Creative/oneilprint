@@ -56,24 +56,24 @@ get_header(); ?>
                                             <?php the_title(); ?>
                                         </h3>
                                         <?php if ($summary_excerpt) : ?>
-                                            <p class="text-md-regular mt-4 text-black text-tertiary search__results__result__excerpt">
+                                            <div class="text-md-regular mt-4 text-black text-tertiary search__results__result__excerpt">
                                                 <?php echo $summary_excerpt; ?>
-                                            </p>
+                                            </div>
                                         <?php endif; ?>
                                         <?php if ($excerpt) : ?>
-                                            <p class="text-md-regular mt-4 text-black text-tertiary search__results__result__excerpt">
+                                            <div class="text-md-regular mt-4 text-black text-tertiary search__results__result__excerpt">
                                                 <?php echo $excerpt; ?>
-                                            </p>
+                                            </div>
                                         <?php endif; ?>
                                         <?php if ($subnav_item_subtitle) : ?>
-                                            <p class="text-md-regular mt-4 text-black text-tertiary search__results__result__excerpt">
+                                            <div class="text-md-regular mt-4 text-black text-tertiary search__results__result__excerpt">
                                                 <?php echo $subnav_item_subtitle; ?>
-                                            </p>
+                                            </div>
                                         <?php endif; ?>
                                         <?php if ($summary_of_bio) : ?>
-                                            <p class="text-md-regular mt-4 text-black text-tertiary search__results__result__excerpt">
+                                            <div class="text-md-regular mt-4 text-black text-tertiary search__results__result__excerpt">
                                                 <?php echo $summary_of_bio; ?>
-                                            </p>
+                                            </div>
                                         <?php endif; ?>
                                         <a href="<?php the_permalink(); ?>" class="button button--steel-underline mt-4">
                                             View Result

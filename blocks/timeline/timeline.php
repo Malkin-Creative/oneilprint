@@ -53,19 +53,19 @@ $padding_bottom_mobile = $padding_bottom / 2;
                 <div class="col-12 p-0 timeline__row__col position-relative background-<?php echo $background_color; echo $imagePosition; ?>">
                     <div class="timeline__row__col__content p-6">
                         <?php if ( $preheader ) : ?>
-                            <h3 class="mb-4 text-blue-ada">
+                            <div class="h3 mb-4 text-blue-ada">
                                 <?php echo $preheader; ?>
-                            </h3>
+                            </div>
                         <?php endif; ?>
                         <?php if ( $header ) : ?>
-                            <h2 class="mb-4 text-black oversized-h3">
+                            <div class="mb-4 text-black oversized-h3">
                                 <?php echo $header; ?>
-                            </h2>
+                            </div>
                         <?php endif; ?>
                         <?php if ( $paragraph ) : ?>
-                            <p class="text-md-regular text-black mb-0">
+                            <div class="text-md-regular text-black mb-0">
                                 <?php echo $paragraph; ?>
-                            </p>
+                            </div>
                         <?php endif; ?>
                     </div>
                     <?php if ( $image ) : ?>

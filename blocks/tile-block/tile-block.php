@@ -78,9 +78,9 @@ if ($background == 'solid') {
                     'style' => $style
                 ]); ?>>
                     <?php if ( $header ) : ?>
-                        <h2 class="tile-block__content__header text-<?php echo $textColor; ?>">
+                        <div class="h2 tile-block__content__header text-<?php echo $textColor; ?>">
                             <?php echo $header; ?>
-                        </h2>
+                        </div>
                     <?php endif; ?>
                     <?php if ( $paragraph ) : ?>
                         <div class="tile-block__content__subheader mb-5 text-xl-regular text-<?php echo $textColor; ?>">
@@ -177,9 +177,9 @@ if ($background == 'solid') {
                             <?php endif; ?>
                             <div>
                                 <?php if ( $header ) : ?>
-                                    <h3 class="mb-2 text-<?php echo $headerColor; ?>">
+                                    <div class="h3 mb-2 text-<?php echo $headerColor; ?>">
                                         <?php echo $header; ?>
-                                    </h3>
+                                    </div>
                                 <?php endif; ?>
                                 <?php if ( $paragraph ) : ?>
                                     <div class="text-md-regular text-<?php echo $paragraph_color; ?>">

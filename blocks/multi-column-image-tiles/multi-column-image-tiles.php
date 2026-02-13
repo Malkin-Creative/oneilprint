@@ -68,9 +68,9 @@ if ($background == 'solid') {
                             <img src="<?php echo esc_url($image['url']); ?>" alt="<?php echo esc_attr($image['alt']); ?>" class="multi-col-img-tiles__content__col__image w-100 object-fit-cover"/>
                         <?php endif; ?>
                         <?php if ( $image_caption ) : ?>
-                            <p class="mt-2 mb-0 text-sm-regular text-<?php echo $captionColor; ?>">
+                            <div class="mt-2 mb-0 text-sm-regular text-<?php echo $captionColor; ?>">
                                 <?php echo $image_caption; ?>
-                            </p>
+                            </div>
                         <?php endif; ?>
                     </div>
                 <?php endwhile; ?>

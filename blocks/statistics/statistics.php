@@ -57,19 +57,19 @@ if ($background_color == 'white') {
                     ?>
                     <div class="col stats__row__col<?php echo $backgroundColor; ?>">
                         <?php if ( $number_character_before || $number || $number_character_after ) : ?>
-                            <h3 class="mb-2 oversized-h3<?php echo $headerColor; ?>">
+                            <div class="mb-2 oversized-h3<?php echo $headerColor; ?>">
                                 <?php echo $number_character_before; ?><?php echo $number; ?><?php echo $number_character_after; ?>
-                            </h3>
+                            </div>
                         <?php endif; ?>
                         <?php if ( $subheader ) : ?>
-                            <h3 class="mb-2<?php echo $headerColor; ?>">
+                            <div class="h3 mb-2<?php echo $headerColor; ?>">
                                 <?php echo $subheader; ?>
-                            </h3>
+                            </div>
                         <?php endif; ?>
                         <?php if ( $paragraph ) : ?>
-                            <p class="text-md-regular<?php echo $textColor; ?>">
+                            <div class="text-md-regular<?php echo $textColor; ?>">
                                 <?php echo $paragraph; ?>
-                            </p>
+                            </div>
                         <?php endif; ?>
                     </div>
                 <?php endwhile; ?>

@@ -193,14 +193,14 @@ if ($cta_column) {
                                 <img src="<?php echo esc_url($icon['url']); ?>" alt="<?php echo esc_attr($icon['alt']); ?>" class="mb-4 multi-col-tiles__content__col__icon"/>
                             <?php endif; ?>
                             <?php if ( $header ) : ?>
-                                <h3 class="mb-2 text-<?php echo $headerColor; ?>">
+                                <div class="h3 mb-2 text-<?php echo $headerColor; ?>">
                                     <?php echo $header; ?>
-                                </h3>
+                                </div>
                             <?php endif; ?>
                             <?php if ( $paragraph ) : ?>
-                                <p class="text-md-regular text-<?php echo $paragraphColor; ?>">
+                                <div class="text-md-regular text-<?php echo $paragraphColor; ?>">
                                     <?php echo $paragraph; ?>
-                                </p>
+                                </div>
                             <?php endif; ?>
                         </div>
                         <div>

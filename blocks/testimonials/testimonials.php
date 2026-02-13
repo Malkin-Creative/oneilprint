@@ -70,9 +70,9 @@ if ($tile_background == 'solid') {
     <div class="row testimonials__row position-relative testimonials--<?php echo $testimonialType; echo $backgroundGraphic; ?>">
         <div class="col-12">
             <?php if ($header) : ?>
-                <h2 class="mb-lg-8 text-steel">
+                <div class="h2 mb-lg-8 text-steel">
                     <?php echo $header; ?>
-                </h2>
+                </div>
             <?php endif; ?>
         </div>
         <?php if($testimonial_type == 'collage'): ?>
@@ -81,19 +81,19 @@ if ($tile_background == 'solid') {
                     <img src="<?php echo esc_url($stars['url']); ?>" alt="<?php echo esc_attr($stars['alt']); ?>" class="mb-4 mb-md-6 mb-lg-10 testimonials__row__stars"/>
                 <?php endif; ?>
                 <?php if ( $testimonial_content ) : ?>
-                    <h3 class="mb-5 text-black oversized-h3">
+                    <div class="mb-5 text-black oversized-h3">
                         <?php echo $testimonial_content; ?>
-                    </h3>
+                    </div>
                 <?php endif; ?>
                 <?php if ( $testimonial_name ) : ?>
-                    <p class="text-lg-medium text-black mb-0">
+                    <div class="text-lg-medium text-black mb-0">
                         <?php echo $testimonial_name; ?>
-                    </p>
+                    </div>
                 <?php endif; ?>
                 <?php if ( $testimonial_title ) : ?>
-                    <p class="text-md-regular text-steel text-tertiary">
+                    <div class="text-md-regular text-steel text-tertiary">
                         <?php echo $testimonial_title; ?>
-                    </p>
+                    </div>
                 <?php endif; ?>
             </div>
             <div class="col-12 col-md-6 testimonials__row--right">
@@ -138,19 +138,19 @@ if ($tile_background == 'solid') {
                             <div class="mb-4 testimonials__row__col__blue-line"></div>
                         <?php endif; ?>
                         <?php if ( $testimonial_content ) : ?>
-                            <h3 class="mb-5 text-black<?php echo $testimonialContentSize; ?>">
+                            <div class="mb-5 text-black<?php echo $testimonialContentSize; ?>">
                                 <?php echo $testimonial_content; ?>
-                            </h3>
+                            </div>
                         <?php endif; ?>
                         <?php if ( $testimonial_name ) : ?>
-                            <p class="text-lg-medium text-black mb-0">
+                            <div class="text-lg-medium text-black mb-0">
                                 <?php echo $testimonial_name; ?>
-                            </p>
+                            </div>
                         <?php endif; ?>
                         <?php if ( $testimonial_title ) : ?>
-                            <p class="text-md-regular text-steel text-tertiary">
+                            <div class="text-md-regular text-steel text-tertiary">
                                 <?php echo $testimonial_title; ?>
-                            </p>
+                            </div>
                         <?php endif; ?>
                     </div>
                 <?php endwhile; ?>

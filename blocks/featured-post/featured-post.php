@@ -134,13 +134,13 @@ $categories = get_the_category($postId);
                     <h2 class="mb-4" style="color: <?php echo $header_color; ?>">
                         Featured <?php echo $type_of_post->labels->singular_name; ?>:
                     </h2>
-                    <h3 class="oversized-h3 mb-4 text-<?php echo $textColor; ?>">
+                    <div class="oversized-h3 mb-4 text-<?php echo $textColor; ?>">
                         <?php echo esc_html($postTitle); ?><?php if ($subtitle) : ?>: <?php echo $subtitle; ?><?php endif; ?>
-                    </h3>
+                    </div>
                     <?php if ($summary_excerpt) : ?>
-                        <p class="text-lg-regular mb-6 mb-md-8 mb-lg-10 text-<?php echo $textColor; ?>">
+                        <div class="text-lg-regular mb-6 mb-md-8 mb-lg-10 text-<?php echo $textColor; ?>">
                             <?php echo $summary_excerpt; ?>
-                        </p>
+                        </div>
                     <?php endif; ?>
                     <a class="button button--<?php echo $button; ?>" href="<?php echo $permalink; ?>" aria-label="Open post">
                         View <?php echo $type_of_post->labels->singular_name; ?>
@@ -197,9 +197,9 @@ $categories = get_the_category($postId);
                             </p>
                         <?php endif; ?>
                         <?php if ($summary_excerpt) : ?>
-                            <p class="text-lg-regular mb-5 text-<?php echo $textColor; ?>">
+                            <div class="text-lg-regular mb-5 text-<?php echo $textColor; ?>">
                                 <?php echo $summary_excerpt; ?>
-                            </p>
+                            </div>
                         <?php endif; ?>
                         <a class="button button--<?php echo $buttonSmall; ?>" href="<?php echo $permalink; ?>" aria-label="Open post">
                             View <?php echo $type_of_post->labels->singular_name; ?>

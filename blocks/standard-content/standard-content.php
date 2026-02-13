@@ -1,6 +1,6 @@
 <?php
 /**
- * Hero block.
+ * Standard Content block.
  *
  * @param array  $block The block settings and attributes.
  * @param string $content The block inner HTML (empty).
@@ -32,6 +32,35 @@ $header = get_field('header');
 $header_of_second_column = get_field('header_of_second_column');
 $paragraph = get_field('paragraph');
 $paragraph_of_second_column = get_field('paragraph_of_second_column');
+$primary_cta = get_field('primary_call_to_action');
+$primary_cta_label = get_field('primary_call_to_action_label');
+if( $primary_cta ): 
+    $primary_link_url = $primary_cta['url'];
+    $primary_link_title = $primary_cta['title'];
+    $primary_link_target = $primary_cta['target'] ? $primary_cta['target'] : '_self';
+endif;
+$anchorScrollPrimary = get_field('anchor_scroll_on_primary_cta');
+
+if ($anchorScrollPrimary == 'anchor-scroll') {
+    $anchor_scroll_primary = ' anchor-scroll';
+} else {
+    $anchor_scroll_primary = '';
+}
+
+$secondary_cta = get_field('secondary_call_to_action');
+$secondary_cta_label = get_field('secondary_call_to_action_label');
+if( $secondary_cta ): 
+    $secondary_link_url = $secondary_cta['url'];
+    $secondary_link_title = $secondary_cta['title'];
+    $secondary_link_target = $secondary_cta['target'] ? $secondary_cta['target'] : '_self';
+endif;
+$anchorScrollSecondary = get_field('anchor_scroll_on_secondary_cta');
+
+if ($anchorScrollSecondary == 'anchor-scroll') {
+    $anchor_scroll_secondary = ' anchor-scroll';
+} else {
+    $anchor_scroll_secondary = '';
+}
 
 if ($text_alignment == 'left') {
     $textAlignment = '';
@@ -60,15 +89,23 @@ if ($header_size == 'small') {
 if ($background_color == 'white') {
     $backgroundColor = ' background-white';
     $textColor = 'black';
+    $buttonPrimary = 'primary';
+    $buttonSecondary = 'secondary';
 } elseif ($background_color == 'light-silver') {
     $backgroundColor = ' background-light-silver';
     $textColor = 'black';
+    $buttonPrimary = 'primary';
+    $buttonSecondary = 'secondary';
 } elseif ($background_color == 'blue') {
     $backgroundColor = ' background-blue-ada';
     $textColor = 'white';
+    $buttonPrimary = 'white';
+    $buttonSecondary = 'white-border';
 } else {
     $backgroundColor = ' background-navy';
     $textColor = 'white';
+    $buttonPrimary = 'white';
+    $buttonSecondary = 'white-border';
 }
 ?>
 
@@ -141,6 +178,21 @@ if ($background_color == 'white') {
                             <?php endif; ?>
                         </div>
                     <?php endif; ?>
+                <?php endif; ?>
+
+                <?php if ( $primary_cta || $secondary_cta ) : ?>
+                    <div class="mt-6 d-flex justify-content-center align-items-center standard-content__wrap__buttons">
+                        <?php if ( $primary_cta ) : ?>
+                            <a class="button button--<?php echo $buttonPrimary; ?><?php echo $anchor_scroll_primary; ?>" href="<?php echo esc_url( $primary_link_url ); ?>" target="<?php echo esc_attr( $primary_link_target ); ?>" rel="noopener" aria-label="<?php echo esc_attr( $primary_cta_label ); ?>">
+                                <?php echo esc_html( $primary_link_title ); ?>
+                            </a>
+                        <?php endif; ?>
+                        <?php if ( $secondary_cta ) : ?>
+                            <a class="button button--<?php echo $buttonSecondary; ?><?php echo $anchor_scroll_secondary; ?>" href="<?php echo esc_url( $secondary_link_url ); ?>" target="<?php echo esc_attr( $secondary_link_target ); ?>" rel="noopener" aria-label="<?php echo esc_attr( $secondary_cta_label ); ?>">
+                                <?php echo esc_html( $secondary_link_title ); ?>
+                            </a>
+                        <?php endif; ?>
+                    </div>
                 <?php endif; ?>
             </div>
         </div>

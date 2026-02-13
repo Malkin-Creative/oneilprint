@@ -77,14 +77,14 @@ if ($typeOfPost == 'case-study') {
         <div class="row">
             <div class="col-12 mb-6 mb-md-8 mb-lg-10">
                 <?php if ($header) : ?>
-                    <h2 class="featured-post-grid__header oversized-h2 mb-4<?php echo $textPosition; ?>">
+                    <div class="featured-post-grid__header oversized-h2 mb-4<?php echo $textPosition; ?>">
                         <?php echo $header; ?>
-                    </h2>
+                    </div>
                 <?php endif; ?>
                 <?php if ($subheader) : ?>
-                    <p class="h4 text-tertiary text-steel<?php echo $textPosition; ?>">
+                    <div class="h4 text-tertiary text-steel<?php echo $textPosition; ?>">
                         <?php echo $subheader; ?>
-                    </p>
+                    </div>
                 <?php endif; ?>
             </div>
         </div>
@@ -137,9 +137,9 @@ if ($typeOfPost == 'case-study') {
                         </p>
                     <?php endif; ?>
                     <?php if ($summary_excerpt) : ?>
-                        <p class="text-md-regular mt-4 text-black text-tertiary featured-post-grid__wrap__excerpt">
+                        <div class="text-md-regular mt-4 text-black text-tertiary featured-post-grid__wrap__excerpt">
                             <?php echo $summary_excerpt; ?>
-                        </p>
+                        </div>
                     <?php endif; ?>
                     <?php if ($excerpt) : ?>
                         <p class="text-md-regular mt-4 text-black text-tertiary featured-post-grid__wrap__excerpt">

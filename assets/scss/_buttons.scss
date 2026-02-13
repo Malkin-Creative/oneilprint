@@ -62,7 +62,7 @@
         border-radius: $radius-xs;
 
         &:hover {
-            color: $steel !important;
+            color: $white !important;
             background: $navy !important;
             border: 1px solid $steel !important; 
         }
@@ -72,7 +72,7 @@
             outline-style: solid;
             box-shadow: 0 0 0 3px $white, 0 0 0 4px $silver;
             border-radius: $radius-xs;
-            color: $black !important;
+            color: $white !important;
             background: $white !important;
             border: 1px solid $white !important; 
         }

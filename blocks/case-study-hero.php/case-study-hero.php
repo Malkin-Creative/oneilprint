@@ -19,9 +19,9 @@ $services = get_the_terms(get_the_ID(), 'services');
                 </h1>
             <?php endif; ?>
             <?php if ( $subtitle ) : ?>
-                <span class="text-steel mb-0 h3">
+                <div class="text-steel mb-0 h3">
                     <?php echo $subtitle; ?>
-                </span>
+                </div>
             <?php endif; ?>
             <?php if ( $featured_image_url ) : ?>
                 <img src="<?php echo esc_url( $featured_image_url ); ?>" alt="<?php echo esc_attr( $alt_text ); ?>" class="w-100 mt-6 mt-md-8 mt-lg-10 position-relative"/>

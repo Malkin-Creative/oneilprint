@@ -89,9 +89,9 @@ if ($tile_background == 'solid') {
         <div class="row">
             <div class="col-12 col-lg-6 mx-auto split-content__wrap">
                 <?php if ($header) : ?>
-                    <h2 class="mb-2 split-content__wrap__header text-<?php echo $textColor; ?>">
+                    <div class="h2 mb-2 split-content__wrap__header text-<?php echo $textColor; ?>">
                         <?php echo $header; ?>
-                    </h2>
+                    </div>
                 <?php endif; ?>
                 <?php if ($paragraph) : ?>
                     <div class="text-xl-regular mb-0 text-<?php echo $textColor; ?>">

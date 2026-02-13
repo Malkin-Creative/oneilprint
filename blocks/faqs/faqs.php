@@ -53,9 +53,9 @@ if ($background_color == 'white') {
         <div class="row">
             <div class="col-12">
                 <?php if ( $header ) : ?>
-                    <h2 class="faqs__header oversized-h2 mb-6 mb-md-8 mb-lg-10 text-<?php echo $headerColor; ?>">
+                    <div class="faqs__header oversized-h2 mb-6 mb-md-8 mb-lg-10 text-<?php echo $headerColor; ?>">
                         <?php echo $header; ?>
-                    </h2>
+                    </div>
                 <?php endif; ?>
             </div>
         </div>
@@ -67,14 +67,14 @@ if ($background_color == 'white') {
                 <?php if ( $question && $answer ) : ?>
                     <div class="row py-5 mb-5 mb-md-8 mb-lg-10 faqs__wrap<?php echo $borderColor; ?>">
                         <div class="col-12 col-md-6 col-lg-4">
-                            <h3 class="text-<?php echo $questionColor; ?>">
+                            <div class="h3 text-<?php echo $questionColor; ?>">
                                 <?php echo $header; ?>
-                            </h3>
+                            </div>
                         </div>
                         <div class="col-12 col-md-6 col-lg-8 pl-md-6 pl-lg-18">
-                            <p class="text-lg-regular text-<?php echo $answerColor; ?>">
+                            <div class="text-lg-regular text-<?php echo $answerColor; ?>">
                                 <?php echo $answer; ?>
-                            </p>
+                            </div>
                         </div>
                     </div>
                 <?php endif; ?>

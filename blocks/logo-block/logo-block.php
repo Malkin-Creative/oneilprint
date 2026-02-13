@@ -38,9 +38,9 @@ $header = get_field('header');
         <div class="row">
             <div class="col-12">
                 <?php if ($header) : ?>
-                    <h2 class="mb-8 mb-md-14 text-steel text-center">
+                    <div class="h2 mb-8 mb-md-14 text-steel text-center">
                         <?php echo $header; ?>
-                    </h2>
+                    </div>
                 <?php endif; ?>
             </div>
         </div>

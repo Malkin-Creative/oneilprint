@@ -104,9 +104,9 @@ if ($background == 'solid') {
                     </h3>
                 <?php endif; ?>
                 <?php if ($paragraph) : ?>
-                    <p class="text-black text-xl-regular mt-4 mt-md-5">
+                    <div class="text-black text-xl-regular mt-4 mt-md-5">
                         <?php echo $paragraph; ?>
-                    </p>
+                    </div>
                 <?php endif; ?>
                 <?php if ( $primary_cta || $secondary_cta ) : ?>
                     <div class="mt-4 mt-md-5 d-flex hero-collage__container__content__wrap__buttons">

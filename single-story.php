@@ -176,9 +176,9 @@ if ($related_query->have_posts()) : ?>
                             </p>
                         <?php endif; ?>
                         <?php if ($summary_excerpt) : ?>
-                            <p class="text-md-regular mt-4 text-black text-tertiary featured-post-grid__wrap__excerpt">
+                            <div class="text-md-regular mt-4 text-black text-tertiary featured-post-grid__wrap__excerpt">
                                 <?php echo $summary_excerpt; ?>
-                            </p>
+                            </div>
                         <?php endif; ?>
                         <a class="button button--steel-underline" href="<?php echo $permalink; ?>" aria-label="Open post">
                             Read Story

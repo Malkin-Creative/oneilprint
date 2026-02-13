@@ -64,14 +64,14 @@ if ($block_alignment == 'left') {
         <div class="row">
             <div class="col-12 d-flex flex-column">
                 <?php if ($header) : ?>
-                    <h2 class="mb-2 mb-md-3 text-black<?php echo $textPosition; ?>">
+                    <div class="h2 mb-2 mb-md-3 text-black<?php echo $textPosition; ?>">
                         <?php echo $header; ?>
-                    </h2>
+                    </div>
                 <?php endif; ?>
                 <?php if ($subheader) : ?>
-                    <p class="mb-5 text-lg-regular text-black<?php echo $textPosition; ?>">
+                    <div class="mb-5 text-lg-regular text-black<?php echo $textPosition; ?>">
                         <?php echo $subheader; ?>
-                    </p>
+                    </div>
                 <?php endif; ?>
                 <?php if ($iframe_embed) : ?>
                     <div class="mb-5">
@@ -79,9 +79,9 @@ if ($block_alignment == 'left') {
                     </div>
                 <?php endif; ?>
                 <?php if ($paragraph) : ?>
-                    <p class="mb-5 text-md-regular text-steel<?php echo $textPosition; ?>">
+                    <div class="mb-5 text-md-regular text-steel<?php echo $textPosition; ?>">
                         <?php echo $paragraph; ?>
-                    </p>
+                    </div>
                 <?php endif; ?>
                 <?php if ( $link ) : ?>
                     <div class="d-flex<?php echo $buttonPosition; ?>">

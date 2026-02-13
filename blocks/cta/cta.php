@@ -146,14 +146,14 @@ if ($tile_background == 'solid') {
             <?php endif; ?>
             <div class="col-12 col-md-10 col-lg-7 py-8 px-6 py-md-8 py-lg-10 px-md-10 px-lg-12 cta__content__wrap">
                 <?php if ( $header ) : ?>
-                    <h2 class="text-left text-md-center px-lg-6 mb-2 text-<?php echo $textColor; ?>">
+                    <div class="h2 text-left text-md-center px-lg-6 mb-2 text-<?php echo $textColor; ?>">
                         <?php echo $header; ?>
-                    </h2>
+                    </div>
                 <?php endif; ?>
                 <?php if ( $paragraph ) : ?>
-                    <p class="h3 text-left text-md-center text-<?php echo $textColor; ?>">
+                    <div class="h3 text-left text-md-center text-<?php echo $textColor; ?>">
                         <?php echo $paragraph; ?>
-                    </p>
+                    </div>
                 <?php endif; ?>
                 <?php if ( $primary_cta || $secondary_cta ) : ?>
                     <div class="mt-6 d-flex justify-content-center align-items-center cta__content__wrap__buttons">

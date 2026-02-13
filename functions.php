@@ -229,7 +229,8 @@ function my_allowed_block_types($allowed_blocks, $block_editor_context) {
 function register_my_theme_menus() {
   register_nav_menus(
     array(
-      'top-main-menu' => __( 'Top Main Menu', 'your-theme-slug' )
+      'top-main-menu' => __( 'Top Main Menu', 'oneilprint' ),
+      'mobile-menu' => __( 'Mobile Menu', 'oneilprint' )
     )
   );
 }
@@ -317,53 +318,6 @@ function enqueue_admin_scripts_and_styles() {
 wp_localize_script( 'admin-scripts', 'passed_data', array( 'templateUrl' => get_stylesheet_directory_uri() ) );
 }
 add_action('admin_enqueue_scripts', 'enqueue_admin_scripts_and_styles');
-
-// Walker main menus for ADA compliance
-// class ADA_Compliant_Walker_Nav_Menu extends Walker_Nav_Menu {
-//   // Start level (sub-menu)
-//   function start_lvl( &$output, $depth = 0, $args = array() ) {
-//     if ( $depth > 0 ) return; // Prevent >1 level dropdowns
-
-//     $indent = str_repeat("\t", $depth);
-//     $output .= "\n$indent<ul role=\"menu\" class=\"sub-menu\" id=\"\" aria-labelledby=\"Submenu\">\n";
-//   }
-
-//   // End level
-//   function end_lvl( &$output, $depth = 0, $args = array() ) {
-//     if ( $depth > 0 ) return;
-//     $indent = str_repeat("\t", $depth);
-//     $output .= "$indent</ul>\n";
-//   }
-
-//   // Start element (menu item)
-//   function start_el( &$output, $item, $depth = 0, $args = array(), $id = 0 ) {
-//     $indent = ( $depth ) ? str_repeat("\t", $depth) : '';
-//     $classes = empty( $item->classes ) ? array() : (array) $item->classes;
-
-//     $has_children = in_array('menu-item-has-children', $classes);
-
-//     $class_names = join(' ', array_filter($classes));
-//     $class_names = $class_names ? ' class="' . esc_attr($class_names) . '"' : '';
-
-//     $output .= $indent . '<li' . $class_names . '>';
-
-//     $attributes  = ' class="menu-link text-steel text-xs-medium"';
-//     $attributes .= ' href="' . esc_attr($item->url) . '"';
-
-//     if ( $has_children && $depth === 0 ) {
-//       $attributes .= ' aria-controls="Submenu" aria-expanded="false"';
-//     }
-
-//     $title = apply_filters('the_title', $item->title, $item->ID);
-//     $output .= '<a' . $attributes . '>' . $title . '</a>';
-//   }
-
-//   // End element
-//   function end_el( &$output, $item, $depth = 0, $args = array() ) {
-//     $output .= "</li>\n";
-//   }
-
-// }
 
 // Custom nav walker
 class ADA_Menu_Walker extends Walker_Nav_Menu {
@@ -496,3 +450,9 @@ class ADA_Menu_Walker extends Walker_Nav_Menu {
     }
   }
 }
+
+// Add styles to editor
+add_action('after_setup_theme', function() {
+    add_editor_style('assets/scss/_editor.css');
+});
+

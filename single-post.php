@@ -45,9 +45,9 @@ $topic = get_the_terms(get_the_ID(), 'topic');
                 </h1>
             <?php endif; ?>
             <?php if ( $subtitle ) : ?>
-                <span class="single-story__row__excerpt text-steel mb-0 h3">
+                <div class="single-story__row__excerpt text-steel mb-0 h3">
                     <?php echo $subtitle; ?>
-                </span>
+                </div>
             <?php endif; ?>
         </div>
     </div>

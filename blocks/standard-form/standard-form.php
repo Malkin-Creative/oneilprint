@@ -62,9 +62,9 @@ if ($background == 'solid') {
                 'style' => $style
             ]); ?>>
                 <?php if ( $header ) : ?>
-                    <h2 class="standard-form__content__header text-<?php echo $textColor; ?>">
+                    <div class="h2 standard-form__content__header text-<?php echo $textColor; ?>">
                         <?php echo $header; ?>
-                    </h2>
+                    </div>
                 <?php endif; ?>
                 <?php if ( $subheader ) : ?>
                     <div class="standard-form__content__subheader text-xl-regular text-<?php echo $textColor; ?>">

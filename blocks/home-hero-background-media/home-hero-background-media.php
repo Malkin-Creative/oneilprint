@@ -92,9 +92,9 @@ if ($anchorScrollSecondary == 'anchor-scroll') {
                     </div>
                 <?php endif; ?>
                 <?php if ($subheader) : ?>
-                    <h3 class="text-steel mb-0">
+                    <div class="h3 text-steel mb-0">
                         <?php echo $subheader; ?>
-                    </h3>
+                    </div>
                 <?php endif; ?>
                 <?php if ( $primary_cta || $secondary_cta ) : ?>
                     <div class="mt-4 mt-md-6 d-flex hero-bg-media__content__wrap__buttons">

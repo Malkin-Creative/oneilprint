@@ -73,15 +73,15 @@ body {
 @media (min-width: 1200px) {
     .container, .container-sm, .container-md {
         max-width: 1400px;
-        padding-right: 20px;
-        padding-left: 20px;
+        padding-right: 40px;
+        padding-left: 40px;
     }
 }
 @media (min-width: 1400px) {
     .container, .container-sm, .container-md {
         max-width: 1600px;
-        padding-right: 20px;
-        padding-left: 20px;
+        padding-right: 60px;
+        padding-left: 60px;
     }
 }
 

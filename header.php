@@ -166,7 +166,7 @@ defined('ABSPATH') || exit;
         </div>
         <div class="col-6 d-flex align-items-center justify-content-end d-lg-none header__mobile">
           <nav>
-            <button class="navbar-toggler custom-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#primary-menu"  aria-controls="primary-menu" aria-expanded="false" aria-label="Toggle navigation">
+            <button class="navbar-toggler custom-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#primary-menu" aria-controls="primary-menu" aria-expanded="false" aria-label="Toggle navigation">
               <span class="toggler-icon"></span>
               <span class="toggler-icon"></span>
               <span class="toggler-icon"></span>
@@ -177,8 +177,9 @@ defined('ABSPATH') || exit;
           <div class="mobile-menu-inner">
             <?php
             wp_nav_menu([
-              'theme_location' => 'main-menu',
+              'theme_location' => 'mobile-menu',
               'container'      => false,
+              'walker'         => new ADA_Menu_Walker(),
               'menu_class'     => 'mobile-menu',
               'fallback_cb'    => false
             ]);

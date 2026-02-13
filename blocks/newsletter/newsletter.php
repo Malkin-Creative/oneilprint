@@ -41,14 +41,14 @@ $form_selector = get_field('form_selector');
         <div class="row">
             <div class="col-12 col-lg-3 mb-4 mb-md-0">
                 <?php if ( $header ) : ?>
-                    <h2 class="text-blue-ada text-xl-medium mb-0">
+                    <div class="text-blue-ada text-xl-medium mb-0">
                         <?php echo $header; ?>
-                    </h2>
+                    </div>
                 <?php endif; ?>
                 <?php if ( $subheader ) : ?>
-                    <p class="text-md-regular text-black mb-0">
+                    <div class="text-md-regular text-black mb-0">
                         <?php echo $subheader; ?>
-                    </p>
+                    </div>
                 <?php endif; ?>
             </div>
             <div class="col-12 col-lg-9 newsletter__form">

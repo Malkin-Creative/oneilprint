@@ -154,14 +154,14 @@ if ($overlay == 'solid') {
                     </div>
                 <?php endif; ?>
                 <?php if ( $subheader ) : ?>
-                    <h3 class="mb-5 text-<?php echo $subheaderColor; ?><?php echo $textAlignment; ?>">
+                    <div class="h3 mb-5 text-<?php echo $subheaderColor; ?><?php echo $textAlignment; ?>">
                         <?php echo $subheader; ?>
-                    </h3>
+                    </div>
                 <?php endif; ?>
                 <?php if ( $paragraph ) : ?>
-                    <p class="h4 mb-0 text-<?php echo $textColor; ?><?php echo $textAlignment; ?>">
+                    <div class="h4 mb-0 text-<?php echo $textColor; ?><?php echo $textAlignment; ?>">
                         <?php echo $paragraph; ?>
-                    </p>
+                    </div>
                 <?php endif; ?>
                 <?php if ( $primary_cta || $secondary_cta ) : ?>
                     <div class="mt-6 hero-default__content__wrap__buttons d-flex<?php echo $containerAlignment; ?>">
