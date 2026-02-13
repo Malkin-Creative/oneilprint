@@ -190,6 +190,7 @@ $allowed_blocks = [
   'acf/timeline',
   'acf/video',
   'acf/case-study-hero',
+  'acf/team-member-block',
 ];
 
 add_filter('allowed_block_types_all', 'my_allowed_block_types', 10, 2);
@@ -222,6 +223,7 @@ function my_allowed_block_types($allowed_blocks, $block_editor_context) {
     'acf/timeline',
     'acf/video',
     'acf/case-study-hero',
+    'acf/team-member-block',
   ];
 }
 

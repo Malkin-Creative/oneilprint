@@ -30,7 +30,7 @@ $company = get_the_terms(get_the_ID(), 'company');
 $location = get_the_terms(get_the_ID(), 'location');
 ?>
 
-<section class="single-story container position-relative">
+<section class="single-story container position-relative pb-10 pb-md-12 pb-lg-15">
     <div class="row single-story__row py-4 justify-content-center">
         <div class="col-12 col-md-8">
             <?php if ( $title ) : ?>
@@ -61,13 +61,13 @@ $location = get_the_terms(get_the_ID(), 'location');
         </div>
     </div>
 </section>
-<section class="dividers position-relative icon py-10 py-md-12 py-lg-15">
+<section class="dividers position-relative icon pb-10 pb-md-12 pb-lg-15">
     <div class="dividers__icon">
     </div>
 </section>
 <div class="container p-0">
     <div class="row p-0">
-        <div class="col-12 col-md-10 p-0">
+        <div class="col-12 col-md-10 p-0 mx-auto">
             <?php the_content(); ?>
         </div>
     </div>

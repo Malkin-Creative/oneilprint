@@ -1,0 +1,19 @@
+{
+  "apiVersion": 2,
+  "name": "acf/team-member-block",
+  "title": "Team Member Block",
+  "category": "text",
+  "icon": "grid-view",
+  "description": "",
+  "editorStyle": "file:../../assets/css/editornew.css",
+  "acf": {
+    "mode": "preview",
+    "renderTemplate": "team-member-block.php"
+  },
+  "attributes": {
+    "previewImage": {
+        "type": "string",
+        "default": "/wp-content/uploads/2026/02/Screenshot-2026-02-13-at-11.59.44-AM.png"
+    }
+  }
+}

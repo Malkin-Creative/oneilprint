@@ -60,7 +60,7 @@ if ($typeOfPost == 'case-study') {
     $post_objects = $featured_case_studies;
 } elseif ($typeOfPost == 'story') {
     $post_objects = $featured_stories;
-} else {
+} elseif ($typeOfPost == 'post') {
     $post_objects = $featured_posts;
 }
 ?>
@@ -147,7 +147,7 @@ if ($typeOfPost == 'case-study') {
                         </p>
                     <?php endif; ?>
                     <a class="button button--steel-underline" href="<?php echo $permalink; ?>" aria-label="Open post">
-                        Read <?php echo $type_of_post->labels->singular_name; ?>
+                        Read <?php echo $type_of_post->labels->singular_name; endif; ?>
                     </a>
                 </div>
             <?php endforeach; ?>
