@@ -162,7 +162,7 @@ if ($background == 'solid') {
                                     <?php if ( $tile_background_image ) : ?>
                                         <img src="<?php echo esc_url($tile_background_image['url']); ?>" alt="<?php echo esc_attr($tile_background_image['alt']); ?>" class="w-100 h-100"/>
                                     <?php endif; ?>
-                                    <div class="tile-block__bg-img__overlay h-100 w-100 overlay"<?php if ($tile_background == 'image') : ?> style="background: <?php echo $overlayColor; ?>;"<?php endif; ?>></div>
+                                    <div class="tile-block__bg-img__overlay h-100 w-100 overlay"<?php if ($tile_background_overlay_color) : ?> style="background: <?php echo $overlayColor; ?>;"<?php endif; ?>></div>
                                 </div>
                             <?php endif; ?>
                             <?php if ($tile_background == 'video') : ?>
@@ -172,7 +172,7 @@ if ($background == 'solid') {
                                             <source src="<?php echo $tile_background_video; ?>" type="video/mp4">
                                         </video>
                                     <?php endif; ?>
-                                    <div class="tile-block__bg-video__overlay h-100 w-100 overlay"<?php if ($tile_background == 'video') : ?> style="background: <?php echo $overlayColor; ?>;"<?php endif; ?>></div>
+                                    <div class="tile-block__bg-video__overlay h-100 w-100 overlay"<?php if ($tile_background_overlay_color) : ?> style="background: <?php echo $overlayColor; ?>;"<?php endif; ?>></div>
                                 </div>
                             <?php endif; ?>
                             <div>
@@ -182,9 +182,9 @@ if ($background == 'solid') {
                                     </h3>
                                 <?php endif; ?>
                                 <?php if ( $paragraph ) : ?>
-                                    <p class="text-md-regular text-<?php echo $paragraph_color; ?>">
+                                    <div class="text-md-regular text-<?php echo $paragraph_color; ?>">
                                         <?php echo $paragraph; ?>
-                                    </p>
+                                    </div>
                                 <?php endif; ?>
                             </div>
                             <div>

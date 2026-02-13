@@ -235,55 +235,6 @@ function register_my_theme_menus() {
 }
 add_action( 'init', 'register_my_theme_menus' );
 
-// Walker main menus for ADA compliance
-class ADA_Compliant_Walker_Nav_Menu extends Walker_Nav_Menu {
-  // Start level (sub-menu)
-  function start_lvl( &$output, $depth = 0, $args = array() ) {
-    if ( $depth > 0 ) return; // Prevent >1 level dropdowns
-
-    $indent = str_repeat("\t", $depth);
-    $output .= "\n$indent<ul role=\"menu\" class=\"sub-menu\" aria-label=\"Submenu\">\n";
-  }
-
-  // End level
-  function end_lvl( &$output, $depth = 0, $args = array() ) {
-    if ( $depth > 0 ) return;
-    $indent = str_repeat("\t", $depth);
-    $output .= "$indent</ul>\n";
-  }
-
-  // Start element (menu item)
-  function start_el( &$output, $item, $depth = 0, $args = array(), $id = 0 ) {
-    $indent = ( $depth ) ? str_repeat("\t", $depth) : '';
-    $classes = empty( $item->classes ) ? array() : (array) $item->classes;
-
-    $has_children = in_array('menu-item-has-children', $classes);
-
-    $class_names = join(' ', array_filter($classes));
-    $class_names = $class_names ? ' class="' . esc_attr($class_names) . '"' : '';
-
-    $output .= $indent . '<li' . $class_names . ' role="none">';
-
-    $attributes  = ' class="menu-link text-steel text-xs-medium"';
-    $attributes .= ' role="menuitem"';
-    $attributes .= ' tabindex="0"';
-    $attributes .= ' href="' . esc_attr($item->url) . '"';
-
-    if ( $has_children && $depth === 0 ) {
-      $attributes .= ' aria-haspopup="true" aria-expanded="false"';
-    }
-
-    $title = apply_filters('the_title', $item->title, $item->ID);
-    $output .= '<a' . $attributes . '>' . $title . '</a>';
-  }
-
-  // End element
-  function end_el( &$output, $item, $depth = 0, $args = array() ) {
-    $output .= "</li>\n";
-  }
-
-}
-
 // Format Phone Number 
 function format_phone_dots($phone) {
   // Remove all non-numeric characters
@@ -366,3 +317,182 @@ function enqueue_admin_scripts_and_styles() {
 wp_localize_script( 'admin-scripts', 'passed_data', array( 'templateUrl' => get_stylesheet_directory_uri() ) );
 }
 add_action('admin_enqueue_scripts', 'enqueue_admin_scripts_and_styles');
+
+// Walker main menus for ADA compliance
+// class ADA_Compliant_Walker_Nav_Menu extends Walker_Nav_Menu {
+//   // Start level (sub-menu)
+//   function start_lvl( &$output, $depth = 0, $args = array() ) {
+//     if ( $depth > 0 ) return; // Prevent >1 level dropdowns
+
+//     $indent = str_repeat("\t", $depth);
+//     $output .= "\n$indent<ul role=\"menu\" class=\"sub-menu\" id=\"\" aria-labelledby=\"Submenu\">\n";
+//   }
+
+//   // End level
+//   function end_lvl( &$output, $depth = 0, $args = array() ) {
+//     if ( $depth > 0 ) return;
+//     $indent = str_repeat("\t", $depth);
+//     $output .= "$indent</ul>\n";
+//   }
+
+//   // Start element (menu item)
+//   function start_el( &$output, $item, $depth = 0, $args = array(), $id = 0 ) {
+//     $indent = ( $depth ) ? str_repeat("\t", $depth) : '';
+//     $classes = empty( $item->classes ) ? array() : (array) $item->classes;
+
+//     $has_children = in_array('menu-item-has-children', $classes);
+
+//     $class_names = join(' ', array_filter($classes));
+//     $class_names = $class_names ? ' class="' . esc_attr($class_names) . '"' : '';
+
+//     $output .= $indent . '<li' . $class_names . '>';
+
+//     $attributes  = ' class="menu-link text-steel text-xs-medium"';
+//     $attributes .= ' href="' . esc_attr($item->url) . '"';
+
+//     if ( $has_children && $depth === 0 ) {
+//       $attributes .= ' aria-controls="Submenu" aria-expanded="false"';
+//     }
+
+//     $title = apply_filters('the_title', $item->title, $item->ID);
+//     $output .= '<a' . $attributes . '>' . $title . '</a>';
+//   }
+
+//   // End element
+//   function end_el( &$output, $item, $depth = 0, $args = array() ) {
+//     $output .= "</li>\n";
+//   }
+
+// }
+
+// Custom nav walker
+class ADA_Menu_Walker extends Walker_Nav_Menu {
+
+  private string $label_id = '';
+  private string $panel_id = '';
+  private string $footer_items = '';
+
+  private function make_id($string) {
+    $string = strtolower(trim($string));
+    $string = preg_replace('/[^a-z0-9\-_]+/', '-', $string);
+    return trim($string, '-');
+  }
+
+  public function start_lvl(&$output, $depth = 0, $args = null) {
+    if ($depth === 0) {
+      $output .= "\n<div id=\"{$this->panel_id}\" role=\"region\" class=\"sub-menu\" aria-labelledby=\"{$this->label_id}\">\n";
+      $output .= "  <button type=\"button\" class=\"close-button\" aria-label=\"Close submenu\">\n";
+      $output .= "    <span aria-hidden=\"true\">×</span>\n";
+      $output .= "    <span class=\"sr-only\">Close menu</span>\n";
+      $output .= "  </button>\n";
+      $output .= "  <div class=\"mega-menu__grid\">\n";
+    }
+  }
+
+  public function end_lvl(&$output, $depth = 0, $args = null) {
+    if ($depth === 0) {
+
+      $output .= "  </div>";
+
+      if (!empty($this->footer_items)) {
+        $output .= "<div class=\"mega-menu__footer\">";
+        $output .= $this->footer_items;
+        $output .= "</div>";
+        $this->footer_items = '';
+      }
+
+      $output .= "\n</div>\n";
+    }
+  }
+
+  public function start_el(&$output, $item, $depth = 0, $args = null, $id = 0) {
+
+    $has_children = in_array('menu-item-has-children', (array) $item->classes, true);
+    $target = $item->target ? ' target="_blank" rel="noopener"' : '';
+    $url    = esc_url($item->url);
+    $title  = esc_html($item->title);
+
+    // LEVEL 0 (top nav)
+    if ($depth === 0) {
+
+      $slug = $this->make_id($title ?: $item->ID);
+      $this->label_id = $slug . '-label';
+      $this->panel_id = $slug . '-menu';
+      $mega_menu    = get_field('mega_menu', $item);
+
+      if ($mega_menu) {
+        $megaMenu = ' mega-menu-dropdown';
+      } else {
+        $megaMenu = ' normal-menu-dropdown';
+      }
+
+      // Build proper WP classes
+      $classes = array_filter((array) $item->classes);
+      $classes[] = 'menu-item';
+
+      $class_attr = esc_attr(implode(' ', $classes));
+
+      $output .= "<li class=\"{$class_attr}{$megaMenu}\">";
+      $output .= "<a href=\"{$url}\" id=\"{$this->label_id}\" class=\"top-link\"{$target}>{$title}</a>";
+
+      if ($has_children) {
+        $output .= "<button type=\"button\" class=\"toggle-button\" aria-expanded=\"false\" aria-controls=\"{$this->panel_id}\">";
+        $output .= "  <span aria-hidden=\"true\"></span>";
+        $output .= "  <span class=\"sr-only\">{$title} submenu</span>";
+        $output .= "</button>";
+      }
+    }
+
+    // LEVEL 1 (tiles)
+    if ($depth === 1) {
+
+      $icon     = get_field('icon', $item);
+      $subtitle = get_field('subtitle', $item);
+      $badge    = get_field('badge', $item);
+      $full_btn = get_field('full_width_button', $item);
+
+      $html = '';
+
+      $classes = 'mega-menu__item d-flex align-items-center';
+      $classesTitle = 'mega-menu__title text-md-bold d-flex align-items-center';
+
+      if ($full_btn) {
+        $classes .= ' button button--white-underline';
+        $classesTitle = '';
+      }
+
+      $html .= "<a href=\"{$url}\" class=\"{$classes}\" role=\"menuitem\"{$target}>";
+
+      if ($icon) {
+        $html .= "<div class=\"mega-menu__icon\"><img src=\"{$icon['url']}\" alt=\"\" /></div>";
+      }
+
+      $html .= "<div class=\"mega-menu__text\">";
+      $html .= "<div class=\"{$classesTitle}\">{$title}";
+
+      if ($badge) {
+        $html .= "<span class=\"mega-menu__badge d-flex\"><img src=\"{$badge['url']}\" alt=\"\" /></span>";
+      }
+
+      $html .= "</div>";
+
+      if ($subtitle) {
+        $html .= "<div class=\"mega-menu__subtitle text-sm-regular text-tertiary text-steel mt-1\">{$subtitle}</div>";
+      }
+
+      $html .= "</div></a>\n";
+
+      if ($full_btn) {
+        $this->footer_items .= $html;
+      } else {
+        $output .= $html;
+      }
+    }
+  }
+
+  public function end_el(&$output, $item, $depth = 0, $args = null) {
+    if ($depth === 0) {
+      $output .= "</li>\n";
+    }
+  }
+}

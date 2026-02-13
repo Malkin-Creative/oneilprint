@@ -1,0 +1,43 @@
+.search {
+    &__title {
+        color: $blue-ada !important;
+    }
+    &__results {
+        &__result {
+            border-bottom: 1px solid $silver;
+
+            &__col {
+                gap: 40px;
+            }
+
+            img {
+                border-radius: $radius-md;
+                min-height: 240px;
+                max-height: 240px;
+                max-width: 400px;
+            }
+
+            &__excerpt {
+                overflow: hidden;
+                display: -webkit-box;
+                -webkit-line-clamp: 3;
+                -webkit-box-orient: vertical;
+            }
+        }
+    }
+}
+
+@media (max-width: 767px) {
+    .search {
+        &__results {
+            &__result {
+                img {
+                    max-width: inherit;
+                }
+                &__col {
+                    gap: 20px;
+                }
+            }
+        }
+    }
+}

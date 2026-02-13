@@ -40,37 +40,91 @@ jQuery(function ($) {
     });
 
     // Toggle Search bar
-    $('#searchinput').on('click', function() {
-        const $parent = $(this).closest('form');
-        const isExpanded = $parent.hasClass('active-search');
-        const $otherInput = $('#searchinput').siblings('input[type="submit"]').first();
+    // $('#searchinput').on('click', function() {
+    //     const $parent = $(this).closest('form');
+    //     const isExpanded = $parent.hasClass('active-search');
+    //     const $otherInput = $('#searchinput').siblings('input[type="submit"]').first();
 
-        if (isExpanded === false) {
-            $parent.addClass('active-search');
-            $parent.attr('aria-expanded', 'true');
-            $('#searchinput').attr('placeholder', 'Keyword');
+    //     if (isExpanded === false) {
+    //         $parent.addClass('active-search');
+    //         $parent.attr('aria-expanded', 'true');
+    //         $('#searchinput').attr('placeholder', 'Keyword');
+    //     }
+
+    //     // Toggle value between "Search" and ""
+    //     if ($otherInput.val() === '') {
+    //         $otherInput.val('Search');
+    //     }
+    // });
+
+    // $('#close-search').on('click', function() {
+    //     const $parent1 = $(this).closest('form');
+    //     const isExpanded1 = $parent1.hasClass('active-search');
+    //     const $otherInput1 = $('#searchinput').siblings('input[type="submit"]').first();
+
+    //     if (isExpanded1 === true) {
+    //         $parent1.removeClass('active-search');
+    //         $parent1.attr('aria-expanded', 'false');
+    //         $('#searchinput').attr('placeholder', 'Search');
+    //     }
+
+    //     // Toggle value between "Search" and ""
+    //     if ($otherInput1.val() === 'Search') {
+    //         $otherInput1.val('');
+    //     }
+    // });
+
+    const $form     = $('#search-form');
+    const $input    = $('#searchinput');
+    const $closeButton = $('#close-search');
+
+    function openSearch() {
+        if (!$form.hasClass('active-search')) {
+            $form.addClass('active-search')
+                 .attr('aria-expanded', 'true');
+            $closeButton.prop('hidden', false);
         }
+    }
 
-        // Toggle value between "Search" and ""
-        if ($otherInput.val() === '') {
-            $otherInput.val('Search');
+    function closeSearch() {
+        $form.removeClass('active-search')
+             .attr('aria-expanded', 'false');
+        $closeButton.prop('hidden', true);
+    }
+
+    // Expand when input receives focus
+    $input.on('focus', function () {
+        openSearch();
+    });
+
+    // Close button click
+    $closeButton.on('click', function () {
+        closeSearch();
+        $input.blur();
+    });
+
+    // Escape key closes (from anywhere inside form)
+    $form.on('keydown', function (e) {
+        if (e.key === 'Escape') {
+            closeSearch();
+            $input.blur();
         }
     });
 
-    $('#close-search').on('click', function() {
-        const $parent1 = $(this).closest('form');
-        const isExpanded1 = $parent1.hasClass('active-search');
-        const $otherInput1 = $('#searchinput').siblings('input[type="submit"]').first();
+    // Close when focus leaves the entire form
+    $form.on('focusout', function (e) {
+        // Delay so we can check the new focused element
+        setTimeout(function () {
+            if (!$form.find(':focus').length) {
+                closeSearch();
+            }
+        }, 0);
+    });
 
-        if (isExpanded1 === true) {
-            $parent1.removeClass('active-search');
-            $parent1.attr('aria-expanded', 'false');
-            $('#searchinput').attr('placeholder', 'Search');
-        }
-
-        // Toggle value between "Search" and ""
-        if ($otherInput1.val() === 'Search') {
-            $otherInput1.val('');
+    // Click outside closes
+    $(document).on('mousedown', function (e) {
+        if (!$form.is(e.target) && $form.has(e.target).length === 0) {
+            closeSearch();
         }
     });
 
@@ -152,6 +206,128 @@ jQuery(function ($) {
         closeModal();
         }
     });
+
+    //Mega Menu
+    var mouseOutHideDelay = 300;
+    var mouseTimers = new WeakMap();
+
+    function showMenu($btn, $panel) {
+        $btn.attr('aria-expanded', 'true');
+        $panel.addClass('is-open');
+    }
+
+    function hideMenu($btn, $panel) {
+        $btn.attr('aria-expanded', 'false');
+        $panel.removeClass('is-open');
+    }
+
+    function closeAllMenus() {
+        $('.toggle-button[aria-expanded="true"]').each(function () {
+            var $btn = $(this);
+            var panelId = $btn.attr('aria-controls');
+            var $panel = $('#' + panelId);
+            hideMenu($btn, $panel);
+        });
+    }
+
+    // Loop every mega-enabled menu item
+    $('nav .menu-item-has-children').each(function () {
+
+        var $container = $(this);
+        var $toggleBtn = $container.find('> .toggle-button');
+        var panelId    = $toggleBtn.attr('aria-controls');
+        var $panel     = $('#' + panelId);
+        var $closeBtn  = $panel.find('.close-button');
+
+        if (!$toggleBtn.length || !$panel.length) return;
+
+        // Hover behavior
+        $container.on('mouseenter', function () {
+            clearTimeout(mouseTimers.get(this));
+            showMenu($toggleBtn, $panel);
+        });
+
+        $container.on('mouseleave', function () {
+            var timer = setTimeout(function () {
+                hideMenu($toggleBtn, $panel);
+            }, mouseOutHideDelay);
+
+            mouseTimers.set($container[0], timer);
+        });
+
+        // Toggle click
+        $toggleBtn.on('click', function (e) {
+            e.preventDefault();
+            var expanded = $toggleBtn.attr('aria-expanded') === 'true';
+
+            closeAllMenus();
+
+            if (!expanded) {
+                showMenu($toggleBtn, $panel);
+            }
+        });
+
+        // Close button click
+        $closeBtn.on('click', function () {
+            hideMenu($toggleBtn, $panel);
+            $toggleBtn.focus();
+        });
+
+        // Keyboard handling inside this menu
+        $container.on('keydown', function (e) {
+            if (e.key === 'Escape') {
+                hideMenu($toggleBtn, $panel);
+                $toggleBtn.focus();
+            }
+
+            // Tab out of last link closes menu
+            var $lastLink = $panel.find('a').last();
+            if (e.key === 'Tab' && !e.shiftKey && e.target === $lastLink[0]) {
+                hideMenu($toggleBtn, $panel);
+            }
+        });
+
+    });
+
+    // Click outside closes everything
+    $('body').on('click', function (e) {
+        if (!$(e.target).closest('nav').length) {
+            closeAllMenus();
+        }
+    });
+
+    // Hamburger
+    const $toggle = $('.navbar-toggler');
+    const $overlay = $('#mobile-menu');
+
+    $toggle.on('click', function(){
+
+        const expanded = $(this).attr('aria-expanded') === 'true';
+
+        $(this)
+        .attr('aria-expanded', !expanded)
+        .toggleClass('active');
+
+        $overlay
+        .toggleClass('active')
+        .attr('aria-hidden', expanded);
+
+        $('body').toggleClass('menu-open');
+
+    });
+
+    // Close if clicking outside menu
+    $(document).on('click', function(e){
+        if (!$(e.target).closest('.mobile-menu-inner, .navbar-toggler').length) {
+        closeMenu();
+        }
+    });
+
+    function closeMenu(){
+        $toggle.attr('aria-expanded', false).removeClass('active');
+        $overlay.removeClass('active').attr('aria-hidden', true);
+        $('body').removeClass('menu-open');
+    }
 
 }); // jQuery End
 

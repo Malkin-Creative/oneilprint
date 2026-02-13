@@ -56,6 +56,10 @@ if ($background_color == 'light') {
     $backgroundColor = ' background-navy';
     $buttonColor = 'white';
     $textColor = 'white';
+} else {
+    $backgroundColor = ' background-white';
+    $buttonColor = 'primary';
+    $textColor = 'black';
 }
 
 if ($block_alignment == 'image-left') {

@@ -15,6 +15,18 @@ body {
     --gf-form-validation-heading-color: $red-ada;
 }
 
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0); /* Deprecated, but still widely used for compatibility */
+    white-space: nowrap;
+    border: 0;
+}
+
 // Social Sharing
 .simplesocialbuttons {
     background: transparent !important;
@@ -507,77 +519,277 @@ p, span {
 h1, h2, h3, h4, h5, h6, p, span, li {
     text-wrap: pretty
 }
+
+// Pagination
+.pagination {
+    padding: 90px 0;
+
+    .nav-links {
+        width: 100%;
+        gap: 20px;
+        display: flex;
+        justify-content: center;
+        position: relative;
+
+        .page-numbers {
+            color: $steel;
+            font-size: 14px;
+            font-weight: 600;
+            text-decoration: none;
+            width: 25px;
+            height: 25px;
+            text-align: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: $primaryFont;
+
+            &:focus, &:focus-visible, &:focus-within {
+                outline-color: transparent; 
+                outline-style: solid;
+                box-shadow: 0 0 0 3px $white, 0 0 0 4px $silver;
+                border-radius: $radius-xs;
+                color: $steel !important;
+                background: transparent !important;
+            }
+
+            &.current {
+                color: $white !important;
+                position: relative;
+
+                &:after {
+                    content: '';
+                    position: absolute;
+                    width: 40px;
+                    height: 40px;
+                    top: calc(50% - 20px);
+                    left: calc(50% - 20px);
+                    border-radius: 50px;
+                    background: $steel;
+                    z-index: -1;
+                }
+            }
+            &.prev {
+                position: absolute;
+                left: 0;
+                padding: 6px 0 6px 34px !important;
+                color: $steel !important;
+                background: transparent !important;
+                border-radius: $radius-xs;
+                font-weight: 400;
+                text-decoration: underline !important;
+                width: fit-content;
+                transition: all .3s ease-in-out !important;
+
+                &:after {
+                    content: '';
+                    background-image: url('/wp-content/uploads/2026/01/icon-3.svg');
+                    background-size: 100%;
+                    height: 12px;
+                    width: 12px;
+                    position: absolute;
+                    top: calc(50% - 6px);
+                    left: 10px;
+                    transform: rotate(180deg);
+                }
+
+                &:hover {
+                    color: $white !important;
+                    background: $navy !important;
+                    text-decoration: none !important;
+                    padding-right: 10px !important;
+
+                    &:after {
+                        background-image: url('/wp-content/uploads/2026/01/icon-2.svg');
+                    }
+                }
+
+                &:focus, &:focus-visible, &:focus-within {
+                    outline-color: transparent; 
+                    outline-style: solid;
+                    box-shadow: 0 0 0 3px $white, 0 0 0 4px $silver;
+                    border-radius: $radius-xs;
+                    color: $white !important;
+                    background: $navy !important;
+                    text-decoration: none !important;
+                    padding-right: 10px !important;
+
+                    &:after {
+                        background-image: url('/wp-content/uploads/2026/01/icon-2.svg');
+                    }
+                }
+            }
+            &.next {
+                position: absolute;
+                right: 0;
+                padding: 6px 34px 6px 0 !important;
+                color: $steel !important;
+                background: transparent !important;
+                border-radius: $radius-xs;
+                font-weight: 400;
+                text-decoration: underline !important;
+                width: fit-content;
+                transition: all .3s ease-in-out !important;
+
+                &:after {
+                    content: '';
+                    background-image: url('/wp-content/uploads/2026/01/icon-3.svg');
+                    background-size: 100%;
+                    height: 12px;
+                    width: 12px;
+                    position: absolute;
+                    top: calc(50% - 6px);
+                    right: 10px;
+                }
+
+                &:hover {
+                    color: $white !important;
+                    background: $navy !important;
+                    text-decoration: none !important;
+                    padding-left: 10px !important;
+
+                    &:after {
+                        background-image: url('/wp-content/uploads/2026/01/icon-2.svg');
+                    }
+                }
+
+                &:focus, &:focus-visible, &:focus-within {
+                    outline-color: transparent; 
+                    outline-style: solid;
+                    box-shadow: 0 0 0 3px $white, 0 0 0 4px $silver;
+                    border-radius: $radius-xs;
+                    color: $white !important;
+                    background: $navy !important;
+                    text-decoration: none !important;
+                    padding-left: 10px !important;
+
+                    &:after {
+                        background-image: url('/wp-content/uploads/2026/01/icon-2.svg');
+                    }
+                }
+            }
+        }
+    }
+}
+
 @media screen and (min-width: 767px) and (max-width: 992px) {
     
 }
 @media screen and (max-width: 767px) {
     h1.h1-jumbo, .h1-jumbo, .h1-jumbo h1, .h1-jumbo h2 {
         font-size: 38px;
+
+        h1, h2, h3, h4, h5, h6, p, li, a, button, span {
+            font-size: 38px;
+        }
     }
     h1, .h1 {
         font-size: 38px;
+
+        h1, h2, h3, h4, h5, h6, p, li, a, button, span {
+            font-size: 38px;
+        }
     }
     h2.oversized-h2, .oversized-h2 {
         font-size: 38px;
+
+        h1, h2, h3, h4, h5, h6, p, li, a, button, span {
+            font-size: 38px;
+        }
     }
     h2, .h2 {
         font-size: 32px;
+
+        h1, h2, h3, h4, h5, h6, p, li, a, button, span {
+            font-size: 32px;
+        }
     }
     .oversized-h3 {
         font-size: 32px;
+
+        h1, h2, h3, h4, h5, h6, p, li, a, button, span {
+            font-size: 32px;
+        }
     }
     h3, .h3 {
         font-size: 24px;
+
+        h1, h2, h3, h4, h5, h6, p, li, a, button, span {
+            font-size: 24px;
+        }
     }
     h4, .h4 {
         font-size: 18px;
+
+        h1, h2, h3, h4, h5, h6, p, li, a, button, span {
+            font-size: 18px;
+        }
     }
     h5, .h5 {
         font-size: 16px;
+
+        h1, h2, h3, h4, h5, h6, p, li, a, button, span {
+            font-size: 16px;
+        }
     }
     h6, .h6 {
         font-size: 14px;
+
+        h1, h2, h3, h4, h5, h6, p, li, a, button, span {
+            font-size: 14px;
+        }
     }
     .text-xl-regular {
         font-size: 18px;
 
-        p, li, a, button, span {
+        h1, h2, h3, h4, h5, h6, p, li, a, button, span {
             font-size: 18px;
         }
     }
     .text-xl-medium {
         font-size: 18px;
 
-        p, li, a, button, span {
+        h1, h2, h3, h4, h5, h6, p, li, a, button, span {
             font-size: 18px;
         }
     }
     .text-xl-bold {
         font-size: 18px;
 
-        p, li, a, button, span {
+        h1, h2, h3, h4, h5, h6, p, li, a, button, span {
             font-size: 18px;
         }
     }
     .text-lg-regular {
         font-size: 16px;
 
-        p, li, a, button, span {
+        h1, h2, h3, h4, h5, h6, p, li, a, button, span {
             font-size: 16px;
         }
     }
     .text-lg-medium {
         font-size: 16px;
 
-        p, li, a, button, span {
+        h1, h2, h3, h4, h5, h6, p, li, a, button, span {
             font-size: 16px;
         }
     }
     .text-lg-bold {
         font-size: 16px;
 
-        p, li, a, button, span {
+        h1, h2, h3, h4, h5, h6, p, li, a, button, span {
             font-size: 16px;
+        }
+    }
+    .pagination {
+        padding: 50px 0 90px;
+
+        .nav-links {
+            .page-numbers {
+                &.prev, &.next {
+                    top: calc(100% + 30px);
+                }
+            }
         }
     }
 }

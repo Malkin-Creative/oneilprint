@@ -25,11 +25,18 @@ defined('ABSPATH') || exit;
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300..900;1,300..900&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap" rel="stylesheet">
+  <?php if (get_field('header_code', 'options') ) : ?>
+    <?php echo get_field('header_code', 'options'); ?>
+  <?php endif; ?>
+
   <?php wp_head(); ?>
 </head>
 
 <body <?php body_class(); ?>>
 <?php wp_body_open(); ?>
+<?php if (get_field('body_code', 'options') ) : ?>
+  <?php echo get_field('body_code', 'options'); ?>
+<?php endif; ?>
 <div id="page" class="site">
   
   <!-- Skip Links -->
@@ -103,105 +110,91 @@ defined('ABSPATH') || exit;
   <header id="masthead" class="site-header header">
     <?php do_action( 'bootscore_after_masthead_open' ); ?>
     <div class="container">
-      <div class="row">
+      <div class="row d-none d-lg-flex">
         <div class="col-12 d-flex justify-content-end">
           <div class="header--top background-lightest-silver px-2 py-2 d-flex align-items-center">
             <nav class="nav menu-top-main-menu-container" aria-label="Top Main Menu">
               <?php // Top Menu
                 wp_nav_menu( array(
                   'theme_location' => 'top-main-menu',
-                  'walker'         => new ADA_Compliant_Walker_Nav_Menu(),
+                  'walker'         => new ADA_Menu_Walker(),
                   'container' => false, // disables default wrapping
                 ));
               ?>
             </nav>
-            <form id="search-form" class="searchform" action="/search/" method="get" aria-expanded="false">
+            <!-- <form id="search-form" class="searchform" action="/search/" method="get" aria-expanded="false">
               <label for="searchinput" aria-labelledby="searchinput" class="sr-only" style="display: none">Search</label>
               <input placeholder="Search" type="text" name="q" id="searchinput" class="text-steel" aria-label="Search site">
               <input type="submit" name="searchsubmit" class="submit button" value=""/>
               <button type="button" id="close-search" class="banner-close text-xs-medium text-steel py-0" aria-label="Close search bar" title="Close search bar">
                 <p class="mb-0">Close</p>
               </button>
+            </form> -->
+            <form id="search-form" method="get" class="searchform" action="<?php echo esc_url( home_url( '/' ) ); ?>" role="search" aria-expanded="false">
+              <label for="searchinput" class="sr-only">
+                Search the site
+              </label>
+              <input type="search" name="s" id="searchinput" class="text-steel" placeholder="Search" autocomplete="off">
+              <button type="submit" class="submit button" aria-label="Submit search">
+                <span class="submit-text text-white">Search</span>
+              </button>
+              <button type="button" id="close-search" class="banner-close text-xs-medium text-steel py-0" aria-label="Close search" hidden>
+                Close
+              </button>
             </form>
           </div>
         </div>
       </div>
-      <div class="row justify-content-between py-2">
-        <div class="col-6 col-md-4 col-lg-2">
+      <div class="row justify-content-between pt-2 pb-4">
+        <div class="col-6 col-md-4 col-lg-2 header__logo">
           <?php if ( $header_logo ) : ?>
             <a href="<?php echo esc_url( home_url( '/' ) ); ?>" class="header__logo--buton">
-              <img src="<?php echo esc_url($header_logo['url']); ?>" alt="<?php echo esc_attr($header_logo['alt']); ?>" class="header__logo"/>
+              <img src="<?php echo esc_url($header_logo['url']); ?>" alt="<?php echo esc_attr($header_logo['alt']); ?>" class="header__logo__img"/>
             </a>
           <?php endif; ?>
         </div>
-        <div class="col-6 col-md-8 col-lg-10 d-flex align-items-center justify-content-end">
-          <nav class="nav menu-main-menu-container" aria-label="Main Manu navigation">
+        <div class="col-lg-10 d-none d-lg-flex align-items-center justify-content-end position-relative">
+          <nav class="nav menu-main-menu-container" aria-label="Main Menu navigation">
             <?php // Primary Menu
               wp_nav_menu( array(
                 'theme_location' => 'main-menu',
-                'walker'         => new ADA_Compliant_Walker_Nav_Menu(),
-                'container' => false, // disables default wrapping
+                'walker'         => new ADA_Menu_Walker(),
+                'container'      => false, // disables default wrapping
               ));
             ?>
           </nav>
         </div>
+        <div class="col-6 d-flex align-items-center justify-content-end d-lg-none header__mobile">
+          <nav>
+            <button class="navbar-toggler custom-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#primary-menu"  aria-controls="primary-menu" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="toggler-icon"></span>
+              <span class="toggler-icon"></span>
+              <span class="toggler-icon"></span>
+            </button>
+          </nav>
+        </div>
+        <div id="mobile-menu" class="mobile-overlay" aria-hidden="true">
+          <div class="mobile-menu-inner">
+            <?php
+            wp_nav_menu([
+              'theme_location' => 'main-menu',
+              'container'      => false,
+              'menu_class'     => 'mobile-menu',
+              'fallback_cb'    => false
+            ]);
+            ?>
+            <form id="search-form" method="get" class="searchform" action="<?php echo esc_url( home_url( '/' ) ); ?>" role="search" aria-expanded="false">
+              <label for="searchinput" class="sr-only">
+                Search the site
+              </label>
+              <input type="search" name="s" id="searchinput" class="text-steel" placeholder="Search" autocomplete="off">
+              <button type="submit" class="submit button" aria-label="Submit search">
+                <span class="submit-text text-white">Search</span>
+              </button>
+            </form>
+          </div>
+        </div>
       </div>
-    </div>
-    <div class="wrap header__content">
-      <?php
-      if ( $id == 1 ) {
-        ?>
-        <a class="logobox" href="<?php echo home_url(); ?>"><img class="logomain" width="200" src="<?php echo get_template_directory_uri(); ?>/assets/logomain-new.png" alt="Batavia Public School District 101">
-        </a>
-      <?php } ?>
-      <?php
-
-        /*
-          * Render top level menu
-          * First level items only
-          *
-          * First level items have menu_item_parent set to 0
-          * The label to use is post_title first, title if it's empty
-          */
-        $locations = get_nav_menu_locations();
-        $menu_header = false;
-        $header_items = array();
-        $parent_ids = array();
-        if ( isset( $locations[ 'menu-main' ] ) ) {
-          $menu_header = $locations[ 'menu-main' ];
-        }
-        if ( $menu_header !== false ) {
-          $header_items = wp_get_nav_menu_items( $menu_header );
-        }
-        ?>
-        <?php
-        if ( !empty( $header_items ) ) {
-          $active_ids = array();
-          // if (isset($post)) {
-          // foreach($header_items as $item) {
-          // if ($item->object_id == $post->ID) {
-          // $active_ids[] = $item->ID;
-          // $active_ids[] = $item->menu_item_parent;
-          // }
-          // }
-          // }
-
-          foreach ( $header_items as $item ) {
-            if ( $item->menu_item_parent != 0 )
-              continue;
-            $parent_ids[] = $item->ID;
-            $label = !empty( $item->post_title ) ? $item->post_title : $item->title;
-            $url = $item->url;
-            $class = ""; //in_array($item->ID, $active_ids) ? 'current-menu-item' : '';
-            $children = wp_get_nav_menu_items( $menu_header, array( 'meta_key' => '_menu_item_menu_item_parent', 'meta_value' => $item->ID ) );
-            if ( empty( $children ) ) {
-              echo '<a href="' . $url . '" ><li class="' . $class . ' menu-no-children">' . $label . '</li></a>';
-            } else {
-              echo '<li class="' . $class . ' has-children"  data-nav="' . $label . '">' . $label . '</li>';
-            }
-          }
-        }
-      ?>
     </div>
     <?php do_action( 'bootscore_before_masthead_close' ); ?>
   </header><!-- #masthead -->
