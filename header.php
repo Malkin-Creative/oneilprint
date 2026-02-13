@@ -177,7 +177,7 @@ defined('ABSPATH') || exit;
           <div class="mobile-menu-inner">
             <?php
             wp_nav_menu([
-              'theme_location' => 'mobile-menu',
+              'theme_location' => 'main-menu',
               'container'      => false,
               'walker'         => new ADA_Menu_Walker(),
               'menu_class'     => 'mobile-menu',
