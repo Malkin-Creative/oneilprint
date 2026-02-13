@@ -5,6 +5,7 @@
   "category": "text",
   "icon": "welcome-widgets-menus",
   "description": "",
+  "editorStyle": "file:../../assets/css/editornew.css",
   "acf": {
     "mode": "preview",
     "renderTemplate": "tile-block.php"

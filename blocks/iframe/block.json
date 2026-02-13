@@ -5,6 +5,7 @@
   "category": "text",
   "icon": "video-alt3",
   "description": "",
+  "editorStyle": "file:../../assets/css/editornew.css",
   "acf": {
     "mode": "preview",
     "renderTemplate": "iframe.php"

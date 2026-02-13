@@ -453,6 +453,6 @@ class ADA_Menu_Walker extends Walker_Nav_Menu {
 
 // Add styles to editor
 add_action('after_setup_theme', function() {
-    add_editor_style('assets/scss/_editor.css');
+    add_editor_style('assets/css/editornew.css');
 });
 

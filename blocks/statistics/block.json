@@ -5,6 +5,7 @@
   "category": "text",
   "icon": "editor-ol",
   "description": "",
+  "editorStyle": "file:../../assets/css/editornew.css",
   "acf": {
     "mode": "preview",
     "renderTemplate": "statistics.php"

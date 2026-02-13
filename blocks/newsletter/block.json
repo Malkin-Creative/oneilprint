@@ -5,6 +5,7 @@
   "category": "text",
   "icon": "info-outline",
   "description": "",
+  "editorStyle": "file:../../assets/css/editornew.css",
   "acf": {
     "mode": "preview",
     "renderTemplate": "newsletter.php"

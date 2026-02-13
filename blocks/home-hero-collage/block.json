@@ -5,7 +5,7 @@
   "category": "text",
   "icon": "images-alt2",
   "description": "",
-  "editorStyle": "file:../../assets/scss/_editor.scss",
+  "editorStyle": "file:../../assets/css/editornew.css",
   "acf": {
     "mode": "preview",
     "renderTemplate": "home-hero-collage.php"
