@@ -48,7 +48,6 @@ $post_objects = $featured_team_members;
                 $summary_of_bio = get_field('summary_of_bio', $postId);
                 $full_bio = get_field('full_bio', $postId);
                 $team_member_email = get_field('team_member_email', $postId);
-                $social_media = get_field('social_media', $postId);
                 ?>
                 <div class="col-12 col-md-6 col-lg-3 featured-post-grid__wrap position-relative pb-10 pb-md-8 pb-lg-0">
                     <?php if ($featured_image_url) : ?>
@@ -71,13 +70,13 @@ $post_objects = $featured_team_members;
                             <?php echo $summary_of_bio; ?>
                         </div>
                     <?php endif; ?>
-                    <div class="d-flex">
+                    <div class="d-flex align-items-center justify-content-between">
                         <a class="button button--blue-underline" href="<?php echo $permalink; ?>" aria-label="Open team member bio page">
                             Read bio
                         </a>
-                        <?php if( have_rows('social_media') ): ?>
-                            <div class="d-flex gap-3">
-                                <?php while( have_rows('social_media') ) : the_row(); ?>
+                        <?php if( have_rows('social_media', $postId) ): ?>
+                            <div class="d-flex gap-2">
+                                <?php while( have_rows('social_media', $postId) ) : the_row(); ?>
                                     <?php 
                                     $social_media_icon = get_sub_field('social_media_icon');
                                     $social_media_url = get_sub_field('social_media_url');
@@ -87,7 +86,7 @@ $post_objects = $featured_team_members;
                                     <?php if ( $social_media_url ) : ?>
                                         <a class="featured-post-grid__wrap__cta" href="<?php echo esc_attr( $social_media_url ); ?>" target="_blank" rel="noopener" aria-label="<?php echo esc_attr( $social_media_button_label ); ?>">
                                             <?php if ( $social_media_icon ) : ?>
-                                                <img height="24" width="24" src="<?php echo esc_url($social_media_icon['url']); ?>" alt="<?php echo esc_attr($social_media_icon['alt']); ?>" />
+                                                <img src="<?php echo esc_url($social_media_icon['url']); ?>" alt="<?php echo esc_attr($social_media_icon['alt']); ?>" />
                                             <?php endif; ?>
                                         </a>
                                     <?php endif; ?>

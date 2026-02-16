@@ -5,6 +5,18 @@
     &__wrap {
         padding-top: 260px;
 
+        &__cta {
+            transition: all .3s ease-in-out !important;
+
+            &:hover {
+                transform: scale(1.1);
+            }
+            img {
+                height: 20px;
+                width: 20px;
+            }
+        }
+
         &__img {
             height: 240px;
             width: calc(100% - 24px);

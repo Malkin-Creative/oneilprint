@@ -46,12 +46,18 @@ if ($divider_type == 'icon') {
 <?php endif; ?>
 
 <section class="dividers position-relative<?php echo $dividerType; ?>" id="<?php echo esc_attr( $id ); ?>"<?php if ($background_color) : ?> style="background: <?php echo $background_color; ?>;"<?php endif; ?>>
+    <div class="container">
+        <div class="row">
+            <div class="col-12 position-relative">
+                <?php if ($divider_type == 'icon') : ?>
+                    <div class="dividers__icon">
+                    </div>
+                <?php endif; ?>
+            </div>
+        </div>
+    </div>
     <?php if ($divider_type == 'cutout') : ?>
         <div class="dividers__cutout h-100 overlay<?php echo $cutoutPosition; ?>" style="background: <?php echo $cutout_color; ?>;">
-        </div>
-    <?php endif; ?>
-    <?php if ($divider_type == 'icon') : ?>
-        <div class="dividers__icon">
         </div>
     <?php endif; ?>
 </section>

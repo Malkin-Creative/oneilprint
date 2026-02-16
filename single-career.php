@@ -62,7 +62,13 @@ $location = get_the_terms(get_the_ID(), 'location');
     </div>
 </section>
 <section class="dividers position-relative icon pb-10 pb-md-12 pb-lg-15">
-    <div class="dividers__icon">
+    <div class="container">
+        <div class="row">
+            <div class="col-12 position-relative">
+                <div class="dividers__icon">
+                </div>
+            </div>
+        </div>
     </div>
 </section>
 <div class="container p-0">
