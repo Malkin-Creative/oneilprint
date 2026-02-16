@@ -157,14 +157,14 @@ h1.h1-jumbo, .h1-jumbo, .h1-jumbo h1, .h1-jumbo h2 {
     font-weight: 300;
     letter-spacing: -1px;
 
-    // h1, h2, h3, h4, h5, h6, p, li, a, button, span {
-    //     font-size: 60px;
-    //     font-family: $primaryFont;
-    //     text-transform: uppercase;
-    //     line-height: 1.16;
-    //     font-weight: 300;
-    //     letter-spacing: -1px;
-    // }
+    h1, h2, h3, h4, h5, h6, p, li, a, button, span {
+        font-size: 60px;
+        font-family: $primaryFont;
+        text-transform: uppercase;
+        line-height: 1.16;
+        font-weight: 300;
+        letter-spacing: -1px;
+    }
 }
 h1, .h1 {
     font-size: 60px;
@@ -172,12 +172,12 @@ h1, .h1 {
     line-height: 1.1;
     font-weight: 300;
 
-    // h1, h2, h3, h4, h5, h6, p, li, a, button, span {
-    //     font-size: 60px;
-    //     font-family: $primaryFont;
-    //     line-height: 1.1;
-    //     font-weight: 300;
-    // }
+    h1, h2, h3, h4, h5, h6, p, li, a, button, span {
+        font-size: 60px;
+        font-family: $primaryFont;
+        line-height: 1.1;
+        font-weight: 300;
+    }
 }
 h2.oversized-h2, .oversized-h2 {
     font-size: 62px;
@@ -186,13 +186,13 @@ h2.oversized-h2, .oversized-h2 {
     line-height: 1.2;
     letter-spacing: -1px;
 
-    // h1, h2, h3, h4, h5, h6, p, li, a, button, span {
-    //     font-size: 62px;
-    //     font-family: $primaryFont;
-    //     font-weight: 300;
-    //     line-height: 1.2;
-    //     letter-spacing: -1px;
-    // }
+    h1, h2, h3, h4, h5, h6, p, li, a, button, span {
+        font-size: 62px;
+        font-family: $primaryFont;
+        font-weight: 300;
+        line-height: 1.2;
+        letter-spacing: -1px;
+    }
 }
 h2, .h2 {
     font-size: 32px;
@@ -202,14 +202,14 @@ h2, .h2 {
     letter-spacing: -1px;
     margin: 0 0 20px !important;
 
-    // h1, h2, h3, h4, h5, h6, p, li, a, button, span {
-    //     font-size: 32px;
-    //     font-family: $primaryFont;
-    //     font-weight: 300;
-    //     line-height: 1.375;
-    //     letter-spacing: -1px;
-    //     margin: 0 0 20px !important;
-    // }
+    h1, h2, h3, h4, h5, h6, p, li, a, button, span {
+        font-size: 32px;
+        font-family: $primaryFont;
+        font-weight: 300;
+        line-height: 1.375;
+        letter-spacing: -1px;
+        margin: 0 0 20px !important;
+    }
 }
 .oversized-h3 {
     font-size: 48px;
@@ -218,13 +218,13 @@ h2, .h2 {
     line-height: 1.33;
     letter-spacing: -1px;
 
-    // h1, h2, h3, h4, h5, h6, p, li, a, button, span {
-    //     font-size: 48px;
-    //     font-family: $primaryFont;
-    //     font-weight: 300;
-    //     line-height: 1.33;
-    //     letter-spacing: -1px;
-    // }
+    h1, h2, h3, h4, h5, h6, p, li, a, button, span {
+        font-size: 48px;
+        font-family: $primaryFont;
+        font-weight: 300;
+        line-height: 1.33;
+        letter-spacing: -1px;
+    }
 }
 h3, .h3 {
     font-size: 24px;
@@ -233,13 +233,13 @@ h3, .h3 {
     line-height: 1.33;
     letter-spacing: -1px;
 
-    // h1, h2, h3, h4, h5, h6, p, li, a, button, span {
-    //     font-size: 24px;
-    //     font-family: $primaryFont;
-    //     font-weight: 400;
-    //     line-height: 1.33;
-    //     letter-spacing: -1px;
-    // }
+    h1, h2, h3, h4, h5, h6, p, li, a, button, span {
+        font-size: 24px;
+        font-family: $primaryFont;
+        font-weight: 400;
+        line-height: 1.33;
+        letter-spacing: -1px;
+    }
 }
 h4, .h4 {
     font-size: 20px;
@@ -248,13 +248,13 @@ h4, .h4 {
     line-height: 1.4;
     letter-spacing: -1px;
 
-    // h1, h2, h3, h4, h5, h6, p, li, a, button, span {
-    //     font-size: 20px;
-    //     font-family: $primaryFont;
-    //     font-weight: 400;
-    //     line-height: 1.4;
-    //     letter-spacing: -1px;
-    // }
+    h1, h2, h3, h4, h5, h6, p, li, a, button, span {
+        font-size: 20px;
+        font-family: $primaryFont;
+        font-weight: 400;
+        line-height: 1.4;
+        letter-spacing: -1px;
+    }
 }
 h5, .h5 {
     font-size: 18px;
@@ -262,12 +262,12 @@ h5, .h5 {
     font-weight: 400;
     line-height: 1.33;
 
-    // h1, h2, h3, h4, h5, h6, p, li, a, button, span {
-    //     font-size: 18px;
-    //     font-family: $primaryFont;
-    //     font-weight: 400;
-    //     line-height: 1.33;
-    // }
+    h1, h2, h3, h4, h5, h6, p, li, a, button, span {
+        font-size: 18px;
+        font-family: $primaryFont;
+        font-weight: 400;
+        line-height: 1.33;
+    }
 }
 h6, .h6 {
     font-size: 16px;
@@ -275,12 +275,12 @@ h6, .h6 {
     font-weight: 400;
     line-height: 1.25;
 
-    // h1, h2, h3, h4, h5, h6, p, li, a, button, span {
-    //     font-size: 16px;
-    //     font-family: $primaryFont;
-    //     font-weight: 400;
-    //     line-height: 1.25;
-    // }
+    h1, h2, h3, h4, h5, h6, p, li, a, button, span {
+        font-size: 16px;
+        font-family: $primaryFont;
+        font-weight: 400;
+        line-height: 1.25;
+    }
 }
 .text-xl-regular {
     font-size: 20px;
@@ -288,12 +288,12 @@ h6, .h6 {
     font-weight: 400;
     line-height: 1.5;
 
-    // h1, h2, h3, h4, h5, h6, p, li, a, button, span {
-    //     font-size: 20px;
-    //     font-family: $primaryFont;
-    //     font-weight: 400;
-    //     line-height: 1.5;
-    // }
+    h1, h2, h3, h4, h5, h6, p, li, a, button, span {
+        font-size: 20px;
+        font-family: $primaryFont;
+        font-weight: 400;
+        line-height: 1.5;
+    }
 }
 .text-xl-medium {
     font-size: 20px;
@@ -301,12 +301,12 @@ h6, .h6 {
     font-weight: 500;
     line-height: 1.5;
 
-    // h1, h2, h3, h4, h5, h6, p, li, a, button, span {
-    //     font-size: 20px;
-    //     font-family: $primaryFont;
-    //     font-weight: 500;
-    //     line-height: 1.5;
-    // }
+    h1, h2, h3, h4, h5, h6, p, li, a, button, span {
+        font-size: 20px;
+        font-family: $primaryFont;
+        font-weight: 500;
+        line-height: 1.5;
+    }
 }
 .text-xl-bold {
     font-size: 20px;
@@ -314,12 +314,12 @@ h6, .h6 {
     font-weight: 600;
     line-height: 1.5;
 
-    // h1, h2, h3, h4, h5, h6, p, li, a, button, span {
-    //     font-size: 20px;
-    //     font-family: $primaryFont;
-    //     font-weight: 600;
-    //     line-height: 1.5;
-    // }
+    h1, h2, h3, h4, h5, h6, p, li, a, button, span {
+        font-size: 20px;
+        font-family: $primaryFont;
+        font-weight: 600;
+        line-height: 1.5;
+    }
 }
 .text-lg-regular {
     font-size: 18px;
@@ -327,12 +327,12 @@ h6, .h6 {
     font-weight: 400;
     line-height: 1.5;
 
-    // h1, h2, h3, h4, h5, h6, p, li, a, button, span {
-    //     font-size: 18px;
-    //     font-family: $primaryFont;
-    //     font-weight: 400;
-    //     line-height: 1.5;
-    // }
+    h1, h2, h3, h4, h5, h6, p, li, a, button, span {
+        font-size: 18px;
+        font-family: $primaryFont;
+        font-weight: 400;
+        line-height: 1.5;
+    }
 }
 .text-lg-medium {
     font-size: 18px;
@@ -353,12 +353,12 @@ h6, .h6 {
     font-weight: 600;
     line-height: 1.5;
 
-    // h1, h2, h3, h4, h5, h6, p, li, a, button, span {
-    //     font-size: 18px;
-    //     font-family: $primaryFont;
-    //     font-weight: 600;
-    //     line-height: 1.5;
-    // }
+    h1, h2, h3, h4, h5, h6, p, li, a, button, span {
+        font-size: 18px;
+        font-family: $primaryFont;
+        font-weight: 600;
+        line-height: 1.5;
+    }
 }
 .text-md-regular {
     font-size: 16px;
@@ -366,12 +366,12 @@ h6, .h6 {
     font-weight: 400;
     line-height: 1.5;
 
-    // h1, h2, h3, h4, h5, h6, p, li, a, button, span {
-    //     font-size: 16px;
-    //     font-family: $primaryFont;
-    //     font-weight: 400;
-    //     line-height: 1.5;
-    // }
+    h1, h2, h3, h4, h5, h6, p, li, a, button, span {
+        font-size: 16px;
+        font-family: $primaryFont;
+        font-weight: 400;
+        line-height: 1.5;
+    }
 }
 .text-md-medium {
     font-size: 16px;
@@ -379,12 +379,12 @@ h6, .h6 {
     font-weight: 500;
     line-height: 1.5;
 
-    // p, li, a, button, span {
-    //     font-size: 16px;
-    //     font-family: $primaryFont;
-    //     font-weight: 500;
-    //     line-height: 1.5;
-    // }
+    h1, h2, h3, h4, h5, h6, p, li, a, button, span {
+        font-size: 16px;
+        font-family: $primaryFont;
+        font-weight: 500;
+        line-height: 1.5;
+    }
 }
 .text-md-bold {
     font-size: 16px;
@@ -392,12 +392,12 @@ h6, .h6 {
     font-weight: 600;
     line-height: 1.5;
 
-    // h1, h2, h3, h4, h5, h6, p, li, a, button, span {
-    //     font-size: 16px;
-    //     font-family: $primaryFont;
-    //     font-weight: 600;
-    //     line-height: 1.5;
-    // }
+    h1, h2, h3, h4, h5, h6, p, li, a, button, span {
+        font-size: 16px;
+        font-family: $primaryFont;
+        font-weight: 600;
+        line-height: 1.5;
+    }
 }
 .text-sm-regular {
     font-size: 14px;
@@ -405,12 +405,12 @@ h6, .h6 {
     font-weight: 400;
     line-height: 1.5;
 
-    // h1, h2, h3, h4, h5, h6, p, li, a, button, span {
-    //     font-size: 14px;
-    //     font-family: $primaryFont;
-    //     font-weight: 400;
-    //     line-height: 1.5;
-    // }
+    h1, h2, h3, h4, h5, h6, p, li, a, button, span {
+        font-size: 14px;
+        font-family: $primaryFont;
+        font-weight: 400;
+        line-height: 1.5;
+    }
 }
 .text-sm-medium {
     font-size: 14px;
@@ -418,12 +418,12 @@ h6, .h6 {
     font-weight: 500;
     line-height: 1.5;
 
-    // h1, h2, h3, h4, h5, h6, p, li, a, button, span {
-    //     font-size: 14px;
-    //     font-family: $primaryFont;
-    //     font-weight: 500;
-    //     line-height: 1.5;
-    // }
+    h1, h2, h3, h4, h5, h6, p, li, a, button, span {
+        font-size: 14px;
+        font-family: $primaryFont;
+        font-weight: 500;
+        line-height: 1.5;
+    }
 }
 .text-sm-bold {
     font-size: 14px;
@@ -431,12 +431,12 @@ h6, .h6 {
     font-weight: 600;
     line-height: 1.5;
 
-    // h1, h2, h3, h4, h5, h6, p, li, a, button, span {
-    //     font-size: 14px;
-    //     font-family: $primaryFont;
-    //     font-weight: 600;
-    //     line-height: 1.5;
-    // }
+    h1, h2, h3, h4, h5, h6, p, li, a, button, span {
+        font-size: 14px;
+        font-family: $primaryFont;
+        font-weight: 600;
+        line-height: 1.5;
+    }
 }
 .text-xs-regular {
     font-size: 12px;
@@ -444,12 +444,12 @@ h6, .h6 {
     font-weight: 400;
     line-height: 1.5;
 
-    // h1, h2, h3, h4, h5, h6, p, li, a, button, span {
-    //     font-size: 12px;
-    //     font-family: $primaryFont;
-    //     font-weight: 400;
-    //     line-height: 1.5;
-    // }
+    h1, h2, h3, h4, h5, h6, p, li, a, button, span {
+        font-size: 12px;
+        font-family: $primaryFont;
+        font-weight: 400;
+        line-height: 1.5;
+    }
 }
 .text-xs-medium {
     font-size: 12px;
@@ -457,12 +457,12 @@ h6, .h6 {
     font-weight: 500;
     line-height: 1.5;
 
-    // h1, h2, h3, h4, h5, h6, p, li, a, button, span {
-    //     font-size: 12px;
-    //     font-family: $primaryFont;
-    //     font-weight: 500;
-    //     line-height: 1.5;
-    // }
+    h1, h2, h3, h4, h5, h6, p, li, a, button, span {
+        font-size: 12px;
+        font-family: $primaryFont;
+        font-weight: 500;
+        line-height: 1.5;
+    }
 }
 .text-xs-bold {
     font-size: 12px;
@@ -470,12 +470,12 @@ h6, .h6 {
     font-weight: 600;
     line-height: 1.5;
 
-    // h1, h2, h3, h4, h5, h6, p, li, a, button, span {
-    //     font-size: 12px;
-    //     font-family: $primaryFont;
-    //     font-weight: 600;
-    //     line-height: 1.5;
-    // }
+    h1, h2, h3, h4, h5, h6, p, li, a, button, span {
+        font-size: 12px;
+        font-family: $primaryFont;
+        font-weight: 600;
+        line-height: 1.5;
+    }
 }
 p {
     font-size: 16px;
@@ -679,107 +679,107 @@ h1, h2, h3, h4, h5, h6, p, span, li {
     h1.h1-jumbo, .h1-jumbo, .h1-jumbo h1, .h1-jumbo h2 {
         font-size: 38px;
 
-        // h1, h2, h3, h4, h5, h6, p, li, a, button, span {
-        //     font-size: 38px;
-        // }
+        h1, h2, h3, h4, h5, h6, p, li, a, button, span {
+            font-size: 38px;
+        }
     }
     h1, .h1 {
         font-size: 38px;
 
-        // h1, h2, h3, h4, h5, h6, p, li, a, button, span {
-        //     font-size: 38px;
-        // }
+        h1, h2, h3, h4, h5, h6, p, li, a, button, span {
+            font-size: 38px;
+        }
     }
     h2.oversized-h2, .oversized-h2 {
         font-size: 38px;
 
-        // h1, h2, h3, h4, h5, h6, p, li, a, button, span {
-        //     font-size: 38px;
-        // }
+        h1, h2, h3, h4, h5, h6, p, li, a, button, span {
+            font-size: 38px;
+        }
     }
     h2, .h2 {
         font-size: 32px;
 
-        // h1, h2, h3, h4, h5, h6, p, li, a, button, span {
-        //     font-size: 32px;
-        // }
+        h1, h2, h3, h4, h5, h6, p, li, a, button, span {
+            font-size: 32px;
+        }
     }
     .oversized-h3 {
         font-size: 32px;
 
-        // h1, h2, h3, h4, h5, h6, p, li, a, button, span {
-        //     font-size: 32px;
-        // }
+        h1, h2, h3, h4, h5, h6, p, li, a, button, span {
+            font-size: 32px;
+        }
     }
     h3, .h3 {
         font-size: 24px;
 
-        // h1, h2, h3, h4, h5, h6, p, li, a, button, span {
-        //     font-size: 24px;
-        // }
+        h1, h2, h3, h4, h5, h6, p, li, a, button, span {
+            font-size: 24px;
+        }
     }
     h4, .h4 {
         font-size: 18px;
 
-        // h1, h2, h3, h4, h5, h6, p, li, a, button, span {
-        //     font-size: 18px;
-        // }
+        h1, h2, h3, h4, h5, h6, p, li, a, button, span {
+            font-size: 18px;
+        }
     }
     h5, .h5 {
         font-size: 16px;
 
-        // h1, h2, h3, h4, h5, h6, p, li, a, button, span {
-        //     font-size: 16px;
-        // }
+        h1, h2, h3, h4, h5, h6, p, li, a, button, span {
+            font-size: 16px;
+        }
     }
     h6, .h6 {
         font-size: 14px;
 
-        // h1, h2, h3, h4, h5, h6, p, li, a, button, span {
-        //     font-size: 14px;
-        // }
+        h1, h2, h3, h4, h5, h6, p, li, a, button, span {
+            font-size: 14px;
+        }
     }
     .text-xl-regular {
         font-size: 18px;
 
-        // h1, h2, h3, h4, h5, h6, p, li, a, button, span {
-        //     font-size: 18px;
-        // }
+        h1, h2, h3, h4, h5, h6, p, li, a, button, span {
+            font-size: 18px;
+        }
     }
     .text-xl-medium {
         font-size: 18px;
 
-        // h1, h2, h3, h4, h5, h6, p, li, a, button, span {
-        //     font-size: 18px;
-        // }
+        h1, h2, h3, h4, h5, h6, p, li, a, button, span {
+            font-size: 18px;
+        }
     }
     .text-xl-bold {
         font-size: 18px;
 
-        // h1, h2, h3, h4, h5, h6, p, li, a, button, span {
-        //     font-size: 18px;
-        // }
+        h1, h2, h3, h4, h5, h6, p, li, a, button, span {
+            font-size: 18px;
+        }
     }
     .text-lg-regular {
         font-size: 16px;
 
-        // h1, h2, h3, h4, h5, h6, p, li, a, button, span {
-        //     font-size: 16px;
-        // }
+        h1, h2, h3, h4, h5, h6, p, li, a, button, span {
+            font-size: 16px;
+        }
     }
     .text-lg-medium {
         font-size: 16px;
 
-        // h1, h2, h3, h4, h5, h6, p, li, a, button, span {
-        //     font-size: 16px;
-        // }
+        h1, h2, h3, h4, h5, h6, p, li, a, button, span {
+            font-size: 16px;
+        }
     }
     .text-lg-bold {
         font-size: 16px;
 
-        // h1, h2, h3, h4, h5, h6, p, li, a, button, span {
-        //     font-size: 16px;
-        // }
+        h1, h2, h3, h4, h5, h6, p, li, a, button, span {
+            font-size: 16px;
+        }
     }
     .pagination {
         padding: 50px 0 90px;
