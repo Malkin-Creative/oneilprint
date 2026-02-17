@@ -25,6 +25,7 @@ $padding_top_mobile = $padding_top / 2;
 $padding_bottom_mobile = $padding_bottom / 2;
 $featured_team_members = get_field('featured_team_members');
 $post_objects = $featured_team_members;
+$placeholder_image = get_field('placeholder_image');
 ?>
 
 <?php if ( ! $is_preview ) : ?>
@@ -47,14 +48,17 @@ $post_objects = $featured_team_members;
                 $job_title = get_field('job_title', $postId);
                 $summary_of_bio = get_field('summary_of_bio', $postId);
                 $full_bio = get_field('full_bio', $postId);
-                $team_member_email = get_field('team_member_email', $postId);
                 ?>
-                <div class="col-12 col-md-6 col-lg-3 featured-post-grid__wrap position-relative pb-10 pb-md-8 pb-lg-0">
-                    <?php if ($featured_image_url) : ?>
-                        <div class="overlay object-fit-cover featured-post-grid__wrap__img">
+                <div class="col-12 col-md-6 col-lg-3 featured-post-grid__wrap position-relative pb-10 pb-md-8">
+                    <div class="overlay object-fit-cover featured-post-grid__wrap__img">
+                        <?php if ($featured_image_url) : ?>
                             <img src="<?php echo esc_url( $featured_image_url ); ?>" alt="<?php echo esc_attr( $alt_text ); ?>" class="w-100"/>
-                        </div>
-                    <?php endif; ?>
+                        <?php elseif ($placeholder_image) : ?>
+                            <img src="<?php echo esc_url($placeholder_image['url']); ?>" alt="<?php echo esc_attr($placeholder_image['alt']); ?>" class="w-100"/>
+                        <?php else : ?>
+                            <img src="/wp-content/uploads/2026/01/default-social-sharing-image.jpeg" alt="Team Member Placeholder Image" class="w-100"/>
+                        <?php endif; ?>
+                    </div>
                     <?php if ($title) : ?>
                         <h3>
                             <?php echo $title; ?>

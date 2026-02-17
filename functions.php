@@ -457,3 +457,22 @@ add_action('after_setup_theme', function() {
     add_editor_style('assets/css/editornew.css');
 });
 
+// Fix breadcrumbs
+add_filter('wpseo_breadcrumb_links', function ($links) {
+
+    $posts_page_id = get_option('page_for_posts');
+
+    // Only modify breadcrumbs when NOT viewing blog posts
+    if (!is_home() && !is_singular('post') && $posts_page_id) {
+
+        foreach ($links as $key => $link) {
+            if (isset($link['id']) && $link['id'] == $posts_page_id) {
+                unset($links[$key]);
+            }
+        }
+
+        $links = array_values($links);
+    }
+
+    return $links;
+});
