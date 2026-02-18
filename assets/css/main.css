@@ -26234,6 +26234,9 @@ body.menu-open {
 .footer a {
   width: fit-content;
 }
+.footer__fax {
+  padding-left: 3px;
+}
 .footer__container ul.menu {
   padding-left: 0;
   list-style: none;

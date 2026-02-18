@@ -82,57 +82,65 @@ if ( $office_address ) {
         <div class="row mb-10 mb-md-6 footer__small-gap">
           <div class="col-12 col-lg-9">
             <div class="row footer__small-gap">
-              <div class="col-6 col-lg-3">
-                <p class="text-yellow text-sm-regular font-secondary mb-3">
-                  Solutions
-                </p>
-                <?php // Primary Menu
-                  wp_nav_menu( array(
-                    'theme_location' => 'footer-solutions-menu',
-                    'container'      => false, // disables default wrapping
-                  ));
-                ?>
-              </div>
-              <div class="col-6 col-lg-3">
-                <p class="text-yellow text-sm-regular font-secondary mb-3">
-                  About
-                </p>
-                <?php // Primary Menu
-                  wp_nav_menu( array(
-                    'theme_location' => 'footer-about-menu',
-                    'container'      => false, // disables default wrapping
-                  ));
-                ?>
-              </div>
-              <div class="col-6 col-lg-3">
-                <p class="text-yellow text-sm-regular font-secondary mb-3">
-                  Resources
-                </p>
-                <?php // Primary Menu
-                  wp_nav_menu( array(
-                    'theme_location' => 'footer-resources-menu',
-                    'container'      => false, // disables default wrapping
-                  ));
-                ?>
-              </div>
-              <div class="col-6 col-lg-3">
-                <p class="text-yellow text-sm-regular font-secondary mb-3">
-                  Our Companies
-                </p>
-                <?php // Primary Menu
-                  wp_nav_menu( array(
-                    'theme_location' => 'footer-companies-menu',
-                    'container'      => false, // disables default wrapping
-                  ));
-                ?>
-              </div>
+              <?php if ( has_nav_menu( 'footer-solutions-menu' ) ) : ?>
+                <div class="col-6 col-lg-3">
+                  <p class="text-yellow text-sm-regular font-secondary mb-3">
+                    Solutions
+                  </p>
+                  <?php // Primary Menu
+                    wp_nav_menu( array(
+                      'theme_location' => 'footer-solutions-menu',
+                      'container'      => false, // disables default wrapping
+                    ));
+                  ?>
+                </div>
+              <?php endif; ?>
+              <?php if ( has_nav_menu( 'footer-about-menu' ) ) : ?>
+                <div class="col-6 col-lg-3">
+                  <p class="text-yellow text-sm-regular font-secondary mb-3">
+                    About
+                  </p>
+                  <?php // Primary Menu
+                    wp_nav_menu( array(
+                      'theme_location' => 'footer-about-menu',
+                      'container'      => false, // disables default wrapping
+                    ));
+                  ?>
+                </div>
+              <?php endif; ?>
+              <?php if ( has_nav_menu( 'footer-resources-menu' ) ) : ?>
+                <div class="col-6 col-lg-3">
+                  <p class="text-yellow text-sm-regular font-secondary mb-3">
+                    Resources
+                  </p>
+                  <?php // Primary Menu
+                    wp_nav_menu( array(
+                      'theme_location' => 'footer-resources-menu',
+                      'container'      => false, // disables default wrapping
+                    ));
+                  ?>
+                </div>
+              <?php endif; ?>
+              <?php if ( has_nav_menu( 'footer-companies-menu' ) ) : ?>
+                <div class="col-6 col-lg-3">
+                  <p class="text-yellow text-sm-regular font-secondary mb-3">
+                    Our Companies
+                  </p>
+                  <?php // Primary Menu
+                    wp_nav_menu( array(
+                      'theme_location' => 'footer-companies-menu',
+                      'container'      => false, // disables default wrapping
+                    ));
+                  ?>
+                </div>
+              <?php endif; ?>
             </div>
           </div>
-          <div class="col-12 col-lg-3">
-            <p class="text-yellow text-sm-regular font-secondary mb-3">
-              Follow Us
-            </p>
-            <?php if( have_rows('socials', 'options') ): ?>
+          <?php if( have_rows('socials', 'options') ): ?>
+            <div class="col-12 col-lg-3">
+              <p class="text-yellow text-sm-regular font-secondary mb-3">
+                Follow Us
+              </p>
               <div class="d-flex gap-8 gap-md-4">
                 <?php while( have_rows('socials', 'options') ) : the_row(); ?>
                   <?php 
@@ -150,15 +158,15 @@ if ( $office_address ) {
                   <?php endif; ?>
                 <?php endwhile; ?>
               </div>
-            <?php endif; ?>
-          </div>
+            </div>
+          <?php endif; ?>
         </div>
-        <div class="row">
-          <div class="col-12">
-            <p class="text-yellow text-sm-regular font-secondary mb-4">
-              Affiliations
-            </p>
-            <?php if( have_rows('affiliations', 'options') ): ?>
+        <?php if( have_rows('affiliations', 'options') ): ?>
+          <div class="row">
+            <div class="col-12">
+              <p class="text-yellow text-sm-regular font-secondary mb-4">
+                Affiliations
+              </p>
               <div class="d-flex flex-wrap gap-5 footer__container__affiliations">
                 <?php while( have_rows('affiliations', 'options') ) : the_row(); ?>
                   <?php 
@@ -169,9 +177,9 @@ if ( $office_address ) {
                   <?php endif; ?>
                 <?php endwhile; ?>
               </div>
-            <?php endif; ?>
+            </div>
           </div>
-        </div>
+        <?php endif; ?>
       </div>
     </div>
   </div>
