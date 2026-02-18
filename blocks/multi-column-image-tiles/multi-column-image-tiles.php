@@ -50,7 +50,7 @@ if ($background == 'solid') {
         'style' => $style
     ]); ?>>
     <div class="container">
-        <div class="row justify-content-center multi-col-img-tiles__content" style="grid-template-columns: repeat(<?php if ($number_of_tiles_in_each_row) { echo $number_of_tiles_in_each_row; } else { echo '1'; } ?>, 1fr);">
+        <div class="row justify-content-center multi-col-img-tiles__content" style="grid-template-columns: repeat(<?php echo $number_of_tiles_in_each_row; ?>, 1fr);">
             <?php if( have_rows('columns') ): ?>
                 <?php while( have_rows('columns') ) : the_row(); ?>
                     <?php 
