@@ -89,7 +89,7 @@ if ($background == 'solid') {
 if ($block_type == 'full-width') {
     $blockType = ' full-width-featured';
 } else {
-    $blockType = '';
+    $blockType = ' split-featured';
 }
 
 if ($typeOfPost == 'case-study') {
