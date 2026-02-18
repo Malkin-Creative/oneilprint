@@ -174,7 +174,7 @@ $categories = get_the_category($postId);
             <div class="row">
                 <div class="col-12 col-md-8 featured-post__left">
                     <?php if ($featured_image_url) : ?>
-                        <img src="<?php echo esc_url( $featured_image_url ); ?>" alt="<?php echo esc_attr( $alt_text ); ?>" class="w-100 mb-4 mb-md-0"/>
+                        <img src="<?php echo esc_url( $featured_image_url ); ?>" alt="<?php echo esc_attr( $alt_text ); ?>" class="w-100 mb-4 mb-md-0 h-100"/>
                     <?php endif; ?>
                 </div>
                 <div class="col-12 col-md-4 featured-post__right">

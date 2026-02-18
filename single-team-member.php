@@ -100,7 +100,7 @@ endif;
     </div>
 </section>
 
-<section class="dividers position-relative icon pb-10 pb-md-12 pb-lg-15">
+<section class="dividers position-relative icon py-10 py-md-12 py-lg-15">
     <div class="container">
         <div class="row">
             <div class="col-12 position-relative">

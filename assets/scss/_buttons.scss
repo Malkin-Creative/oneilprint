@@ -409,7 +409,7 @@
 
             &:before {
                 content: '';
-                background-image: url('/wp-content/uploads/2026/02/Icon-2.svg');
+                background-image: url('/wp-content/uploads/2026/02/Icon-3.svg');
                 background-size: 100%;
                 height: 13px;
                 width: 16px;
@@ -443,7 +443,7 @@
                 padding-left: 34px !important;
 
                 &:before {
-                    background-image: url('/wp-content/uploads/2026/02/Icon-3.svg');
+                    background-image: url('/wp-content/uploads/2026/02/Icon-2.svg');
                     left: 10px;
                 }
             }
@@ -464,8 +464,10 @@
             padding-left: 10px !important;
 
             &.email-button {
+                padding-left: 34px !important;
+                
                 &:before {
-                    background-image: url('/wp-content/uploads/2026/02/Icon-3.svg');
+                    background-image: url('/wp-content/uploads/2026/02/Icon-2.svg');
                 }
             }
 
