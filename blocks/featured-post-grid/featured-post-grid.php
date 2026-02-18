@@ -101,7 +101,7 @@ if ($typeOfPost == 'case-study') {
                 $categories = get_the_category($postId);
                 $industries = get_the_terms( $postId, 'industries' );
                 ?>
-                <div class="col-12 col-md-6 col-lg-4 featured-post-grid__wrap position-relative pb-10 pb-md-8 pb-lg-0">
+                <div class="col-12 col-md-6 col-lg-4 featured-post-grid__wrap position-relative pb-10 pb-md-8">
                     <?php if ($featured_image_url) : ?>
                         <div class="overlay object-fit-cover featured-post-grid__wrap__img">
                             <img src="<?php echo esc_url( $featured_image_url ); ?>" alt="<?php echo esc_attr( $alt_text ); ?>" class="w-100"/>

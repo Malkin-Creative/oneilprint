@@ -154,11 +154,11 @@ if ($background == 'solid') {
                             $buttonColor = 'black-underline';
                         }
                         ?>
-                        <div class="col tile-block__content__col position-relative p-6 p-lg-4 d-flex flex-column justify-content-between" <?php echo get_block_wrapper_attributes([
+                        <div class="col tile-block__content__col position-relative<?php if ($tile_background == 'image') : else : ?> p-6 p-lg-4<?php endif; ?> d-flex flex-column justify-content-between" <?php echo get_block_wrapper_attributes([
                             'style' => $styleTile
                         ]); ?>>
                             <?php if ($tile_background == 'image') : ?>
-                                <div class="tile-block__bg-img overlay object-fit-cover w-100 h-100">
+                                <div class="tile-block__bg-img ratio ratio-1x1 object-fit-cover w-100 h-100">
                                     <?php if ( $tile_background_image ) : ?>
                                         <img src="<?php echo esc_url($tile_background_image['url']); ?>" alt="<?php echo esc_attr($tile_background_image['alt']); ?>" class="w-100 h-100"/>
                                     <?php endif; ?>
