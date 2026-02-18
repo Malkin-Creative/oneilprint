@@ -12,7 +12,7 @@ defined('ABSPATH') || exit;
 
 get_header(); ?>
 
-<section class="container py-6">
+<section class="container py-6 mb-2 mb-md-6">
     <div class="row">
         <div class="col-12">
             <?php if ( function_exists( 'yoast_breadcrumb' ) ) {
