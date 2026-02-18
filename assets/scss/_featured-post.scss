@@ -23,7 +23,7 @@
         img {
             border-radius: $radius-md;
             object-fit: cover;
-            max-height: 600px;
+            // max-height: 600px;
         }
     }
     &__right {
@@ -65,7 +65,7 @@
 
         &__left {
             img {
-                max-height: 220px;
+                // max-height: 220px;
             }
         }
         &__right {

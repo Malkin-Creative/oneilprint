@@ -26493,7 +26493,6 @@ body.menu-open {
 .featured-post__left img {
   border-radius: 8px;
   object-fit: cover;
-  max-height: 600px;
 }
 .featured-post__right > div {
   border-radius: 8px;
@@ -26518,9 +26517,6 @@ body.menu-open {
     left: 0;
     top: unset;
     height: 300px !important;
-  }
-  .featured-post__left img {
-    max-height: 220px;
   }
 }
 .featured-post-grid__header {
