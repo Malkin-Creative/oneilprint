@@ -55,12 +55,16 @@ $topic = get_the_terms(get_the_ID(), 'topic');
         <div class="col-12 col-md-8 single-story__row__left">
             <?php if ( $featured_image_url ) : ?>
                 <img src="<?php echo esc_url( $featured_image_url ); ?>" alt="<?php echo esc_attr( $alt_text ); ?>" class="w-100 mb-md-8 mb-lg-10 position-relative sm-hide"/>
+            <?php else : ?>
+                <img src="/wp-content/uploads/2026/01/default-social-sharing-image.jpeg" alt="Post Placeholder Image" class="w-100 mb-md-8 mb-lg-10 position-relative sm-hide"/>
             <?php endif; ?>
             <?php the_content(); ?>
         </div>
         <div class="col-12 col-md-4 single-story__row__right">
             <?php if ( $featured_image_url ) : ?>
                 <img src="<?php echo esc_url( $featured_image_url ); ?>" alt="<?php echo esc_attr( $alt_text ); ?>" class="w-100 mb-4 position-relative sm-show md-hide lg-hide"/>
+            <?php else : ?>
+                <img src="/wp-content/uploads/2026/01/default-social-sharing-image.jpeg" alt="Post Placeholder Image" class="w-100 mb-4 position-relative sm-show md-hide lg-hide"/>
             <?php endif; ?>
             <div class="background-lightest-silver p-6 p-md-8 p-lg-10 d-flex flex-column">
                 <?php if ( ! empty( $author ) && ! is_wp_error( $author ) ) : ?>
@@ -153,11 +157,13 @@ if ($related_query->have_posts()) : ?>
                     $categories = get_the_category(get_the_ID());
                     ?>
                     <div class="col-12 col-md-6 col-lg-4 featured-post-grid__wrap position-relative pb-10 pb-md-8 pb-lg-0">
-                        <?php if ($featured_image_url) : ?>
-                            <div class="overlay object-fit-cover featured-post-grid__wrap__img">
+                        <div class="overlay object-fit-cover featured-post-grid__wrap__img">
+                            <?php if ($featured_image_url) : ?>
                                 <img src="<?php echo esc_url( $featured_image_url ); ?>" alt="<?php echo esc_attr( $alt_text ); ?>" class="w-100"/>
-                            </div>
-                        <?php endif; ?>
+                            <?php else : ?>
+                                <img src="/wp-content/uploads/2026/01/default-social-sharing-image.jpeg" alt="Post Placeholder Image" class="w-100"/>
+                            <?php endif; ?>
+                        </div>
                         <?php if ($title) : ?>
                             <h3>
                                 <?php echo $title; ?>

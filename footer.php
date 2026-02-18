@@ -42,46 +42,48 @@ if ( $office_address ) {
 <?php do_action( 'bootscore_before_footer' ); ?>
 
 <footer id="footer" class="footer position-relative">
-  <div class="container py-10 py-md-13 position-relative">
-    <div class="row">
-      <div class="col-12 col-md-4 col-lg-3 d-flex flex-md-column">
+  <div class="container py-10 py-md-13 position-relative footer__container">
+    <div class="row position-relative">
+      <div class="col-12 col-md-4 col-lg-3 d-flex flex-md-column mb-10 mb-md-0">
         <?php if ( $footer_logo ) : ?>
-          <a href="<?php echo esc_url( home_url( '/' ) ); ?>" class="footer__logo--buton mb-10">
+          <a href="<?php echo esc_url( home_url( '/' ) ); ?>" class="footer__logo--button mb-8">
             <img src="<?php echo esc_url($footer_logo['url']); ?>" alt="<?php echo esc_attr($footer_logo['alt']); ?>" class="footer__logo__img"/>
           </a>
         <?php endif; ?>
-        <?php if ( $office_address ) : ?>
-          <a href="<?php echo $google_maps_url; ?>" target="_blank" rel="noopener noreferrer" class="map-button text-white mb-4" role="button" aria-label="Open directions to <?php echo $office_address; ?> on Google Maps">
-            <?php echo $office_address; ?>
-          </a>
-        <?php endif; ?>
-        <div class="d-flex gap-1 mb-2">
-          <p class="text-blue-ada text-xs-bold">
-            O
-          </p>
-          <?php if ( $phone_number ) : ?>
-            <a href="<?php echo $tel; ?>" class="text-white" role="button" aria-label="Call us at <?php echo $phone_number; ?>">
-              <?php echo esc_html($formatted_phone); ?>
+        <div class="d-flex flex-column">
+          <?php if ( $office_address ) : ?>
+            <a href="<?php echo $google_maps_url; ?>" target="_blank" rel="noopener noreferrer" class="map-button text-white mb-4 text-xs-regular" role="button" aria-label="Open directions to <?php echo $office_address; ?> on Google Maps">
+              <?php echo $office_address; ?>
             </a>
           <?php endif; ?>
-        </div>
-        <div class="d-flex gap-1">
-          <p class="text-blue-ada text-xs-bold">
-            F
-          </p>
-          <?php if ( $fax_number ) : ?>
-            <a href="<?php echo $fax; ?>" class="text-white" role="button" aria-label="Send fax to <?php echo $fax_number; ?>">
-              <?php echo esc_html($formatted_fax); ?>
-            </a>
-          <?php endif; ?>
+          <div class="d-flex gap-2 mb-1 mb-md-2 align-items-center">
+            <p class="text-blue-ada text-xs-bold mb-0">
+              O
+            </p>
+            <?php if ( $phone_number ) : ?>
+              <a href="<?php echo $tel; ?>" class="text-white text-xs-regular" role="button" aria-label="Call us at <?php echo $phone_number; ?>">
+                <?php echo esc_html($formatted_phone); ?>
+              </a>
+            <?php endif; ?>
+          </div>
+          <div class="d-flex gap-2 align-items-center">
+            <p class="text-blue-ada text-xs-bold mb-0">
+              F
+            </p>
+            <?php if ( $fax_number ) : ?>
+              <a href="<?php echo $fax; ?>" class="text-white text-xs-regular footer__fax" role="button" aria-label="Send fax to <?php echo $fax_number; ?>">
+                <?php echo esc_html($formatted_fax); ?>
+              </a>
+            <?php endif; ?>
+          </div>
         </div>
       </div>
       <div class="col-12 col-md-8 col-lg-9">
-        <div class="row">
+        <div class="row mb-10 mb-md-6 footer__small-gap">
           <div class="col-12 col-lg-9">
-            <div class="row">
+            <div class="row footer__small-gap">
               <div class="col-6 col-lg-3">
-                <p class="text-yellow text-sm-regular font-secondary mb-8">
+                <p class="text-yellow text-sm-regular font-secondary mb-3">
                   Solutions
                 </p>
                 <?php // Primary Menu
@@ -92,7 +94,7 @@ if ( $office_address ) {
                 ?>
               </div>
               <div class="col-6 col-lg-3">
-                <p class="text-yellow text-sm-regular font-secondary mb-8">
+                <p class="text-yellow text-sm-regular font-secondary mb-3">
                   About
                 </p>
                 <?php // Primary Menu
@@ -103,7 +105,7 @@ if ( $office_address ) {
                 ?>
               </div>
               <div class="col-6 col-lg-3">
-                <p class="text-yellow text-sm-regular font-secondary mb-8">
+                <p class="text-yellow text-sm-regular font-secondary mb-3">
                   Resources
                 </p>
                 <?php // Primary Menu
@@ -114,7 +116,7 @@ if ( $office_address ) {
                 ?>
               </div>
               <div class="col-6 col-lg-3">
-                <p class="text-yellow text-sm-regular font-secondary mb-8">
+                <p class="text-yellow text-sm-regular font-secondary mb-3">
                   Our Companies
                 </p>
                 <?php // Primary Menu
@@ -127,20 +129,20 @@ if ( $office_address ) {
             </div>
           </div>
           <div class="col-12 col-lg-3">
-            <p class="text-yellow text-sm-regular font-secondary mb-6">
+            <p class="text-yellow text-sm-regular font-secondary mb-3">
               Follow Us
             </p>
             <?php if( have_rows('socials', 'options') ): ?>
-              <div class="d-flex gap-3">
+              <div class="d-flex gap-8 gap-md-4">
                 <?php while( have_rows('socials', 'options') ) : the_row(); ?>
                   <?php 
                   $social_media_image = get_sub_field('social_media_image');
-                  $social_media_url = get_sub_field('social_media_url');
+                  $social_media_link = get_sub_field('social_media_link');
                   $social_media_button_label = get_sub_field('social_media_button_label');
                   ?>
                   
-                  <?php if ( $social_media_url ) : ?>
-                    <a class="footer__socials" href="<?php echo esc_attr( $social_media_url ); ?>" target="_blank" rel="noopener" aria-label="<?php echo esc_attr( $social_media_button_label ); ?>">
+                  <?php if ( $social_media_link ) : ?>
+                    <a class="footer__socials" href="<?php echo esc_attr( $social_media_link ); ?>" target="_blank" rel="noopener" aria-label="<?php echo esc_attr( $social_media_button_label ); ?>">
                       <?php if ( $social_media_image ) : ?>
                         <img src="<?php echo esc_url($social_media_image['url']); ?>" alt="<?php echo esc_attr($social_media_image['alt']); ?>" />
                       <?php endif; ?>
@@ -153,24 +155,17 @@ if ( $office_address ) {
         </div>
         <div class="row">
           <div class="col-12">
-            <p class="text-yellow text-sm-regular font-secondary mb-6">
+            <p class="text-yellow text-sm-regular font-secondary mb-4">
               Affiliations
             </p>
             <?php if( have_rows('affiliations', 'options') ): ?>
-              <div class="d-flex gap-3 align-items-center">
+              <div class="d-flex flex-wrap gap-5 footer__container__affiliations">
                 <?php while( have_rows('affiliations', 'options') ) : the_row(); ?>
                   <?php 
                   $affiliation_image = get_sub_field('affiliation_image');
-                  $image_caption = get_sub_field('image_caption');
                   ?>
-                  
                   <?php if ( $affiliation_image ) : ?>
                     <img src="<?php echo esc_url($affiliation_image['url']); ?>" alt="<?php echo esc_attr($affiliation_image['alt']); ?>" />
-                  <?php endif; ?>
-                  <?php if ( $image_caption ) : ?>
-                    <p class="text-xs-regular mb-0">
-                      <?php echo $image_caption; ?>
-                    </p>
                   <?php endif; ?>
                 <?php endwhile; ?>
               </div>
@@ -183,18 +178,21 @@ if ( $office_address ) {
   <div class="py-5 footer__bottom position-relative">
     <div class="container position-relative">
       <div class="row align-items-center">
-        <div class="col-12 col-md-4">
-          <p class="text-blue text-xs-regular">
+        <div class="col-12 col-lg-3 mb-6 mb-md-0">
+          <p class="text-blue text-xs-regular mb-0">
             © <?php echo date('Y'); ?> O'Neil Printing. All rights reserved.
           </p>
         </div>
-        <div class="col-12 col-md-4">
-          iubenda
+        <div class="col-12 col-lg-5 mb-3 mb-md-0">
+          
         </div>
-        <div class="col-12 col-md-4 d-flex gap-1 align-items-center justify-content-end">
+        <div class="col-12 col-lg-4 d-flex gap-1 align-items-center justify-content-lg-end">
           <a class="text-blue text-xs-regular" href="https://www.rule29.com/" target="_blank" rel="noopener noreferrer" aria-label="Open Rule29 website">
             Design by Rule29
-          </a>|
+          </a>
+          <p class="text-blue text-xs-regular mb-0">
+            |
+          </p>
           <a class="text-blue text-xs-regular" href="https://malkinmade.com/" target="_blank" rel="noopener noreferrer" aria-label="Open Malkin Made website">
             Development by Malkin Made
           </a>
