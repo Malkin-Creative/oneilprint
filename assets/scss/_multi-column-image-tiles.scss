@@ -1,9 +1,13 @@
 .multi-col-img-tiles {
     &__content {
+        // display: grid;
+        // grid-auto-columns: 1fr;
+        // grid-auto-flow: column;
+        // gap: 20px;
         display: grid;
-        grid-auto-columns: 1fr;
-        grid-auto-flow: column;
         gap: 20px;
+        grid-auto-columns: unset;
+        grid-auto-flow: unset;
 
         &__col {
             &__image {
@@ -20,10 +24,11 @@
         padding-right: 20px !important;
 
         &__content {
-            row-gap: 40px !important;
-            grid-template-columns: repeat(2, 1fr);
-            grid-auto-columns: unset;
-            grid-auto-flow: unset;
+            // row-gap: 40px !important;
+            // grid-template-columns: repeat(2, 1fr);
+            // grid-auto-columns: unset;
+            // grid-auto-flow: unset;
+            grid-template-columns: repeat(2, 1fr) !important;
         }
     }
 }
@@ -34,10 +39,11 @@
         padding-right: 20px !important;
         
         &__content {
-            row-gap: 30px !important;
-            grid-template-columns: repeat(1, 1fr);
-            grid-auto-columns: unset;
-            grid-auto-flow: unset;
+            // row-gap: 30px !important;
+            // grid-template-columns: repeat(1, 1fr);
+            // grid-auto-columns: unset;
+            // grid-auto-flow: unset;
+            grid-template-columns: repeat(1, 1fr) !important;
         }
     }
 }

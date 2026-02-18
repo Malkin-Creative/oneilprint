@@ -23,6 +23,7 @@ $padding_top = get_field('padding_top');
 $padding_bottom = get_field('padding_bottom');
 $padding_top_mobile = $padding_top / 2;
 $padding_bottom_mobile = $padding_bottom / 2;
+$number_of_tiles_in_each_row = get_field('number_of_tiles_in_each_row');
 $background = get_field('background');
 $background_color = get_field('background_color');
 $background_gradient_start = get_field('background_gradient_start');
@@ -49,7 +50,7 @@ if ($background == 'solid') {
         'style' => $style
     ]); ?>>
     <div class="container">
-        <div class="row justify-content-center multi-col-img-tiles__content">
+        <div class="row justify-content-center multi-col-img-tiles__content" style="grid-template-columns: repeat(<?php if ($number_of_tiles_in_each_row) { echo $number_of_tiles_in_each_row; } else { echo '1'; } ?>, 1fr);">
             <?php if( have_rows('columns') ): ?>
                 <?php while( have_rows('columns') ) : the_row(); ?>
                     <?php 
