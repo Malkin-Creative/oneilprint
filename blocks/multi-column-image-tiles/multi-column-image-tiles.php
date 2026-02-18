@@ -37,6 +37,12 @@ if ($background == 'solid') {
 } else {
     $style = '';
 }
+
+if ($number_of_tiles_in_each_row) {
+    $tileNumber = $number_of_tiles_in_each_row;
+} else {
+    $tileNumber = '3';
+}
 ?>
 
 <?php if ( ! $is_preview ) : ?>
@@ -50,7 +56,7 @@ if ($background == 'solid') {
         'style' => $style
     ]); ?>>
     <div class="container">
-        <div class="row justify-content-center multi-col-img-tiles__content" style="grid-template-columns: repeat(<?php echo $number_of_tiles_in_each_row; ?>, 1fr);">
+        <div class="row justify-content-center multi-col-img-tiles__content" style="grid-template-columns: repeat(<?php echo $tileNumber; ?>, 1fr);">
             <?php if( have_rows('columns') ): ?>
                 <?php while( have_rows('columns') ) : the_row(); ?>
                     <?php 

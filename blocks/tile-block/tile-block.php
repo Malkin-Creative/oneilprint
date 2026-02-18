@@ -49,6 +49,12 @@ if ($anchorScrollPrimary == 'anchor-scroll') {
     $anchor_scroll_primary = '';
 }
 
+if ($number_of_tiles_in_each_row) {
+    $tileNumber = $number_of_tiles_in_each_row;
+} else {
+    $tileNumber = '3';
+}
+
 if ($text_color == 'light') {
     $textColor = 'white';
 } else {
@@ -95,7 +101,7 @@ if ($background == 'solid') {
                     <?php endif; ?>
                 </div>
             </div>
-            <div class="col-12 col-lg-8 tile-block__content" style="grid-template-columns: repeat(<?php echo $number_of_tiles_in_each_row; ?>, 1fr);">
+            <div class="col-12 col-lg-8 tile-block__content" style="grid-template-columns: repeat(<?php echo $tileNumber; ?>, 1fr);">
                 <?php if( have_rows('tiles') ): ?>
                     <?php while( have_rows('tiles') ) : the_row(); ?>
                         <?php 

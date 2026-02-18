@@ -25314,7 +25314,7 @@ h1, .h1, h2, .h2, .multi-col-tiles__content.cta-column .multi-col-tiles__content
 }
 .button--blue-underline.email-button:before, button--blue-underline.email-button:before {
   content: "";
-  background-image: url("/wp-content/uploads/2026/02/Icon-2.svg");
+  background-image: url("/wp-content/uploads/2026/02/Icon-3.svg");
   background-size: 100%;
   height: 13px;
   width: 16px;
@@ -25345,7 +25345,7 @@ h1, .h1, h2, .h2, .multi-col-tiles__content.cta-column .multi-col-tiles__content
   padding-left: 34px !important;
 }
 .button--blue-underline:hover.email-button:before, button--blue-underline:hover.email-button:before {
-  background-image: url("/wp-content/uploads/2026/02/Icon-3.svg");
+  background-image: url("/wp-content/uploads/2026/02/Icon-2.svg");
   left: 10px;
 }
 .button--blue-underline:hover:after, button--blue-underline:hover:after {
@@ -25361,8 +25361,11 @@ h1, .h1, h2, .h2, .multi-col-tiles__content.cta-column .multi-col-tiles__content
   text-decoration: none !important;
   padding-left: 10px !important;
 }
+.button--blue-underline:focus.email-button, .button--blue-underline:focus-visible.email-button, .button--blue-underline:focus-within.email-button, button--blue-underline:focus.email-button, button--blue-underline:focus-visible.email-button, button--blue-underline:focus-within.email-button {
+  padding-left: 34px !important;
+}
 .button--blue-underline:focus.email-button:before, .button--blue-underline:focus-visible.email-button:before, .button--blue-underline:focus-within.email-button:before, button--blue-underline:focus.email-button:before, button--blue-underline:focus-visible.email-button:before, button--blue-underline:focus-within.email-button:before {
-  background-image: url("/wp-content/uploads/2026/02/Icon-3.svg");
+  background-image: url("/wp-content/uploads/2026/02/Icon-2.svg");
 }
 .button--blue-underline:focus:after, .button--blue-underline:focus-visible:after, .button--blue-underline:focus-within:after, button--blue-underline:focus:after, button--blue-underline:focus-visible:after, button--blue-underline:focus-within:after {
   background-image: url("/wp-content/uploads/2026/01/icon-2.svg");
