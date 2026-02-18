@@ -26502,6 +26502,9 @@ body.menu-open {
     padding-left: 20px;
     padding-right: 20px;
   }
+  .featured-post.split-featured .featured-post__left {
+    padding-bottom: 20px;
+  }
   .featured-post__content__wrap {
     padding-bottom: 360px !important;
   }

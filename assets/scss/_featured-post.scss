@@ -35,6 +35,16 @@
     }
 }
 
+@media (min-width: 768px) and (max-width: 992px) {
+    .featured-post {
+        &.split-featured {
+            .featured-post__left {
+                padding-bottom: 20px;
+            }
+        }
+    }
+}
+
 @media (max-width: 767px) {
     .featured-post {
         &.full-width-featured {
@@ -42,7 +52,7 @@
             padding-right: 20px;
         }
 
-        .split-featured {
+        &.split-featured {
             .featured-post__left {
                 padding-bottom: 20px;
             }
