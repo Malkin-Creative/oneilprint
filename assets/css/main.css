@@ -27697,8 +27697,9 @@ body.modal-open {
 }
 .tile-block__content {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
   gap: 20px;
+  grid-auto-columns: unset;
+  grid-auto-flow: unset;
 }
 .tile-block__content img, .tile-block__content video {
   border-radius: 8px;
@@ -27718,14 +27719,12 @@ body.modal-open {
     padding-right: 20px !important;
   }
   .tile-block__content {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 20px;
+    grid-template-columns: repeat(2, 1fr) !important;
   }
 }
 @media (max-width: 767px) {
   .tile-block__content {
-    grid-template-columns: repeat(1, 1fr);
-    gap: 20px;
+    grid-template-columns: repeat(1, 1fr) !important;
   }
   .tile-block__content__col {
     min-height: 250px;

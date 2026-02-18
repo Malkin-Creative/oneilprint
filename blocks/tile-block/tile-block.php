@@ -23,6 +23,7 @@ $padding_top = get_field('padding_top');
 $padding_bottom = get_field('padding_bottom');
 $padding_top_mobile = $padding_top / 2;
 $padding_bottom_mobile = $padding_bottom / 2;
+$number_of_tiles_in_each_row = get_field('number_of_tiles_in_each_row');
 $animation_toggle = get_field('animation_toggle');
 $background = get_field('background');
 $background_color = get_field('background_color');
@@ -94,7 +95,7 @@ if ($background == 'solid') {
                     <?php endif; ?>
                 </div>
             </div>
-            <div class="col-12 col-lg-8 tile-block__content">
+            <div class="col-12 col-lg-8 tile-block__content" style="grid-template-columns: repeat(<?php echo $number_of_tiles_in_each_row; ?>, 1fr);">
                 <?php if( have_rows('tiles') ): ?>
                     <?php while( have_rows('tiles') ) : the_row(); ?>
                         <?php 
