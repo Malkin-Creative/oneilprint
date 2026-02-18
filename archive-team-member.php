@@ -23,7 +23,7 @@ get_header(); ?>
 </section>
 
 <?php
-$page = get_page_by_path('news');
+$page = get_page_by_path('our-team');
 
 if ($page) {
     echo apply_filters('the_content', $page->post_content);

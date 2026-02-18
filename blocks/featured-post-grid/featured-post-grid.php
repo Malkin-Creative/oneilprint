@@ -82,7 +82,7 @@ if ($typeOfPost == 'case-study') {
                     </div>
                 <?php endif; ?>
                 <?php if ($subheader) : ?>
-                    <div class="h4 text-tertiary text-steel<?php echo $textPosition; ?>">
+                    <div class="h4 font-tertiary text-steel<?php echo $textPosition; ?>">
                         <?php echo $subheader; ?>
                     </div>
                 <?php endif; ?>
@@ -114,7 +114,7 @@ if ($typeOfPost == 'case-study') {
                     <?php endif; ?>
                     <?php if ($categories) : ?>
                         <?php $lastCat = end($categories); ?>
-                        <p class="text-sm-bold mt-2 text-blue-ada text-tertiary">
+                        <p class="text-sm-bold mt-2 text-blue-ada font-tertiary">
                             <?php foreach( $categories as $category): ?>
                                 <?php echo esc_html( $category->name );
                                     if ($category !== $lastCat) {
@@ -126,7 +126,7 @@ if ($typeOfPost == 'case-study') {
                     <?php endif; ?>
                     <?php if ( ! empty( $industries ) && ! is_wp_error( $industries ) ) : ?>
                         <?php $lastInd = end($industries); ?>
-                        <p class="text-sm-bold mt-2 text-blue-ada text-tertiary">
+                        <p class="text-sm-bold mt-2 text-blue-ada font-tertiary">
                             <?php foreach( $industries as $industry): ?>
                                 <?php echo esc_html( $industry->name );
                                     if ($industry !== $lastInd) {
@@ -137,12 +137,12 @@ if ($typeOfPost == 'case-study') {
                         </p>
                     <?php endif; ?>
                     <?php if ($summary_excerpt) : ?>
-                        <div class="text-md-regular mt-4 text-black text-tertiary featured-post-grid__wrap__excerpt">
+                        <div class="text-md-regular mt-4 text-black font-tertiary featured-post-grid__wrap__excerpt">
                             <?php echo $summary_excerpt; ?>
                         </div>
                     <?php endif; ?>
                     <?php if ($excerpt) : ?>
-                        <p class="text-md-regular mt-4 text-black text-tertiary featured-post-grid__wrap__excerpt">
+                        <p class="text-md-regular mt-4 text-black font-tertiary featured-post-grid__wrap__excerpt">
                             <?php echo $excerpt; ?>
                         </p>
                     <?php endif; ?>

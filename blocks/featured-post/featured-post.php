@@ -186,7 +186,7 @@ $categories = get_the_category($postId);
                         </h2>
                         <?php if ($categories) : ?>
                             <?php $lastCat = end($categories); ?>
-                            <p class="text-sm-bold mb-4 text-tertiary text-<?php echo $subheaderColor; ?>">
+                            <p class="text-sm-bold mb-4 font-tertiary text-<?php echo $subheaderColor; ?>">
                                 <?php foreach( $categories as $category): ?>
                                     <?php echo esc_html( $category->name );
                                         if ($category !== $lastCat) {

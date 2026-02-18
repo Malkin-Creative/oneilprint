@@ -91,7 +91,7 @@ if ($tile_background == 'solid') {
                     </div>
                 <?php endif; ?>
                 <?php if ( $testimonial_title ) : ?>
-                    <div class="text-md-regular text-steel text-tertiary">
+                    <div class="text-md-regular text-steel font-tertiary">
                         <?php echo $testimonial_title; ?>
                     </div>
                 <?php endif; ?>
@@ -148,7 +148,7 @@ if ($tile_background == 'solid') {
                             </div>
                         <?php endif; ?>
                         <?php if ( $testimonial_title ) : ?>
-                            <div class="text-md-regular text-steel text-tertiary">
+                            <div class="text-md-regular text-steel font-tertiary">
                                 <?php echo $testimonial_title; ?>
                             </div>
                         <?php endif; ?>

@@ -37,7 +37,7 @@ $services = get_the_terms(get_the_ID(), 'services');
                             Client
                         </span>
                         <?php $lastClient = end($client); ?>
-                        <p class="text-lg-medium text-black text-tertiary">
+                        <p class="text-lg-medium text-black font-tertiary">
                             <?php foreach( $client as $clients): ?>
                                 <?php echo esc_html( $clients->name );
                                     if ($clients !== $lastClient) {
@@ -54,7 +54,7 @@ $services = get_the_terms(get_the_ID(), 'services');
                             Industry
                         </span>
                         <?php $lastInd = end($industries); ?>
-                        <p class="text-lg-medium text-black text-tertiary">
+                        <p class="text-lg-medium text-black font-tertiary">
                             <?php foreach( $industries as $industry): ?>
                                 <?php echo esc_html( $industry->name );
                                     if ($industry !== $lastInd) {
@@ -71,7 +71,7 @@ $services = get_the_terms(get_the_ID(), 'services');
                             Services
                         </span>
                         <?php $lastServ = end($services); ?>
-                        <p class="text-lg-medium text-black text-tertiary">
+                        <p class="text-lg-medium text-black font-tertiary">
                             <?php foreach( $services as $service): ?>
                                 <?php echo esc_html( $service->name );
                                     if ($service !== $lastServ) {

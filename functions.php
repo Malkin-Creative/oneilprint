@@ -231,7 +231,11 @@ function my_allowed_block_types($allowed_blocks, $block_editor_context) {
 function register_my_theme_menus() {
   register_nav_menus(
     array(
-      'top-main-menu' => __( 'Top Main Menu', 'oneilprint' )
+      'top-main-menu' => __( 'Top Main Menu', 'oneilprint' ),
+      'footer-solutions-menu' => __( 'Footer Solutions Menu', 'oneilprint' ),
+      'footer-about-menu' => __( 'Footer About Menu', 'oneilprint' ),
+      'footer-resources-menu' => __( 'Footer Resources Menu', 'oneilprint' ),
+      'footer-companies-menu' => __( 'Footer Companies Menu', 'oneilprint' )
     )
   );
 }
@@ -432,7 +436,7 @@ class ADA_Menu_Walker extends Walker_Nav_Menu {
       $html .= "</div>";
 
       if ($subtitle) {
-        $html .= "<div class=\"mega-menu__subtitle text-sm-regular text-tertiary text-steel mt-1\">{$subtitle}</div>";
+        $html .= "<div class=\"mega-menu__subtitle text-sm-regular font-tertiary text-steel mt-1\">{$subtitle}</div>";
       }
 
       $html .= "</div></a>\n";
@@ -455,24 +459,4 @@ class ADA_Menu_Walker extends Walker_Nav_Menu {
 // Add styles to editor
 add_action('after_setup_theme', function() {
     add_editor_style('assets/css/editornew.css');
-});
-
-// Fix breadcrumbs
-add_filter('wpseo_breadcrumb_links', function ($links) {
-
-    $posts_page_id = get_option('page_for_posts');
-
-    // Only modify breadcrumbs when NOT viewing blog posts
-    if (!is_home() && !is_singular('post') && $posts_page_id) {
-
-        foreach ($links as $key => $link) {
-            if (isset($link['id']) && $link['id'] == $posts_page_id) {
-                unset($links[$key]);
-            }
-        }
-
-        $links = array_values($links);
-    }
-
-    return $links;
 });

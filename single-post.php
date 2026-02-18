@@ -69,7 +69,7 @@ $topic = get_the_terms(get_the_ID(), 'topic');
                             Author
                         </span>
                         <?php $lastAuthor = end($author); ?>
-                        <p class="text-lg-medium text-black text-tertiary">
+                        <p class="text-lg-medium text-black font-tertiary">
                             <?php foreach( $author as $authors): ?>
                                 <?php echo esc_html( $authors->name );
                                     if ($authors !== $lastAuthor) {
@@ -86,7 +86,7 @@ $topic = get_the_terms(get_the_ID(), 'topic');
                             Category
                         </span>
                         <?php $lastCat = end($category); ?>
-                        <p class="text-lg-medium text-black text-tertiary">
+                        <p class="text-lg-medium text-black font-tertiary">
                             <?php foreach( $category as $categories): ?>
                                 <?php echo esc_html( $categories->name );
                                     if ($categories !== $lastCat) {
@@ -103,7 +103,7 @@ $topic = get_the_terms(get_the_ID(), 'topic');
                             Topic
                         </span>
                         <?php $lastTopic = end($topic); ?>
-                        <p class="text-lg-medium text-black text-tertiary">
+                        <p class="text-lg-medium text-black font-tertiary">
                             <?php foreach( $topic as $topics): ?>
                                 <?php echo esc_html( $topics->name );
                                     if ($topics !== $lastTopic) {
@@ -165,7 +165,7 @@ if ($related_query->have_posts()) : ?>
                         <?php endif; ?>
                         <?php if ($categories) : ?>
                             <?php $lastCat = end($categories); ?>
-                            <p class="text-sm-bold mt-2 text-blue-ada text-tertiary">
+                            <p class="text-sm-bold mt-2 text-blue-ada font-tertiary">
                                 <?php foreach( $categories as $category): ?>
                                     <?php echo esc_html( $category->name );
                                         if ($category !== $lastCat) {
@@ -176,7 +176,7 @@ if ($related_query->have_posts()) : ?>
                             </p>
                         <?php endif; ?>
                         <?php if ($excerpt) : ?>
-                            <p class="text-md-regular mt-4 text-black text-tertiary featured-post-grid__wrap__excerpt">
+                            <p class="text-md-regular mt-4 text-black font-tertiary featured-post-grid__wrap__excerpt">
                                 <?php echo $excerpt; ?>
                             </p>
                         <?php endif; ?>

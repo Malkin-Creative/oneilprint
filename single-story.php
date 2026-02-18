@@ -69,7 +69,7 @@ $service = get_the_terms(get_the_ID(), 'service');
                             Client
                         </span>
                         <?php $lastClient = end($client); ?>
-                        <p class="text-lg-medium text-black text-tertiary">
+                        <p class="text-lg-medium text-black font-tertiary">
                             <?php foreach( $client as $clients): ?>
                                 <?php echo esc_html( $clients->name );
                                     if ($clients !== $lastClient) {
@@ -86,7 +86,7 @@ $service = get_the_terms(get_the_ID(), 'service');
                             Industry
                         </span>
                         <?php $lastInd = end($industries); ?>
-                        <p class="text-lg-medium text-black text-tertiary">
+                        <p class="text-lg-medium text-black font-tertiary">
                             <?php foreach( $industries as $industry): ?>
                                 <?php echo esc_html( $industry->name );
                                     if ($industry !== $lastInd) {
@@ -103,7 +103,7 @@ $service = get_the_terms(get_the_ID(), 'service');
                             Services
                         </span>
                         <?php $lastServ = end($service); ?>
-                        <p class="text-lg-medium text-black text-tertiary">
+                        <p class="text-lg-medium text-black font-tertiary">
                             <?php foreach( $service as $services): ?>
                                 <?php echo esc_html( $services->name );
                                     if ($services !== $lastServ) {
@@ -165,7 +165,7 @@ if ($related_query->have_posts()) : ?>
                         <?php endif; ?>
                         <?php if ($categories) : ?>
                             <?php $lastCat = end($categories); ?>
-                            <p class="text-sm-bold mt-2 text-blue-ada text-tertiary">
+                            <p class="text-sm-bold mt-2 text-blue-ada font-tertiary">
                                 <?php foreach( $categories as $category): ?>
                                     <?php echo esc_html( $category->name );
                                         if ($category !== $lastCat) {
@@ -176,7 +176,7 @@ if ($related_query->have_posts()) : ?>
                             </p>
                         <?php endif; ?>
                         <?php if ($summary_excerpt) : ?>
-                            <div class="text-md-regular mt-4 text-black text-tertiary featured-post-grid__wrap__excerpt">
+                            <div class="text-md-regular mt-4 text-black font-tertiary featured-post-grid__wrap__excerpt">
                                 <?php echo $summary_excerpt; ?>
                             </div>
                         <?php endif; ?>

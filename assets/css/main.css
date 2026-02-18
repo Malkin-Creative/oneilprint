@@ -24465,13 +24465,13 @@ p {
   font-weight: 400;
   line-height: 1.5;
 }
-.text-primary {
+.font-primary {
   font-family: "Figtree", sans-serif;
 }
-.text-secondary {
+.font-secondary {
   font-family: "Roboto Mono", monospace;
 }
-.text-tertiary {
+.font-tertiary {
   font-family: "Inter", sans-serif;
 }
 .overlay {
@@ -26217,16 +26217,48 @@ body.menu-open {
     text-align: center;
   }
 }
-#footer .widget_nav_menu {
-  margin-top: 0;
+.footer {
+  background: #141B4D;
 }
-#footer #menu-footer-navigation {
+.footer:before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background: #000000;
+  background: linear-gradient(90deg, black 0%, #1179c5 100%);
+  opacity: 0.3;
+}
+.footer__bottom:before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background: #000000;
+  background: linear-gradient(90deg, black 0%, #1179c5 100%);
+  opacity: 0.1;
+}
+.footer__logo__img {
+  max-width: 170px;
+}
+.footer #menu-footer-navigation {
   display: flex;
   gap: 20px;
   justify-content: end;
 }
-#footer p {
-  color: #FFFFFFB0;
+.footer__socials {
+  transition: all 0.3s ease-in-out !important;
+}
+.footer__socials:hover {
+  transform: scale(1.1);
+}
+.footer__socials img {
+  height: 24px;
+  width: 24px;
 }
 @media (max-width: 767px) {
   #footer .wp-block-columns p, #footer .wp-block-columns figure {
