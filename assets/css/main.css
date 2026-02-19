@@ -27807,6 +27807,9 @@ body.modal-open {
     min-height: 250px;
   }
 }
+.team-member-block__img img {
+  border-radius: 8px;
+}
 .timeline:before {
   content: "";
   background: #E3EBF5;

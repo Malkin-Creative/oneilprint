@@ -35,7 +35,7 @@ $placeholder_image = get_field('placeholder_image');
 	>
 <?php endif; ?>
 
-<section class="featured-post-grid position-relative" id="<?php echo esc_attr( $id ); ?>">
+<section class="featured-post-grid position-relative team-member-block" id="<?php echo esc_attr( $id ); ?>">
     <div class="container">
         <div class="row justify-content-center">
             <?php foreach( $post_objects as $post): 
@@ -49,8 +49,8 @@ $placeholder_image = get_field('placeholder_image');
                 $summary_of_bio = get_field('summary_of_bio', $postId);
                 $full_bio = get_field('full_bio', $postId);
                 ?>
-                <div class="col-12 col-md-6 col-lg-3 featured-post-grid__wrap position-relative pb-10 pb-md-8">
-                    <div class="overlay object-fit-cover featured-post-grid__wrap__img">
+                <div class="col-12 col-md-6 col-lg-3 featured-post-grid__wrap position-relative pb-10 pb-md-8 pt-0">
+                    <div class="object-fit-cover mb-4 w-100 ratio ratio-1x1 team-member-block__img">
                         <?php if ($featured_image_url) : ?>
                             <img src="<?php echo esc_url( $featured_image_url ); ?>" alt="<?php echo esc_attr( $alt_text ); ?>" class="w-100"/>
                         <?php elseif ($placeholder_image) : ?>
@@ -70,7 +70,7 @@ $placeholder_image = get_field('placeholder_image');
                         </div>
                     <?php endif; ?>
                     <?php if ($summary_of_bio) : ?>
-                        <div class="text-md-regular mt-4 text-steel featured-post-grid__wrap__excerpt">
+                        <div class="text-md-regular my-4 text-steel featured-post-grid__wrap__excerpt">
                             <?php echo $summary_of_bio; ?>
                         </div>
                     <?php endif; ?>
