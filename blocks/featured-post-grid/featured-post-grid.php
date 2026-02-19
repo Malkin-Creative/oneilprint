@@ -28,11 +28,7 @@ $subheader = get_field('subheader');
 $block_alignment = get_field('block_alignment');
 $header_color = get_field('header_color');
 $text_and_button_color = get_field('text_and_button_color');
-$type_of_post = get_field('type_of_post');
-$featured_case_studies = get_field('featured_case_studies');
-$featured_stories = get_field('featured_stories');
-$featured_posts = get_field('featured_posts');
-$typeOfPost = $type_of_post->name;
+$featured_post_selections = get_field('featured_post_selections');
 $call_to_action = get_field('call_to_action');
 $call_to_action_label = get_field('call_to_action_label');
 if( $call_to_action ): 
@@ -54,14 +50,6 @@ if ($block_alignment == 'left') {
 } else {
     $textPosition = ' text-center';
     $buttonPosition = ' d-flex justify-content-center';
-}
-
-if ($typeOfPost == 'case-study') {
-    $post_objects = $featured_case_studies;
-} elseif ($typeOfPost == 'story') {
-    $post_objects = $featured_stories;
-} elseif ($typeOfPost == 'post') {
-    $post_objects = $featured_posts;
 }
 ?>
 
@@ -88,70 +76,74 @@ if ($typeOfPost == 'case-study') {
                 <?php endif; ?>
             </div>
         </div>
-        <div class="row">
-            <?php foreach( $post_objects as $post): 
-                $postId = $post->ID;
-                $permalink = get_permalink($postId);
-                $title = get_the_title($postId);
-                $summary_excerpt = get_field('summary_excerpt', $postId);
-                $excerpt = get_the_excerpt($postId);
-                $thumbnail_id = get_post_thumbnail_id($postId);
-                $featured_image_url = get_the_post_thumbnail_url($postId, 'full');
-                $alt_text = get_post_meta($thumbnail_id, '_wp_attachment_image_alt', true);
-                $categories = get_the_category($postId);
-                $industries = get_the_terms( $postId, 'industries' );
-                ?>
-                <div class="col-12 col-md-6 col-lg-4 featured-post-grid__wrap position-relative pb-10 pb-md-8">
-                    <?php if ($featured_image_url) : ?>
-                        <div class="overlay object-fit-cover featured-post-grid__wrap__img">
-                            <img src="<?php echo esc_url( $featured_image_url ); ?>" alt="<?php echo esc_attr( $alt_text ); ?>" class="w-100"/>
-                        </div>
-                    <?php endif; ?>
-                    <?php if ($title) : ?>
-                        <h3>
-                            <?php echo $title; ?>
-                        </h3>
-                    <?php endif; ?>
-                    <?php if ($categories) : ?>
-                        <?php $lastCat = end($categories); ?>
-                        <p class="text-sm-bold mt-2 text-blue-ada font-tertiary">
-                            <?php foreach( $categories as $category): ?>
-                                <?php echo esc_html( $category->name );
-                                    if ($category !== $lastCat) {
-                                        echo ', ';
-                                    }
-                                ?>
-                            <?php endforeach; ?>
-                        </p>
-                    <?php endif; ?>
-                    <?php if ( ! empty( $industries ) && ! is_wp_error( $industries ) ) : ?>
-                        <?php $lastInd = end($industries); ?>
-                        <p class="text-sm-bold mt-2 text-blue-ada font-tertiary">
-                            <?php foreach( $industries as $industry): ?>
-                                <?php echo esc_html( $industry->name );
-                                    if ($industry !== $lastInd) {
-                                        echo ', ';
-                                    }
-                                ?>
-                            <?php endforeach; ?>
-                        </p>
-                    <?php endif; ?>
-                    <?php if ($summary_excerpt) : ?>
-                        <div class="text-md-regular mt-4 text-black font-tertiary featured-post-grid__wrap__excerpt">
-                            <?php echo $summary_excerpt; ?>
-                        </div>
-                    <?php endif; ?>
-                    <?php if ($excerpt) : ?>
-                        <p class="text-md-regular mt-4 text-black font-tertiary featured-post-grid__wrap__excerpt">
-                            <?php echo $excerpt; ?>
-                        </p>
-                    <?php endif; ?>
-                    <a class="button button--steel-underline" href="<?php echo $permalink; ?>" aria-label="Open post">
-                        Read <?php echo $type_of_post->labels->singular_name; ?>
-                    </a>
-                </div>
-            <?php endforeach; ?>
-        </div>
+        <?php if ($featured_post_selections) : ?>
+            <div class="row">
+                <?php foreach( $featured_post_selections as $post): 
+                    $postId = $post->ID;
+                    $post_type = get_post_type($postId);
+                    $post_type_object = get_post_type_object($post_type);
+                    $permalink = get_permalink($postId);
+                    $title = get_the_title($postId);
+                    $summary_excerpt = get_field('summary_excerpt', $postId);
+                    $excerpt = get_the_excerpt($postId);
+                    $thumbnail_id = get_post_thumbnail_id($postId);
+                    $featured_image_url = get_the_post_thumbnail_url($postId, 'full');
+                    $alt_text = get_post_meta($thumbnail_id, '_wp_attachment_image_alt', true);
+                    $categories = get_the_category($postId);
+                    $industries = get_the_terms( $postId, 'industries' );
+                    ?>
+                    <div class="col-12 col-md-6 col-lg-4 featured-post-grid__wrap position-relative pb-10 pb-md-8">
+                        <?php if ($featured_image_url) : ?>
+                            <div class="overlay object-fit-cover featured-post-grid__wrap__img">
+                                <img src="<?php echo esc_url( $featured_image_url ); ?>" alt="<?php echo esc_attr( $alt_text ); ?>" class="w-100"/>
+                            </div>
+                        <?php endif; ?>
+                        <?php if ($title) : ?>
+                            <h3>
+                                <?php echo $title; ?>
+                            </h3>
+                        <?php endif; ?>
+                        <?php if ($categories) : ?>
+                            <?php $lastCat = end($categories); ?>
+                            <p class="text-sm-bold mt-2 text-blue-ada font-tertiary">
+                                <?php foreach( $categories as $category): ?>
+                                    <?php echo esc_html( $category->name );
+                                        if ($category !== $lastCat) {
+                                            echo ', ';
+                                        }
+                                    ?>
+                                <?php endforeach; ?>
+                            </p>
+                        <?php endif; ?>
+                        <?php if ( ! empty( $industries ) && ! is_wp_error( $industries ) ) : ?>
+                            <?php $lastInd = end($industries); ?>
+                            <p class="text-sm-bold mt-2 text-blue-ada font-tertiary">
+                                <?php foreach( $industries as $industry): ?>
+                                    <?php echo esc_html( $industry->name );
+                                        if ($industry !== $lastInd) {
+                                            echo ', ';
+                                        }
+                                    ?>
+                                <?php endforeach; ?>
+                            </p>
+                        <?php endif; ?>
+                        <?php if ($summary_excerpt) : ?>
+                            <div class="text-md-regular mt-4 text-black font-tertiary featured-post-grid__wrap__excerpt">
+                                <?php echo $summary_excerpt; ?>
+                            </div>
+                        <?php endif; ?>
+                        <?php if ($excerpt) : ?>
+                            <p class="text-md-regular mt-4 text-black font-tertiary featured-post-grid__wrap__excerpt">
+                                <?php echo $excerpt; ?>
+                            </p>
+                        <?php endif; ?>
+                        <a class="button button--steel-underline" href="<?php echo $permalink; ?>" aria-label="Open post">
+                            Read <?php echo esc_html($post_type_object->labels->singular_name); ?>
+                        </a>
+                    </div>
+                <?php endforeach; ?>
+            </div>
+        <?php endif; ?>
         <div class="row">
             <div class="col-12 mt-lg-10<?php echo $buttonPosition; ?>">
                 <?php if ( $call_to_action ) : ?>
