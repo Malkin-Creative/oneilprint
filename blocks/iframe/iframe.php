@@ -79,7 +79,7 @@ if ($block_alignment == 'left') {
                     </div>
                 <?php endif; ?>
                 <?php if ($paragraph) : ?>
-                    <div class="mb-5 text-md-regular text-steel<?php echo $textPosition; ?>">
+                    <div class="mb-5 text-steel<?php echo $textPosition; ?>">
                         <?php echo $paragraph; ?>
                     </div>
                 <?php endif; ?>

@@ -2,8 +2,6 @@
     &__row {
         column-gap: 40px;
         row-gap: 40px;
-        display: grid;
-        grid-template-columns: repeat(5, 1fr);
 
         &__icon {
             transition: all .3s ease-in-out !important;

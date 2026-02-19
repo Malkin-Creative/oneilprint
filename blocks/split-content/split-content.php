@@ -94,7 +94,7 @@ if ($tile_background == 'solid') {
                     </div>
                 <?php endif; ?>
                 <?php if ($paragraph) : ?>
-                    <div class="text-xl-regular mb-0 text-<?php echo $textColor; ?>">
+                    <div class="mb-0 text-<?php echo $textColor; ?>">
                         <?php echo $paragraph; ?>
                     </div>
                 <?php endif; ?>

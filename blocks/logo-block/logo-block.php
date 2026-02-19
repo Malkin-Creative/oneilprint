@@ -50,7 +50,7 @@ $header = get_field('header');
                     <?php $logo = get_sub_field('logo');
                     $logo_link = get_sub_field('logo_link');
                     $logo_link_label = get_sub_field('logo_link_label'); ?>
-                    <div class="col text-center">
+                    <div class="col-2 text-center">
                         <?php if ( $logo ) : ?>
                             <?php if ( $logo_link ) : ?>
                                 <a class="logo-block__row__icon p-1 object-fit-contain d-flex h-100 justify-content-center" href="<?php echo $logo_link; ?>" aria-label="<?php echo esc_attr( $logo_link_label ); ?>">

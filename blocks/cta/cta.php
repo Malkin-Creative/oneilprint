@@ -151,7 +151,7 @@ if ($tile_background == 'solid') {
                     </div>
                 <?php endif; ?>
                 <?php if ( $paragraph ) : ?>
-                    <div class="h3 text-left text-md-center text-<?php echo $textColor; ?>">
+                    <div class="text-left text-md-center text-<?php echo $textColor; ?>">
                         <?php echo $paragraph; ?>
                     </div>
                 <?php endif; ?>
