@@ -44,7 +44,7 @@ $header = get_field('header');
                 <?php endif; ?>
             </div>
         </div>
-        <div class="row justify-content-between align-items-center logo-block__row">
+        <div class="row justify-content-center align-items-center logo-block__row">
             <?php if( have_rows('logos') ): ?>
                 <?php while( have_rows('logos') ) : the_row(); ?>
                     <?php $logo = get_sub_field('logo');
