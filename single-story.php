@@ -176,7 +176,7 @@ if ($related_query->have_posts()) : ?>
                             </p>
                         <?php endif; ?>
                         <?php if ($summary_excerpt) : ?>
-                            <div class="text-md-regular mt-4 text-black font-tertiary featured-post-grid__wrap__excerpt">
+                            <div class="text-md-regular my-4 text-black font-tertiary featured-post-grid__wrap__excerpt">
                                 <?php echo $summary_excerpt; ?>
                             </div>
                         <?php endif; ?>

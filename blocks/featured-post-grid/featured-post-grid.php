@@ -130,12 +130,12 @@ if ($block_alignment == 'left') {
                             </p>
                         <?php endif; ?>
                         <?php if ($summary_excerpt) : ?>
-                            <div class="text-md-regular mt-4 text-black font-tertiary featured-post-grid__wrap__excerpt">
+                            <div class="text-md-regular my-4 text-black font-tertiary featured-post-grid__wrap__excerpt">
                                 <?php echo $summary_excerpt; ?>
                             </div>
                         <?php endif; ?>
                         <?php if ($excerpt) : ?>
-                            <p class="text-md-regular mt-4 text-black font-tertiary featured-post-grid__wrap__excerpt">
+                            <p class="text-md-regular my-4 text-black font-tertiary featured-post-grid__wrap__excerpt">
                                 <?php echo $excerpt; ?>
                             </p>
                         <?php endif; ?>
@@ -207,12 +207,12 @@ if ($block_alignment == 'left') {
                                 </p>
                             <?php endif; ?>
                             <?php if ($summary_excerpt) : ?>
-                                <div class="text-md-regular mt-4 text-black font-tertiary featured-post-grid__wrap__excerpt">
+                                <div class="text-md-regular my-4 text-black font-tertiary featured-post-grid__wrap__excerpt">
                                     <?php echo $summary_excerpt; ?>
                                 </div>
                             <?php endif; ?>
                             <?php if ($excerpt) : ?>
-                                <p class="text-md-regular mt-4 text-black font-tertiary featured-post-grid__wrap__excerpt">
+                                <p class="text-md-regular my-4 text-black font-tertiary featured-post-grid__wrap__excerpt">
                                     <?php echo $excerpt; ?>
                                 </p>
                             <?php endif; ?>
