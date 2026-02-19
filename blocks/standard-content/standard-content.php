@@ -127,7 +127,7 @@ if ($background_color == 'white') {
                         </div>
                     <?php endif; ?>
                     <?php if ($paragraph) : ?>
-                        <div class="text-lg-regular mb-0 text-<?php echo $textColor; echo $textAlignment; ?>">
+                        <div class="mb-0 text-<?php echo $textColor; echo $textAlignment; ?>">
                             <?php echo $paragraph; ?>
                         </div>
                     <?php endif; ?>
@@ -141,7 +141,7 @@ if ($background_color == 'white') {
                                     </div>
                                 <?php endif; ?>
                                 <?php if ($paragraph) : ?>
-                                    <div class="text-lg-regular mb-0 text-<?php echo $textColor; echo $textAlignment; ?>">
+                                    <div class="mb-0 text-<?php echo $textColor; echo $textAlignment; ?>">
                                         <?php echo $paragraph; ?>
                                     </div>
                                 <?php endif; ?>
@@ -153,7 +153,7 @@ if ($background_color == 'white') {
                                     </div>
                                 <?php endif; ?>
                                 <?php if ($paragraph_of_second_column) : ?>
-                                    <div class="text-lg-regular mb-0 text-<?php echo $textColor; echo $textAlignment; ?>">
+                                    <div class="mb-0 text-<?php echo $textColor; echo $textAlignment; ?>">
                                         <?php echo $paragraph_of_second_column; ?>
                                     </div>
                                 <?php endif; ?>
@@ -167,12 +167,12 @@ if ($background_color == 'white') {
                         <?php endif; ?>
                         <div class="standard-content__wrap__columns">
                             <?php if ($paragraph) : ?>
-                                <div class="text-xl-regular mb-0 text-<?php echo $textColor; echo $textAlignment; ?>">
+                                <div class="mb-0 text-<?php echo $textColor; echo $textAlignment; ?>">
                                     <?php echo $paragraph; ?>
                                 </div>
                             <?php endif; ?>
                             <?php if ($paragraph_of_second_column) : ?>
-                                <div class="text-xl-regular mb-0 text-<?php echo $textColor; echo $textAlignment; ?>">
+                                <div class="mb-0 text-<?php echo $textColor; echo $textAlignment; ?>">
                                     <?php echo $paragraph_of_second_column; ?>
                                 </div>
                             <?php endif; ?>

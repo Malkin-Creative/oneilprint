@@ -71,7 +71,7 @@ $location = get_the_terms(get_the_ID(), 'location');
         </div>
     </div>
 </section>
-<div class="container p-0">
+<div class="container p-0 single--content">
     <div class="row p-0">
         <div class="col-12 col-md-10 p-0 mx-auto">
             <?php the_content(); ?>

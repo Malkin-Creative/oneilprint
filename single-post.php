@@ -141,7 +141,7 @@ if ($related_query->have_posts()) : ?>
         <div class="container">
             <div class="row">
                 <div class="col-12 mb-6 mb-md-8 mb-lg-10">
-                    <h2 class="featured-post-grid__header oversized-h2 mb-4 text-center">
+                    <h2 class="featured-post-grid__header  mb-4 text-center">
                         Related Posts
                     </h2>
                 </div>

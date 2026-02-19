@@ -26703,6 +26703,74 @@ body.menu-open {
   gap: 24px;
   flex-wrap: wrap;
 }
+.hero-collage__container__content__wrap__paragraph h1.h1-jumbo, .hero-collage__container__content__wrap__paragraph .h1-jumbo.h1, .hero-collage__container__content__wrap__paragraph .h1-jumbo, .hero-collage__container__content__wrap__paragraph .h1-jumbo h1, .hero-collage__container__content__wrap__paragraph .h1-jumbo .h1, .hero-collage__container__content__wrap__paragraph .h1-jumbo h2, .hero-collage__container__content__wrap__paragraph .h1-jumbo .h2, .hero-collage__container__content__wrap__paragraph .h1-jumbo .multi-col-tiles__content.cta-column .multi-col-tiles__content__col:last-of-type h3, .multi-col-tiles__content.cta-column .multi-col-tiles__content__col:last-of-type .hero-collage__container__content__wrap__paragraph .h1-jumbo h3, .hero-collage__container__content__wrap__paragraph .h1-jumbo .multi-col-tiles__content.cta-column .multi-col-tiles__content__col:last-of-type .h3 {
+  font-size: 60px;
+  font-family: "Figtree", sans-serif;
+  text-transform: uppercase;
+  line-height: 1.16;
+  font-weight: 300;
+  letter-spacing: -1px;
+}
+.hero-collage__container__content__wrap__paragraph h1, .hero-collage__container__content__wrap__paragraph .h1 {
+  font-size: 60px;
+  font-family: "Figtree", sans-serif;
+  line-height: 1.1;
+  font-weight: 300;
+}
+.hero-collage__container__content__wrap__paragraph h2.oversized-h2, .hero-collage__container__content__wrap__paragraph .oversized-h2.h2, .hero-collage__container__content__wrap__paragraph .multi-col-tiles__content.cta-column .multi-col-tiles__content__col:last-of-type h3.oversized-h2, .multi-col-tiles__content.cta-column .multi-col-tiles__content__col:last-of-type .hero-collage__container__content__wrap__paragraph h3.oversized-h2, .hero-collage__container__content__wrap__paragraph .multi-col-tiles__content.cta-column .multi-col-tiles__content__col:last-of-type .oversized-h2.h3, .hero-collage__container__content__wrap__paragraph .oversized-h2 {
+  font-size: 62px;
+  font-family: "Figtree", sans-serif;
+  font-weight: 300;
+  line-height: 1.2;
+  letter-spacing: -1px;
+}
+.hero-collage__container__content__wrap__paragraph h2, .hero-collage__container__content__wrap__paragraph .h2, .hero-collage__container__content__wrap__paragraph .multi-col-tiles__content.cta-column .multi-col-tiles__content__col:last-of-type h3, .multi-col-tiles__content.cta-column .multi-col-tiles__content__col:last-of-type .hero-collage__container__content__wrap__paragraph h3, .hero-collage__container__content__wrap__paragraph .multi-col-tiles__content.cta-column .multi-col-tiles__content__col:last-of-type .h3 {
+  font-size: 32px;
+  font-family: "Figtree", sans-serif;
+  font-weight: 300;
+  line-height: 1.375;
+  letter-spacing: -1px;
+  margin: 0 0 20px !important;
+}
+.hero-collage__container__content__wrap__paragraph .oversized-h3 {
+  font-size: 48px;
+  font-family: "Figtree", sans-serif;
+  font-weight: 300;
+  line-height: 1.33;
+  letter-spacing: -1px;
+}
+.hero-collage__container__content__wrap__paragraph h3, .hero-collage__container__content__wrap__paragraph .h3 {
+  font-size: 24px;
+  font-family: "Figtree", sans-serif;
+  font-weight: 400;
+  line-height: 1.33;
+  letter-spacing: -1px;
+}
+.hero-collage__container__content__wrap__paragraph h4, .hero-collage__container__content__wrap__paragraph .h4 {
+  font-size: 20px;
+  font-family: "Figtree", sans-serif;
+  font-weight: 400;
+  line-height: 1.4;
+  letter-spacing: -1px;
+}
+.hero-collage__container__content__wrap__paragraph h5, .hero-collage__container__content__wrap__paragraph .h5 {
+  font-size: 18px;
+  font-family: "Figtree", sans-serif;
+  font-weight: 400;
+  line-height: 1.33;
+}
+.hero-collage__container__content__wrap__paragraph h6, .hero-collage__container__content__wrap__paragraph .h6 {
+  font-size: 16px;
+  font-family: "Figtree", sans-serif;
+  font-weight: 400;
+  line-height: 1.25;
+}
+.hero-collage__container__content__wrap__paragraph p {
+  font-size: 16px;
+  font-family: "Figtree", sans-serif;
+  font-weight: 400;
+  line-height: 1.5;
+}
 @media (max-width: 992px) {
   .hero-collage__container:before {
     height: 60px;
@@ -27467,6 +27535,74 @@ body.modal-open {
 .standard-content__wrap__buttons {
   gap: 12px;
   flex-wrap: wrap;
+}
+.standard-content__wrap h1.h1-jumbo, .standard-content__wrap .h1-jumbo.h1, .standard-content__wrap .h1-jumbo, .standard-content__wrap .h1-jumbo h1, .standard-content__wrap .h1-jumbo .h1, .standard-content__wrap .h1-jumbo h2, .standard-content__wrap .h1-jumbo .h2, .standard-content__wrap .h1-jumbo .multi-col-tiles__content.cta-column .multi-col-tiles__content__col:last-of-type h3, .multi-col-tiles__content.cta-column .multi-col-tiles__content__col:last-of-type .standard-content__wrap .h1-jumbo h3, .standard-content__wrap .h1-jumbo .multi-col-tiles__content.cta-column .multi-col-tiles__content__col:last-of-type .h3 {
+  font-size: 60px;
+  font-family: "Figtree", sans-serif;
+  text-transform: uppercase;
+  line-height: 1.16;
+  font-weight: 300;
+  letter-spacing: -1px;
+}
+.standard-content__wrap h1, .standard-content__wrap .h1 {
+  font-size: 60px;
+  font-family: "Figtree", sans-serif;
+  line-height: 1.1;
+  font-weight: 300;
+}
+.standard-content__wrap h2.oversized-h2, .standard-content__wrap .oversized-h2.h2, .standard-content__wrap .multi-col-tiles__content.cta-column .multi-col-tiles__content__col:last-of-type h3.oversized-h2, .multi-col-tiles__content.cta-column .multi-col-tiles__content__col:last-of-type .standard-content__wrap h3.oversized-h2, .standard-content__wrap .multi-col-tiles__content.cta-column .multi-col-tiles__content__col:last-of-type .oversized-h2.h3, .standard-content__wrap .oversized-h2 {
+  font-size: 62px;
+  font-family: "Figtree", sans-serif;
+  font-weight: 300;
+  line-height: 1.2;
+  letter-spacing: -1px;
+}
+.standard-content__wrap h2, .standard-content__wrap .h2, .standard-content__wrap .multi-col-tiles__content.cta-column .multi-col-tiles__content__col:last-of-type h3, .multi-col-tiles__content.cta-column .multi-col-tiles__content__col:last-of-type .standard-content__wrap h3, .standard-content__wrap .multi-col-tiles__content.cta-column .multi-col-tiles__content__col:last-of-type .h3 {
+  font-size: 32px;
+  font-family: "Figtree", sans-serif;
+  font-weight: 300;
+  line-height: 1.375;
+  letter-spacing: -1px;
+  margin: 0 0 20px !important;
+}
+.standard-content__wrap .oversized-h3 {
+  font-size: 48px;
+  font-family: "Figtree", sans-serif;
+  font-weight: 300;
+  line-height: 1.33;
+  letter-spacing: -1px;
+}
+.standard-content__wrap h3, .standard-content__wrap .h3 {
+  font-size: 24px;
+  font-family: "Figtree", sans-serif;
+  font-weight: 400;
+  line-height: 1.33;
+  letter-spacing: -1px;
+}
+.standard-content__wrap h4, .standard-content__wrap .h4 {
+  font-size: 20px;
+  font-family: "Figtree", sans-serif;
+  font-weight: 400;
+  line-height: 1.4;
+  letter-spacing: -1px;
+}
+.standard-content__wrap h5, .standard-content__wrap .h5 {
+  font-size: 18px;
+  font-family: "Figtree", sans-serif;
+  font-weight: 400;
+  line-height: 1.33;
+}
+.standard-content__wrap h6, .standard-content__wrap .h6 {
+  font-size: 16px;
+  font-family: "Figtree", sans-serif;
+  font-weight: 400;
+  line-height: 1.25;
+}
+.standard-content__wrap p {
+  font-size: 16px;
+  font-family: "Figtree", sans-serif;
+  font-weight: 400;
+  line-height: 1.5;
 }
 @media (max-width: 767px) {
   .standard-content__wrap__columns {

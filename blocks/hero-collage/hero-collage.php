@@ -104,7 +104,7 @@ if ($background == 'solid') {
                     </h3>
                 <?php endif; ?>
                 <?php if ($paragraph) : ?>
-                    <div class="text-black text-xl-regular mt-4 mt-md-5">
+                    <div class="text-black text-xl-regular mt-4 mt-md-5 hero-collage__container__content__wrap__paragraph">
                         <?php echo $paragraph; ?>
                     </div>
                 <?php endif; ?>

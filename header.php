@@ -62,7 +62,7 @@ defined('ABSPATH') || exit;
             <?php endif; ?>
           </div>
           <div class="col-12 col-md-3 col-lg-2 d-flex align-items-center justify-content-end">
-            <button id="close-cookie" class="banner-close text-md-medium text-white py-0" aria-label="Dismiss banner" title="Close banner">Allow & Close</button>
+            <button id="close-cookie" class="banner-close text-sm-regular text-white py-0" aria-label="Dismiss banner" title="Close banner">Allow & Close</button>
           </div>
         </div>
       </div>
@@ -90,13 +90,13 @@ defined('ABSPATH') || exit;
           </div>
           <div class="col-12 col-md-3 col-lg-2 d-flex align-items-center justify-content-end">
             <?php if ( $announcement_bar_link ) : ?>
-              <a class="button text-white text-md-medium" href="<?php echo esc_url( $link_url ); ?>" target="<?php echo esc_attr( $link_target ); ?>" rel="noopener" aria-label="<?php echo esc_attr( $announcement_bar_link_label ); ?>">
+              <a class="button text-white text-sm-regular" href="<?php echo esc_url( $link_url ); ?>" target="<?php echo esc_attr( $link_target ); ?>" rel="noopener" aria-label="<?php echo esc_attr( $announcement_bar_link_label ); ?>">
                 <span>
                   <?php echo esc_html( $link_title ); ?>
                 </span>
               </a>
             <?php endif; ?>
-            <button id="close-announcement" class="banner-close text-md-medium text-white" aria-label="Dismiss announcement" title="Close announcement"></button>
+            <button id="close-announcement" class="banner-close text-sm-regular text-white" aria-label="Dismiss announcement" title="Close announcement"></button>
           </div>
         </div>
       </div>
