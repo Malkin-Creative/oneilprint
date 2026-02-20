@@ -85,6 +85,10 @@ body {
     }
 }
 
+// Fixing broken link class
+.broken_link, a.broken_link {
+    text-decoration: none;
+}
 // Breadcrumbs
 #breadcrumbs {
     > span {
@@ -96,6 +100,23 @@ body {
             > a {
                 position: relative;
                 color: transparent;
+                padding: 0;
+
+                &:hover {
+                    color: transparent !important;
+                    background: transparent !important; 
+                    text-decoration: none !important;
+                }
+
+                &:focus, &:focus-visible, &:focus-within {
+                    outline-color: transparent; 
+                    outline-style: solid;
+                    box-shadow: 0 0 0 3px $white, 0 0 0 4px $silver;
+                    border-radius: $radius-xs;
+                    color: transparent !important;
+                    background: transparent !important; 
+                    text-decoration: none !important;
+                }
 
                 &:after {
                     position: absolute;
@@ -131,7 +152,30 @@ body {
                 font-family: $primaryFont;
                 font-weight: 500;
                 line-height: 1.5;
+                padding: 8px 12px;
                 color: $steel;
+                background: transparent !important;
+                outline: none !important;
+                border-color: transparent !important;
+                border: none;
+                border-radius: $radius-sm;
+                transition: all .3s ease-in-out !important;
+
+                &:hover {
+                    color: $white !important;
+                    background: $navy !important; 
+                    text-decoration: none !important;
+                }
+
+                &:focus, &:focus-visible, &:focus-within {
+                    outline-color: transparent; 
+                    outline-style: solid;
+                    box-shadow: 0 0 0 3px $white, 0 0 0 4px $silver;
+                    border-radius: $radius-xs;
+                    color: $white !important;
+                    background: $navy !important;
+                    text-decoration: none !important;
+                }
             }
         }
         .breadcrumb_last {

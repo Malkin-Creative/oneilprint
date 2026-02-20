@@ -148,9 +148,13 @@ defined('ABSPATH') || exit;
       <div class="row justify-content-between pt-2 pb-4">
         <div class="col-6 col-md-4 col-lg-2 header__logo">
           <?php if ( $header_logo ) : ?>
-            <a href="<?php echo esc_url( home_url( '/' ) ); ?>" class="header__logo--buton">
+            <?php if ( is_front_page() ) : ?>
               <img src="<?php echo esc_url($header_logo['url']); ?>" alt="<?php echo esc_attr($header_logo['alt']); ?>" class="header__logo__img"/>
-            </a>
+            <?php else : ?>
+              <a href="<?php echo esc_url( home_url( '/' ) ); ?>" class="header__logo--buton">
+                <img src="<?php echo esc_url($header_logo['url']); ?>" alt="<?php echo esc_attr($header_logo['alt']); ?>" class="header__logo__img"/>
+              </a>
+            <?php endif; ?>
           <?php endif; ?>
         </div>
         <div class="col-lg-10 d-none d-lg-flex align-items-center justify-content-end position-relative">

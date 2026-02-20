@@ -13,9 +13,20 @@
                 transition: all .3s ease-in-out !important;
             }
 
-            &:hover, &:focus, &:focus-visible, &:focus-within {
+            &:hover {
                 border-radius: $radius-md;
                 border: 1px solid $steel;
+
+                img {
+                    transform: scale(0.95);
+                }
+            }
+
+            &:focus, &:focus-visible, &:focus-within {
+                outline-color: transparent; 
+                outline-style: solid;
+                box-shadow: 0 0 0 3px $white, 0 0 0 4px $silver;
+                border-radius: $radius-md;
 
                 img {
                     transform: scale(0.95);

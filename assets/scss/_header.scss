@@ -644,6 +644,34 @@
     &__logo {
         position: relative;
         z-index: 999;
+
+        a {
+            height: 100%;
+            display: block;
+            transition: all .3s ease-in-out !important;
+
+            img {
+                transition: all .3s ease-in-out !important;
+            }
+            &:hover {
+                border-radius: $radius-md;
+                border: 1px solid $steel !important;
+
+                img {
+                    transform: scale(0.85);
+                }
+            }
+            &:focus, &:focus-visible, &:focus-within {
+                outline-color: transparent; 
+                outline-style: solid;
+                box-shadow: 0 0 0 3px $white, 0 0 0 4px $silver;
+                border-radius: $radius-md;
+
+                img {
+                    transform: scale(0.85);
+                }
+            }
+        }
     }
     &__mobile {
         position: relative;
