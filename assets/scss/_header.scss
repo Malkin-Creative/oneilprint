@@ -649,12 +649,13 @@
             height: 100%;
             display: block;
             transition: all .3s ease-in-out !important;
+            border: 1px solid transparent !important;
+            border-radius: $radius-md;
 
             img {
                 transition: all .3s ease-in-out !important;
             }
             &:hover {
-                border-radius: $radius-md;
                 border: 1px solid $steel !important;
 
                 img {

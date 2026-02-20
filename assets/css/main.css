@@ -26213,12 +26213,13 @@ h1, .h1, h2, .h2, .multi-col-tiles__content.cta-column .multi-col-tiles__content
   height: 100%;
   display: block;
   transition: all 0.3s ease-in-out !important;
+  border: 1px solid transparent !important;
+  border-radius: 8px;
 }
 .header__logo a img {
   transition: all 0.3s ease-in-out !important;
 }
 .header__logo a:hover {
-  border-radius: 8px;
   border: 1px solid #647692 !important;
 }
 .header__logo a:hover img {
