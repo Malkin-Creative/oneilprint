@@ -129,6 +129,7 @@ if ($cta_column) {
             <?php if( have_rows('columns') ): ?>
                 <?php while( have_rows('columns') ) : the_row(); ?>
                     <?php 
+                    $icon_width = get_sub_field('icon_width');
                     $header_color = get_sub_field('header_color');
                     $paragraph_color = get_sub_field('paragraph_color');
                     $button_color = get_sub_field('button_color');
@@ -177,6 +178,12 @@ if ($cta_column) {
                         $paragraphColor = 'black';
                     }
 
+                    if ($icon_width == 'full') {
+                        $iconWidth = ' full-width';
+                    } else {
+                        $iconWidth = '';
+                    }
+
                     if ($button_color == 'steel') {
                         $buttonColor = 'steel-underline';
                     } elseif ($button_color == 'white') {
@@ -190,7 +197,7 @@ if ($cta_column) {
                     ]); ?>>
                         <div>
                             <?php if ( $icon ) : ?>
-                                <img src="<?php echo esc_url($icon['url']); ?>" alt="<?php echo esc_attr($icon['alt']); ?>" class="mb-4 multi-col-tiles__content__col__icon"/>
+                                <img src="<?php echo esc_url($icon['url']); ?>" alt="<?php echo esc_attr($icon['alt']); ?>" class="mb-4 multi-col-tiles__content__col__icon<?php echo $iconWidth; ?>"/>
                             <?php endif; ?>
                             <?php if ( $header ) : ?>
                                 <div class="h3 mb-2 text-<?php echo $headerColor; ?>">

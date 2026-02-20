@@ -27489,6 +27489,10 @@ body.modal-open {
   height: 24px;
   object-fit: contain;
 }
+.multi-col-tiles__content__col__icon.full-width {
+  width: 100%;
+  height: fit-content;
+}
 @media (min-width: 767px) and (max-width: 992px) {
   .multi-col-tiles {
     padding-left: 20px !important;

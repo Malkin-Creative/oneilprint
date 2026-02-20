@@ -39,6 +39,11 @@
                 width: 24px;
                 height: 24px;
                 object-fit: contain;
+
+                &.full-width {
+                    width: 100%;
+                    height: fit-content;
+                }
             }
         }
     }
