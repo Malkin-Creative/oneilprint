@@ -24501,12 +24501,58 @@ h1, .h1, h2, .h2, .multi-col-tiles__content.cta-column .multi-col-tiles__content
   font-family: "Figtree", sans-serif;
   font-weight: 400;
   line-height: 1.5;
+  padding: 10px 14px;
+  border: 1px solid #647692;
+  border-radius: 4px;
+}
+.facetwp-dropdown:focus, .facetwp-dropdown:focus-visible, .facetwp-dropdown:focus-within {
+  outline-color: transparent;
+  outline-style: solid;
+  box-shadow: 0 0 0 3px #ffffff, 0 0 0 4px #C8D8EB;
+  border-radius: 4px;
 }
 .facetwp-dropdown::placeholder {
   font-size: 12px;
   font-family: "Figtree", sans-serif;
   font-weight: 400;
   line-height: 1.5;
+}
+.facetwp-facet-search .facetwp-input-wrap {
+  width: 100%;
+}
+.facetwp-facet-search .facetwp-input-wrap .facetwp-icon {
+  right: unset;
+  left: 10px;
+  opacity: 1;
+}
+.facetwp-facet-search .facetwp-input-wrap .facetwp-icon.f-loading:before {
+  animation: none;
+}
+.facetwp-facet-search .facetwp-input-wrap .facetwp-icon:before {
+  background-image: url("/wp-content/uploads/2026/02/search-lg.svg") !important;
+  position: absolute;
+  top: calc(50% - 10px);
+  background-position: unset;
+  width: 20px;
+  height: 20px;
+}
+.facetwp-facet-search .facetwp-input-wrap .facetwp-search {
+  font-size: 12px;
+  font-family: "Figtree", sans-serif;
+  font-weight: 400;
+  line-height: 1.5;
+  padding: 10px 14px 10px 38px;
+  border: 1px solid #647692;
+  border-radius: 4px;
+  min-width: unset;
+  width: 100%;
+  transition: all 0.3s ease-in-out !important;
+}
+.facetwp-facet-search .facetwp-input-wrap .facetwp-search:focus, .facetwp-facet-search .facetwp-input-wrap .facetwp-search:focus-visible, .facetwp-facet-search .facetwp-input-wrap .facetwp-search:focus-within {
+  outline-color: transparent;
+  outline-style: solid;
+  box-shadow: 0 0 0 3px #ffffff, 0 0 0 4px #C8D8EB;
+  border-radius: 4px;
 }
 .pagination {
   padding: 90px 0;
@@ -26633,6 +26679,10 @@ body.menu-open {
 .featured-post {
   padding-left: 10px;
   padding-right: 10px;
+}
+.featured-post.split-featured {
+  padding-left: 0;
+  padding-right: 0;
 }
 .featured-post__content {
   border-radius: 20px;

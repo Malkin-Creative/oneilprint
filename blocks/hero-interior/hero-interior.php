@@ -59,7 +59,7 @@ if ($background == 'solid') {
     <?php endif; ?>
     <div class="container">
         <div class="row hero-interior__content">
-            <div class="hero-interior__content__wrap col-12 col-md-10">
+            <div class="hero-interior__content__wrap col-12">
                 <?php if ( $header ) : ?>
                     <div class="mb-1 text-black">
                         <?php echo $header; ?>
