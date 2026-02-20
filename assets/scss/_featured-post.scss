@@ -1,4 +1,7 @@
 .featured-post {
+    padding-left: 10px;
+    padding-right: 10px;
+
     &__content {
         border-radius: $radius-3xl;
         z-index: 1;
@@ -37,9 +40,33 @@
 
 @media (min-width: 768px) and (max-width: 992px) {
     .featured-post {
+        padding-left: 10px;
+        padding-right: 10px;
+
         &.split-featured {
             .featured-post__left {
                 padding-bottom: 20px;
+            }
+        }
+
+        &__content {
+            &__wrap {
+                padding-bottom: 360px !important;
+
+                &__buttons {
+                    flex-direction: column;
+
+                    .button {
+                        width: 100%;
+                        text-align: center;
+                    }
+                }
+            }
+            &__bg-img {
+                width: 100%;
+                left: 0;
+                top: unset;
+                height: 300px !important;
             }
         }
     }

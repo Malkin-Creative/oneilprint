@@ -329,5 +329,23 @@ jQuery(function ($) {
         $('body').removeClass('menu-open');
     }
 
+    // Archive pagination
+    function togglePager() {
+        if (typeof FWP === 'undefined') return;
+
+        var total_pages = FWP.settings.pager.total_pages;
+        var $pager = $('.pagination.archive');
+
+        if (!$pager.length) return;
+
+        if (total_pages <= 1) {
+            $pager.hide();
+        } else {
+            $pager.show();
+        }
+    }
+
+    $(document).on('facetwp-loaded', togglePager);
+
 }); // jQuery End
 

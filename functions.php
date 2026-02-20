@@ -462,3 +462,49 @@ class ADA_Menu_Walker extends Walker_Nav_Menu {
 add_action('after_setup_theme', function() {
     add_editor_style('assets/css/editornew.css');
 });
+
+// Setting posts to show on all archives
+add_action('pre_get_posts', function($query) {
+    if ( ! is_admin() && $query->is_main_query() && is_post_type_archive('case-study') ) {
+        $query->set('posts_per_page', 9);
+    }
+});
+
+// Fixing breadrumbs
+add_filter('wpseo_breadcrumb_links', function ($links) {
+
+    // List of CPTs you want to control
+    $custom_post_types = [
+        'service',
+        'career',
+        'industry',
+        'story',
+        'team-member',
+        'case-study'
+    ];
+
+    if (is_singular($custom_post_types)) {
+
+        $post_type = get_post_type();
+        $post_type_obj = get_post_type_object($post_type);
+
+        if (!$post_type_obj || !$post_type_obj->has_archive) {
+            return $links;
+        }
+
+        // Remove whatever Yoast inserted in position 1
+        array_splice($links, 1, 1);
+
+        // Add correct archive link
+        $archive_link = [
+            'url'  => get_post_type_archive_link($post_type),
+            'text' => $post_type_obj->labels->name,
+        ];
+
+        array_splice($links, 1, 0, [$archive_link]);
+    }
+
+    return $links;
+});
+
+

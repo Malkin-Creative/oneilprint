@@ -1,7 +1,4 @@
 .hero-interior {
-    padding-right: 10px;
-    padding-left: 10px;
-
     &__bg {
         height: calc(100% + 170px);
         top: 0;
@@ -34,5 +31,11 @@
             z-index: 1;
             position: relative;
         }
+    }
+}
+
+@media screen and (min-width: 767px) and (max-width: 992px) {
+    .hero-interior {
+        
     }
 }

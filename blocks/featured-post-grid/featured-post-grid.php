@@ -212,12 +212,12 @@ if ($block_alignment == 'left') {
                                 </div>
                             <?php endif; ?>
                             <?php if ($excerpt) : ?>
-                                <p class="text-md-regular my-4 text-black font-tertiary featured-post-grid__wrap__excerpt">
+                                <div class="text-md-regular my-4 text-black font-tertiary featured-post-grid__wrap__excerpt">
                                     <?php echo $excerpt; ?>
-                                </p>
+                                </div>
                             <?php endif; ?>
                             <a class="button button--steel-underline" href="<?php echo $permalink; ?>" aria-label="Open post">
-                                Read <?php echo esc_html($post_type_object_selection->labels->singular_name); ?>
+                                Read <?php if ($post_type_selection) : echo esc_html($post_type_object_selection->labels->singular_name); else : ?>Post<?php endif; ?>
                             </a>
                         </div>
                     <?php endwhile; ?>
