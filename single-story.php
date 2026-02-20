@@ -51,7 +51,7 @@ $service = get_the_terms(get_the_ID(), 'service');
             <?php endif; ?>
         </div>
     </div>
-    <div class="row mt-6 mt-md-8 mt-lg-10">
+    <div class="row mt-6 mt-md-8 mt-lg-10 position-relative">
         <div class="col-12 col-md-8 single-story__row__left">
             <?php if ( $featured_image_url ) : ?>
                 <img src="<?php echo esc_url( $featured_image_url ); ?>" alt="<?php echo esc_attr( $alt_text ); ?>" class="w-100 mb-md-8 mb-lg-10 position-relative sm-hide"/>
