@@ -101,6 +101,11 @@ if ($background_color == 'white') {
     $textColor = 'white';
     $buttonPrimary = 'white';
     $buttonSecondary = 'white-border';
+} elseif ($background_color == 'steel') {
+    $backgroundColor = ' background-steel';
+    $textColor = 'white';
+    $buttonPrimary = 'white';
+    $buttonSecondary = 'white-border';
 } else {
     $backgroundColor = ' background-navy';
     $textColor = 'white';
