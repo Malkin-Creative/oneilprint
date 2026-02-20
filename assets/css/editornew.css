@@ -11,3 +11,10 @@ body.block-editor-page .interface-interface-skeleton__sidebar .interface-complem
 body.block-editor-page .interface-interface-skeleton__sidebar .interface-complementary-area{
     width: 100% !important;
 }
+body :where(.editor-styles-wrapper) {
+    overflow: visible !important;
+}
+.block-library-classic__toolbar.has-advanced-toolbar {
+    position: sticky;
+    top: 0;
+}
