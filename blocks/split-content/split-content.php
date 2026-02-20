@@ -19,6 +19,7 @@ if ( ! empty( $block['anchor'] ) ) {
 
 $id = 'split-content-' . $block['id'];
 
+$row_id = get_field('row_id');
 $padding_top = get_field('padding_top');
 $padding_bottom = get_field('padding_bottom');
 $padding_top_mobile = $padding_top / 2;
@@ -85,7 +86,7 @@ if ($tile_background == 'solid') {
 <?php endif; ?>
 
 <section class="split-content<?php echo $backgroundColor; ?><?php echo $blockAlignment; ?>" id="<?php echo esc_attr( $id ); ?>">
-    <div class="container">
+    <div class="container" id="<?php echo $row_id; ?>">
         <div class="row">
             <div class="col-12 col-lg-6 mx-auto split-content__wrap">
                 <?php if ($header) : ?>

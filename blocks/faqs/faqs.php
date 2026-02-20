@@ -19,6 +19,7 @@ if ( ! empty( $block['anchor'] ) ) {
 
 $id = 'faqs-' . $block['id'];
 
+$row_id = get_field('row_id');
 $padding_top = get_field('padding_top');
 $padding_bottom = get_field('padding_bottom');
 $padding_top_mobile = $padding_top / 2;
@@ -49,7 +50,7 @@ if ($background_color == 'white') {
 <?php endif; ?>
 
 <section class="faqs background-<?php echo $backgroundColor; ?>" id="<?php echo esc_attr( $id ); ?>">
-    <div class="container">
+    <div class="container" id="<?php echo $row_id; ?>">
         <div class="row">
             <div class="col-12">
                 <?php if ( $header ) : ?>

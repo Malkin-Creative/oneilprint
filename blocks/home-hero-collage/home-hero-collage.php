@@ -19,6 +19,7 @@ if ( ! empty( $block['anchor'] ) ) {
 
 $id = 'home-hero-collage-' . $block['id'];
 
+$row_id = get_field('row_id');
 $padding_top = get_field('padding_top');
 $padding_bottom = get_field('padding_bottom');
 $padding_top_mobile = $padding_top / 2;
@@ -83,7 +84,7 @@ if ($rectangle_background == 'solid') {
 <?php endif; ?>
 
 <section class="home-hero-collage" id="<?php echo esc_attr( $id ); ?>">
-    <div class="container">
+    <div class="container" id="<?php echo $row_id; ?>">
         <div class="row home-hero-collage__content background-lightest-silver position-relative px-6 px-lg-14">
             <?php if ( $rectangle_background ) : ?>
                 <div class="home-hero-collage__content__bg" <?php echo get_block_wrapper_attributes([

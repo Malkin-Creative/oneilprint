@@ -19,6 +19,7 @@ if ( ! empty( $block['anchor'] ) ) {
 
 $id = 'hero-default-' . $block['id'];
 
+$row_id = get_field('row_id');
 $padding_top = get_field('padding_top');
 $padding_bottom = get_field('padding_bottom');
 $padding_top_mobile = $padding_top / 2;
@@ -49,7 +50,7 @@ if ($background == 'solid') {
 <?php endif; ?>
 
 <section class="hero-interior position-relative" id="<?php echo esc_attr( $id ); ?>">
-    <div class="hero-interior__bg w-100" <?php echo get_block_wrapper_attributes([
+    <div class="hero-interior__bg w-100" id="<?php echo $row_id; ?>" <?php echo get_block_wrapper_attributes([
         'style' => $style
     ]); ?>></div>
     <?php if ( $background_graphic ) : ?>

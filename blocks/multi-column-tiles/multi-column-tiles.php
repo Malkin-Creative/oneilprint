@@ -19,6 +19,7 @@ if ( ! empty( $block['anchor'] ) ) {
 
 $id = 'multi-col-tiles-' . $block['id'];
 
+$row_id = get_field('row_id');
 $padding_top = get_field('padding_top');
 $padding_bottom = get_field('padding_bottom');
 $padding_top_mobile = $padding_top / 2;
@@ -124,7 +125,7 @@ if ($cta_column) {
             <div class="multi-col-tiles__bg-video__overlay h-100 w-100 overlay"<?php if ($background == 'video') : ?> style="background: <?php echo $overlayColor; ?>;"<?php endif; ?>></div>
         </div>
     <?php endif; ?>
-    <div class="container">
+    <div class="container" id="<?php echo $row_id; ?>">
         <div class="row justify-content-center multi-col-tiles__content<?php echo $ctaColumn; ?>" style="grid-template-columns: repeat(<?php echo $tileNumber; ?>, 1fr);">
             <?php if( have_rows('columns') ): ?>
                 <?php while( have_rows('columns') ) : the_row(); ?>

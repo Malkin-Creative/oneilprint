@@ -19,6 +19,7 @@ if ( ! empty( $block['anchor'] ) ) {
 
 $id = 'dividers-' . $block['id'];
 
+$row_id = get_field('row_id');
 $divider_type = get_field('divider_type');
 $cutout_position = get_field('cutout_position');
 $cutout_color = get_field('cutout_color');
@@ -46,7 +47,7 @@ if ($divider_type == 'icon') {
 <?php endif; ?>
 
 <section class="dividers position-relative<?php echo $dividerType; ?>" id="<?php echo esc_attr( $id ); ?>"<?php if ($background_color) : ?> style="background: <?php echo $background_color; ?>;"<?php endif; ?>>
-    <div class="container">
+    <div class="container" id="<?php echo $row_id; ?>">
         <div class="row">
             <div class="col-12 position-relative">
                 <?php if ($divider_type == 'icon') : ?>

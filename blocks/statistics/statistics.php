@@ -19,6 +19,7 @@ if ( ! empty( $block['anchor'] ) ) {
 
 $id = 'stats-' . $block['id'];
 
+$row_id = get_field('row_id');
 $padding_top = get_field('padding_top');
 $padding_bottom = get_field('padding_bottom');
 $padding_top_mobile = $padding_top / 2;
@@ -44,7 +45,7 @@ if ($background_color == 'white') {
 <?php endif; ?>
 
 <section class="stats background-<?php echo $background_color; ?>" id="<?php echo esc_attr( $id ); ?>">
-    <div class="container">
+    <div class="container" id="<?php echo $row_id; ?>">
         <div class="row justify-content-center stats__row">
             <?php if( have_rows('stat_blocks') ): ?>
                 <?php while( have_rows('stat_blocks') ) : the_row(); ?>

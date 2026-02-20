@@ -19,6 +19,7 @@ if ( ! empty( $block['anchor'] ) ) {
 
 $id = 'newsletter-' . $block['id'];
 
+$row_id = get_field('row_id');
 $padding_top = get_field('padding_top');
 $padding_bottom = get_field('padding_bottom');
 $padding_top_mobile = $padding_top / 2;
@@ -37,7 +38,7 @@ $form_selector = get_field('form_selector');
 <?php endif; ?>
 
 <section class="newsletter background-light-silver" id="<?php echo esc_attr( $id ); ?>">
-    <div class="container">
+    <div class="container" id="<?php echo $row_id; ?>">
         <div class="row">
             <div class="col-12 col-lg-3 mb-4 mb-md-0">
                 <?php if ( $header ) : ?>

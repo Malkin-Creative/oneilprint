@@ -24103,6 +24103,9 @@ body {
     padding-left: 60px;
   }
 }
+.broken_link, a.broken_link {
+  text-decoration: none !important;
+}
 #breadcrumbs > span {
   display: flex;
   gap: 40px;

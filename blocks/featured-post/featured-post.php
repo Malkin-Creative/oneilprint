@@ -19,6 +19,7 @@ if ( ! empty( $block['anchor'] ) ) {
 
 $id = 'featured-post-' . $block['id'];
 
+$row_id = get_field('row_id');
 $padding_top = get_field('padding_top');
 $padding_bottom = get_field('padding_bottom');
 $padding_top_mobile = $padding_top / 2;
@@ -125,7 +126,7 @@ $categories = get_the_category($postId);
 <?php endif; ?>
 
 <section class="featured-post position-relative<?php echo $blockType; ?>" id="<?php echo esc_attr( $id ); ?>">
-    <div class="container">
+    <div class="container" id="<?php echo $row_id; ?>">
         <?php if ($block_type == 'full-width') { ?>
             <div class="row featured-post__content" <?php echo get_block_wrapper_attributes([
                 'style' => $style

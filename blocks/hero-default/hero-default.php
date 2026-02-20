@@ -19,6 +19,7 @@ if ( ! empty( $block['anchor'] ) ) {
 
 $id = 'hero-default-' . $block['id'];
 
+$row_id = get_field('row_id');
 $padding_top = get_field('padding_top');
 $padding_bottom = get_field('padding_bottom');
 $padding_top_mobile = $padding_top / 2;
@@ -121,7 +122,7 @@ if ($overlay == 'solid') {
             <img src="<?php echo esc_url($background_graphic['url']); ?>" alt="<?php echo esc_attr($background_graphic['alt']); ?>" class="w-100 h-100"/>
         </div>
     <?php endif; ?>
-    <div class="container">
+    <div class="container" id="<?php echo $row_id; ?>">
         <div class="row hero-default__content<?php echo $containerAlignment; ?>" <?php echo get_block_wrapper_attributes([
             'style' => $style
         ]); ?>>

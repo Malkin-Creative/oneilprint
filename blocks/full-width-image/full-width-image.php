@@ -19,6 +19,7 @@ if ( ! empty( $block['anchor'] ) ) {
 
 $id = 'full-width-image-' . $block['id'];
 
+$row_id = get_field('row_id');
 $image_style = get_field('image_style');
 $top_inset_color = get_field('top_inset_color');
 $bottom_inset_color = get_field('bottom_inset_color');
@@ -42,7 +43,7 @@ if ($bottom_inset_color) {
 	>
 <?php endif; ?>
 
-<section class="full-width-image position-relative">
+<section class="full-width-image position-relative" id="<?php echo $row_id; ?>">
     <?php if ($image_style == 'inset') : ?>
         <div class="container">
             <div class="row full-width-image__content">

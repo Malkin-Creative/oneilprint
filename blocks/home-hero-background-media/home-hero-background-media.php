@@ -19,6 +19,7 @@ if ( ! empty( $block['anchor'] ) ) {
 
 $id = 'hero-bg-media-' . $block['id'];
 
+$row_id = get_field('row_id');
 $padding_top = get_field('padding_top');
 $padding_bottom = get_field('padding_bottom');
 $padding_top_mobile = $padding_top / 2;
@@ -67,7 +68,7 @@ if ($anchorScrollSecondary == 'anchor-scroll') {
 <?php endif; ?>
 
 <section class="hero-bg-media position-relative" id="<?php echo esc_attr( $id ); ?>">
-    <div class="container">
+    <div class="container" id="<?php echo $row_id; ?>">
         <div class="row hero-bg-media__content position-relative py-md-20">
             <?php if ($main_imagery == 'image') : ?>
                 <div class="hero-bg-media__content__bg-img overlay object-fit-cover w-100 h-100">

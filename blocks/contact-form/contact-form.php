@@ -19,6 +19,7 @@ if ( ! empty( $block['anchor'] ) ) {
 
 $id = 'standard-form-' . $block['id'];
 
+$row_id = get_field('row_id');
 $padding_top = get_field('padding_top');
 $padding_bottom = get_field('padding_bottom');
 $padding_top_mobile = $padding_top / 2;
@@ -60,7 +61,7 @@ if ( $office_address ) {
 <?php endif; ?>
 
 <section class="contact-form container" id="<?php echo esc_attr( $id ); ?>">
-    <div class="row">
+    <div class="row" id="<?php echo $row_id; ?>">
         <div class="col-12 col-md-7 col-lg-9 mb-8 mb-md-0">
             <div class="p-6 p-md-8 contact-form__form background-lightest-silver h-100">
                 <?php if ( $form_selector ) :

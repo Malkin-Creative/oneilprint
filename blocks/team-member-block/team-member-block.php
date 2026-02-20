@@ -19,6 +19,7 @@ if ( ! empty( $block['anchor'] ) ) {
 
 $id = 'featured-post-grid-' . $block['id'];
 
+$row_id = get_field('row_id');
 $padding_top = get_field('padding_top');
 $padding_bottom = get_field('padding_bottom');
 $padding_top_mobile = $padding_top / 2;
@@ -36,7 +37,7 @@ $placeholder_image = get_field('placeholder_image');
 <?php endif; ?>
 
 <section class="featured-post-grid position-relative team-member-block" id="<?php echo esc_attr( $id ); ?>">
-    <div class="container">
+    <div class="container" id="<?php echo $row_id; ?>">
         <div class="row justify-content-center">
             <?php foreach( $post_objects as $post): 
                 $postId = $post->ID;

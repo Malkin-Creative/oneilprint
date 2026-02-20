@@ -19,6 +19,7 @@ if ( ! empty( $block['anchor'] ) ) {
 
 $id = 'tile-block-' . $block['id'];
 
+$row_id = get_field('row_id');
 $padding_top = get_field('padding_top');
 $padding_bottom = get_field('padding_bottom');
 $padding_top_mobile = $padding_top / 2;
@@ -78,7 +79,7 @@ if ($background == 'solid') {
 <?php endif; ?>
 
 <section class="tile-block position-relative" id="<?php echo esc_attr( $id ); ?>">
-    <div class="container">
+    <div class="container" id="<?php echo $row_id; ?>">
         <div class="row justify-content-center">
             <div class="col-12 col-lg-4 pb-4 pb-lg-0">
                 <div class="p-6 p-md-8 p-lg-10 h-100 tile-block__content--left" <?php echo get_block_wrapper_attributes([

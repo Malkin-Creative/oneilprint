@@ -473,7 +473,6 @@ add_action('pre_get_posts', function($query) {
 // Fixing breadrumbs
 add_filter('wpseo_breadcrumb_links', function ($links) {
 
-    // List of CPTs you want to control
     $custom_post_types = [
         'service',
         'career',
@@ -492,19 +491,25 @@ add_filter('wpseo_breadcrumb_links', function ($links) {
             return $links;
         }
 
-        // Remove whatever Yoast inserted in position 1
-        array_splice($links, 1, 1);
+        // Remove all middle breadcrumb levels except first and last
+        $first = $links[0]; // Home
+        $last  = end($links); // Current post
 
-        // Add correct archive link
-        $archive_link = [
+        $links = [$first];
+
+        // Insert correct archive link
+        $links[] = [
             'url'  => get_post_type_archive_link($post_type),
             'text' => $post_type_obj->labels->name,
         ];
 
-        array_splice($links, 1, 0, [$archive_link]);
+        $links[] = $last;
+
+        return $links;
     }
 
     return $links;
 });
+
 
 

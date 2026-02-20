@@ -20,6 +20,7 @@ if ( ! empty( $block['anchor'] ) ) {
 $id = 'cta-' . $block['id'];
 $style = '';
 
+$row_id = get_field('row_id');
 $padding_top = get_field('padding_top');
 $padding_bottom = get_field('padding_bottom');
 $padding_top_mobile = $padding_top / 2;
@@ -124,7 +125,7 @@ if ($tile_background == 'solid') {
             <?php endif; ?>
         </div>
     <?php endif; ?>
-    <div class="container">
+    <div class="container" id="<?php echo $row_id; ?>">
         <div class="row justify-content-center cta__content" <?php echo get_block_wrapper_attributes([
             'style' => $tile_style
         ]); ?>>

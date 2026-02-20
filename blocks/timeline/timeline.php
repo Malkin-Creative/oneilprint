@@ -19,6 +19,7 @@ if ( ! empty( $block['anchor'] ) ) {
 
 $id = 'timeline-' . $block['id'];
 
+$row_id = get_field('row_id');
 $padding_top = get_field('padding_top');
 $padding_bottom = get_field('padding_bottom');
 $padding_top_mobile = $padding_top / 2;
@@ -33,7 +34,7 @@ $padding_bottom_mobile = $padding_bottom / 2;
 <?php endif; ?>
 
 <section class="timeline container position-relative" id="<?php echo esc_attr( $id ); ?>">
-    <div class="row justify-content-center timeline__row position-relative">
+    <div class="row justify-content-center timeline__row position-relative" id="<?php echo $row_id; ?>">
         <?php if( have_rows('columns') ): ?>
             <?php while( have_rows('columns') ) : the_row(); ?>
                 <?php 

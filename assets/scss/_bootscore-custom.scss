@@ -87,7 +87,7 @@ body {
 
 // Fixing broken link class
 .broken_link, a.broken_link {
-    text-decoration: none;
+    text-decoration: none !important;
 }
 // Breadcrumbs
 #breadcrumbs {

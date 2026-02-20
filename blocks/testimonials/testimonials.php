@@ -19,6 +19,7 @@ if ( ! empty( $block['anchor'] ) ) {
 
 $id = 'testimonials-' . $block['id'];
 
+$row_id = get_field('row_id');
 $padding_top = get_field('padding_top');
 $padding_bottom = get_field('padding_bottom');
 $padding_top_mobile = $padding_top / 2;
@@ -67,7 +68,7 @@ if ($tile_background == 'solid') {
 <?php endif; ?>
 
 <section class="testimonials container" id="<?php echo esc_attr( $id ); ?>">
-    <div class="row testimonials__row position-relative testimonials--<?php echo $testimonialType; echo $backgroundGraphic; ?>">
+    <div class="row testimonials__row position-relative testimonials--<?php echo $testimonialType; echo $backgroundGraphic; ?>" id="<?php echo $row_id; ?>">
         <div class="col-12">
             <?php if ($header) : ?>
                 <div class="h2 mb-lg-8 text-steel">
