@@ -19,6 +19,7 @@ if ( ! empty( $block['anchor'] ) ) {
 
 $id = 'standard-form-' . $block['id'];
 
+$row_id = get_field('row_id');
 $padding_top = get_field('padding_top');
 $padding_bottom = get_field('padding_bottom');
 $padding_top_mobile = $padding_top / 2;
@@ -56,7 +57,7 @@ if ($background == 'solid') {
 <?php endif; ?>
 
 <section class="standard-form container" id="<?php echo esc_attr( $id ); ?>">
-    <div class="row">
+    <div class="row" id="<?php echo $row_id; ?>">
         <div class="col-12 col-md-6 col-lg-4 pb-4 pb-md-0">
             <div class="p-6 p-md-8 p-lg-10 h-100 standard-form__content" <?php echo get_block_wrapper_attributes([
                 'style' => $style

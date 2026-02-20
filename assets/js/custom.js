@@ -347,5 +347,24 @@ jQuery(function ($) {
 
     $(document).on('facetwp-loaded', togglePager);
 
+    // Anchor Scroll
+     $('.anchor-scroll').on('click', function(e) {
+        var target = $(this).attr('href');
+        // Only handle anchor links
+        if (target && target.startsWith('#') && $(target).length) {
+            e.preventDefault();
+
+            var headerHeight = $('.site-header').outerHeight() || 0; // adjust selector
+            var offset = $(target).offset().top - headerHeight;
+
+            $('html, body').stop(true).animate({
+                scrollTop: offset
+            }, 400, function() {
+                window.location.hash = target;
+            });
+
+        }
+    });
+
 }); // jQuery End
 

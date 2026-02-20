@@ -68,7 +68,7 @@ if ($background_color == 'white') {
                     <div class="row py-5 mb-5 mb-md-8 mb-lg-10 faqs__wrap<?php echo $borderColor; ?>">
                         <div class="col-12 col-md-6 col-lg-4">
                             <div class="h3 text-<?php echo $questionColor; ?>">
-                                <?php echo $header; ?>
+                                <?php echo $question; ?>
                             </div>
                         </div>
                         <div class="col-12 col-md-6 col-lg-8 pl-md-6 pl-lg-18">
