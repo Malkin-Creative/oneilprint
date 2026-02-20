@@ -24496,6 +24496,18 @@ p {
 h1, .h1, h2, .h2, .multi-col-tiles__content.cta-column .multi-col-tiles__content__col:last-of-type h3, .multi-col-tiles__content.cta-column .multi-col-tiles__content__col:last-of-type .h3, h3, .h3, h4, .h4, h5, .h5, h6, .h6, p, span, li {
   text-wrap: pretty;
 }
+.facetwp-dropdown {
+  font-size: 12px;
+  font-family: "Figtree", sans-serif;
+  font-weight: 400;
+  line-height: 1.5;
+}
+.facetwp-dropdown::placeholder {
+  font-size: 12px;
+  font-family: "Figtree", sans-serif;
+  font-weight: 400;
+  line-height: 1.5;
+}
 .pagination {
   padding: 90px 0;
 }
