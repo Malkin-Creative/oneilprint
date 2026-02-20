@@ -1,0 +1,38 @@
+.hero-interior {
+    padding-right: 10px;
+    padding-left: 10px;
+
+    &__bg {
+        height: calc(100% + 170px);
+        top: 0;
+        left: 0;
+        position: absolute;
+        z-index: -1;
+    }
+    &__bg-graphic {
+        left: unset;
+        bottom: unset;
+        width: 70%;
+        height: fit-content;
+
+        &:before {
+            content: '';
+            height: 100%;
+            width: 100%;
+            position: absolute;
+            top: 0;
+            right: 0;
+            background: $white;
+            background: linear-gradient(10deg, rgba(255, 255, 255, 1) 30%, rgba(255, 255, 255, 0.5) 100%);
+        }
+    }
+    &__content {
+        z-index: 1;
+        position: relative;
+
+        &__wrap {
+            z-index: 1;
+            position: relative;
+        }
+    }
+}

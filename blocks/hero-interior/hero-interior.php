@@ -48,12 +48,18 @@ if ($background == 'solid') {
 	>
 <?php endif; ?>
 
-<section class="hero-interior position-relative" id="<?php echo esc_attr( $id ); ?>" <?php echo get_block_wrapper_attributes([
+<section class="hero-interior position-relative" id="<?php echo esc_attr( $id ); ?>">
+    <div class="hero-interior__bg w-100" <?php echo get_block_wrapper_attributes([
         'style' => $style
-    ]); ?>>
+    ]); ?>></div>
+    <?php if ( $background_graphic ) : ?>
+        <div class="hero-interior__bg-graphic overlay object-fit-cover d-none d-md-flex">
+            <img src="<?php echo esc_url($background_graphic['url']); ?>" alt="<?php echo esc_attr($background_graphic['alt']); ?>" class="w-100 h-100"/>
+        </div>
+    <?php endif; ?>
     <div class="container">
-        <div class="row hero-default__content">
-            <div class="hero-default__content__wrap col-12 col-md-10">
+        <div class="row hero-interior__content">
+            <div class="hero-interior__content__wrap col-12 col-md-10">
                 <?php if ( $header ) : ?>
                     <div class="mb-1 text-black">
                         <?php echo $header; ?>

@@ -26868,6 +26868,41 @@ body.menu-open {
     padding-right: 20px;
   }
 }
+.hero-interior {
+  padding-right: 10px;
+  padding-left: 10px;
+}
+.hero-interior__bg {
+  height: calc(100% + 170px);
+  top: 0;
+  left: 0;
+  position: absolute;
+  z-index: -1;
+}
+.hero-interior__bg-graphic {
+  left: unset;
+  bottom: unset;
+  width: 70%;
+  height: fit-content;
+}
+.hero-interior__bg-graphic:before {
+  content: "";
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  right: 0;
+  background: #ffffff;
+  background: linear-gradient(10deg, white 30%, rgba(255, 255, 255, 0.5) 100%);
+}
+.hero-interior__content {
+  z-index: 1;
+  position: relative;
+}
+.hero-interior__content__wrap {
+  z-index: 1;
+  position: relative;
+}
 .hero-video__wrap {
   padding-left: 60px;
 }
