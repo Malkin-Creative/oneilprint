@@ -58,7 +58,7 @@ if ($background_color == 'white') {
                     ?>
                     <div class="col stats__row__col<?php echo $backgroundColor; ?>">
                         <?php if ( $number_character_before || $number || $number_character_after ) : ?>
-                            <div class="mb-2 oversized-h3<?php echo $headerColor; ?>">
+                            <div class="mb-2 d-flex oversized-h3<?php echo $headerColor; ?>">
                                 <?php echo $number_character_before; ?><?php echo $number; ?><?php echo $number_character_after; ?>
                             </div>
                         <?php endif; ?>
