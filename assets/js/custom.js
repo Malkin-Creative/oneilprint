@@ -208,7 +208,7 @@ jQuery(function ($) {
     });
 
     //Mega Menu
-    var mouseOutHideDelay = 300;
+    var mouseOutHideDelay = 200;
     var mouseTimers = new WeakMap();
 
     function showMenu($btn, $panel) {

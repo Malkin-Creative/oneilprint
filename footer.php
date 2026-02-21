@@ -19,6 +19,7 @@ $footer_logo = get_field('footer_logo', 'options');
 $office_address = get_field('office_address', 'options');
 $phone_number = get_field('phone_number', 'options');
 $fax_number = get_field('fax_number', 'options');
+$legal = get_field('legal', 'options');
 
 if ( $phone_number ) {
   $tel = preg_replace('/[^\d+]/', '', $phone_number);
@@ -191,8 +192,12 @@ if ( $office_address ) {
             © <?php echo date('Y'); ?> O'Neil Printing. All rights reserved.
           </p>
         </div>
-        <div class="col-12 col-lg-5 mb-3 mb-md-0">
-          
+        <div class="col-12 col-lg-5 mb-3 mb-md-0 footer__bottom__legal">
+          <?php if ( $legal ) : ?>
+            <div class="text-blue text-xs-regular">
+              <?php echo $legal; ?>
+            </div>
+          <?php endif; ?>
         </div>
         <div class="col-12 col-lg-4 d-flex gap-1 align-items-center justify-content-lg-end">
           <a class="text-blue text-xs-regular" href="https://www.rule29.com/" target="_blank" rel="noopener noreferrer" aria-label="Open Rule29 website">

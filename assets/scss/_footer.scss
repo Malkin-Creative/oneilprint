@@ -51,6 +51,12 @@
     &__bottom {
         background: #0A1947;
         z-index: 1;
+
+        &__legal {
+            p {
+                margin-bottom: 0;
+            }
+        }
     }
 
     &__logo {
