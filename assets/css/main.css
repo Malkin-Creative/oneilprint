@@ -28448,6 +28448,37 @@ body.modal-open {
   -webkit-line-clamp: 3;
   -webkit-box-orient: vertical;
 }
+.share-buttons {
+  display: flex;
+  gap: 12px;
+}
+.share-btn {
+  border: 1px solid #ccc;
+  background: #fff;
+  padding: 10px 14px;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+.share-btn:hover {
+  background: #f5f5f5;
+}
+/* WCAG AA focus state */
+.share-btn:focus {
+  outline: 3px solid #005fcc;
+  outline-offset: 2px;
+}
+/* Screen-reader-only utility */
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  border: 0;
+  clip: rect(0 0 0 0);
+}
 @media (max-width: 992px) {
   .single-case-study__row:before {
     display: none;

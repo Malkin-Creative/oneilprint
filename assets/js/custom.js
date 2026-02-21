@@ -366,5 +366,33 @@ jQuery(function ($) {
         }
     });
 
+    // Share buttons
+     $('.copy-link').on('click keypress', function(e) {
+
+        if (e.type === 'keypress' && e.which !== 13 && e.which !== 32) {
+            return;
+        }
+
+        e.preventDefault();
+
+        var url = $(this).data('url');
+        var $status = $('#copy-status');
+
+        if (navigator.clipboard) {
+            navigator.clipboard.writeText(url).then(function() {
+                $status.text('Link copied to clipboard.');
+            }).catch(function() {
+                $status.text('Unable to copy link.');
+            });
+        } else {
+            var tempInput = $('<input>');
+            $('body').append(tempInput);
+            tempInput.val(url).select();
+            document.execCommand('copy');
+            tempInput.remove();
+            $status.text('Link copied to clipboard.');
+        }
+    });
+
 }); // jQuery End
 
