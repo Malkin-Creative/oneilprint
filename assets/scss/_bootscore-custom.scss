@@ -93,7 +93,8 @@ body {
 #breadcrumbs {
     > span {
         display: flex;
-        gap: 40px;
+        column-gap: 40px;
+        row-gap: 10px;
         align-items: center;
 
         > span:first-of-type {
@@ -167,6 +168,8 @@ body {
                 border: none;
                 border-radius: $radius-sm;
                 transition: all .3s ease-in-out !important;
+                width: fit-content;
+                display: block;
 
                 &:hover {
                     color: $white !important;
@@ -194,6 +197,26 @@ body {
 
             &:after {
                 display: none;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 767px) {
+    #breadcrumbs {
+        > span {
+            column-gap: 20px;
+
+            > span:after {
+                right: -16px;
+            }
+
+            .breadcrumb_last {
+                overflow: hidden;
+                text-overflow: ellipsis;
+                display: inline-block;
+                white-space: nowrap;
+                width: 140px;
             }
         }
     }

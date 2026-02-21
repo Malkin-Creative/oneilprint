@@ -525,6 +525,44 @@
             box-shadow: 0 0 0 3px $white, 0 0 0 4px $silver;
         }
     }
+    &--share-btn {
+        position: relative;
+        padding: 6px 12px 6px 34px !important;
+        color: $steel !important;
+        background: $white !important;
+        border: 1px solid $steel !important; 
+        border-radius: $radius-xs;
+        font-size: 14px !important;
+        font-family: $tertiaryFont;
+
+        &:before {
+            content: '';
+            background-image: url('/wp-content/uploads/2026/02/Icon-4.svg');
+            background-size: 100%;
+            height: 16px;
+            width: 16px;
+            position: absolute;
+            top: calc(50% - 8px);
+            left: 12px;
+            background-repeat: no-repeat;
+        }
+
+        &:hover {
+            color: $black !important;
+            background: $white !important;
+            border: 1px solid $silver !important; 
+        }
+
+        &:focus, &:focus-visible, &:focus-within {
+            outline-color: transparent; 
+            outline-style: solid;
+            box-shadow: 0 0 0 3px $white, 0 0 0 4px $silver;
+            border-radius: $radius-xs;
+            color: $black !important;
+            background: $white !important;
+            border: 1px solid $silver !important; 
+        }
+    }
 }
 @media screen and (min-width: 767px) and (max-width: 992px) {
     .button {

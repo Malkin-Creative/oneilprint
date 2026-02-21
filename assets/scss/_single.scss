@@ -38,7 +38,7 @@
     }
 }
 
-.single-story {
+.single-story-page {
     &:before {
         content: '';
         background-image: url('/wp-content/uploads/2026/01/d806c26951d7fa168dfce167f2c6a4c28548e64e-1-1-e1769670392281.png');
@@ -76,38 +76,72 @@
 }
 .share-buttons {
     display: flex;
-    gap: 12px;
-}
+    gap: 8px;
+    flex-wrap: wrap;
 
-.share-btn {
-    border: 1px solid #ccc;
-    background: #fff;
-    padding: 10px 14px;
-    text-decoration: none;
-    cursor: pointer;
-    transition: background 0.2s ease;
-}
+    .visually-hidden, span {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        margin: -1px;
+        padding: 0;
+        overflow: hidden;
+        border: 0;
+        clip: rect(0 0 0 0);
+    }
 
-.share-btn:hover {
-    background: #f5f5f5;
-}
+    .share-btn {
+        height: 39px;
+        width: 39px;
+        text-decoration: none;
+        cursor: pointer;
+        color: $steel !important;
+        background: $white !important;
+        border: 1px solid $steel !important; 
+        border-radius: $radius-xs;
+        position: relative;
+        transition: all .3s ease-in-out !important;
 
-/* WCAG AA focus state */
-.share-btn:focus {
-    outline: 3px solid #005fcc;
-    outline-offset: 2px;
-}
+        &:hover {
+            border: 1px solid $silver !important; 
+        }
 
-/* Screen-reader-only utility */
-.visually-hidden {
-    position: absolute;
-    width: 1px;
-    height: 1px;
-    margin: -1px;
-    padding: 0;
-    overflow: hidden;
-    border: 0;
-    clip: rect(0 0 0 0);
+        &.twitter:before {
+            content: '';
+            background-image: url('/wp-content/uploads/2026/02/Social-icon-5.svg');
+            background-size: 100%;
+            height: 20px;
+            width: 20px;
+            position: absolute;
+            top: calc(50% - 10px);
+            left: calc(50% - 10px);
+            background-repeat: no-repeat;
+        }
+
+        &.facebook:before {
+            content: '';
+            background-image: url('/wp-content/uploads/2026/02/Social-icon-4.svg');
+            background-size: 100%;
+            height: 20px;
+            width: 20px;
+            position: absolute;
+            top: calc(50% - 10px);
+            left: calc(50% - 10px);
+            background-repeat: no-repeat;
+        }
+
+        &.linkedin:before {
+            content: '';
+            background-image: url('/wp-content/uploads/2026/02/Social-icon-3.svg');
+            background-size: 100%;
+            height: 20px;
+            width: 20px;
+            position: absolute;
+            top: calc(50% - 10px);
+            left: calc(50% - 10px);
+            background-repeat: no-repeat;
+        }
+    }
 }
 
 @media (max-width: 992px) {
@@ -123,8 +157,8 @@
             }
 
             &--bottom {
-                padding-left: 20px;
-                padding-right: 20px;
+                // padding-left: 20px;
+                // padding-right: 20px;
 
                 .background-lightest-silver {
                     border-radius: $radius-md;
@@ -142,14 +176,20 @@
             display: none;
         }
         &__row {
-            &__left {
-                order: 2;
-            }
-            &__right {
-                order: 1;
-            }
             img {
                 max-height: 230px;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .single-case-study {
+        &__row {
+
+            &--bottom {
+                padding-left: 20px;
+                padding-right: 20px;
             }
         }
     }

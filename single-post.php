@@ -36,8 +36,8 @@ $category = get_the_category(get_the_ID());
 $topic = get_the_terms(get_the_ID(), 'topic');
 ?>
 
-<section class="single-story container position-relative">
-    <div class="row single-story__row py-4">
+<section class="single-story-page container position-relative">
+    <div class="row single-story-page__row py-4">
         <div class="col-12 col-md-8">
             <?php if ( $title ) : ?>
                 <h1 class="mb-2 text-black">
@@ -45,22 +45,22 @@ $topic = get_the_terms(get_the_ID(), 'topic');
                 </h1>
             <?php endif; ?>
             <?php if ( $subtitle ) : ?>
-                <div class="single-story__row__excerpt text-steel mb-0 h3">
+                <div class="single-story-page__row__excerpt text-steel mb-0 h3">
                     <?php echo $subtitle; ?>
                 </div>
             <?php endif; ?>
         </div>
     </div>
     <div class="row mt-6 mt-md-8 mt-lg-10 mb-md-8 mb-lg-10">
-        <div class="col-12 col-md-8 single-story__row__left">
+        <div class="col-12 col-md-8 single-story-page__row__left pb-4 pb-md-0">
             <?php if ( $featured_image_url ) : ?>
                 <img src="<?php echo esc_url( $featured_image_url ); ?>" alt="<?php echo esc_attr( $alt_text ); ?>" class="w-100 position-relative"/>
             <?php else : ?>
                 <img src="/wp-content/uploads/2026/01/default-social-sharing-image.jpeg" alt="Post Placeholder Image" class="w-100 position-relative"/>
             <?php endif; ?>
         </div>
-        <div class="col-12 col-md-4 single-story__row__right">
-            <div class="background-lightest-silver p-6 p-md-8 p-lg-10 d-flex flex-column h-100 justify-content-between">
+        <div class="col-12 col-md-4 single-story-page__row__right pb-8 pb-md-0">
+            <div class="background-lightest-silver p-6 p-md-8 d-flex flex-column h-100 justify-content-between">
                 <?php if ( ! empty( $author ) && ! is_wp_error( $author ) ) : ?>
                     <div class="col">
                         <span class="text-blue-ada text-sm-medium mb-0">
@@ -120,57 +120,31 @@ $topic = get_the_terms(get_the_ID(), 'topic');
                     ?>
 
                     <div class="share-buttons" role="group" aria-label="Share this page">
-
                         <!-- Copy Link -->
-                        <button 
-                            type="button"
-                            class="share-btn copy-link"
-                            data-url="<?php echo $current_url; ?>"
-                            aria-label="Copy page link to clipboard">
-                            <span aria-hidden="true">Copy link</span>
+                        <button type="button" class="button button--share-btn copy-link text-tertiary" data-url="<?php echo $current_url; ?>" aria-label="Copy page link to clipboard">
+                            Copy link
                         </button>
-
                         <!-- X / Twitter -->
-                        <a 
-                            class="share-btn"
-                            href="https://twitter.com/intent/tweet?url=<?php echo $encoded_url; ?>&text=<?php echo $current_title; ?>"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            aria-label="Share this page on X (opens in a new window)">
+                        <a class="share-btn twitter" href="https://twitter.com/intent/tweet?url=<?php echo $encoded_url; ?>&text=<?php echo $current_title; ?>" target="_blank" rel="noopener noreferrer" aria-label="Share this page on X (opens in a new window)">
                             <span aria-hidden="true">X</span>
                         </a>
-
                         <!-- Facebook -->
-                        <a 
-                            class="share-btn"
-                            href="https://www.facebook.com/sharer/sharer.php?u=<?php echo $encoded_url; ?>"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            aria-label="Share this page on Facebook (opens in a new window)">
+                        <a class="share-btn facebook" href="https://www.facebook.com/sharer/sharer.php?u=<?php echo $encoded_url; ?>" target="_blank" rel="noopener noreferrer" aria-label="Share this page on Facebook (opens in a new window)">
                             <span aria-hidden="true">Facebook</span>
                         </a>
-
                         <!-- LinkedIn -->
-                        <a 
-                            class="share-btn"
-                            href="https://www.linkedin.com/sharing/share-offsite/?url=<?php echo $encoded_url; ?>"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            aria-label="Share this page on LinkedIn (opens in a new window)">
+                        <a class="share-btn linkedin" href="https://www.linkedin.com/sharing/share-offsite/?url=<?php echo $encoded_url; ?>" target="_blank" rel="noopener noreferrer" aria-label="Share this page on LinkedIn (opens in a new window)">
                             <span aria-hidden="true">LinkedIn</span>
                         </a>
-
                     </div>
-
                     <!-- Screen reader live region -->
                     <div id="copy-status" class="visually-hidden" aria-live="polite"></div>
-
                 </div>
             </div>
         </div>
     </div>
     <div class="row">
-        <div class="col-12 col-md-8 single-story__row__left">
+        <div class="col-12 col-md-8 single-story-page__row__left">
             <?php the_content(); ?>
         </div>
     </div>

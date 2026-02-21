@@ -83,41 +83,33 @@ $services = get_the_terms(get_the_ID(), 'services');
                     </div>
                 <?php endif; ?>
             </div>
-            <div class="row">
-                <div class="share-buttons" role="group" aria-label="Share this page">
-                    <button class="share-btn" id="copyLinkBtn" aria-label="Copy page link to clipboard">
-                        Copy Link
+            <div class="row pt-4">
+                <?php
+                    $current_url   = esc_url( get_permalink() );
+                    $encoded_url   = urlencode( get_permalink() );
+                    $current_title = urlencode( get_the_title() );
+                    ?>
+
+                    <div class="share-buttons" role="group" aria-label="Share this page">
+                    <!-- Copy Link -->
+                    <button type="button" class="button button--share-btn copy-link text-tertiary" data-url="<?php echo $current_url; ?>" aria-label="Copy page link to clipboard">
+                        Copy link
                     </button>
-
-                    <a class="share-btn"
-                    id="shareFacebook"
-                    href="#"
-                    target="_blank"
-                    rel="noopener"
-                    aria-label="Share this page on Facebook">
-                        Facebook
+                    <!-- X / Twitter -->
+                    <a class="share-btn twitter" href="https://twitter.com/intent/tweet?url=<?php echo $encoded_url; ?>&text=<?php echo $current_title; ?>" target="_blank" rel="noopener noreferrer" aria-label="Share this page on X (opens in a new window)">
+                        <span aria-hidden="true">X</span>
                     </a>
-
-                    <a class="share-btn"
-                    id="shareX"
-                    href="#"
-                    target="_blank"
-                    rel="noopener"
-                    aria-label="Share this page on X">
-                        X
+                    <!-- Facebook -->
+                    <a class="share-btn facebook" href="https://www.facebook.com/sharer/sharer.php?u=<?php echo $encoded_url; ?>" target="_blank" rel="noopener noreferrer" aria-label="Share this page on Facebook (opens in a new window)">
+                        <span aria-hidden="true">Facebook</span>
                     </a>
-
-                    <a class="share-btn"
-                    id="shareLinkedIn"
-                    href="#"
-                    target="_blank"
-                    rel="noopener"
-                    aria-label="Share this page on LinkedIn">
-                        LinkedIn
+                    <!-- LinkedIn -->
+                    <a class="share-btn linkedin" href="https://www.linkedin.com/sharing/share-offsite/?url=<?php echo $encoded_url; ?>" target="_blank" rel="noopener noreferrer" aria-label="Share this page on LinkedIn (opens in a new window)">
+                        <span aria-hidden="true">LinkedIn</span>
                     </a>
-
-                    <span id="copyStatus" class="visually-hidden" aria-live="polite"></span>
                 </div>
+                <!-- Screen reader live region -->
+                <div id="copy-status" class="visually-hidden" aria-live="polite"></div>
             </div>
         </div>
     </div>
