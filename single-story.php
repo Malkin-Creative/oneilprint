@@ -156,12 +156,12 @@ $service = get_the_terms(get_the_ID(), 'service');
     </div>
 </section>
 <?php 
+$category = wp_get_post_terms( get_the_ID(), 'industry' );
 $args = array(
     'post_type'      => 'story', 
     'posts_per_page' => 3,
     'post__not_in'   => array( get_the_ID() ), 
-    'orderby'        => 'date',
-    'order'          => 'DESC'
+    'category__in'     => $category,
 );
 $related_query = new WP_Query( $args );
 
@@ -183,7 +183,7 @@ if ($related_query->have_posts()) : ?>
                     $thumbnail_id = get_post_thumbnail_id(get_the_ID());
                     $featured_image_url = get_the_post_thumbnail_url(get_the_ID(), 'full');
                     $alt_text = get_post_meta($thumbnail_id, '_wp_attachment_image_alt', true);
-                    $categories = get_the_category(get_the_ID());
+                    $industries = get_the_terms( get_the_ID(), 'industries' );
                     ?>
                     <div class="col-12 col-md-6 col-lg-4 featured-post-grid__wrap position-relative pb-10 pb-md-8 pb-lg-0">
                         <?php if ($featured_image_url) : ?>
@@ -196,12 +196,12 @@ if ($related_query->have_posts()) : ?>
                                 <?php echo $title; ?>
                             </h3>
                         <?php endif; ?>
-                        <?php if ($categories) : ?>
-                            <?php $lastCat = end($categories); ?>
+                        <?php if ( ! empty( $industries ) && ! is_wp_error( $industries ) ) : ?>
+                            <?php $lastInd = end($industries); ?>
                             <p class="text-sm-bold mt-2 text-blue-ada font-tertiary">
-                                <?php foreach( $categories as $category): ?>
-                                    <?php echo esc_html( $category->name );
-                                        if ($category !== $lastCat) {
+                                <?php foreach( $industries as $industry): ?>
+                                    <?php echo esc_html( $industry->name );
+                                        if ($industry !== $lastInd) {
                                             echo ', ';
                                         }
                                     ?>

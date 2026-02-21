@@ -24050,6 +24050,9 @@ body {
   white-space: nowrap;
   border: 0;
 }
+a {
+  color: #1179C5;
+}
 .simplesocialbuttons {
   background: transparent !important;
 }
@@ -26604,11 +26607,29 @@ body.menu-open {
   display: grid;
 }
 .footer__container ul.menu li a {
-  color: #ffffff;
   font-size: 14px;
   font-family: "Figtree", sans-serif;
   font-weight: 400;
   line-height: 1.5;
+  padding: 4px 6px 4px 0;
+  color: #ffffff !important;
+  background: transparent !important;
+  border-radius: 4px;
+  transition: all 0.3s ease-in-out !important;
+}
+.footer__container ul.menu li a:hover {
+  color: #ffffff !important;
+  background: #1179C5 !important;
+  padding-left: 6px;
+  text-decoration: none !important;
+}
+.footer__container ul.menu li a:focus, .footer__container ul.menu li a:focus-visible, .footer__container ul.menu li a:focus-within {
+  outline-color: transparent;
+  outline-style: solid;
+  box-shadow: 0 0 0 3px #ffffff, 0 0 0 4px #C8D8EB;
+  border-radius: 4px;
+  color: #ffffff !important;
+  background: #1179C5 !important;
 }
 .footer__container__affiliations img {
   max-height: 100px;
@@ -26627,9 +26648,24 @@ body.menu-open {
 }
 .footer__socials {
   transition: all 0.3s ease-in-out !important;
+  background: transparent !important;
+  border-radius: 4px;
+  width: 24px;
+  padding: 2px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 .footer__socials:hover {
-  transform: scale(1.1);
+  background: #1179C5 !important;
+  text-decoration: none !important;
+}
+.footer__socials:focus, .footer__socials:focus-visible, .footer__socials:focus-within {
+  outline-color: transparent;
+  outline-style: solid;
+  box-shadow: 0 0 0 3px #ffffff, 0 0 0 4px #C8D8EB;
+  border-radius: 4px;
+  background: #1179C5 !important;
 }
 .footer__socials img {
   height: 24px;
@@ -26861,6 +26897,13 @@ body.menu-open {
 .featured-post__left img {
   border-radius: 8px;
   object-fit: cover;
+  aspect-ratio: 1.777;
+}
+.featured-post__right__excerpt {
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 7;
+  -webkit-box-orient: vertical;
 }
 .featured-post__right > div {
   border-radius: 8px;
@@ -26944,6 +26987,7 @@ body.menu-open {
   display: -webkit-box;
   -webkit-line-clamp: 3;
   -webkit-box-orient: vertical;
+  padding-right: 40px;
 }
 .featured-post-grid__wrap__excerpt p {
   margin-bottom: 0;
@@ -27964,6 +28008,7 @@ body.modal-open {
 .standard-content__wrap__columns {
   display: grid;
   grid-template-columns: 1fr 1fr;
+  column-gap: 50px;
 }
 .standard-content__wrap__buttons {
   gap: 12px;

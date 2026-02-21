@@ -154,12 +154,12 @@ $topic = get_the_terms(get_the_ID(), 'topic');
     </div>
 </section>
 <?php 
+$category = wp_get_post_categories( get_the_ID() );
 $args = array(
     'post_type'      => 'post', 
     'posts_per_page' => 3,
     'post__not_in'   => array( get_the_ID() ), 
-    'orderby'        => 'date',
-    'order'          => 'DESC'
+    'category__in'     => $category,
 );
 $related_query = new WP_Query( $args );
 

@@ -198,7 +198,7 @@ $categories = get_the_category($postId);
                             </p>
                         <?php endif; ?>
                         <?php if ($summary_excerpt) : ?>
-                            <div class="text-lg-regular mb-5 text-<?php echo $textColor; ?>">
+                            <div class="featured-post__right__excerpt text-lg-regular mb-5 text-<?php echo $textColor; ?>">
                                 <?php echo $summary_excerpt; ?>
                             </div>
                         <?php endif; ?>

@@ -31,11 +31,16 @@
         img {
             border-radius: $radius-md;
             object-fit: cover;
-            // max-height: 600px;
+            aspect-ratio: 1.777;
         }
     }
     &__right {
-        // height: 500px;
+        &__excerpt {
+            overflow: hidden;
+            display: -webkit-box;
+            -webkit-line-clamp: 7;
+            -webkit-box-orient: vertical;
+        }
 
         > div {
             border-radius: $radius-md;
