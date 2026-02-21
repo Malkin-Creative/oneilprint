@@ -24111,6 +24111,9 @@ body {
   gap: 40px;
   align-items: center;
 }
+#breadcrumbs > span > span:first-of-type {
+  padding-right: 12px;
+}
 #breadcrumbs > span > span:first-of-type > a {
   position: relative;
   color: transparent;
@@ -24144,6 +24147,10 @@ body {
 #breadcrumbs > span > span {
   position: relative;
   line-height: 1;
+  padding-left: 12px;
+}
+#breadcrumbs > span > span:has(a) {
+  padding-left: 0;
 }
 #breadcrumbs > span > span:after {
   position: absolute;
@@ -26529,6 +26536,9 @@ body.menu-open {
 .footer__bottom {
   background: #0A1947;
   z-index: 1;
+}
+.footer__bottom__legal p {
+  margin-bottom: 0;
 }
 .footer__logo__img {
   max-width: 170px;
