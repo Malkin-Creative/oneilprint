@@ -24542,6 +24542,35 @@ p {
 h1, .h1, h2, .h2, .multi-col-tiles__content.cta-column .multi-col-tiles__content__col:last-of-type h3, .multi-col-tiles__content.cta-column .multi-col-tiles__content__col:last-of-type .h3, h3, .h3, h4, .h4, h5, .h5, h6, .h6, p, span, li {
   text-wrap: pretty;
 }
+.facetwp-facet.facetwp-type-dropdown, .facetwp-facet.facetwp-type-reset {
+  margin-bottom: 0 !important;
+}
+.facetwp-facet.facetwp-type-reset {
+  width: 100%;
+}
+.facetwp-facet.facetwp-type-reset .facetwp-reset {
+  width: 100%;
+  font-family: "Figtree", sans-serif;
+  font-weight: 600;
+  line-height: 1.15 !important;
+  padding: 10px 14px;
+  position: relative;
+  color: #ffffff !important;
+  background: #1179C5 !important;
+  border: 1px solid #1179C5 !important;
+  border-radius: 4px;
+}
+.facetwp-facet.facetwp-type-reset .facetwp-reset:hover {
+  color: #647692 !important;
+  background: #ffffff !important;
+  border: 1px solid #647692 !important;
+}
+.facetwp-facet.facetwp-type-reset .facetwp-reset:focus, .facetwp-facet.facetwp-type-reset .facetwp-reset:focus-visible, .facetwp-facet.facetwp-type-reset .facetwp-reset:focus-within {
+  outline-color: transparent;
+  outline-style: solid;
+  box-shadow: 0 0 0 3px #ffffff, 0 0 0 4px #C8D8EB;
+  border-radius: 4px;
+}
 .facetwp-dropdown {
   font-size: 12px;
   font-family: "Figtree", sans-serif;

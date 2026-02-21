@@ -23,7 +23,7 @@ get_header(); ?>
 </section>
 
 <?php
-$page = get_page_by_path('stories');
+$page = get_page_by_path('blog');
 
 if ($page) {
     echo apply_filters('the_content', $page->post_content);
@@ -41,15 +41,15 @@ if ($page) {
                 <div class="row flex-column flex-md-row">
                     <div class="col col-md-4 mb-4 mb-md-8">
                         <p class="text-sm-medium text-black mb-2">
-                            Industry
+                            Category
                         </p>
-                        <?php echo do_shortcode('[facetwp facet="industry"]'); ?>
+                        <?php echo do_shortcode('[facetwp facet="categories"]'); ?>
                     </div>
                     <div class="col col-md-4 mb-8">
                         <p class="text-sm-medium text-black mb-2">
-                            Services
+                            Topic
                         </p>
-                        <?php echo do_shortcode('[facetwp facet="services"]'); ?>
+                        <?php echo do_shortcode('[facetwp facet="topics"]'); ?>
                     </div>
                     <div class="col col-md-4 d-flex align-items-end mb-8">
                         <?php echo do_shortcode('[facetwp facet="clear_button"]'); ?>
@@ -62,11 +62,11 @@ if ($page) {
                 <?php while ( have_posts() ) : the_post(); 
                     $permalink = get_permalink(get_the_ID());
                     $title = get_the_title(get_the_ID());
-                    $summary_excerpt = get_field('summary_excerpt', get_the_ID());
+                    $excerpt = get_the_excerpt(get_the_ID());
                     $thumbnail_id = get_post_thumbnail_id(get_the_ID());
                     $featured_image_url = get_the_post_thumbnail_url(get_the_ID(), 'full');
                     $alt_text = get_post_meta($thumbnail_id, '_wp_attachment_image_alt', true);
-                    $industries = get_the_terms( get_the_ID(), 'industries' );
+                    $categories = get_the_category(get_the_ID());
                     ?>
                     <div class="col-12 col-md-6 col-lg-4 featured-post-grid__wrap position-relative pb-10 pb-md-8">
                         <div class="overlay object-fit-cover featured-post-grid__wrap__img">
@@ -81,22 +81,22 @@ if ($page) {
                                 <?php echo $title; ?>
                             </h3>
                         <?php endif; ?>
-                        <?php if ( ! empty( $industries ) && ! is_wp_error( $industries ) ) : ?>
-                            <?php $lastInd = end($industries); ?>
-                            <p class="text-sm-bold mt-2 text-blue-ada font-tertiary mb-0">
-                                <?php foreach( $industries as $industry): ?>
-                                    <?php echo esc_html( $industry->name );
-                                        if ($industry !== $lastInd) {
+                        <?php if ($categories) : ?>
+                            <?php $lastCat = end($categories); ?>
+                            <p class="text-sm-bold mt-2 text-blue-ada font-tertiary">
+                                <?php foreach( $categories as $category): ?>
+                                    <?php echo esc_html( $category->name );
+                                        if ($category !== $lastCat) {
                                             echo ', ';
                                         }
                                     ?>
                                 <?php endforeach; ?>
                             </p>
                         <?php endif; ?>
-                        <?php if ($summary_excerpt) : ?>
-                            <div class="text-md-regular my-4 text-black font-tertiary featured-post-grid__wrap__excerpt">
-                                <?php echo $summary_excerpt; ?>
-                            </div>
+                        <?php if ($excerpt) : ?>
+                            <p class="text-md-regular my-4 text-black font-tertiary featured-post-grid__wrap__excerpt">
+                                <?php echo $excerpt; ?>
+                            </p>
                         <?php endif; ?>
                         <a class="button button--steel-underline" href="<?php echo $permalink; ?>" aria-label="Open post">
                             Read Post

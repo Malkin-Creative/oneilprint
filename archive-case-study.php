@@ -37,17 +37,24 @@ if ($page) {
                     Filter Case Studies
                 </h2>
             </div>
-            <div class="col-12 col-md-4 d-flex flex-column">
-                <p class="text-sm-medium text-black mb-2">
-                    Industry
-                </p>
-                <?php echo do_shortcode('[facetwp facet="industry"]'); ?>
-            </div>
-            <div class="col-12 col-md-4 flex-column">
-                <p class="text-sm-medium text-black mb-2">
-                    Services
-                </p>
-                <?php echo do_shortcode('[facetwp facet="services"]'); ?>
+            <div class="col-12 col-lg-9">
+                <div class="row flex-column flex-md-row">
+                    <div class="col col-md-4 mb-4 mb-md-8">
+                        <p class="text-sm-medium text-black mb-2">
+                            Industry
+                        </p>
+                        <?php echo do_shortcode('[facetwp facet="industry"]'); ?>
+                    </div>
+                    <div class="col col-md-4 mb-8">
+                        <p class="text-sm-medium text-black mb-2">
+                            Services
+                        </p>
+                        <?php echo do_shortcode('[facetwp facet="services"]'); ?>
+                    </div>
+                    <div class="col col-md-4 d-flex align-items-end mb-8">
+                        <?php echo do_shortcode('[facetwp facet="clear_button"]'); ?>
+                    </div>
+                </div>
             </div>
         </div>
         <?php if ( have_posts() ) : ?>

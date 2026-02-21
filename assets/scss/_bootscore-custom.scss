@@ -571,7 +571,39 @@ h1, h2, h3, h4, h5, h6, p, span, li {
     text-wrap: pretty
 }
 
-// Pagination
+// Facet WP
+.facetwp-facet.facetwp-type-dropdown, .facetwp-facet.facetwp-type-reset {
+    margin-bottom: 0 !important;
+}
+.facetwp-facet.facetwp-type-reset {
+    width: 100%;
+
+    .facetwp-reset {
+        width: 100%;
+        font-family: $primaryFont;
+        font-weight: 600;
+        line-height: 1.15 !important;
+        padding: 10px 14px;
+        position: relative;
+        color: $white !important;
+        background: $blue-ada !important;
+        border: 1px solid $blue-ada !important; 
+        border-radius: $radius-xs;
+
+        &:hover {
+            color: $steel !important;
+            background: $white !important; 
+            border: 1px solid $steel !important; 
+        }
+
+        &:focus, &:focus-visible, &:focus-within {
+            outline-color: transparent; 
+            outline-style: solid;
+            box-shadow: 0 0 0 3px $white, 0 0 0 4px $silver;
+            border-radius: $radius-xs;
+        }
+    }
+}
 .facetwp-dropdown {
     font-size: 12px;
     font-family: $primaryFont;
