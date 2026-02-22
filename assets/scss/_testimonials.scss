@@ -32,6 +32,8 @@
     }
 
     &__row {
+        min-height: 450px;
+
         &.background-graphic {
             &:before {
                 content: '';
@@ -145,6 +147,13 @@
         &__row {
             row-gap: 40px;
             grid-template-columns: repeat(1, 1fr);
+            display: grid;
+
+            &__col {
+                padding-left: 20px !important;
+                padding-right: 20px !important;
+            }
+
             &--left {
                 padding-bottom: 330px;
                 position: relative;
@@ -156,7 +165,7 @@
                 top: unset;
                 right: 215px;
                 left: unset;
-                bottom: 165px;
+                bottom: 205px;
                 height: 100px;
                 width: 100px;
             }
@@ -164,12 +173,12 @@
                 top: unset;
                 right: 100px;
                 left: unset;
-                bottom: 165px;
+                bottom: 205px;
                 height: 150px;
                 width: 100px;
             }
             &__image-3 {
-                bottom: 50px;
+                bottom: 90px;
                 top: unset;
                 height: 100px;
                 width: 100px;
@@ -177,7 +186,7 @@
                 right: 280px;
             }
             &__image-4 {
-                bottom: 0;
+                bottom: 40px;
                 top: unset;
                 height: 150px;
                 width: 100px;
@@ -190,7 +199,7 @@
                 right: 20px;
                 left: unset;
                 top: unset;
-                bottom: 70px;
+                bottom: 110px;
             }
         }
     }

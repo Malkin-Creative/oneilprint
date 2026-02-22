@@ -46,6 +46,8 @@
 
         nav {
             padding-right: 100px;
+            position: relative;
+            z-index: 1;
 
             #menu-top-main-menu {
                 display: flex;
@@ -91,11 +93,12 @@
                         display: block;
                         font-size: 12px !important;
                         color: $steel;
+                        border-radius: 0 !important;
 
                         &:last-of-type {
                             border-bottom: none;
                             padding-bottom: 8px;
-                            border-radius: 0 0 9px 9px;
+                            border-radius: 0 0 9px 9px !important;
                         }
                         &:hover {
                             background-color: $silver;
@@ -118,9 +121,13 @@
                         color: $steel;
                         font-size: 12px;
                         font-weight: 500;
+                        background: transparent !important;
+                        border-radius: $radius-xs;
 
                         &:hover {
                             text-decoration: underline;
+                            color: $navy !important;
+                            background: $silver !important; 
                         }
 
                         &:focus, &:focus-visible, &:focus-within {
@@ -128,8 +135,8 @@
                             outline-style: solid;
                             box-shadow: 0 0 0 3px $white, 0 0 0 4px $silver;
                             border-radius: $radius-xs;
-                            color: $steel !important;
-                            background: transparent !important;
+                            color: $navy !important;
+                            background: $silver !important; 
                         }
                     }
 
@@ -183,23 +190,49 @@
             }
         }
 
+        .search-wrap {
+            overflow: hidden;
+            width: 100%;
+            position: absolute;
+            height: 100%;
+            right: 0;
+        }
         .searchform {
             position: absolute;
-            right: 20px;
-            width: 80px;
+            right: 10px;
+            width: 90px;
             top: calc(50% - 14px);
             display: flex;
             align-items: center;
             transition: all 0.3s ease-in-out;
+            background: transparent !important;
+            border-radius: $radius-xs;
+            z-index: 1;
+
+            &:hover {
+                background: $silver !important;
+
+                &.active-search {
+                    background: $lightest-silver !important;
+                }
+                
+                #searchinput::placeholder {
+                    color: $navy !important;
+                }
+            }
 
             &.active-search {
-                background: $lightest-silver;
-                width: calc(100% - 40px);
+                background: $lightest-silver !important;
+                width: calc(100% - 20px);
 
                 #searchinput {
                     border: 1px solid $steel;
                     border-radius: 4px;
                     width: 300px;
+
+                    &::placeholder {
+                        color: $steel !important;
+                    }
                 }
 
                 .submit {
@@ -243,6 +276,7 @@
                 width: 75px;
                 transition: all 0.3s ease-in-out;
                 padding: 6px 8px;
+                cursor: pointer;
                 
                 &::placeholder {
                     color: $steel;
@@ -265,7 +299,7 @@
                 border-radius: 4px;
                 position: absolute;
                 width: 20px;
-                right: 0;
+                right: 5px;
                 height: 100%;
                 left: unset;
                 font-size: 12px !important;

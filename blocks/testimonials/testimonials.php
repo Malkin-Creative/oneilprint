@@ -68,7 +68,7 @@ if ($tile_background == 'solid') {
 <?php endif; ?>
 
 <section class="testimonials container" id="<?php echo esc_attr( $id ); ?>">
-    <div class="row testimonials__row position-relative testimonials--<?php echo $testimonialType; echo $backgroundGraphic; ?>" id="<?php echo $row_id; ?>">
+    <div class="row">
         <div class="col-12">
             <?php if ($header) : ?>
                 <div class="h2 mb-lg-8 text-steel">
@@ -76,6 +76,8 @@ if ($tile_background == 'solid') {
                 </div>
             <?php endif; ?>
         </div>
+    </div>
+    <div class="row testimonials__row position-relative testimonials--<?php echo $testimonialType; echo $backgroundGraphic; ?>" id="<?php echo $row_id; ?>">
         <?php if($testimonial_type == 'collage'): ?>
             <div class="col-12 col-lg-6 testimonials__row--left">
                 <?php if ( $stars ) : ?>

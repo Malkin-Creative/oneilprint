@@ -81,3 +81,8 @@ $spacers: (
   39: ($spacer * 19.5),
   40: ($spacer * 20),
 );
+
+@media (max-width: 767px) {
+  $radius-4xl: 10px;
+  $radius-3xl: 8px;
+}

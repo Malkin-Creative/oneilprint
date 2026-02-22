@@ -24,6 +24,7 @@ $padding_top = get_field('padding_top');
 $padding_bottom = get_field('padding_bottom');
 $padding_top_mobile = $padding_top / 2;
 $padding_bottom_mobile = $padding_bottom / 2;
+$row_width = get_field('row_width');
 $block_alignment = get_field('block_alignment');
 $text_alignment = get_field('text_alignment');
 $column_count = get_field('column_count');
@@ -75,8 +76,10 @@ if ($block_alignment == 'left') {
     $blockAlignment = ' mx-auto';
 }
 
-if ($column_count == 'two' || $header_size == 'large') {
+if ($column_count == 'two' || $header_size == 'large' || $row_width == 'small') {
     $columnCount = ' col-md-12 col-lg-10';
+} elseif ($row_width == 'large') {
+    $columnCount = '';
 } else {
     $columnCount = ' col-md-10 col-lg-8';
 }

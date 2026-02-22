@@ -122,26 +122,20 @@ defined('ABSPATH') || exit;
                 ));
               ?>
             </nav>
-            <!-- <form id="search-form" class="searchform" action="/search/" method="get" aria-expanded="false">
-              <label for="searchinput" aria-labelledby="searchinput" class="sr-only" style="display: none">Search</label>
-              <input placeholder="Search" type="text" name="q" id="searchinput" class="text-steel" aria-label="Search site">
-              <input type="submit" name="searchsubmit" class="submit button" value=""/>
-              <button type="button" id="close-search" class="banner-close text-xs-medium text-steel py-0" aria-label="Close search bar" title="Close search bar">
-                <p class="mb-0">Close</p>
-              </button>
-            </form> -->
-            <form id="search-form" method="get" class="searchform" action="<?php echo esc_url( home_url( '/' ) ); ?>" role="search" aria-expanded="false">
-              <label for="searchinput" class="sr-only">
-                Search the site
-              </label>
-              <input type="search" name="s" id="searchinput" class="text-steel" placeholder="Search" autocomplete="off">
-              <button type="submit" class="submit button" aria-label="Submit search">
-                <span class="submit-text text-white">Search</span>
-              </button>
-              <button type="button" id="close-search" class="banner-close text-xs-medium text-steel py-0" aria-label="Close search" hidden>
-                Close
-              </button>
-            </form>
+            <div class="search-wrap">
+              <form id="search-form" method="get" class="searchform" action="<?php echo esc_url( home_url( '/' ) ); ?>" role="search" aria-expanded="false">
+                <label for="searchinput" class="sr-only">
+                  Search the site
+                </label>
+                <input type="search" name="s" id="searchinput" class="text-steel" placeholder="Search" autocomplete="off">
+                <button type="submit" class="submit button" aria-label="Submit search">
+                  <span class="submit-text text-white">Search</span>
+                </button>
+                <button type="button" id="close-search" class="banner-close text-xs-medium text-steel py-0" aria-label="Close search" hidden>
+                  Close
+                </button>
+              </form>
+            </div>
           </div>
         </div>
       </div>

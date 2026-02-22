@@ -58,9 +58,9 @@
         &__content {
             grid-template-columns: repeat(1, 1fr) !important;
 
-            &__col {
-                min-height: 250px;
-            }
+            // &__col {
+            //     min-height: 250px;
+            // }
         }
     }
 }

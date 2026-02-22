@@ -404,7 +404,7 @@
         text-decoration: underline !important;
 
         &.email-button {
-            padding-left: 24px !important;
+            padding-left: 28px !important;
             font-weight: 600 !important;
 
             &:before {
@@ -415,7 +415,7 @@
                 width: 16px;
                 position: absolute;
                 top: calc(50% - 6px);
-                left: 0;
+                left: 2px;
                 background-repeat: no-repeat;
                 transition: all .3s ease-in-out !important;
             }
@@ -440,7 +440,7 @@
             padding-left: 10px !important;
 
             &.email-button {
-                padding-left: 34px !important;
+                padding-left: 38px !important;
 
                 &:before {
                     background-image: url('/wp-content/uploads/2026/02/Icon-2.svg');
@@ -464,7 +464,7 @@
             padding-left: 10px !important;
 
             &.email-button {
-                padding-left: 34px !important;
+                padding-left: 38px !important;
                 
                 &:before {
                     background-image: url('/wp-content/uploads/2026/02/Icon-2.svg');

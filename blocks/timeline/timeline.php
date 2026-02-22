@@ -59,7 +59,7 @@ $padding_bottom_mobile = $padding_bottom / 2;
                             </div>
                         <?php endif; ?>
                         <?php if ( $header ) : ?>
-                            <div class="mb-4 text-black oversized-h3">
+                            <div class="mb-1 text-black oversized-h3">
                                 <?php echo $header; ?>
                             </div>
                         <?php endif; ?>

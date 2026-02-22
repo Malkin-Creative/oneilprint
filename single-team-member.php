@@ -38,7 +38,7 @@ if( $primary_cta ):
 endif;
 ?>
 
-<section class="split-content background-white image-left py-6">
+<section class="split-content single-team-member background-white image-left py-6">
     <div class="container">
         <div class="row">
             <div class="col-12 col-md-6 col-lg-5 split-content__content pt-lg-8">

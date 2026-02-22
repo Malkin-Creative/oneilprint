@@ -1,7 +1,23 @@
 .team-member-block {
+    &__wrap {
+        display: flex;
+        flex-direction: column;
+    }
     &__img {
+        flex: 0 0 auto;
+
         img {
-            border-radius: 8px;
+            border-radius: 8px 8px 0 0;
+        }
+    }
+    &__content {
+        border-radius: 0 0 8px 8px;
+        flex: 1 1 auto;
+        display: flex;
+        flex-direction: column;
+
+        &__last {
+            margin-top: auto;
         }
     }
 }

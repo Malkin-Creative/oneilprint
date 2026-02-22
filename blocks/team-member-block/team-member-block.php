@@ -50,8 +50,8 @@ $placeholder_image = get_field('placeholder_image');
                 $summary_of_bio = get_field('summary_of_bio', $postId);
                 $full_bio = get_field('full_bio', $postId);
                 ?>
-                <div class="col-12 col-md-6 col-lg-3 featured-post-grid__wrap position-relative pb-10 pb-md-8 pt-0">
-                    <div class="object-fit-cover mb-4 w-100 ratio ratio-1x1 team-member-block__img">
+                <div class="col-12 col-md-6 col-lg-3 featured-post-grid__wrap position-relative pb-10 pb-md-8 pt-0 team-member-block__wrap">
+                    <div class="object-fit-cover w-100 ratio ratio-1x1 team-member-block__img">
                         <?php if ($featured_image_url) : ?>
                             <img src="<?php echo esc_url( $featured_image_url ); ?>" alt="<?php echo esc_attr( $alt_text ); ?>" class="w-100"/>
                         <?php elseif ($placeholder_image) : ?>
@@ -60,44 +60,46 @@ $placeholder_image = get_field('placeholder_image');
                             <img src="/wp-content/uploads/2026/01/default-social-sharing-image.jpeg" alt="Team Member Placeholder Image" class="w-100"/>
                         <?php endif; ?>
                     </div>
-                    <?php if ($title) : ?>
-                        <h3>
-                            <?php echo $title; ?>
-                        </h3>
-                    <?php endif; ?>
-                    <?php if ($job_title) : ?>
-                        <div class="text-md-regular text-black">
-                            <?php echo $job_title; ?>
-                        </div>
-                    <?php endif; ?>
-                    <?php if ($summary_of_bio) : ?>
-                        <div class="text-md-regular my-4 text-steel featured-post-grid__wrap__excerpt">
-                            <?php echo $summary_of_bio; ?>
-                        </div>
-                    <?php endif; ?>
-                    <div class="d-flex align-items-center justify-content-between">
-                        <a class="button button--blue-underline" href="<?php echo $permalink; ?>" aria-label="Open team member bio page">
-                            Read bio
-                        </a>
-                        <?php if( have_rows('social_media', $postId) ): ?>
-                            <div class="d-flex gap-2">
-                                <?php while( have_rows('social_media', $postId) ) : the_row(); ?>
-                                    <?php 
-                                    $social_media_icon = get_sub_field('social_media_icon');
-                                    $social_media_url = get_sub_field('social_media_url');
-                                    $social_media_button_label = get_sub_field('social_media_button_label');
-                                    ?>
-                                    
-                                    <?php if ( $social_media_url ) : ?>
-                                        <a class="featured-post-grid__wrap__cta" href="<?php echo esc_attr( $social_media_url ); ?>" target="_blank" rel="noopener" aria-label="<?php echo esc_attr( $social_media_button_label ); ?>">
-                                            <?php if ( $social_media_icon ) : ?>
-                                                <img src="<?php echo esc_url($social_media_icon['url']); ?>" alt="<?php echo esc_attr($social_media_icon['alt']); ?>" />
-                                            <?php endif; ?>
-                                        </a>
-                                    <?php endif; ?>
-                                <?php endwhile; ?>
+                    <div class="team-member-block__content p-4 background-lightest-silver">
+                        <?php if ($title) : ?>
+                            <h3>
+                                <?php echo $title; ?>
+                            </h3>
+                        <?php endif; ?>
+                        <?php if ($job_title) : ?>
+                            <div class="text-md-regular text-black">
+                                <?php echo $job_title; ?>
                             </div>
                         <?php endif; ?>
+                        <?php if ($summary_of_bio) : ?>
+                            <div class="text-md-regular mb-4 text-steel featured-post-grid__wrap__excerpt">
+                                <?php echo $summary_of_bio; ?>
+                            </div>
+                        <?php endif; ?>
+                        <div class="d-flex align-items-center justify-content-between team-member-block__content__last">
+                            <a class="button button--blue-underline" href="<?php echo $permalink; ?>" aria-label="Open team member bio page">
+                                Read bio
+                            </a>
+                            <?php if( have_rows('social_media', $postId) ): ?>
+                                <div class="d-flex gap-2">
+                                    <?php while( have_rows('social_media', $postId) ) : the_row(); ?>
+                                        <?php 
+                                        $social_media_icon = get_sub_field('social_media_icon');
+                                        $social_media_url = get_sub_field('social_media_url');
+                                        $social_media_button_label = get_sub_field('social_media_button_label');
+                                        ?>
+                                        
+                                        <?php if ( $social_media_url ) : ?>
+                                            <a class="featured-post-grid__wrap__cta" href="<?php echo esc_attr( $social_media_url ); ?>" target="_blank" rel="noopener" aria-label="<?php echo esc_attr( $social_media_button_label ); ?>">
+                                                <?php if ( $social_media_icon ) : ?>
+                                                    <img src="<?php echo esc_url($social_media_icon['url']); ?>" alt="<?php echo esc_attr($social_media_icon['alt']); ?>" />
+                                                <?php endif; ?>
+                                            </a>
+                                        <?php endif; ?>
+                                    <?php endwhile; ?>
+                                </div>
+                            <?php endif; ?>
+                        </div>
                     </div>
                 </div>
             <?php endforeach; ?>

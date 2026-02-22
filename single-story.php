@@ -33,120 +33,122 @@ $featured_image_url = get_the_post_thumbnail_url(get_the_ID(), 'full');
 $alt_text = get_post_meta($thumbnail_id, '_wp_attachment_image_alt', true);
 $client = get_the_terms(get_the_ID(), 'client');
 $industries = get_the_terms(get_the_ID(), 'industries');
-$service = get_the_terms(get_the_ID(), 'service');
+$services = get_the_terms(get_the_ID(), 'services');
 ?>
 
-<section class="single-story-page container position-relative">
-    <div class="row single-story-page__row py-4">
-        <div class="col-12 col-md-8">
-            <?php if ( $title ) : ?>
-                <h1 class="mb-2 text-black">
-                    <?php echo $title; ?>
-                </h1>
-            <?php endif; ?>
-            <?php if ( $subtitle ) : ?>
-                <span class="text-steel mb-0 h3">
-                    <?php echo $subtitle; ?>
-                </span>
-            <?php endif; ?>
+<section class="single-story-page position-relative">
+    <div class="container">
+        <div class="row single-story-page__row py-4">
+            <div class="col-12 col-md-8">
+                <?php if ( $title ) : ?>
+                    <h1 class="mb-2 text-black">
+                        <?php echo $title; ?>
+                    </h1>
+                <?php endif; ?>
+                <?php if ( $subtitle ) : ?>
+                    <span class="text-steel mb-0 h3 single-story-page__row__paragraph">
+                        <?php echo $subtitle; ?>
+                    </span>
+                <?php endif; ?>
+            </div>
         </div>
-    </div>
-    <div class="row mt-6 mt-md-8 mt-lg-10 mb-md-8 mb-lg-10">
-        <div class="col-12 col-md-8 single-story-page__row__left pb-4 pb-md-0">
-            <?php if ( $featured_image_url ) : ?>
-                <img src="<?php echo esc_url( $featured_image_url ); ?>" alt="<?php echo esc_attr( $alt_text ); ?>" class="w-100 position-relative"/>
-            <?php else : ?>
-                <img src="/wp-content/uploads/2026/01/default-social-sharing-image.jpeg" alt="Post Placeholder Image" class="w-100 position-relative"/>
-            <?php endif; ?>
-        </div>
-        <div class="col-12 col-md-4 single-story-page__row__right pb-8 pb-md-0">
-            <div class="background-lightest-silver p-6 p-md-8 d-flex flex-column h-100 justify-content-between">
-                <div>
-                    <?php if ( ! empty( $client ) && ! is_wp_error( $client ) ) : ?>
-                        <div class="col">
-                            <span class="text-blue-ada text-sm-medium mb-0">
-                                Client
-                            </span>
-                            <?php $lastClient = end($client); ?>
-                            <p class="text-lg-medium text-black font-tertiary">
-                                <?php foreach( $client as $clients): ?>
-                                    <?php echo esc_html( $clients->name );
-                                        if ($clients !== $lastClient) {
-                                            echo ', ';
-                                        }
-                                    ?>
-                                <?php endforeach; ?>
-                            </p>
-                        </div>
-                    <?php endif; ?>
-                    <?php if ( ! empty( $industries ) && ! is_wp_error( $industries ) ) : ?>
-                        <div class="col">
-                            <span class="text-blue-ada text-sm-medium mb-0">
-                                Industry
-                            </span>
-                            <?php $lastInd = end($industries); ?>
-                            <p class="text-lg-medium text-black font-tertiary">
-                                <?php foreach( $industries as $industry): ?>
-                                    <?php echo esc_html( $industry->name );
-                                        if ($industry !== $lastInd) {
-                                            echo ', ';
-                                        }
-                                    ?>
-                                <?php endforeach; ?>
-                            </p>
-                        </div>
-                    <?php endif; ?>
-                    <?php if ( ! empty( $service ) && ! is_wp_error( $service ) ) : ?>
-                        <div class="col">
-                            <span class="text-blue-ada text-sm-medium mb-0">
-                                Services
-                            </span>
-                            <?php $lastServ = end($service); ?>
-                            <p class="text-lg-medium text-black font-tertiary">
-                                <?php foreach( $service as $services): ?>
-                                    <?php echo esc_html( $services->name );
-                                        if ($services !== $lastServ) {
-                                            echo ', ';
-                                        }
-                                    ?>
-                                <?php endforeach; ?>
-                            </p>
-                        </div>
-                    <?php endif; ?>
-                </div>
-                <div class="col d-flex align-items-end">
-                    <?php
-                    $current_url   = esc_url( get_permalink() );
-                    $encoded_url   = urlencode( get_permalink() );
-                    $current_title = urlencode( get_the_title() );
-                    ?>
-
-                    <div class="share-buttons" role="group" aria-label="Share this page">
-                        <!-- Copy Link -->
-                        <button type="button" class="button button--share-btn copy-link text-tertiary" data-url="<?php echo $current_url; ?>" aria-label="Copy page link to clipboard">
-                            Copy link
-                        </button>
-                        <!-- X / Twitter -->
-                        <a class="share-btn twitter" href="https://twitter.com/intent/tweet?url=<?php echo $encoded_url; ?>&text=<?php echo $current_title; ?>" target="_blank" rel="noopener noreferrer" aria-label="Share this page on X (opens in a new window)">
-                            <span aria-hidden="true">X</span>
-                        </a>
-                        <!-- Facebook -->
-                        <a class="share-btn facebook" href="https://www.facebook.com/sharer/sharer.php?u=<?php echo $encoded_url; ?>" target="_blank" rel="noopener noreferrer" aria-label="Share this page on Facebook (opens in a new window)">
-                            <span aria-hidden="true">Facebook</span>
-                        </a>
-                        <!-- LinkedIn -->
-                        <a class="share-btn linkedin" href="https://www.linkedin.com/sharing/share-offsite/?url=<?php echo $encoded_url; ?>" target="_blank" rel="noopener noreferrer" aria-label="Share this page on LinkedIn (opens in a new window)">
-                            <span aria-hidden="true">LinkedIn</span>
-                        </a>
+        <div class="row mt-6 mt-md-8 mt-lg-10 mb-md-8 mb-lg-10">
+            <div class="col-12 col-md-8 single-story-page__row__left pb-4 pb-md-0">
+                <?php if ( $featured_image_url ) : ?>
+                    <img src="<?php echo esc_url( $featured_image_url ); ?>" alt="<?php echo esc_attr( $alt_text ); ?>" class="w-100 position-relative"/>
+                <?php else : ?>
+                    <img src="/wp-content/uploads/2026/01/default-social-sharing-image.jpeg" alt="Post Placeholder Image" class="w-100 position-relative"/>
+                <?php endif; ?>
+            </div>
+            <div class="col-12 col-md-4 single-story-page__row__right pb-8 pb-md-0">
+                <div class="background-lightest-silver p-6 p-md-8 d-flex flex-column h-100 justify-content-between">
+                    <div>
+                        <?php if ( ! empty( $client ) && ! is_wp_error( $client ) ) : ?>
+                            <div class="col">
+                                <span class="text-blue-ada text-sm-medium mb-0">
+                                    Client
+                                </span>
+                                <?php $lastClient = end($client); ?>
+                                <p class="text-lg-medium text-black font-tertiary">
+                                    <?php foreach( $client as $clients): ?>
+                                        <?php echo esc_html( $clients->name );
+                                            if ($clients !== $lastClient) {
+                                                echo ', ';
+                                            }
+                                        ?>
+                                    <?php endforeach; ?>
+                                </p>
+                            </div>
+                        <?php endif; ?>
+                        <?php if ( ! empty( $industries ) && ! is_wp_error( $industries ) ) : ?>
+                            <div class="col">
+                                <span class="text-blue-ada text-sm-medium mb-0">
+                                    Industry
+                                </span>
+                                <?php $lastInd = end($industries); ?>
+                                <p class="text-lg-medium text-black font-tertiary">
+                                    <?php foreach( $industries as $industry): ?>
+                                        <?php echo esc_html( $industry->name );
+                                            if ($industry !== $lastInd) {
+                                                echo ', ';
+                                            }
+                                        ?>
+                                    <?php endforeach; ?>
+                                </p>
+                            </div>
+                        <?php endif; ?>
+                        <?php if ( ! empty( $services ) && ! is_wp_error( $services ) ) : ?>
+                            <div class="col">
+                                <span class="text-blue-ada text-sm-medium mb-0">
+                                    Services
+                                </span>
+                                <?php $lastServ = end($services); ?>
+                                <p class="text-lg-medium text-black font-tertiary">
+                                    <?php foreach( $services as $service): ?>
+                                        <?php echo esc_html( $service->name );
+                                            if ($service !== $lastServ) {
+                                                echo ', ';
+                                            }
+                                        ?>
+                                    <?php endforeach; ?>
+                                </p>
+                            </div>
+                        <?php endif; ?>
                     </div>
-                    <!-- Screen reader live region -->
-                    <div id="copy-status" class="visually-hidden" aria-live="polite"></div>
+                    <div class="col d-flex align-items-end">
+                        <?php
+                        $current_url   = esc_url( get_permalink() );
+                        $encoded_url   = urlencode( get_permalink() );
+                        $current_title = urlencode( get_the_title() );
+                        ?>
+
+                        <div class="share-buttons" role="group" aria-label="Share this page">
+                            <!-- Copy Link -->
+                            <button type="button" class="button button--share-btn copy-link text-tertiary" data-url="<?php echo $current_url; ?>" aria-label="Copy page link to clipboard">
+                                Copy link
+                            </button>
+                            <!-- X / Twitter -->
+                            <a class="share-btn twitter" href="https://twitter.com/intent/tweet?url=<?php echo $encoded_url; ?>&text=<?php echo $current_title; ?>" target="_blank" rel="noopener noreferrer" aria-label="Share this page on X (opens in a new window)">
+                                <span aria-hidden="true">X</span>
+                            </a>
+                            <!-- Facebook -->
+                            <a class="share-btn facebook" href="https://www.facebook.com/sharer/sharer.php?u=<?php echo $encoded_url; ?>" target="_blank" rel="noopener noreferrer" aria-label="Share this page on Facebook (opens in a new window)">
+                                <span aria-hidden="true">Facebook</span>
+                            </a>
+                            <!-- LinkedIn -->
+                            <a class="share-btn linkedin" href="https://www.linkedin.com/sharing/share-offsite/?url=<?php echo $encoded_url; ?>" target="_blank" rel="noopener noreferrer" aria-label="Share this page on LinkedIn (opens in a new window)">
+                                <span aria-hidden="true">LinkedIn</span>
+                            </a>
+                        </div>
+                        <!-- Screen reader live region -->
+                        <div id="copy-status" class="visually-hidden" aria-live="polite"></div>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
     <div class="row">
-        <div class="col-12 col-md-8 single-story-page__row__left">
+        <div class="col col-md-8 single-story-page__row__left">
             <?php the_content(); ?>
         </div>
     </div>

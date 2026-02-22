@@ -34,6 +34,7 @@ $background_gradient_end = get_field('background_gradient_end');
 $background_gradient_angle = get_field('background_gradient_angle');
 $background_image = get_field('background_image');
 $background_video = get_field('background_video');
+$content_position = get_field('content_position');
 $tile_content_style = get_field('tile_content_style');
 $tile_background = get_field('tile_background');
 $tile_background_color = get_field('tile_background_color');
@@ -70,6 +71,16 @@ if ($anchorScrollSecondary == 'anchor-scroll') {
     $anchor_scroll_secondary = ' anchor-scroll';
 } else {
     $anchor_scroll_secondary = '';
+}
+
+if ($content_position == 'left') {
+    $columnWidth = '';
+    $textPosition = '';
+    $buttonPosition = '';
+} else {
+    $columnWidth = ' col-md-10 col-lg-7';
+    $textPosition = ' text-md-center';
+    $buttonPosition = ' justify-content-center';
 }
 
 if ($tile_content_style == 'light') {
@@ -145,19 +156,19 @@ if ($tile_background == 'solid') {
                     <?php endif; ?>
                 </div>
             <?php endif; ?>
-            <div class="col-12 col-md-10 col-lg-7 py-8 px-6 py-md-8 py-lg-10 px-md-10 px-lg-12 cta__content__wrap">
+            <div class="col-12 py-8 px-6 py-md-8 py-lg-10 px-md-10 px-lg-12 cta__content__wrap<?php echo $columnWidth; ?>">
                 <?php if ( $header ) : ?>
-                    <div class="h2 text-left text-md-center px-lg-6 mb-2 text-<?php echo $textColor; ?>">
+                    <div class="h2 text-left mb-2 text-<?php echo $textColor; echo $textPosition; ?>">
                         <?php echo $header; ?>
                     </div>
                 <?php endif; ?>
                 <?php if ( $paragraph ) : ?>
-                    <div class="text-left text-md-center text-<?php echo $textColor; ?>">
+                    <div class="text-left text-<?php echo $textColor; echo $textPosition; ?>">
                         <?php echo $paragraph; ?>
                     </div>
                 <?php endif; ?>
                 <?php if ( $primary_cta || $secondary_cta ) : ?>
-                    <div class="mt-6 d-flex justify-content-center align-items-center cta__content__wrap__buttons">
+                    <div class="mt-6 d-flex align-items-center cta__content__wrap__buttons<?php echo $buttonPosition; ?>">
                         <?php if ( $primary_cta ) : ?>
                             <a class="button button--<?php echo $buttonPrimary; ?><?php echo $anchor_scroll_primary; ?>" href="<?php echo esc_url( $primary_link_url ); ?>" target="<?php echo esc_attr( $primary_link_target ); ?>" rel="noopener" aria-label="<?php echo esc_attr( $primary_cta_label ); ?>">
                                 <?php echo esc_html( $primary_link_title ); ?>

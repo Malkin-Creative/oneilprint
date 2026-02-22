@@ -26,6 +26,10 @@
             .multi-col-tiles__content__col:last-of-type {
                 grid-column: span 2;
 
+                .multi-col-tiles__content__col__paragraph {
+                    width: 50%;
+                }
+
                 h3 {
                     @extend .h2;
                 }
